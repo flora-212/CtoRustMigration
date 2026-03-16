@@ -6,9 +6,7 @@ extern "C" {
     fn pthread_create(
         __newthread: *mut libc::c_ulong,
         __attr: *const libc::c_void,
-        __start_routine: Option::<
-            unsafe extern "C" fn(*mut libc::c_void) -> *mut libc::c_void,
-        >,
+        __start_routine: Option::<unsafe extern "C" fn(*mut libc::c_void) -> *mut libc::c_void>,
         __arg: *mut libc::c_void,
     ) -> libc::c_int;
     fn pthread_join(
@@ -18,20 +16,26 @@ extern "C" {
 }
 
 static mut n1: libc::c_int = 0;
-static mut n2: libc::c_int = 0;
-static NUM_MUTEX: Mutex<()> = Mutex::new(());
 
-unsafe extern "C" fn f1() {
-    let _guard = NUM_MUTEX.lock().unwrap();
-    n1 += n2;
+fn inc() {
+    unsafe {
+        n1 += 1;
+    }
 }
 
-unsafe extern "C" fn t_fun(mut _arg: *mut libc::c_void) -> *mut libc::c_void {
-    f1();
+fn f1(mutex: &Mutex<()>) {
+    let _guard = mutex.lock().unwrap();
+    inc();
+}
+
+unsafe extern "C" fn t_fun(arg: *mut libc::c_void) -> *mut libc::c_void {
+    let mutex = arg as *mut Mutex<()>;
+    f1(&*mutex);
     0 as *mut libc::c_void
 }
 
 unsafe fn main_0() -> libc::c_int {
+    let mutex = Arc::new(Mutex::new(()));
     let mut id1: libc::c_ulong = 0;
     let mut id2: libc::c_ulong = 0;
 
@@ -39,13 +43,14 @@ unsafe fn main_0() -> libc::c_int {
         &mut id1,
         std::ptr::null(),
         Some(t_fun),
-        std::ptr::null_mut(),
+        Arc::into_raw(mutex.clone()) as *mut libc::c_void,
     );
+
     pthread_create(
         &mut id2,
         std::ptr::null(),
         Some(t_fun),
-        std::ptr::null_mut(),
+        Arc::into_raw(mutex.clone()) as *mut libc::c_void,
     );
 
     pthread_join(id1, std::ptr::null_mut());

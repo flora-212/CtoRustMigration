@@ -5,6 +5,7 @@ import time
 import subprocess
 import ollama
 from validator import CodeValidator, ValidationStrategy
+from output_manager import OutputManager
 
 # ────────────────────────────────────────────────────────────────────────────
 # System Prompts for different optimization levels
@@ -85,7 +86,9 @@ def rewrite_file_with_validation(
     system_prompt: str,
     example_dir: str,
     max_iterations: int = 3,
-    validation_strategy: ValidationStrategy = ValidationStrategy.COMPILE
+    validation_strategy: ValidationStrategy = ValidationStrategy.COMPILE,
+    output_manager: OutputManager = None,
+    example_name: str = None
 ) -> tuple:
     """
     Rewrite a Rust file with iterative validation and feedback.
@@ -99,9 +102,11 @@ def rewrite_file_with_validation(
         example_dir: Directory containing Cargo.toml (for cargo build context)
         max_iterations: Maximum number of generation attempts
         validation_strategy: What to validate (compile, safety, lock_safety, comprehensive)
+        output_manager: OutputManager instance for saving intermediate results
+        example_name: Name of the example for organizing outputs
     
     Returns:
-        (success: bool, rewritten_code: str, report: str)
+        (success: bool, rewritten_code: str, report: str, iterations_used: int)
     """
     validator = CodeValidator()
     
@@ -143,7 +148,17 @@ def rewrite_file_with_validation(
                 # Cleanup temp file
                 if os.path.exists(temp_file):
                     os.remove(temp_file)
-                return True, rewritten_code, report
+                
+                # Save round result if output_manager is provided
+                if output_manager and example_name:
+                    output_manager.save_rewritten_file(
+                        "main_rewritten.rs", 
+                        rewritten_code, 
+                        round_num=iteration, 
+                        is_final=False
+                    )
+                
+                return True, rewritten_code, report, iteration
             else:
                 print("❌ Validation failed")
                 
@@ -191,14 +206,14 @@ def rewrite_file_with_validation(
         except Exception as e:
             print(f"❌ Error: {e}")
             if iteration == max_iterations:
-                return False, current_code, f"Failed after {max_iterations} iterations: {str(e)}"
+                return False, current_code, f"Failed after {max_iterations} iterations: {str(e)}", iteration
             else:
                 # Add error to messages for context
                 print(f"      🔄 向 LLM 反馈错误: {str(e)[:100]}\n")
                 messages.append({"role": "user", "content": f"An error occurred: {str(e)}\n\nPlease try again and fix the code:"})
                 time.sleep(RETRY_DELAY)
     
-    return False, current_code, f"Failed to pass validation after {max_iterations} iterations"
+    return False, current_code, f"Failed to pass validation after {max_iterations} iterations", max_iterations
 
 def extract_code(result: str) -> str:
     """Extract code from markdown code block."""
@@ -245,6 +260,17 @@ def main():
     system_prompt = SYSTEM_PROMPTS[prompt_idx]
     mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(force regenerate)" if force else ""
     print(f"Using SYSTEM_PROMPT_{prompt_idx} {mode_str}\n")
+    
+    # Initialize OutputManager with timestamp-based directory
+    output_manager = OutputManager()
+    output_root = output_manager.initialize(
+        prompt_idx=prompt_idx,
+        validate=validate,
+        strategy=strategy_str,
+        max_iterations=max_iterations,
+        force=force
+    )
+    print(f"📁 Output directory: {output_root}\n")
 
     examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.rs"))
     total = len(examples)
@@ -269,26 +295,35 @@ def main():
             if validate:
                 # Iterative validation mode
                 print(f"  -> Using iterative validation (max {max_iterations} iterations)...")
-                passed, code, report = rewrite_file_with_validation(
+                passed, code, report, iterations_used = rewrite_file_with_validation(
                     filepath,
                     system_prompt,
                     example_dir,
                     max_iterations=max_iterations,
-                    validation_strategy=validation_strategy
+                    validation_strategy=validation_strategy,
+                    output_manager=output_manager,
+                    example_name=example_name
                 )
                 
+                # Save to both old location and new timestamped location
                 with open(output_path, "w") as f:
                     f.write(code + "\n")
+                
+                # Save to timestamped output directory
+                output_manager.save_example_rewritten(example_name, "main_rewritten.rs", code + "\n")
+                output_manager.save_rewritten_file("main_rewritten.rs", code + "\n", is_final=True)
                 
                 # Optional: run rustfmt on the output
                 subprocess.run(["rustfmt", output_path], capture_output=True)
                 
                 if passed:
                     print(f"  -> ✅ Saved to: {output_path}")
+                    print(f"  -> Iterations used: {iterations_used}/{max_iterations}")
                     print(f"  -> Validation Report:\n{report}")
                     success += 1
                 else:
                     print(f"  -> ⚠️  Saved (unvalidated) to: {output_path}")
+                    print(f"  -> Iterations used: {iterations_used}/{max_iterations}")
                     print(f"  -> Report: {report}")
                     failed.append(example_name)
             else:
@@ -297,6 +332,10 @@ def main():
                 code = extract_code(result)
                 with open(output_path, "w") as f:
                     f.write(code + "\n")
+
+                # Save to timestamped output directory
+                output_manager.save_example_rewritten(example_name, "main_rewritten.rs", code + "\n")
+                output_manager.save_rewritten_file("main_rewritten.rs", code + "\n", is_final=True)
 
                 # Optional: run rustfmt on the output
                 subprocess.run(["rustfmt", output_path], capture_output=True)
@@ -310,11 +349,19 @@ def main():
         # Rate limiting: avoid hitting API too fast
         time.sleep(1)
 
+    # Finalize output manager
+    output_manager.finalize(success, total, failed)
+
     print(f"\n{'='*60}")
     print(f"Results: {success}/{total} succeeded")
     if failed:
         print(f"Failed: {', '.join(failed)}")
-    print(f"Output: {prompt_idx}")
+    print(f"Output Root: {output_manager.output_root}")
+    print(f"Output Dir Structure:")
+    print(f"  - config.json")
+    print(f"  - rewritten/")
+    print(f"  - examples/")
+    print(f"  - evaluation/")
 
 if __name__ == "__main__":
     main()
