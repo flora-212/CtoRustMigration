@@ -1,0 +1,1181 @@
+{
+  "summary": {
+    "total": 30,
+    "concrat_clean": 0,
+    "llm_clean": 0,
+    "concrat_warn_total": 60,
+    "llm_warn_total": 60
+  },
+  "results": [
+    {
+      "name": "array_const",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpknmt4xok)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpxtue12jf)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp3l9q29he)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_main",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmppa7x1t27)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpm03p364u)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmppgxg0zfw)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp873ceucy)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp_bw8b8dh)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp9knld9cj)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpl041yeh2)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpr25okfaz)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpm7mr4uww)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume2",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmplyy3_tf5)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp4po789hn)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpwbzt6wck)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_check",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpd715z9b1)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpg36izgrb)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpd5f4urpd)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp2n3_r5c_)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp46h0_chb)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpx7p0a6xx)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_custom",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpgl3w6ke8)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp4acxkxxz)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpuch4mc49)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_main",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpquk78_yf)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpd7ktu5dz)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpcyzfwpc2)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpkn69xz5n)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpcbztkv9c)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpjtc0bziq)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_read",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpi1nctja1)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpsrsifrpg)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpw2fmwqcr)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_rwlock",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpqei5538k)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpnxxj6t5h)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpay5n60l4)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp33hijxl1)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpi33bh3bv)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpb3nnnm54)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_trylock",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpo470djb6)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpbg2jkgx9)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp20yiqpua)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_while",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp0i1yqlnq)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpxixa55ya)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpk7ovx1ml)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_alias",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpe0hou5qz)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp9lzwfpds)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpdm9kkmdu)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n  --> main.rs:19:10\n   |\n19 | #[derive(Copy, Clone)]\n   |          ^^^^\n...\n22 |     pub num_mutex: Mutex<()>,\n   |     ------------------------ this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpv0bgfi5k)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpa01u1599)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpk51ufqtt)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n --> main.rs:4:10\n  |\n4 | #[derive(Copy, Clone)]\n  |          ^^^^\n...\n7 |     pub m: Arc<Mutex<()>>,\n  |     --------------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpb5lly2ct)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpsxrzvoto)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpqkllp283)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0425]: cannot find function `pthread_mutex_lock` in this scope\n   --> main.rs:154:9\n    |\n154 |         pthread_mutex_lock(&mut s.m1);\n    |         ^^^^^^^^^^^^^^^^^^ not found in this scope\n    |\nhelp: consider importing one of these items\n    |",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_dup",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp86ax03i8)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp8bdox3oz)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpskb5w9sg)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_empty",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpg6ajw21p)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpinupxiz5)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpch9spv4r)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n --> main.rs:4:10\n  |\n4 | #[derive(Copy, Clone)]\n  |          ^^^^\n...\n7 |     pub m: Arc<Mutex<()>>,\n  |     --------------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_init",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpdxjg01fy)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpb75ps7bd)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpmaa0ps1r)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0530]: let bindings cannot shadow statics\n  --> main.rs:26:9\n   |\n10 | / static mut s1: ss = ss {\n11 | |     n: 0,\n12 | |     m: Arc::new(Mutex::new(())),\n13 | | };\n   | |__- the static `s1` is defined here",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_main",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpmhmysj79)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpxojkpypg)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmppdwllsxe)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n --> main.rs:4:10\n  |\n4 | #[derive(Copy, Clone)]\n  |          ^^^^\n...\n7 |     m1: Mutex<i32>,\n  |     -------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp04yuijfq)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpnd2xv6h0)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpz970d8d6)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n  --> main.rs:6:10\n   |\n6  | #[derive(Copy, Clone)]\n   |          ^^^^\n...\n10 |     pub m: Mutex<()>,\n   |     ---------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc2",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpg12l30x2)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpvxrqo23c)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp17xclsbi)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n --> main.rs:5:10\n  |\n5 | #[derive(Copy, Clone)]\n  |          ^^^^\n...\n9 |     pub m: Mutex<libc::c_int>,\n  |     ------------------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_multiple",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmptzxzlyey)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpp4b5d7j0)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpk4of_ko1)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n  --> main.rs:19:10\n   |\n19 | #[derive(Copy, Clone)]\n   |          ^^^^\n...\n22 |     pub num_mutex: Mutex<()>,\n   |     ------------------------ this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp_4tcberg)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpuvc_j7ii)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpk1cauy85)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n  --> main.rs:26:10\n   |\n26 | #[derive(Copy, Clone)]\n   |          ^^^^\n...\n30 |     pub m: Mutex<()>,\n   |     ---------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp8z25nw4e)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpuhihouzo)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpu7hnmrg8)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_spin",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpkro6ov7_)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpwetbsujs)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp1139l_vj)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0432]: unresolved import `std::sync::Spinlock`\n --> main.rs:1:37\n  |\n1 | use std::sync::{Arc, Mutex, RwLock, Spinlock};\n  |                                     ^^^^^^^^ no `Spinlock` in `sync`\n\nSome errors have detailed explanations: E0432, E0602.\nFor more information about an error, try `rustc --explain E0432`.",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_timedwait",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpu7i90o50)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp3_nnmmuk)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmphg6infww)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nerror[E0204]: the trait `Copy` may not be implemented for this type\n  --> main.rs:18:10\n   |\n18 | #[derive(Copy, Clone)]\n   |          ^^^^\n...\n24 |     pub m1: Mutex<()>,\n   |     ----------------- this field does not implement `Copy`",
+        "exists": true
+      }
+    },
+    {
+      "name": "unused_func",
+      "original": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmplw521qzt)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "concrat": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmp71m51rjg)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 2,
+        "unique_lints": [
+          "clippy::arc_with_non_send_sync"
+        ],
+        "lint_hits": {
+          "clippy::arc_with_non_send_sync": 2
+        },
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n   Compiling libc v0.2.183\n    Checking c2rust_out v0.0.0 (/tmp/tmpunduaww7)\nerror[E0602]: unknown lint: `clippy::arc_with_non_send_sync`\n  |\n  = note: requested on the command line with `-W clippy::arc_with_non_send_sync`\n\nFor more information about this error, try `rustc --explain E0602`.\nerror: could not compile `c2rust_out` due to previous error",
+        "exists": true
+      }
+    }
+  ]
+}
