@@ -221,9 +221,17 @@ def main():
     prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 0
     force = "--force" in sys.argv
     clear = "--clear" in sys.argv
+    
+    # Parse --llm-output-dir
+    llm_output_dir = None
+    for i, arg in enumerate(sys.argv):
+        if arg == "--llm-output-dir" and i + 1 < len(sys.argv):
+            llm_output_dir = sys.argv[i + 1]
+            break
 
     report_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
     report_path = os.path.join(report_dir, "comparison_report.json")
+
 
     if os.path.exists(report_path) and not force:
         print(f"Report already exists: {report_path} (use --force to regenerate)")
@@ -251,7 +259,11 @@ def main():
         summary["total"] += 1
 
         original_rs = os.path.join(example_dir, "main.rs")
-        llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
+        # Try to read from llm_output_dir if provided, otherwise use the old location
+        if llm_output_dir:
+            llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")
+        else:
+            llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
 
         if not os.path.exists(original_rs):
             continue

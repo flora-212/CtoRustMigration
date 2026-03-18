@@ -42,6 +42,16 @@ Requirements:
 6. Keep the program's functionality and concurrency semantics exactly the same.
 """
 
+FIXING_PROMPT = """Your previous code failed validation.
+
+{feedback}
+
+Requirements:
+1. Fix all compilation errors first
+2. Then address safety and concurrency issues
+3. Keep functionality unchanged
+Rewrite the full corrected code:
+"""
 
 SYSTEM_PROMPTS = {
     int(k.split("_")[-1]): v
@@ -133,75 +143,137 @@ def rewrite_file_with_validation(
             rewritten_code = extract_code(response.message.content)
             messages.append({"role": "assistant", "content": response.message.content})
             
-            # Write to temp file for validation
-            temp_file = filepath.replace(".rs", f"_temp_{iteration}.rs")
-            with open(temp_file, "w") as f:
-                f.write(rewritten_code)
+            # Write to file for validation
+            output_file = output_manager.save_example_round(
+                example_name, 
+                iteration, 
+                rewritten_code,
+            )
+            # output_file = output_path + f"round{iteration}.rs"
+            # with open(output_file, "w") as f:
+            #     f.write(rewritten_code)
             
             # Validate
             passed, report, results = validator.validate_and_report(
-                temp_file, rewritten_code, validation_strategy, example_dir
+                output_file, rewritten_code, validation_strategy, example_dir
             )
             
             if passed:
                 print("✅ Validation passed!")
-                # Cleanup temp file
-                if os.path.exists(temp_file):
-                    os.remove(temp_file)
+                # # Cleanup output file
+                # if os.path.exists(output_file):
+                #     os.remove(output_file)
                 
                 # Save round result if output_manager is provided
-                if output_manager and example_name:
-                    output_manager.save_rewritten_file(
-                        "main_rewritten.rs", 
-                        rewritten_code, 
-                        round_num=iteration, 
-                        is_final=False
-                    )
+                final_path = output_manager.save_example_round(
+                    example_name,
+                    "final",
+                    rewritten_code + "\n"
+                )
                 
                 return True, rewritten_code, report, iteration
+                
             else:
                 print("❌ Validation failed")
                 
                 # 显示详细的验证反馈
                 print("\n      📋 验证反馈详情:")
+
+                failed_results = []
+
                 for result in results:
                     status = "✅" if result.passed else "❌"
                     print(f"      {status} [{result.category}] {result.message}")
                     
                     # 如果是编译错误，显示详细的错误信息
-                    if not result.passed and result.details.get("error"):
-                        error_lines = result.details["error"].split("\n")[:3]  # 显示前 3 行
-                        for err_line in error_lines:
-                            if err_line.strip():
-                                print(f"         └─ {err_line[:100]}")
-                
-                # Prepare feedback for next iteration
-                feedback_lines = []
-                for result in results:
                     if not result.passed:
-                        # 提取更详细的错误信息用于反馈
-                        if result.category == "compile" and result.details.get("error"):
-                            # 只取编译错误的关键信息
-                            error_summary = result.details["error"].split("\n")[0:2]
-                            error_text = " | ".join(error_summary)
-                            feedback_lines.append(f"[{result.category}] {error_text[:150]}")
-                        else:
-                            feedback_lines.append(f"[{result.category}] {result.message}")
+                        failed_results.append(result)
+
+                        error_text = result.details.get("error", "")
+                        if error_text:
+                            error_lines = error_text.split("\n")[:3]
+                            for err_line in error_lines:
+                                if err_line.strip():
+                                    print(f"         └─ {err_line[:120]}")
+
+                #     if not result.passed and result.details.get("error"):
+                #         error_lines = result.details["error"].split("\n")[:3]  # 显示前 3 行
+                #         for err_line in error_lines:
+                #             if err_line.strip():
+                #                 print(f"         └─ {err_line[:100]}")
+
+                compile_errors = []
+                other_errors = []
+
+                for result in failed_results:
+                    error_text = result.details.get("error", "")
+
+                    if result.category == "compile" and error_text:
+                        summary = " | ".join(error_text.split("\n")[:2])
+                        compile_errors.append(summary[:200])
+                    else:
+                        other_errors.append(f"{result.category}: {result.message}")
                 
-                feedback = "Validation issues found:\n" + "\n".join(feedback_lines)
+                # # Prepare feedback for next iteration
+                # feedback_lines = []
+                # for result in results:
+                #     if not result.passed:
+                #         # 提取更详细的错误信息用于反馈
+                #         if result.category == "compile" and result.details.get("error"):
+                #             # 只取编译错误的关键信息
+                #             error_summary = result.details["error"].split("\n")[0:2]
+                #             error_text = " | ".join(error_summary)
+                #             feedback_lines.append(f"[{result.category}] {error_text[:150]}")
+                #         else:
+                #             feedback_lines.append(f"[{result.category}] {result.message}")
                 
-                # 如果不是最后一次迭代，向 LLM 反馈
-                if iteration < max_iterations:
-                    print(f"      🔄 向 LLM 反馈错误信息...\n")
-                    # 直接向消息中添加反馈
-                    messages.append({"role": "user", "content": f"Please fix these issues:\n{feedback}\n\nRewrite the code again:"})
+                # feedback = "Validation issues found:\n" + "\n".join(feedback_lines)
+
+                feedback_parts = []
+
+                if compile_errors:
+                    feedback_parts.append(
+                        "Compilation errors (must fix first):\n" + "\n".join(f"- {e}" for e in compile_errors))
                 
+                if other_errors:
+                    feedback_parts.append(
+                        "Other errors:\n" + "\n".join(f"- {e}" for e in other_errors))
+
+                feedback = "The code has the following issues:\n\n" + "\n\n".join(feedback_parts)
+
+                # # 如果不是最后一次迭代，向 LLM 反馈
+                # if iteration < max_iterations:
+                #     print(f"      🔄 向 LLM 反馈错误信息...\n")
+                #     # 直接向消息中添加反馈
+                #     messages.append({"role": "user", "content": f"Please fix these issues:\n{feedback}\n\nRewrite the code again:"})
+                
+                # # Update current code for next iteration
+                # current_code = rewritten_code
+                
+                # # # Cleanup output file
+                # # if os.path.exists(output_file):
+                # #     os.remove(output_file)
+
                 # Update current code for next iteration
                 current_code = rewritten_code
-                
-                # Cleanup temp file
-                if os.path.exists(temp_file):
-                    os.remove(temp_file)
+
+                if iteration < max_iterations:
+                    print(f"      🔄 向 LLM 反馈错误信息...\n")
+                    
+                    messages.append({
+                        "role": "user", 
+                        "content": FIXING_PROMPT.format(feedback=feedback)
+                        })
+                    
+                    # Rate limit before next attempt
+                    time.sleep(RETRY_DELAY)
+                else:
+                    final_path = output_manager.save_example_round(
+                        example_name,
+                        "final",
+                        rewritten_code + "\n"
+                    )
+
         
         except Exception as e:
             print(f"❌ Error: {e}")
@@ -284,12 +356,10 @@ def main():
         example_name = os.path.basename(example_dir)
         print(f"[{i}/{total}] Processing: {example_name}")
 
-        output_path = filepath.replace("main.rs", f"main_rewritten_{prompt_idx}.rs")
-
-        if os.path.exists(output_path) and not force:
-            print(f"  -> Already exists, skipping. (use --force to regenerate)")
-            success += 1
-            continue
+        # if os.path.exists(output_path) and not force:
+        #     print(f"  -> Already exists, skipping. (use --force to regenerate)")
+        #     success += 1
+        #     continue
 
         try:
             if validate:
@@ -305,13 +375,14 @@ def main():
                     example_name=example_name
                 )
                 
-                # Save to both old location and new timestamped location
-                with open(output_path, "w") as f:
-                    f.write(code + "\n")
+                output_path = output_root + f"/examples/{example_name}/final.rs"
                 
-                # Save to timestamped output directory
-                output_manager.save_example_rewritten(example_name, "main_rewritten.rs", code + "\n")
-                output_manager.save_rewritten_file("main_rewritten.rs", code + "\n", is_final=True)
+                # # Save to both old location and new timestamped location
+                # with open(output_path, "w") as f:
+                #     f.write(code + "\n")
+                
+                # # Save to timestamped output directory
+                # output_manager.save_example_round(example_name, "final", code + "\n")
                 
                 # Optional: run rustfmt on the output
                 subprocess.run(["rustfmt", output_path], capture_output=True)
@@ -330,12 +401,11 @@ def main():
                 # Original mode (no validation)
                 result = rewrite_file(filepath, system_prompt)
                 code = extract_code(result)
-                with open(output_path, "w") as f:
-                    f.write(code + "\n")
+                # with open(output_path, "w") as f:
+                #     f.write(code + "\n")
 
                 # Save to timestamped output directory
-                output_manager.save_example_rewritten(example_name, "main_rewritten.rs", code + "\n")
-                output_manager.save_rewritten_file("main_rewritten.rs", code + "\n", is_final=True)
+                output_manager.save_example_round(example_name, "final", code + "\n")
 
                 # Optional: run rustfmt on the output
                 subprocess.run(["rustfmt", output_path], capture_output=True)
@@ -362,6 +432,12 @@ def main():
     print(f"  - rewritten/")
     print(f"  - examples/")
     print(f"  - evaluation/")
+    
+    # Output timestamp directory info for downstream scripts
+    last_output_file = os.path.join(os.path.dirname(__file__), ".last_refactor_output")
+    with open(last_output_file, "w") as f:
+        f.write(output_manager.output_root)
+    print(f"\n✅ Output directory path saved to: {last_output_file}")
 
 if __name__ == "__main__":
     main()

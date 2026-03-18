@@ -58,19 +58,15 @@ result/
 └── 20260316_162332_0/          # 时间戳命名 (YYYYMMDD_HHMMSS_PROMPTIDX)
     ├── config.json              # ✓ 运行配置和统计信息
     │
-    ├── rewritten/               # ✓ 所有代码重写文件
-    │   ├── round1/              # 第1轮迭代结果
-    │   │   └── main_rewritten.rs
-    │   ├── round2/              # 第2轮迭代结果（如需修改）
-    │   │   └── main_rewritten.rs
-    │   └── final/               # ✓ 最终通过的结果
-    │       └── main_rewritten.rs
-    │
     ├── examples/                # ✓ 30个示例各有一个子文件夹
     │   ├── array_const/
-    │   │   └── main_rewritten.rs
+    │   │   ├── round1.rs        # 第1轮迭代结果
+    │   │   ├── round2.rs        # 第2轮迭代结果（如需修改）
+    │   │   └── final.rs         # ✓ 最终版本
     │   ├── array_main/
-    │   │   └── main_rewritten.rs
+    │   │   ├── round1.rs
+    │   │   ├── round2.rs
+    │   │   └── final.rs
     │   └── ... (28个其他示例)
     │
     └── evaluation/              # ✓ 评估和测试结果
@@ -173,20 +169,20 @@ result/
 启用验证时的迭代过程：
 
 ```
-Round 1: 生成代码
+Round 1: 生成代码 → 保存为 examples/{name}/round1.rs
          ↓ 验证
          ✗ 失败 → LLM 反馈错误
          
-Round 2: 改进代码
+Round 2: 改进代码 → 保存为 examples/{name}/round2.rs
          ↓ 验证
          ✗ 失败 → LLM 反馈错误
          
-Round 3: 继续改进
+Round 3: 继续改进 → 保存为 examples/{name}/round3.rs（or final.rs)
          ↓ 验证
-         ✓ 成功 → 保存为 final/
+         ✓ 成功 → 保存为 examples/{name}/final.rs
 ```
 
-每一轮的结果都被保存到 `round{N}/` 目录。
+每一轮的结果都被保存到对应的轮次文件（round{N}.rs）。
 
 ### 4. 查看迭代过程
 
@@ -194,14 +190,14 @@ Round 3: 继续改进
 LATEST=$(ls result/ | sort -r | head -1)
 
 # 对比各轮次的代码变化
-diff result/$LATEST/rewritten/round1/main_rewritten.rs \
-     result/$LATEST/rewritten/final/main_rewritten.rs
+diff result/$LATEST/examples/array_const/round1.rs \
+     result/$LATEST/examples/array_const/final.rs
 
 # 查看第1轮的代码
-head -50 result/$LATEST/rewritten/round1/main_rewritten.rs
+head -50 result/$LATEST/examples/array_const/round1.rs
 
 # 查看最终的代码
-head -50 result/$LATEST/rewritten/final/main_rewritten.rs
+head -50 result/$LATEST/examples/array_const/final.rs
 ```
 
 ---
@@ -322,7 +318,10 @@ python3 validator.py examples/array_const/main_rewritten_0.rs
 
 ```bash
 LATEST=$(ls result/ | sort -r | head -1)
-rm -rf result/$LATEST/rewritten/round*  # 仅保留 final/
+for example_dir in result/$LATEST/examples/*/; do
+  cd "$example_dir"
+  rm -f round*.rs  # 仅保留 final.rs
+done
 ```
 
 ### Q: 如何快速查看某个示例的改进？
@@ -334,10 +333,10 @@ LATEST=$(ls result/ | sort -r | head -1)
 EXAMPLE=array_const
 
 echo "=== 第1轮 ==="
-head -20 result/$LATEST/rewritten/round1/main_rewritten.rs
+head -20 result/$LATEST/examples/$EXAMPLE/round1.rs
 
 echo "=== 最终版 ==="
-head -20 result/$LATEST/rewritten/final/main_rewritten.rs
+head -20 result/$LATEST/examples/$EXAMPLE/final.rs
 
 echo "=== 原始文件 ==="
 head -20 examples/$EXAMPLE/main.rs
@@ -428,8 +427,8 @@ LLM 生成: main_rewritten_{N}.rs
 ↓
 验证: 编译检查、安全检查等
 ↓
-失败 → 反馈给 LLM → 重试
-成功 → 保存到 result/{timestamp}/rewritten/
+失败 → 保存round{N}.rs，反馈给 LLM → 重试
+成功 → 保存final.rs到 result/{timestamp}/examples/{name}/
 ↓
 评估: comparison_report.json
 ↓
@@ -439,8 +438,8 @@ LLM 生成: main_rewritten_{N}.rs
 ### 文件组织原则
 
 - **按时间戳组织** - 每次运行独立目录
-- **按阶段保存** - round1, round2, ..., final
-- **按示例分类** - examples/ 子目录
+- **按示例分类** - examples/ 各自子文件夹
+- **按轮次保存** - round1.rs, round2.rs, ..., final.rs
 - **评估独立** - evaluation/ 子目录
 - **配置记录** - config.json
 

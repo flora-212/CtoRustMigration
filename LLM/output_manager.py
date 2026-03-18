@@ -5,20 +5,16 @@ Structure:
     result/
         {timestamp}_{prompt_idx}/
             config.json                    # 参数记录
-            rewritten/
-                round1/                    # 第一轮迭代结果（如果启用验证）
-                    main_rewritten.rs
-                    deps_rewritten.rs
-                round2/
-                ...
-                final/                     # 最终结果
-                    main_rewritten.rs
-                    deps_rewritten.rs
             examples/
                 example_001/
-                    main_rewritten.rs
-                    deps_rewritten.rs
+                    round1.rs              # 第一轮迭代结果
+                    round2.rs              # 第二轮迭代结果（如需要）
+                    ...
+                    final.rs               # 最终版本
                 example_002/
+                    round1.rs
+                    ...
+                    final.rs
                 ...
             evaluation/
                 comparison_report.json
@@ -58,7 +54,6 @@ class OutputManager:
         
         # 创建主目录结构
         os.makedirs(self.output_root, exist_ok=True)
-        os.makedirs(os.path.join(self.output_root, "rewritten"), exist_ok=True)
         os.makedirs(os.path.join(self.output_root, "examples"), exist_ok=True)
         os.makedirs(os.path.join(self.output_root, "evaluation"), exist_ok=True)
         
@@ -81,22 +76,6 @@ class OutputManager:
         self.save_config()
         return self.output_root
     
-    def get_rewritten_dir(self) -> str:
-        """获取rewritten文件夹路径"""
-        return os.path.join(self.output_root, "rewritten")
-    
-    def get_round_dir(self, round_num: int) -> str:
-        """获取特定轮次的目录"""
-        round_dir = os.path.join(self.get_rewritten_dir(), f"round{round_num}")
-        os.makedirs(round_dir, exist_ok=True)
-        return round_dir
-    
-    def get_final_dir(self) -> str:
-        """获取最终结果目录"""
-        final_dir = os.path.join(self.get_rewritten_dir(), "final")
-        os.makedirs(final_dir, exist_ok=True)
-        return final_dir
-    
     def get_example_dir(self, example_name: str) -> str:
         """为某个example获取输出目录"""
         example_dir = os.path.join(self.output_root, "examples", example_name)
@@ -107,41 +86,31 @@ class OutputManager:
         """获取evaluation结果目录"""
         return os.path.join(self.output_root, "evaluation")
     
-    def save_rewritten_file(self, filename: str, content: str, 
-                           round_num: Optional[int] = None, 
-                           is_final: bool = False) -> str:
+    def save_example_round(self, example_name: str, round_num, 
+                           content: str, filename: str = "round") -> str:
         """
-        保存rewritten文件到对应的轮次或最终目录
+        保存某个example的某一轮结果
         
         Args:
-            filename: 文件名 (e.g., "main_rewritten.rs", "deps_rewritten.rs")
+            example_name: 示例名称
+            round_num: 轮次号（1, 2, ...）或 "final"
             content: 文件内容
-            round_num: 轮次号，如果为None且is_final=False则保存到final
-            is_final: 是否保存为最终版本
+            filename: 基础文件名前缀（默认 "round"）
             
         Returns:
             保存的文件路径
         """
-        if is_final:
-            target_dir = self.get_final_dir()
-        elif round_num is not None:
-            target_dir = self.get_round_dir(round_num)
-        else:
-            target_dir = self.get_final_dir()
-        
-        filepath = os.path.join(target_dir, filename)
-        with open(filepath, "w") as f:
-            f.write(content)
-        
-        return filepath
-    
-    def save_example_rewritten(self, example_name: str, filename: str, 
-                             content: str) -> str:
-        """保存example的rewritten文件"""
         example_dir = self.get_example_dir(example_name)
+        
+        if round_num == "final":
+            filename = f"final.rs"
+        else:
+            filename = f"round{round_num}.rs"
+        
         filepath = os.path.join(example_dir, filename)
         with open(filepath, "w") as f:
             f.write(content)
+        
         return filepath
     
     def save_config(self):

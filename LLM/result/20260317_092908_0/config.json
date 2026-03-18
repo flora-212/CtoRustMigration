@@ -1,0 +1,26 @@
+{
+  "timestamp": "20260317_092908",
+  "prompt_idx": 0,
+  "validate": true,
+  "strategy": "compile",
+  "max_iterations": 5,
+  "force": true,
+  "start_time": "2026-03-17T09:29:08.079688",
+  "end_time": "2026-03-17T09:55:13.828811",
+  "total_files": 30,
+  "success_count": 19,
+  "failed_count": 11,
+  "failed_examples": [
+    "global_check",
+    "global_while",
+    "struct_alias",
+    "struct_assume",
+    "struct_condvar",
+    "struct_empty",
+    "struct_init",
+    "struct_main",
+    "struct_nested",
+    "struct_simple",
+    "struct_timedwait"
+  ]
+}

@@ -116,6 +116,13 @@ def evaluate_one(label: str, rs_file: str, example_dir: str) -> dict:
 def main() -> None:
     prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 0
     force = "--force" in sys.argv
+    
+    # Parse --llm-output-dir
+    llm_output_dir = None
+    for i, arg in enumerate(sys.argv):
+        if arg == "--llm-output-dir" and i + 1 < len(sys.argv):
+            llm_output_dir = sys.argv[i + 1]
+            break
 
     result_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
     json_path = os.path.join(result_dir, "clippy_concurrency_report.json")
@@ -148,7 +155,11 @@ def main() -> None:
 
         original_rs = os.path.join(example_dir, "main.rs")
         concrat_rs = os.path.join(CONCRAT_DIR, name, "main.rs")
-        llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
+        # Try to read from llm_output_dir if provided, otherwise use the old location
+        if llm_output_dir:
+            llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")
+        else:
+            llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
 
         row = {"name": name}
         row["original"] = evaluate_one("original", original_rs, example_dir)
