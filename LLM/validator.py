@@ -26,14 +26,56 @@ class ValidationStrategy(Enum):
     COMPREHENSIVE = "comprehensive"
 
 
+class ErrorInfo:
+    """Structured error information."""
+    
+    def __init__(self, error_type: str, message: str, location: str = "", 
+                 error_code: str = "", line: int = -1, column: int = -1, details: str = ""):
+        """
+        Args:
+            error_type: "compile_error", "safety_issue", "lock_safety_issue", etc.
+            message: Human-readable error message
+            location: File location (e.g., "src/main.rs:5:21")
+            error_code: Error code (e.g., "E0425")
+            line: Line number (-1 if unknown)
+            column: Column number (-1 if unknown)
+            details: Full error details or additional context
+        """
+        self.error_type = error_type
+        self.message = message
+        self.location = location
+        self.error_code = error_code
+        self.line = line
+        self.column = column
+        self.details = details
+    
+    def to_dict(self):
+        """Convert to dictionary for serialization."""
+        return {
+            "type": self.error_type,
+            "code": self.error_code,
+            "message": self.message,
+            "location": self.location,
+            "line": self.line,
+            "column": self.column,
+            "details": self.details[:500] if self.details else ""  # Truncate for JSON
+        }
+    
+    def __repr__(self):
+        loc_str = f" [{self.location}]" if self.location else ""
+        code_str = f" ({self.error_code})" if self.error_code else ""
+        return f"{self.message}{code_str}{loc_str}"
+
+
 class ValidationResult:
     """Result of a validation check."""
     
-    def __init__(self, passed: bool, category: str, message: str = "", details: Dict = None):
+    def __init__(self, passed: bool, category: str, message: str = "", details: Dict = None, errors: List[ErrorInfo] = None):
         self.passed = passed
         self.category = category
         self.message = message
         self.details = details or {}
+        self.errors = errors or []  # List of structured ErrorInfo
     
     def __repr__(self):
         status = "✅" if self.passed else "❌"
@@ -45,6 +87,13 @@ class CodeValidator:
     
     NIGHTLY = "nightly-2022-07-05"
     
+    # Regex patterns for parsing Rust compiler errors
+    ERROR_PATTERN = re.compile(
+        r'error(?:\[([^\]]+)\])?: (.+?)(?:\n\s*-->\s*(.+?):\s*(\d+):(\d+))?',
+        re.MULTILINE
+    )
+    # Pattern: error[CODE]: message --> file:line:col
+    
     def __init__(self, deps_dir: Optional[str] = None):
         """
         Initialize validator.
@@ -53,6 +102,67 @@ class CodeValidator:
             deps_dir: Path to compiled dependencies (optional)
         """
         self.deps_dir = deps_dir or "/home/guoxy/concrat/deps_crate/target/debug/deps"
+    
+    # ════════════════════════════════════════════════════════════════════════
+    # Error Parsing
+    # ════════════════════════════════════════════════════════════════════════
+    
+    @staticmethod
+    def parse_compile_errors(stderr: str) -> List[ErrorInfo]:
+        """
+        Parse Rust compiler errors from stderr into structured ErrorInfo objects.
+        
+        Handles formats like:
+            error[E0425]: cannot find value `x` in this scope
+             --> src/main.rs:5:21
+        
+        Returns:
+            List of ErrorInfo objects
+        """
+        errors = []
+        
+        # Split by "error" lines and process each
+        lines = stderr.split('\n')
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            
+            if line.startswith('error'):
+                # Parse error header: "error[CODE]: message"
+                match = re.match(r'error(?:\[([^\]]+)\])?: (.+)', line)
+                if match:
+                    error_code = match.group(1) or ""
+                    message = match.group(2).strip()
+                    
+                    # Look for location in next line: " --> file:line:col"
+                    location = ""
+                    file_path = ""
+                    line_num = -1
+                    col_num = -1
+                    
+                    if i + 1 < len(lines):
+                        loc_line = lines[i + 1]
+                        loc_match = re.search(r'-->\s*(.+?):(\d+):(\d+)', loc_line)
+                        if loc_match:
+                            file_path = loc_match.group(1).strip()
+                            line_num = int(loc_match.group(2))
+                            col_num = int(loc_match.group(3))
+                            location = f"{file_path}:{line_num}:{col_num}"
+                    
+                    error_info = ErrorInfo(
+                        error_type="compile_error",
+                        error_code=error_code,
+                        message=message,
+                        location=location,
+                        line=line_num,
+                        column=col_num,
+                        details=stderr[:1000]  # Store first 1000 chars of full stderr
+                    )
+                    errors.append(error_info)
+            
+            i += 1
+        
+        return errors
     
     # ════════════════════════════════════════════════════════════════════════
     # Safety Metrics
@@ -84,12 +194,12 @@ class CodeValidator:
     # Compilation Check
     # ════════════════════════════════════════════════════════════════════════
     
-    def try_compile_with_cargo(self, rs_file: str, example_dir: str) -> Tuple[bool, str]:
+    def try_compile_with_cargo(self, rs_file: str, example_dir: str) -> Tuple[bool, List[ErrorInfo]]:
         """
         Try compiling a .rs file using the example's Cargo.toml context.
         
         Returns:
-            (success: bool, error_message: str)
+            (success: bool, errors: List[ErrorInfo])
         """
         td = tempfile.mkdtemp()
         try:
@@ -121,27 +231,41 @@ class CodeValidator:
             )
             
             if result.returncode == 0:
-                return True, ""
+                return True, []
             else:
-                # Extract meaningful error messages
-                errors = [line for line in result.stderr.splitlines() 
-                         if "error" in line.lower()][:5]
-                return False, "\n".join(errors)
+                # Parse structured errors
+                errors = self.parse_compile_errors(result.stderr)
+                # If no structured errors found, create a generic one
+                if not errors:
+                    errors = [ErrorInfo(
+                        error_type="compile_error",
+                        message="Compilation failed",
+                        details=result.stderr[:500]
+                    )]
+                return False, errors
         
         except subprocess.TimeoutExpired:
-            return False, "Compilation timeout (120s exceeded)"
+            return False, [ErrorInfo(
+                error_type="compile_error",
+                message="Compilation timeout",
+                details="Compilation exceeded 120s timeout"
+            )]
         except Exception as e:
-            return False, str(e)[:300]
+            return False, [ErrorInfo(
+                error_type="compile_error",
+                message=str(e),
+                details=str(e)[:300]
+            )]
         finally:
             shutil.rmtree(td, ignore_errors=True)
     
-    def try_compile_standalone(self, rs_file: str, example_dir: Optional[str] = None) -> Tuple[bool, str]:
+    def try_compile_standalone(self, rs_file: str, example_dir: Optional[str] = None) -> Tuple[bool, List[ErrorInfo]]:
         """
         Try compiling a standalone .rs file.
         Falls back to Cargo if standalone rustc fails.
         
         Returns:
-            (success: bool, error_message: str)
+            (success: bool, errors: List[ErrorInfo])
         """
         td = tempfile.mkdtemp()
         try:
@@ -154,21 +278,34 @@ class CodeValidator:
             )
             
             if result.returncode == 0:
-                return True, ""
+                return True, []
             
             # If standalone fails and we have example_dir, try cargo
             if example_dir and os.path.exists(example_dir):
                 return self.try_compile_with_cargo(rs_file, example_dir)
             
-            # Extract error messages
-            errors = [line for line in result.stderr.splitlines() 
-                     if "error" in line.lower()][:5]
-            return False, "\n".join(errors)
+            # Parse structured errors
+            errors = self.parse_compile_errors(result.stderr)
+            if not errors:
+                errors = [ErrorInfo(
+                    error_type="compile_error",
+                    message="Compilation failed",
+                    details=result.stderr[:500]
+                )]
+            return False, errors
         
         except subprocess.TimeoutExpired:
-            return False, "Compilation timeout (120s exceeded)"
+            return False, [ErrorInfo(
+                error_type="compile_error",
+                message="Compilation timeout",
+                details="Compilation exceeded 120s timeout"
+            )]
         except Exception as e:
-            return False, str(e)[:300]
+            return False, [ErrorInfo(
+                error_type="compile_error",
+                message=str(e),
+                details=str(e)[:300]
+            )]
         finally:
             shutil.rmtree(td, ignore_errors=True)
     
@@ -236,46 +373,79 @@ class CodeValidator:
     
     def validate_compile(self, rs_file: str, example_dir: Optional[str] = None) -> ValidationResult:
         """Validate that code compiles."""
-        success, error = self.try_compile_standalone(rs_file, example_dir)
+        success, errors = self.try_compile_standalone(rs_file, example_dir)
         if success:
-            return ValidationResult(True, "compile", "Code compiles successfully")
+            return ValidationResult(True, "compile", "Code compiles successfully", errors=[])
         else:
-            return ValidationResult(False, "compile", f"Compilation failed:\n{error}", {"error": error})
+            # Create error message summary from ErrorInfo objects
+            error_summary = "\n".join([str(e) for e in errors[:3]])  # Show first 3 errors
+            error_dicts = [e.to_dict() for e in errors]
+            return ValidationResult(
+                False, 
+                "compile", 
+                f"Compilation failed",
+                details={"errors": error_dicts, "summary": error_summary},
+                errors=errors
+            )
     
     def validate_safety(self, code: str) -> ValidationResult:
         """Validate safety metrics."""
         metrics = self.safety_metrics(code)
         
-        issues = []
+        errors = []
         if metrics["unsafe"] > 0:
-            issues.append(f"{metrics['unsafe']} unsafe block(s)")
+            errors.append(ErrorInfo(
+                error_type="safety_issue",
+                message=f"{metrics['unsafe']} unsafe block(s) found",
+                details=f"Unsafe blocks should be minimized. Found: {metrics['unsafe']}"
+            ))
         if metrics["pthread"] > 0:
-            issues.append(f"{metrics['pthread']} pthread call(s)")
+            errors.append(ErrorInfo(
+                error_type="safety_issue",
+                message=f"{metrics['pthread']} pthread call(s) found",
+                details=f"Rewritten code should use std::sync instead of pthread"
+            ))
         if metrics["raw_ptr"] > 0:
-            issues.append(f"{metrics['raw_ptr']} raw pointer(s)")
+            errors.append(ErrorInfo(
+                error_type="safety_issue",
+                message=f"{metrics['raw_ptr']} raw pointer(s) found",
+                details=f"Raw pointers are unsafe and should be minimized"
+            ))
         if metrics["static_mut"] > 0:
-            issues.append(f"{metrics['static_mut']} static mut variable(s)")
+            errors.append(ErrorInfo(
+                error_type="safety_issue",
+                message=f"{metrics['static_mut']} static mut variable(s) found",
+                details=f"Static mutable variables are data race risks"
+            ))
         
-        if issues:
-            msg = f"Safety concerns: {', '.join(issues)}"
-            return ValidationResult(False, "safety", msg, {"metrics": metrics, "issues": issues})
+        if errors:
+            msg = f"Safety concerns: {len(errors)} issue(s)"
+            return ValidationResult(False, "safety", msg, {"metrics": metrics}, errors=errors)
         else:
-            return ValidationResult(True, "safety", "No major safety concerns", {"metrics": metrics})
+            return ValidationResult(True, "safety", "No major safety concerns", {"metrics": metrics}, errors=[])
     
     def validate_lock_safety(self, code: str) -> ValidationResult:
         """Validate lock safety."""
         analysis = self.analyze_lock_safety(code, label="rewritten")
         
-        if analysis["issues"]:
-            msg = f"Lock safety issues: {'; '.join(analysis['issues'])}"
-            return ValidationResult(False, "lock_safety", msg, analysis)
+        errors = []
+        for issue in analysis["issues"]:
+            errors.append(ErrorInfo(
+                error_type="lock_safety_issue",
+                message=issue,
+                details=f"Lock safety analysis detected: {issue}"
+            ))
+        
+        if errors:
+            msg = f"Lock safety issues: {len(errors)} issue(s)"
+            return ValidationResult(False, "lock_safety", msg, analysis, errors=errors)
         else:
             msg = "Lock safety OK"
             if analysis["has_std_mutex"]:
                 msg += " (uses std::sync::Mutex)"
             if not analysis["has_pthread"]:
                 msg += " (no pthread)"
-            return ValidationResult(True, "lock_safety", msg, analysis)
+            return ValidationResult(True, "lock_safety", msg, analysis, errors=[])
     
     def validate(self, rs_file: str, code: str, strategy: ValidationStrategy = ValidationStrategy.COMPILE,
                  example_dir: Optional[str] = None) -> List[ValidationResult]:

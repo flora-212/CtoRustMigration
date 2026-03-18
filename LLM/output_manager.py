@@ -4,13 +4,13 @@ Output management module for organizing results with timestamp-based directories
 Structure:
     result/
         {timestamp}_{prompt_idx}/
-            config.json                    # 参数记录
+            config.json                    # Configuration file
             examples/
                 example_001/
-                    round1.rs              # 第一轮迭代结果
-                    round2.rs              # 第二轮迭代结果（如需要）
+                    round1.rs              # First iteration result
+                    round2.rs              # Second iteration result (if needed)
                     ...
-                    final.rs               # 最终版本
+                    final.rs               # Final version
                 example_002/
                     round1.rs
                     ...
@@ -32,7 +32,7 @@ from typing import Dict, Any, Optional, List
 
 
 class OutputManager:
-    """管理带时间戳的输出目录结构"""
+    """Manages timestamped output directory structure"""
     
     def __init__(self, result_base_dir: str = "/home/guoxy/concrat/LLM/result"):
         self.result_base_dir = result_base_dir
@@ -44,7 +44,7 @@ class OutputManager:
     def initialize(self, prompt_idx: int, validate: bool = False, 
                    strategy: str = "compile", max_iterations: int = 3,
                    force: bool = False):
-        """初始化输出目录，使用时间戳"""
+        """Initialize output directory with timestamp"""
         self.prompt_idx = prompt_idx
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         self.output_root = os.path.join(
@@ -52,12 +52,12 @@ class OutputManager:
             f"{self.timestamp}_{prompt_idx}"
         )
         
-        # 创建主目录结构
+        # Create main directory structure
         os.makedirs(self.output_root, exist_ok=True)
         os.makedirs(os.path.join(self.output_root, "examples"), exist_ok=True)
         os.makedirs(os.path.join(self.output_root, "evaluation"), exist_ok=True)
         
-        # 初始化配置
+        # Initialize configuration
         self.config = {
             "timestamp": self.timestamp,
             "prompt_idx": prompt_idx,
@@ -77,28 +77,28 @@ class OutputManager:
         return self.output_root
     
     def get_example_dir(self, example_name: str) -> str:
-        """为某个example获取输出目录"""
+        """Get output directory for a specific example"""
         example_dir = os.path.join(self.output_root, "examples", example_name)
         os.makedirs(example_dir, exist_ok=True)
         return example_dir
     
     def get_evaluation_dir(self) -> str:
-        """获取evaluation结果目录"""
+        """Get evaluation results directory"""
         return os.path.join(self.output_root, "evaluation")
     
     def save_example_round(self, example_name: str, round_num, 
                            content: str, filename: str = "round") -> str:
         """
-        保存某个example的某一轮结果
+        Save a round of results for a specific example
         
         Args:
-            example_name: 示例名称
-            round_num: 轮次号（1, 2, ...）或 "final"
-            content: 文件内容
-            filename: 基础文件名前缀（默认 "round"）
+            example_name: Name of the example
+            round_num: Iteration number (1, 2, ...) or "final"
+            content: File content
+            filename: Base filename prefix (default "round")
             
         Returns:
-            保存的文件路径
+            Path of saved file
         """
         example_dir = self.get_example_dir(example_name)
         
@@ -114,14 +114,14 @@ class OutputManager:
         return filepath
     
     def save_config(self):
-        """保存配置文件"""
+        """Save configuration file"""
         config_path = os.path.join(self.output_root, "config.json")
         with open(config_path, "w") as f:
             json.dump(self.config, f, indent=2, ensure_ascii=False)
     
     def finalize(self, success_count: int, total_count: int, 
                 failed_examples: List[str]):
-        """完成输出，更新配置文件"""
+        """Finalize output and update configuration file"""
         self.config["end_time"] = datetime.now().isoformat()
         self.config["total_files"] = total_count
         self.config["success_count"] = success_count
@@ -132,10 +132,10 @@ class OutputManager:
     
     def copy_evaluation_results(self, src_dir: str):
         """
-        将evaluation结果复制到输出目录
+        Copy evaluation results to output directory
         
         Args:
-            src_dir: evaluation结果源目录 (通常是 result/{prompt_idx}/)
+            src_dir: Source directory for evaluation results (typically result/{prompt_idx}/)
         """
         eval_dest = self.get_evaluation_dir()
         
@@ -151,15 +151,95 @@ class OutputManager:
                             f.write(content)
     
     def get_summary(self) -> Dict[str, Any]:
-        """获取输出摘要"""
+        """Get output summary"""
         return {
             "output_dir": self.output_root,
             "timestamp": self.timestamp,
             "prompt_idx": self.prompt_idx,
             "config": self.config
         }
+    
+    def save_error_report(self, example_name: str, error_data: Dict[str, Any]) -> str:
+        """
+        Save detailed error report for specific example
+        
+        Args:
+            example_name: Name of the example
+            error_data: Dictionary containing all error details
+                {
+                    "total_iterations": int,
+                    "failed_at_iteration": int,
+                    "iterations": [
+                        {
+                            "iteration": int,
+                            "passed": bool,
+                            "errors": [...],
+                            "details": {...}
+                        },
+                        ...
+                    ]
+                }
+        
+        Returns:
+            Path of saved file
+        """
+        example_dir = self.get_example_dir(example_name)
+        
+        # Save error report in JSON format
+        error_json_path = os.path.join(example_dir, "error_report.json")
+        with open(error_json_path, "w") as f:
+            json.dump(error_data, f, indent=2, ensure_ascii=False)
+        
+        # Generate readable Markdown report
+        error_md_path = os.path.join(example_dir, "error_report.md")
+        md_content = self._generate_error_report_md(example_name, error_data)
+        with open(error_md_path, "w") as f:
+            f.write(md_content)
+        
+        return error_json_path
+    
+    def _generate_error_report_md(self, example_name: str, error_data: Dict[str, Any]) -> str:
+        """
+        Generate readable Markdown error report
+        """
+        md = f"# Compilation Error Report - {example_name}\n\n"
+        md += f"**Generated at**: {datetime.now().isoformat()}\n\n"
+        md += f"**Total iterations**: {error_data.get('total_iterations', 0)}\n\n"
+        
+        iterations = error_data.get('iterations', [])
+        md += f"## Iteration Details ({len(iterations)} failures total)\n\n"
+        
+        for iter_data in iterations:
+            iteration_num = iter_data.get('iteration', '?')
+            md += f"### Iteration {iteration_num}\n\n"
+            md += f"**Status**: ❌ Failed\n\n"
+            
+            errors = iter_data.get('errors', [])
+            if errors:
+                md += "**Error List**:\n\n"
+                for idx, error in enumerate(errors, 1):
+                    md += f"{idx}. **{error.get('category', 'Unknown')}**\n"
+                    md += f"   - {error.get('message', 'No message')}\n"
+                    if error.get('details'):
+                        md += f"   - Details: {error['details'][:200]}...\n"
+                    md += "\n"
+            
+            details = iter_data.get('details', {})
+            if details:
+                md += "**Detailed Error Output**:\n\n"
+                md += "```\n"
+                for key, value in details.items():
+                    if isinstance(value, str) and value.strip():
+                        md += f"{key}:\n{value}\n\n"
+                md += "```\n\n"
+        
+        md += "## Summary\n\n"
+        md += f"Compilation failed after all {error_data.get('total_iterations', 0)} iterations.\n"
+        md += f"The final code used has been saved as `final.rs`.\n"
+        
+        return md
 
 
 def get_output_manager() -> OutputManager:
-    """获取全局OutputManager实例"""
+    """Get global OutputManager instance"""
     return OutputManager()

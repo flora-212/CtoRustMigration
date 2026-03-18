@@ -1,64 +1,64 @@
 #!/bin/bash
-# 迭代生成-验证-评估完整流程脚本
+# Complete workflow script for iterative generation-validation-evaluation
 #
-# 使用方式:
-#   ./run.sh                                          # 使用默认参数 (prompt=1, validate=true)
-#   ./run.sh 0                                        # 使用 SYSTEM_PROMPT_0
-#   ./run.sh 1 --validate                             # 显式启用验证（默认已启用）
-#   ./run.sh 1 --validate --strategy comprehensive     # 全面验证
-#   ./run.sh 1 --validate --max-iterations 5           # 自定义迭代次数
-#   ./run.sh 1 --force                                # 强制重新生成和评估
-#   ./run.sh 1 --force --strategy lock_safety         # 强制 + 锁安全策略
-#   ./run.sh 1 --no-validate                          # 关闭验证循环
+# Usage:
+#   ./run.sh                                          # Use default parameters (prompt=1, validate=true)
+#   ./run.sh 0                                        # Use SYSTEM_PROMPT_0
+#   ./run.sh 1 --validate                             # Explicitly enable validation (enabled by default)
+#   ./run.sh 1 --validate --strategy comprehensive     # Comprehensive validation
+#   ./run.sh 1 --validate --max-iterations 5           # Custom iteration count
+#   ./run.sh 1 --force                                # Force regeneration and evaluation
+#   ./run.sh 1 --force --strategy lock_safety         # Force + lock safety strategy
+#   ./run.sh 1 --no-validate                          # Disable validation loop
 
 set -e
 
 # ════════════════════════════════════════════════════════════════════════════
-# 参数解析
+# Parameter parsing
 # ════════════════════════════════════════════════════════════════════════════
 
-# 默认值
-PROMPT_IDX=1                          # 默认改为 prompt 1
-VALIDATE_FLAG="--validate"            # 默认启用验证
-STRATEGY="compile"                    # 验证策略
-MAX_ITERATIONS=3                      # 最大迭代次数
+# Default values
+PROMPT_IDX=1                          # Default to prompt 1
+VALIDATE_FLAG="--validate"            # Enable validation by default
+STRATEGY="compile"                    # Validation strategy
+MAX_ITERATIONS=3                      # Maximum iteration count
 FORCE_REWRITE=""
 FORCE_EVAL=""
 FORCE_GENERATE=""
 CLEAR_FLAG=""
 VERBOSE=""
 
-# 先检查是否有 --help
+# Check for --help first
 for arg in "$@"; do
     if [ "$arg" = "--help" ]; then
-        echo "迭代生成-验证-评估完整流程脚本"
+        echo "Complete workflow script for iterative generation-validation-evaluation"
         echo ""
-        echo "使用方式:"
-        echo "  ./run.sh                                    # 默认: prompt=1, validate=true"
-        echo "  ./run.sh 0                                  # 使用 SYSTEM_PROMPT_0"
-        echo "  ./run.sh 1 --validate                       # 启用验证"
-        echo "  ./run.sh 1 --no-validate                    # 禁用验证"
-        echo "  ./run.sh 1 --strategy {compile|safety|...}  # 验证策略"
-        echo "  ./run.sh 1 --max-iterations 5               # 迭代次数"
-        echo "  ./run.sh 1 --force                          # 强制重新执行"
-        echo "  ./run.sh 1 --verbose                        # 详细输出"
+        echo "Usage:"
+        echo "  ./run.sh                                    # Default: prompt=1, validate=true"
+        echo "  ./run.sh 0                                  # Use SYSTEM_PROMPT_0"
+        echo "  ./run.sh 1 --validate                       # Enable validation"
+        echo "  ./run.sh 1 --no-validate                    # Disable validation"
+        echo "  ./run.sh 1 --strategy {compile|safety|...}  # Validation strategy"
+        echo "  ./run.sh 1 --max-iterations 5               # Iteration count"
+        echo "  ./run.sh 1 --force                          # Force re-execution"
+        echo "  ./run.sh 1 --verbose                        # Verbose output"
         echo ""
-        echo "策略:"
-        echo "  compile        - 编译检查（最快）"
-        echo "  safety         - 安全性检查"
-        echo "  lock_safety    - 锁安全分析"
-        echo "  comprehensive  - 全面检查"
+        echo "Strategies:"
+        echo "  compile        - Compilation check (fastest)"
+        echo "  safety         - Safety check"
+        echo "  lock_safety    - Lock safety analysis"
+        echo "  comprehensive  - Comprehensive check"
         exit 0
     fi
 done
 
-# 处理第一个位置参数 (prompt_idx)
+# Process first positional argument (prompt_idx)
 if [ $# -gt 0 ] && [ "$1" != "--"* ]; then
     PROMPT_IDX="$1"
     shift
 fi
 
-# 处理所有标志
+# Process all flags
 while [ $# -gt 0 ]; do
     case "$1" in
         --force)
@@ -89,7 +89,7 @@ while [ $# -gt 0 ]; do
             ;;
         --strategy)
             if [ -z "$2" ]; then
-                echo "❌ 错误: --strategy 需要参数"
+                echo "❌ Error: --strategy requires an argument"
                 exit 1
             fi
             STRATEGY="$2"
@@ -97,7 +97,7 @@ while [ $# -gt 0 ]; do
             ;;
         --max-iterations)
             if [ -z "$2" ]; then
-                echo "❌ 错误: --max-iterations 需要参数"
+                echo "❌ Error: --max-iterations requires an argument"
                 exit 1
             fi
             MAX_ITERATIONS="$2"
@@ -107,7 +107,7 @@ while [ $# -gt 0 ]; do
             VERBOSE="--verbose"
             ;;
         *)
-            echo "❌ 未知参数: $1"
+            echo "❌ Unknown argument: $1"
             exit 1
             ;;
     esac
@@ -117,15 +117,15 @@ done
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # ════════════════════════════════════════════════════════════════════════════
-# 欢迎横幅
+# Welcome banner
 # ════════════════════════════════════════════════════════════════════════════
 
 echo ""
 echo "╔════════════════════════════════════════════════════════════════════════════╗"
-echo "║                  迭代生成-验证-评估完整流程脚本                            ║"
+echo "║           Complete Workflow: Generation - Validation - Evaluation          ║"
 echo "╚════════════════════════════════════════════════════════════════════════════╝"
 echo ""
-echo "✅ 配置信息:"
+echo "✅ Configuration:"
 echo "   - Prompt Index: $PROMPT_IDX"
 echo "   - Validation: ${VALIDATE_FLAG:-(disabled)}"
 if [ ! -z "$VALIDATE_FLAG" ]; then
@@ -137,29 +137,29 @@ echo "   - Force Eval: ${FORCE_EVAL:-(no)}"
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
-# Step 1: 启动 Ollama
+# Step 1: Start Ollama
 # ════════════════════════════════════════════════════════════════════════════
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📡 Step 1: 启动 Ollama LLM 服务"
+echo "📡 Step 1: Start Ollama LLM Service"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 if pgrep -x ollama > /dev/null 2>&1; then
-    echo "✅ Ollama 已在运行"
+    echo "✅ Ollama is already running"
 else
-    echo "🚀 启动 Ollama..."
+    echo "🚀 Starting Ollama..."
     ollama serve > /dev/null 2>&1 &
     OLLAMA_PID=$!
     echo "   Ollama PID: $OLLAMA_PID"
-    echo "   等待 Ollama 就绪..."
+    echo "   Waiting for Ollama to be ready..."
     for i in $(seq 1 30); do
         if curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then
-            echo "✅ Ollama 已就绪"
+            echo "✅ Ollama is ready"
             break
         fi
         sleep 1
         if [ $i -eq 30 ]; then
-            echo "❌ Ollama 启动超时"
+            echo "❌ Ollama startup timeout"
             exit 1
         fi
     done
@@ -168,18 +168,18 @@ fi
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
-# Step 2: 代码生成 + 迭代验证
+# Step 2: Code generation + iterative validation
 # ════════════════════════════════════════════════════════════════════════════
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "🔄 Step 2: 生成代码 (SYSTEM_PROMPT_${PROMPT_IDX})"
+echo "🔄 Step 2: Generate Code (SYSTEM_PROMPT_${PROMPT_IDX})"
 if [ ! -z "$VALIDATE_FLAG" ]; then
-    echo "   + 迭代验证循环 (策略: $STRATEGY, 最大迭代: $MAX_ITERATIONS)"
+    echo "   + Iterative validation loop (strategy: $STRATEGY, max iterations: $MAX_ITERATIONS)"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 if [ ! -z "$VALIDATE_FLAG" ]; then
-    # 使用验证循环
+    # Use validation loop
     python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
         $VALIDATE_FLAG \
         --strategy "$STRATEGY" \
@@ -187,29 +187,29 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
         $FORCE_REWRITE \
         $VERBOSE
 else
-    # 无验证循环
+    # No validation loop
     python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" $FORCE_REWRITE $VERBOSE
 fi
 
 REFACTOR_STATUS=$?
 if [ $REFACTOR_STATUS -eq 0 ]; then
-    echo "✅ 代码生成完成"
+    echo "✅ Code generation completed"
 else
-    echo "❌ 代码生成失败 (状态码: $REFACTOR_STATUS)"
+    echo "❌ Code generation failed (exit code: $REFACTOR_STATUS)"
     exit $REFACTOR_STATUS
 fi
 
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
-# Step 3: 运行评估套件
+# Step 3: Run evaluation suite
 # ════════════════════════════════════════════════════════════════════════════
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📊 Step 3: 运行评估套件"
+echo "📊 Step 3: Run Evaluation Suite"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-# 📖 Read the output directory from refractor.py
+# Read the output directory from refractor.py
 REFACTOR_OUTPUT_DIR=""
 LAST_OUTPUT_FILE="$SCRIPT_DIR/.last_refactor_output"
 if [ -f "$LAST_OUTPUT_FILE" ]; then
@@ -221,79 +221,79 @@ bash "$SCRIPT_DIR/run_evaluation.sh" "$PROMPT_IDX" $FORCE_EVAL $CLEAR_FLAG --out
 
 EVAL_STATUS=$?
 if [ $EVAL_STATUS -eq 0 ]; then
-    echo "✅ 评估套件完成"
+    echo "✅ Evaluation suite completed"
 else
-    echo "⚠️  评估套件报告 (状态码: $EVAL_STATUS)"
+    echo "⚠️  Evaluation suite report (exit code: $EVAL_STATUS)"
 fi
 
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
-# Step 4: 生成对比报告
+# Step 4: Generate comparison report
 # ════════════════════════════════════════════════════════════════════════════
 
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "📈 Step 4: 生成对比报告"
+echo "📈 Step 4: Generate Comparison Report"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
 python3 "$SCRIPT_DIR/evaluation/generate_comparison.py" "$PROMPT_IDX" $FORCE_GENERATE
 
 COMPARE_STATUS=$?
 if [ $COMPARE_STATUS -eq 0 ]; then
-    echo "✅ 对比报告生成完成"
+    echo "✅ Comparison report generated"
 else
-    echo "❌ 对比报告生成失败 (状态码: $COMPARE_STATUS)"
+    echo "❌ Comparison report generation failed (exit code: $COMPARE_STATUS)"
 fi
 
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
-# 最终总结
+# Final summary
 # ════════════════════════════════════════════════════════════════════════════
 
 echo "╔════════════════════════════════════════════════════════════════════════════╗"
-echo "║                       ✅ 流程执行完成！                                    ║"
+echo "║                     ✅ Workflow Execution Complete!                        ║"
 echo "╚════════════════════════════════════════════════════════════════════════════╝"
 echo ""
-echo "📁 输出文件位置:"
+echo "📁 Output file locations:"
 echo ""
-echo "   📝 生成的代码和评估结果（推荐）:"
-LAST_OUTPUT=\$([ -f "$SCRIPT_DIR/.last_refactor_output" ] && cat "$SCRIPT_DIR/.last_refactor_output" || echo "result/{timestamp}_{PROMPT_IDX}")
+echo "   📝 Generated code and evaluation results (recommended):"
+LAST_OUTPUT=$([ -f "$SCRIPT_DIR/.last_refactor_output" ] && cat "$SCRIPT_DIR/.last_refactor_output" || echo "result/{timestamp}_{PROMPT_IDX}")
 echo "      $LAST_OUTPUT/"
-echo "      ├── config.json                          # 参数和配置记录"
-echo "      ├── examples/                            # 所有example的生成结果"
+echo "      ├── config.json                          # Parameters and configuration"
+echo "      ├── examples/                            # Generation results for all examples"
 echo "      │   ├── {example_name}/"
-echo "      │   │   ├── round1.rs, round2.rs, ...     # 迭代过程"
-echo "      │   │   └── final.rs                      # 最终版本 ✅"
+echo "      │   │   ├── round1.rs, round2.rs, ...     # Iteration process"
+echo "      │   │   └── final.rs                      # Final version ✅"
 echo "      │   └── ..."
-echo "      └── evaluation/                          # 评估结果（自动生成）"
+echo "      └── evaluation/                          # Evaluation results (auto-generated)"
 echo "          ├── comparison_report.json"
 echo "          ├── comparison_report.md"
 echo "          ├── clippy_concurrency_report.json"
 echo "          └── clippy_concurrency_report.md"
 echo ""
-echo "   💡 说明："
-echo "      - 所有生成的代码从 final.rs 读取（不再依赖 examples 目录的副本）"
-echo "      - 每次运行都生成新的时间戳目录，支持多版本管理"
-echo "      - 评估脚本自动从生成的输出目录读取结果"
+echo "   💡 Notes:"
+echo "      - All generated code is read from final.rs (no longer depends on examples dir copies)"
+echo "      - Each run generates a new timestamped directory for multi-version management"
+echo "      - Evaluation script automatically reads results from generated output directory"
 echo ""
-echo "🔍 查看结果 (新格式):"
-LATEST_DIR=\$(find result -maxdepth 1 -type d -name "*_${PROMPT_IDX}" | sort -r | head -1)
-if [ ! -z "\$LATEST_DIR" ]; then
-    echo "   # 最新输出目录: \$LATEST_DIR"
-    echo "   cat \$LATEST_DIR/config.json | jq ."
+echo "🔍 View results (new format):"
+LATEST_DIR=$(find result -maxdepth 1 -type d -name "*_${PROMPT_IDX}" | sort -r | head -1)
+if [ ! -z "$LATEST_DIR" ]; then
+    echo "   # Latest output directory: $LATEST_DIR"
+    echo "   cat $LATEST_DIR/config.json | jq ."
     echo ""
-    echo "   # 查看对比报告"
-    echo "   cat \$LATEST_DIR/evaluation/comparison_report.json | jq ."
+    echo "   # View comparison report"
+    echo "   cat $LATEST_DIR/evaluation/comparison_report.json | jq ."
     echo ""
-    echo "   # 查看所有评估结果"
-    echo "   ls \$LATEST_DIR/evaluation/"
+    echo "   # View all evaluation results"
+    echo "   ls $LATEST_DIR/evaluation/"
 fi
 echo ""
-echo "🧹 清理生成的文件:"
-echo "   # 查看所有生成的文件"
+echo "🧹 Cleanup generated files:"
+echo "   # View all generated files"
 echo "   python3 cleanup.py --all --dry-run"
 echo ""
-echo "   # 删除所有版本"
+echo "   # Delete all versions"
 echo "   python3 cleanup.py --all --yes"
 echo ""
