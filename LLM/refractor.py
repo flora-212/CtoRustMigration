@@ -283,11 +283,10 @@ def rewrite_file_with_validation(
                 iteration, 
                 rewritten_code,
             )
-            # output_file = output_path + f"round{iteration}.rs"
-            # with open(output_file, "w") as f:
-            #     f.write(rewritten_code)
+            print(f"      📄 Saved to: {output_file}")
             
-            # Validate
+            # Validate the generated file
+            # CRITICAL: Pass the actual generated file path (output_file) not the original
             passed, report, results = validator.validate_and_report(
                 output_file, rewritten_code, validation_strategy, example_dir
             )
@@ -462,6 +461,18 @@ def main():
         example_dir = os.path.dirname(filepath)
         example_name = os.path.basename(example_dir)
         print(f"[{i}/{total}] Processing: {example_name}")
+
+        # CRITICAL: Ensure main.rs exists for module resolution (pub mod main; in c2rust-lib.rs)
+        # Copy main.c2rust.rs to main.rs if it doesn't exist
+        main_rs_path = os.path.join(example_dir, "main.rs")
+        if not os.path.exists(main_rs_path) and os.path.exists(filepath):
+            # filepath points to main.c2rust.rs, so create main.rs from it
+            try:
+                import shutil
+                shutil.copy(filepath, main_rs_path)
+                print(f"  -> Created main.rs from main.c2rust.rs")
+            except Exception as e:
+                print(f"  -> ⚠️  Could not create main.rs: {e}")
 
         # if os.path.exists(output_path) and not force:
         #     print(f"  -> Already exists, skipping. (use --force to regenerate)")

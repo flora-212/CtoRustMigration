@@ -9,11 +9,11 @@ st s1 = { 0, PTHREAD_MUTEX_INITIALIZER };
 st s2 = { 1, PTHREAD_MUTEX_INITIALIZER };
 st s3 = { 2, PTHREAD_MUTEX_INITIALIZER };
 
-void f(st *s) {
-    pthread_mutex_lock(&s->num_mutex);
-    s->n1 = s->n1 + 1;
-    g(s);
-    pthread_mutex_unlock(&s->num_mutex);
+void g(st *t);
+void h(st *u);
+
+void h(st *u) {
+    u->n1 = u->n1 + 1;
 }
 
 void g(st *t) {
@@ -21,8 +21,11 @@ void g(st *t) {
     h(t);
 }
 
-void h(st *u) {
-    u->n1 = u->n1 + 1;
+void f(st *s) {
+    pthread_mutex_lock(&s->num_mutex);
+    s->n1 = s->n1 + 1;
+    g(s);
+    pthread_mutex_unlock(&s->num_mutex);
 }
 
 void f1() {

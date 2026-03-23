@@ -21,7 +21,7 @@ set -e
 PROMPT_IDX=3                          # Default to prompt 3
 VALIDATE_FLAG="--validate"            # Enable validation by default
 STRATEGY="compile"                    # Validation strategy
-MAX_ITERATIONS=3                      # Maximum iteration count
+MAX_ITERATIONS=5                      # Maximum iteration count
 FORCE_REWRITE=""
 FORCE_EVAL=""
 FORCE_GENERATE=""
