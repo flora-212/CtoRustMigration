@@ -113,7 +113,7 @@ def test_example_file():
         return False
     
     import glob
-    examples = sorted(glob.glob(f"{examples_dir}/*/main.rs"))
+    examples = sorted(glob.glob(f"{examples_dir}/*/main.c2rust.rs"))
     
     if not examples:
         print(f"❌ 在 {examples_dir} 中找不到任何示例")

@@ -451,7 +451,7 @@ def main():
     )
     print(f"📁 Output directory: {output_root}\n")
 
-    examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.rs"))
+    examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
     total = len(examples)
     success = 0
     failed = []

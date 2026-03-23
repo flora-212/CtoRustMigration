@@ -47,9 +47,17 @@ class OutputManager:
         """Initialize output directory with timestamp"""
         self.prompt_idx = prompt_idx
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # Include validation strategy in directory name if validating
+        dir_suffix = f"_{prompt_idx}"
+        if validate:
+            dir_suffix = f"_{prompt_idx}_{strategy}"
+        else:
+            dir_suffix = f"_{prompt_idx}_no_validation"
+            
         self.output_root = os.path.join(
             self.result_base_dir,
-            f"{self.timestamp}_{prompt_idx}"
+            f"{self.timestamp}{dir_suffix}"
         )
         
         # Create main directory structure

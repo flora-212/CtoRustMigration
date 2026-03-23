@@ -102,8 +102,8 @@ Examples:
     )
     parser.add_argument(
         "--pattern",
-        default="main_rewritten_*.rs",
-        help="File matching pattern (default: main_rewritten_*.rs)"
+        default=None,
+        help="File matching pattern (e.g., main.rs, main_c2rust.rs, *.rs)"
     )
     parser.add_argument(
         "--dry-run",
@@ -136,7 +136,12 @@ Examples:
     # Determine files to delete
     files_to_delete = []
     
-    if args.keep is not None:
+    # If pattern is specified (and not default), use it directly
+    if args.pattern is not None:
+        files_to_delete = find_files(args.examples_dir, args.pattern)
+        action_desc = f"Delete all files matching '{args.pattern}'"
+    
+    elif args.keep is not None:
         # Delete all main_rewritten_* except keep
         all_rewritten = find_files(args.examples_dir, "main_rewritten_*.rs")
         for f in all_rewritten:
@@ -153,8 +158,8 @@ Examples:
     
     elif args.all:
         # Delete all main_rewritten_*
-        files_to_delete = find_files(args.examples_dir, args.pattern)
-        action_desc = f"Delete all files matching '{args.pattern}'"
+        files_to_delete = find_files(args.examples_dir, "main_rewritten_*.rs")
+        action_desc = f"Delete all files matching 'main_rewritten_*.rs'"
     
     elif args.indices:
         # Delete files for specified indices

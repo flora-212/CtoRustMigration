@@ -45,7 +45,7 @@ def run_clippy(rs_file: str, example_dir: str) -> dict:
                 "excerpt": "missing Cargo.toml",
             }
 
-        shutil.copy(rs_file, os.path.join(td, "main.rs"))
+        shutil.copy(rs_file, os.path.join(td, "main.c2rust.rs"))
 
         nightly = NIGHTLY
         tc_file = os.path.join(td, "rust-toolchain")
@@ -153,8 +153,8 @@ def main() -> None:
         name = os.path.basename(example_dir.rstrip("/"))
         summary["total"] += 1
 
-        original_rs = os.path.join(example_dir, "main.rs")
-        concrat_rs = os.path.join(CONCRAT_DIR, name, "main.rs")
+        original_rs = os.path.join(example_dir, "main.c2rust.rs")
+        concrat_rs = os.path.join(CONCRAT_DIR, name, "main.c2rust.rs")
         # Try to read from llm_output_dir if provided, otherwise use the old location
         if llm_output_dir:
             llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")

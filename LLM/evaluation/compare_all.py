@@ -19,12 +19,15 @@ import subprocess
 import json
 import tempfile
 import shutil
+sys.path.insert(0, '/home/guoxy/concrat/LLM')
+from validator import CodeValidator
 
 EXAMPLES_DIR = "/home/guoxy/concrat/examples"
 CONCRAT_DIR = "/tmp/concrat_results"
 NIGHTLY = "nightly-2022-07-05"
 DEPS_DIR = "/home/guoxy/concrat/deps_crate/target/debug/deps"
 CONCRAT_CACHE_PATH = "/home/guoxy/concrat/LLM/result/concrat_cache.json"
+VALIDATOR = CodeValidator()
 
 # ── Safety Metrics ──────────────────────────────────────────────────────────
 
@@ -47,63 +50,23 @@ def safety_metrics(code):
     }
 
 # ── Compilation Check ───────────────────────────────────────────────────────
+# Using CodeValidator from validator.py to ensure consistent compilation detection
 
 def try_compile_with_cargo(rs_file, example_dir):
     """Try compiling a .rs file using the example's Cargo.toml context."""
-    td = tempfile.mkdtemp()
-    try:
-        # Copy Cargo.toml and support files
-        for f in ["Cargo.toml", "rust-toolchain"]:
-            src = os.path.join(example_dir, f)
-            if os.path.exists(src):
-                shutil.copy(src, td)
-        # Copy c2rust-lib.rs if exists
-        lib_rs = os.path.join(example_dir, "c2rust-lib.rs")
-        if os.path.exists(lib_rs):
-            shutil.copy(lib_rs, td)
-        # Copy the target file as main.rs
-        shutil.copy(rs_file, os.path.join(td, "main.rs"))
-
-        nightly = NIGHTLY
-        tc_file = os.path.join(td, "rust-toolchain")
-        if os.path.exists(tc_file):
-            with open(tc_file) as f:
-                nightly = f.read().strip()
-
-        result = subprocess.run(
-            ["cargo", f"+{nightly}", "build", "--manifest-path",
-             os.path.join(td, "Cargo.toml")],
-            capture_output=True, text=True, timeout=60,
-            env={**os.environ, "RUSTFLAGS": "-Awarnings"}
-        )
-        return result.returncode == 0, result.stderr[:500]
-    except Exception as e:
-        return False, str(e)[:200]
-    finally:
-        shutil.rmtree(td, ignore_errors=True)
+    success, errors = VALIDATOR.try_compile_with_cargo(rs_file, example_dir)
+    # Convert ErrorInfo list to error string for backward compatibility
+    err_str = "\n".join([str(e) for e in errors]) if errors else ""
+    return success, err_str[:500]
 
 
 def try_compile_standalone(rs_file):
     """Try compiling a standalone .rs file (LLM rewritten, may not use libc)."""
-    td = tempfile.mkdtemp()
-    try:
-        # First try: standalone rustc
-        result = subprocess.run(
-            ["rustc", "--edition", "2021", rs_file,
-             "-o", os.path.join(td, "out")],
-            capture_output=True, text=True, timeout=60,
-            env={**os.environ, "RUSTFLAGS": "-Awarnings"}
-        )
-        if result.returncode == 0:
-            return True, ""
-
-        # Second try: use the example's Cargo.toml (it may need libc)
-        example_dir = os.path.dirname(rs_file)
-        return try_compile_with_cargo(rs_file, example_dir)
-    except Exception as e:
-        return False, str(e)[:200]
-    finally:
-        shutil.rmtree(td, ignore_errors=True)
+    example_dir = os.path.dirname(rs_file)
+    success, errors = VALIDATOR.try_compile_standalone(rs_file, example_dir)
+    # Convert ErrorInfo list to error string for backward compatibility
+    err_str = "\n".join([str(e) for e in errors]) if errors else ""
+    return success, err_str[:500]
 
 
 # ── Lock Safety Analysis ────────────────────────────────────────────────────
@@ -185,8 +148,8 @@ def build_concrat_cache(examples):
     cache = {}
     for example_dir in examples:
         name = os.path.basename(example_dir.rstrip("/"))
-        original_rs = os.path.join(example_dir, "main.rs")
-        concrat_rs = os.path.join(CONCRAT_DIR, name, "main.rs")
+        original_rs = os.path.join(example_dir, "main.c2rust.rs")
+        concrat_rs = os.path.join(CONCRAT_DIR, name, "main.c2rust.rs")
 
         if not os.path.exists(original_rs):
             continue
@@ -258,7 +221,7 @@ def main():
         name = os.path.basename(example_dir.rstrip("/"))
         summary["total"] += 1
 
-        original_rs = os.path.join(example_dir, "main.rs")
+        original_rs = os.path.join(example_dir, "main.c2rust.rs")
         # Try to read from llm_output_dir if provided, otherwise use the old location
         if llm_output_dir:
             llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")

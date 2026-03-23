@@ -214,8 +214,8 @@ class CodeValidator:
             if os.path.exists(lib_rs):
                 shutil.copy(lib_rs, td)
             
-            # Copy the target file as main.rs
-            shutil.copy(rs_file, os.path.join(td, "main.rs"))
+            # Copy the target file as main.c2rust.rs
+            shutil.copy(rs_file, os.path.join(td, "main.c2rust.rs"))
             
             nightly = self.NIGHTLY
             tc_file = os.path.join(td, "rust-toolchain")
@@ -226,7 +226,7 @@ class CodeValidator:
             result = subprocess.run(
                 ["cargo", f"+{nightly}", "build", "--manifest-path",
                  os.path.join(td, "Cargo.toml")],
-                capture_output=True, text=True, timeout=120,
+                capture_output=True, text=True, timeout=60,
                 env={**os.environ, "RUSTFLAGS": "-Awarnings"}
             )
             
@@ -273,7 +273,7 @@ class CodeValidator:
             result = subprocess.run(
                 ["rustc", "--edition", "2021", rs_file,
                  "-o", os.path.join(td, "out")],
-                capture_output=True, text=True, timeout=120,
+                capture_output=True, text=True, timeout=60,
                 env={**os.environ, "RUSTFLAGS": "-Awarnings"}
             )
             

@@ -18,7 +18,7 @@ set -e
 # ════════════════════════════════════════════════════════════════════════════
 
 # Default values
-PROMPT_IDX=1                          # Default to prompt 1
+PROMPT_IDX=3                          # Default to prompt 3
 VALIDATE_FLAG="--validate"            # Enable validation by default
 STRATEGY="compile"                    # Validation strategy
 MAX_ITERATIONS=3                      # Maximum iteration count
