@@ -33,9 +33,11 @@ else
   MSG=Analyzing
 fi
 
-cp $to/main.rs $to/main_old.rs
-# Save C2Rust original version with explicit name
-cp $to/main.rs $to/main.c2rust.rs
+# cp $to/main.rs $to/main_old.rs
+# # Save C2Rust original version with explicit name
+# cp $to/main.rs $to/main.c2rust.rs
+
+cp $to/main.c2rust.rs $to/main.rs
 
 echo $MSG $from
 cargo run --release --bin $CMD -- -i $to -d deps_crate/target/debug/deps $@

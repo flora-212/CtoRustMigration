@@ -46,7 +46,7 @@ void *t_fun2(void *arg) {
 }
 
 int main() {
-    ss *s1, s2;
+    ss *s1, *s2;
 
     s1 = malloc(sizeof(ss));
     s2 = malloc(sizeof(ss));
