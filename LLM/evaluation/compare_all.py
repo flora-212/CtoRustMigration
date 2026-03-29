@@ -92,9 +92,8 @@ def try_compile_with_cargo(rs_file, example_dir):
     return success, err_str[:500]
 
 
-def try_compile_standalone(rs_file):
+def try_compile_standalone(rs_file, example_dir):
     """Try compiling a standalone .rs file (LLM rewritten, may not use libc)."""
-    example_dir = os.path.dirname(rs_file)
     success, errors = VALIDATOR.try_compile_standalone(rs_file, example_dir)
     # Convert ErrorInfo list to error string for backward compatibility
     err_str = "\n".join([str(e) for e in errors]) if errors else ""
