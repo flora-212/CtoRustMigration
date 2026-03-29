@@ -4,6 +4,7 @@ import glob
 import time
 import subprocess
 import json
+from datetime import datetime
 import ollama
 from validator import CodeValidator, ValidationStrategy, ErrorInfo
 from output_manager import OutputManager
@@ -59,6 +60,71 @@ Requirements:
 Output only the complete rewritten code, no explanations
 """
 
+
+SYSTEM_PROMPT_4 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
+
+Requirements:
+1. The code must compile successfully without errors
+2. Follow Rust's ownership, borrowing, and concurrency rules
+3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+4. Ensure all data shared across threads is safe:
+   - Use Arc<T> for shared ownership
+   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+5. Do not use non-thread-safe types across threads; replace them with safe abstractions
+6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+7. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+8. Preserve the program's logical behavior, but not necessarily its exact structure
+9. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+
+Output only the complete rewritten code, no explanations
+"""
+
+SYSTEM_PROMPT_5 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
+
+Requirements:
+1 The code MUST compile on stable Rust only. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
+2. Follow Rust's ownership, borrowing, and concurrency rules
+3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+4. Ensure all data shared across threads is safe:
+   - Use Arc<T> for shared ownership
+   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+5. Do not use non-thread-safe types across threads; replace them with safe abstractions
+6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+7. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
+8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+   - Use std::thread::spawn instead of pthread_create
+   - Use JoinHandle::join instead of pthread_join
+   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+   - Ensure all concurrency is implemented using safe Rust abstractions
+10. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+11. Preserve the program's logical behavior, but not necessarily its exact structure
+12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+
+Output only the complete rewritten code, no explanations
+"""
+
+# FIXING_PROMPT = """Your previous code failed validation.
+
+# {feedback}
+
+# Requirements:
+# 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
+# 2. Then address safety and concurrency issues
+# 3. Do not use non-thread-safe types across threads
+# 4. Replace unsafe patterns with safe Rust abstractions
+# 5. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+
+# You are allowed to restructure the code as needed:
+# - Remove or redesign *mut c_void arguments
+# - Replace global static mut with Arc<Mutex<T>>
+# - Redesign thread interaction patterns
+# - Change function signatures to be more idiomatic Rust
+# - Use Arc, Mutex, RwLock, and other standard library synchronization primitives
+
+# **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
+# """
+
 FIXING_PROMPT = """Your previous code failed validation.
 
 {feedback}
@@ -66,11 +132,20 @@ FIXING_PROMPT = """Your previous code failed validation.
 Requirements:
 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
 2. Then address safety and concurrency issues
-3. Do not use non-thread-safe types across threads
-4. Replace unsafe patterns with safe Rust abstractions
+3. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
+4. Do not use non-thread-safe types across threads
+5. Replace unsafe patterns with safe Rust abstractions
+6. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+7. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+8. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
+9. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+10. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+   - Use std::thread::spawn instead of pthread_create
+   - Use JoinHandle::join instead of pthread_join
+   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+   - Ensure all concurrency is implemented using safe Rust abstractions
 
 You are allowed to restructure the code as needed:
-- Remove extern "C" if not needed
 - Remove or redesign *mut c_void arguments
 - Replace global static mut with Arc<Mutex<T>>
 - Redesign thread interaction patterns
@@ -227,7 +302,7 @@ def rewrite_file_with_validation(
     filepath: str,
     system_prompt: str,
     example_dir: str,
-    max_iterations: int = 3,
+    max_iterations: int = 5,
     validation_strategy: ValidationStrategy = ValidationStrategy.COMPILE,
     output_manager: OutputManager = None,
     example_name: str = None
@@ -254,6 +329,11 @@ def rewrite_file_with_validation(
     iteration_errors = []
     validator = CodeValidator()
     
+    # Track compilation status for all rounds
+    rounds_compile_status = {}  # {round_num: compile_status}
+    best_compile_round = None    # Best round that compiled successfully
+    best_compile_code = None     # Code that compiled best
+    
     with open(filepath, "r") as f:
         original_code = f.read()
     
@@ -261,7 +341,7 @@ def rewrite_file_with_validation(
     messages = [{"role": "system", "content": system_prompt}]
     
     for iteration in range(1, max_iterations + 1):
-        print(f"    [Iteration {iteration}/{max_iterations}]", end=" ", flush=True)
+        print(f"       [R{iteration:d}/{max_iterations}]", end=" ", flush=True)
         
         try:
             # Request rewrite/fix
@@ -283,7 +363,6 @@ def rewrite_file_with_validation(
                 iteration, 
                 rewritten_code,
             )
-            print(f"      📄 Saved to: {output_file}")
             
             # Validate the generated file
             # CRITICAL: Pass the actual generated file path (output_file) not the original
@@ -291,8 +370,29 @@ def rewrite_file_with_validation(
                 output_file, rewritten_code, validation_strategy, example_dir
             )
             
+            # Track compilation status - check if compiler passed (only check "compilation" category)
+            compilation_results = [r for r in results if r.category == "compilation"]
+            compile_passed = all(r.passed for r in compilation_results) if compilation_results else passed
+            rounds_compile_status[iteration] = compile_passed
+            
+            # Update best compile round if this one compiled
+            if compile_passed and best_compile_round is None:
+                best_compile_round = iteration
+                best_compile_code = rewritten_code
+            elif compile_passed:
+                # Update to latest compile-passing version
+                best_compile_round = iteration
+                best_compile_code = rewritten_code
+            
+            # Extract errors for storage and LLM feedback
+            error_data = extract_errors_for_storage(results)
+            
+            # Save round metadata with error info
+            if output_manager:
+                output_manager.save_round_metadata(example_name, iteration, passed, compile_passed, error_data)
+            
             if passed:
-                print("✅ Validation passed!")
+                print("✅ Passed!", end=" ")
                 # # Cleanup output file
                 # if os.path.exists(output_file):
                 #     os.remove(output_file)
@@ -304,17 +404,32 @@ def rewrite_file_with_validation(
                     rewritten_code + "\n"
                 )
                 
+                # Save conversation history
+                if output_manager:
+                    output_manager.save_conversation_history(example_name, messages)
+                
                 return True, rewritten_code, report, iteration
                 
             else:
-                print("❌ Validation failed")
+                compile_status = "✅" if compile_passed else "❌"
+                print(f"Failed ({compile_status} compile)")
                 
-                # Show detailed validation feedback to user
-                print("\n      📋 Validation Feedback:")
-                print(format_errors_for_display(results))
+                # Print detailed error information
+                error_summary = error_data["summary"]
+                print(f"  Failed checks: {error_summary['failed_checks']}/{error_summary['total_checks']}")
+                print(f"  Total errors: {error_summary['total_errors']}")
                 
-                # Extract errors for storage and LLM feedback
-                error_data = extract_errors_for_storage(results)
+                # Print errors by category
+                for error_result in error_data["results"]:
+                    if not error_result["passed"]:
+                        print(f"  ❌ {error_result['category']}: {error_result['message']}")
+                        for error in error_result["errors"]:
+                            error_msg = error.get("message", error.get("error", str(error)))
+                            # Truncate long error messages
+                            if len(error_msg) > 100:
+                                error_msg = error_msg[:97] + "..."
+                            print(f"     • {error_msg}")
+                
                 iteration_error_data = {
                     "iteration": iteration,
                     "passed": False,
@@ -332,7 +447,7 @@ def rewrite_file_with_validation(
                 current_code = rewritten_code
 
                 if iteration < max_iterations:
-                    print(f"      🔄 Providing error feedback to LLM (iteration {iteration}/{max_iterations})...\n")
+                    print(f" 🔄 trying again...")
                     
                     messages.append({
                         "role": "user", 
@@ -342,27 +457,94 @@ def rewrite_file_with_validation(
                     # Rate limit before next attempt
                     time.sleep(RETRY_DELAY)
                 else:
-                    # Save final (unvalidated) code
-                    final_path = output_manager.save_example_round(
-                        example_name,
-                        "final",
-                        rewritten_code + "\n"
-                    )
+                    # All iterations done but still not validated
+                    # Try to use best compile-passing version
+                    final_code = None
+                    final_round = None
+                    final_reason = None
+                    
+                    print()  # newline
+                    if best_compile_round is not None and best_compile_code is not None:
+                        print(f"       💾 Using best compile from round {best_compile_round}")
+                        final_code = best_compile_code
+                        final_round = best_compile_round
+                        final_reason = "best_compile_round"
+                    else:
+                        # No LLM-generated version compiled - try original code as fallback
+                        print(f"       🔄 Trying original unmodified code...")
+                        
+                        # Try to compile original code
+                        original_compile_ok = False
+                        try:
+                            # Write original code to temp file and check
+                            temp_file = os.path.join(
+                                output_manager.get_example_dir(example_name) if output_manager else "/tmp",
+                                "_original_check.rs"
+                            )
+                            with open(temp_file, "w") as f:
+                                f.write(original_code)
+                            
+                            original_compile_ok, _ = validator.try_compile_standalone(temp_file, example_dir)
+                            
+                            if os.path.exists(temp_file):
+                                os.remove(temp_file)
+                        except:
+                            original_compile_ok = False
+                        
+                        if original_compile_ok:
+                            print(f"       ✅ Original code compiles! Using it.")
+                            final_code = original_code
+                            final_round = "original"
+                            final_reason = "original_code_fallback"
+                        else:
+                            # Last resort - save last attempted LLM version
+                            print(f"       ⚠️  Original also fails. Saving last LLM attempt.")
+                            final_code = rewritten_code
+                            final_round = max_iterations
+                            final_reason = "last_attempt_no_compile"
+                    
+                    # Save final version
+                    if final_code:
+                        final_path = output_manager.save_example_round(
+                            example_name,
+                            "final",
+                            final_code + "\n"
+                        )
+                        # Save metadata indicating which source was used
+                        final_metadata = {
+                            "result_type": final_reason,
+                            "round": final_round,
+                            "reason": final_reason,
+                            "timestamp": datetime.now().isoformat()
+                        }
+                        final_meta_path = os.path.join(
+                            output_manager.get_example_dir(example_name),
+                            "final_metadata.json"
+                        )
+                        with open(final_meta_path, "w") as f:
+                            json.dump(final_metadata, f, indent=2, ensure_ascii=False)
                     
                     # Generate detailed error report
                     error_report_data = {
                         "example_name": example_name,
                         "total_iterations": max_iterations,
                         "failed_at_iteration": max_iterations,
+                        "best_compile_round": best_compile_round,
+                        "final_source": final_round,
                         "summary": error_data["summary"],
-                        "iterations": iteration_errors
+                        "iterations": iteration_errors,
+                        "rounds_compile_status": rounds_compile_status
                     }
                     output_manager.save_error_report(example_name, error_report_data)
-                    print(f"\n      📄 Error details saved for analysis")
+                    print(f"       📄 Details saved")
+                    
+                    # Save conversation history
+                    if output_manager:
+                        output_manager.save_conversation_history(example_name, messages)
 
         
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"Exception: {str(e)[:50]}")
             
             # Record exception to error data
             exception_error = {
@@ -374,24 +556,135 @@ def rewrite_file_with_validation(
             iteration_errors.append(exception_error)
             
             if iteration == max_iterations:
-                # Generate final error report
+                # Last iteration with exception
+                # Try fallback: best compile round or original code
+                final_code = None
+                final_round = None
+                final_reason = None
+                
+                print()  # newline
+                if best_compile_round is not None and best_compile_code is not None:
+                    print(f"       💾 Using best compile from round {best_compile_round}")
+                    final_code = best_compile_code
+                    final_round = best_compile_round
+                    final_reason = "best_compile_round"
+                else:
+                    # Try original code fallback
+                    print(f"       🔄 Trying original unmodified code...")
+                    original_compile_ok = False
+                    try:
+                        temp_file = os.path.join(
+                            output_manager.get_example_dir(example_name) if output_manager else "/tmp",
+                            "_original_check.rs"
+                        )
+                        with open(temp_file, "w") as f:
+                            f.write(original_code)
+                        original_compile_ok, _ = validator.try_compile_standalone(temp_file, example_dir)
+                        if os.path.exists(temp_file):
+                            os.remove(temp_file)
+                    except:
+                        original_compile_ok = False
+                    
+                    if original_compile_ok:
+                        print(f"       ✅ Original code compiles! Using it.")
+                        final_code = original_code
+                        final_round = "original"
+                        final_reason = "original_code_fallback"
+                    else:
+                        print(f"       ⚠️  Saving last LLM attempt")
+                        final_code = best_compile_code or current_code
+                        final_round = best_compile_round or max_iterations
+                        final_reason = "last_attempt_exception"
+                
+                if final_code and output_manager:
+                    output_manager.save_example_round(example_name, "final", final_code + "\n")
+                    final_metadata = {
+                        "result_type": final_reason,
+                        "round": final_round,
+                        "reason": final_reason,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    final_meta_path = os.path.join(
+                        output_manager.get_example_dir(example_name),
+                        "final_metadata.json"
+                    )
+                    with open(final_meta_path, "w") as f:
+                        json.dump(final_metadata, f, indent=2, ensure_ascii=False)
+                
                 error_report_data = {
                     "example_name": example_name,
                     "total_iterations": max_iterations,
                     "failed_at_iteration": iteration,
-                    "iterations": iteration_errors
+                    "best_compile_round": best_compile_round,
+                    "final_source": final_round,
+                    "iterations": iteration_errors,
+                    "rounds_compile_status": rounds_compile_status
                 }
                 if output_manager:
                     output_manager.save_error_report(example_name, error_report_data)
+                    output_manager.save_conversation_history(example_name, messages)
                 
-                return False, current_code, f"Failed after {max_iterations} iterations: {str(e)}", iteration
+                return False, final_code or current_code, f"Failed after {max_iterations} iterations: {str(e)}", iteration
             else:
                 # Add error to messages for context
-                print(f"      🔄 Providing error feedback to LLM: {str(e)[:100]}\n")
+                print(f" 🔄 retrying...")
                 messages.append({"role": "user", "content": f"An error occurred: {str(e)}\n\nPlease try again and fix the code:"})
                 time.sleep(RETRY_DELAY)
     
-    return False, current_code, f"Failed to pass validation after {max_iterations} iterations", max_iterations
+    # Final return if all iterations exhausted without passing
+    final_code = None
+    final_round = None
+    final_reason = None
+    
+    if best_compile_round is not None and best_compile_code is not None:
+        final_code = best_compile_code
+        final_round = best_compile_round
+        final_reason = "best_compile_round"
+    else:
+        # Try original code fallback
+        original_compile_ok = False
+        try:
+            temp_file = os.path.join(
+                output_manager.get_example_dir(example_name) if output_manager else "/tmp",
+                "_original_check.rs"
+            )
+            with open(temp_file, "w") as f:
+                f.write(original_code)
+            original_compile_ok, _ = validator.try_compile_standalone(temp_file, example_dir)
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+        except:
+            original_compile_ok = False
+        
+        if original_compile_ok:
+            final_code = original_code
+            final_round = "original"
+            final_reason = "original_code_fallback"
+        else:
+            final_code = current_code
+            final_round = max_iterations
+            final_reason = "last_attempt"
+    
+    if final_code and output_manager:
+        output_manager.save_example_round(example_name, "final", final_code + "\n")
+        final_metadata = {
+            "result_type": final_reason,
+            "round": final_round,
+            "reason": final_reason,
+            "timestamp": datetime.now().isoformat()
+        }
+        final_meta_path = os.path.join(
+            output_manager.get_example_dir(example_name),
+            "final_metadata.json"
+        )
+        with open(final_meta_path, "w") as f:
+            json.dump(final_metadata, f, indent=2, ensure_ascii=False)
+    
+    # Save conversation history
+    if output_manager:
+        output_manager.save_conversation_history(example_name, messages)
+    
+    return False, final_code or current_code, f"Failed to pass validation after {max_iterations} iterations", max_iterations
 
 def extract_code(result: str) -> str:
     """Extract code from markdown code block."""
@@ -410,13 +703,13 @@ def verify_syntax(filepath: str) -> bool:
     return result.returncode == 0
 
 def main():
-    prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 0
+    prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 3
     force = "--force" in sys.argv
     validate = "--validate" in sys.argv
     
     # Parse command line arguments
     strategy_str = "compile"
-    max_iterations = 3
+    max_iterations = 5
     
     for i, arg in enumerate(sys.argv):
         if arg == "--strategy" and i + 1 < len(sys.argv):
@@ -436,8 +729,9 @@ def main():
         sys.exit(1)
 
     system_prompt = SYSTEM_PROMPTS[prompt_idx]
-    mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(force regenerate)" if force else ""
-    print(f"Using SYSTEM_PROMPT_{prompt_idx} {mode_str}\n")
+    mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(no validation)" if not force else ""
+    print(f"🔧 Using SYSTEM_PROMPT_{prompt_idx} {mode_str}")
+    print(f"📋 Strategy: Save best compilable version + original fallback\n")
     
     # Initialize OutputManager with timestamp-based directory
     output_manager = OutputManager()
@@ -448,19 +742,19 @@ def main():
         max_iterations=max_iterations,
         force=force
     )
-    print(f"📁 Output directory: {output_root}\n")
+    print(f"📁 Output to: {output_root}\n")
 
     examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
     total = len(examples)
     success = 0
     failed = []
 
-    print(f"Found {total} files to process.\n")
+    print(f"🔎 Found {total} examples to process\n")
 
     for i, filepath in enumerate(examples, 1):
         example_dir = os.path.dirname(filepath)
         example_name = os.path.basename(example_dir)
-        print(f"[{i}/{total}] Processing: {example_name}")
+        print(f"[{i:2d}/{total}] 🔄 {example_name}")
 
         # CRITICAL: Ensure main.rs exists for module resolution (pub mod main; in c2rust-lib.rs)
         # Copy main.c2rust.rs to main.rs if it doesn't exist
@@ -470,19 +764,14 @@ def main():
             try:
                 import shutil
                 shutil.copy(filepath, main_rs_path)
-                print(f"  -> Created main.rs from main.c2rust.rs")
+                print(f"       ℹ️  Created main.rs")
             except Exception as e:
-                print(f"  -> ⚠️  Could not create main.rs: {e}")
-
-        # if os.path.exists(output_path) and not force:
-        #     print(f"  -> Already exists, skipping. (use --force to regenerate)")
-        #     success += 1
-        #     continue
+                print(f"       ⚠️  Could not create main.rs: {e}")
 
         try:
             if validate:
                 # Iterative validation mode
-                print(f"  -> Using iterative validation (max {max_iterations} iterations)...")
+                print(f"       🔄 Iterative validation (max {max_iterations} rounds)")
                 passed, code, report, iterations_used = rewrite_file_with_validation(
                     filepath,
                     system_prompt,
@@ -493,45 +782,24 @@ def main():
                     example_name=example_name
                 )
                 
-                output_path = output_root + f"/examples/{example_name}/final.rs"
-                
-                # # Save to both old location and new timestamped location
-                # with open(output_path, "w") as f:
-                #     f.write(code + "\n")
-                
-                # # Save to timestamped output directory
-                # output_manager.save_example_round(example_name, "final", code + "\n")
-                
-                # Optional: run rustfmt on the output
-                subprocess.run(["rustfmt", output_path], capture_output=True)
-                
                 if passed:
-                    print(f"  -> ✅ Saved to: {output_path}")
-                    print(f"  -> Iterations used: {iterations_used}/{max_iterations}")
-                    print(f"  -> Validation Report:\n{report}")
+                    print(f"       ✅ Passed validation at round {iterations_used}")
                     success += 1
                 else:
-                    print(f"  -> ⚠️  Saved (unvalidated) to: {output_path}")
-                    print(f"  -> Iterations used: {iterations_used}/{max_iterations}")
-                    print(f"  -> Report: {report}")
+                    print(f"       ⚠️  Saved (with fallback) - see metadata.json for details")
                     failed.append(example_name)
             else:
                 # Original mode (no validation)
                 result = rewrite_file(filepath, system_prompt)
                 code = extract_code(result)
-                # with open(output_path, "w") as f:
-                #     f.write(code + "\n")
-
+                
                 # Save to timestamped output directory
-                output_manager.save_example_round(example_name, "final", code + "\n")
+                output_path = output_manager.save_example_round(example_name, "final", code + "\n")
 
-                # Optional: run rustfmt on the output
-                subprocess.run(["rustfmt", output_path], capture_output=True)
-
-                print(f"  -> Saved to: {output_path}")
+                print(f"       ✅ Saved")
                 success += 1
         except Exception as e:
-            print(f"  -> FAILED: {e}")
+            print(f"       ❌ Failed: {e}")
             failed.append(example_name)
 
         # Rate limiting: avoid hitting API too fast
@@ -540,22 +808,35 @@ def main():
     # Finalize output manager
     output_manager.finalize(success, total, failed)
 
-    print(f"\n{'='*60}")
-    print(f"Results: {success}/{total} succeeded")
+    print(f"\n{'='*70}")
+    print(f"✅ Results: {success}/{total} examples processed")
     if failed:
-        print(f"Failed: {', '.join(failed)}")
-    print(f"Output Root: {output_manager.output_root}")
-    print(f"Output Dir Structure:")
-    print(f"  - config.json")
-    print(f"  - rewritten/")
-    print(f"  - examples/")
-    print(f"  - evaluation/")
+        print(f"⚠️  Failed to pass validation: {', '.join(failed[:5])}" + (f" + {len(failed)-5} more..." if len(failed) > 5 else ""))
+    
+    print(f"\n📁 Output Structure:")
+    print(f"   {output_manager.output_root}/")
+    print(f"   ├── examples/")
+    print(f"   │   ├── {{example_name}}/")
+    print(f"   │   │   ├── round1.rs, round2.rs, ...   # Iteration history")
+    print(f"   │   │   ├── final.rs                     # Final version (best/fallback)")
+    print(f"   │   │   ├── rounds_metadata.json         # All rounds metadata")
+    print(f"   │   │   ├── final_metadata.json          # Which source was used")
+    print(f"   │   │   ├── conversation_history.json    # Full LLM conversation")
+    print(f"   │   │   └── error_report.json")
+    print(f"   │   └── ...")
+    print(f"   ├── config.json")
+    print(f"   └── evaluation/")
+    
+    print(f"\n📊 Summary:")
+    print(f"   - Total processed: {total}")
+    print(f"   - Validation passed: {success}")
+    print(f"   - Using fallback/best: {total - success}")
     
     # Output timestamp directory info for downstream scripts
     last_output_file = os.path.join(os.path.dirname(__file__), ".last_refactor_output")
     with open(last_output_file, "w") as f:
         f.write(output_manager.output_root)
-    print(f"\n✅ Output directory path saved to: {last_output_file}")
+    print(f"\n✅ Output directory saved to: .last_refactor_output")
 
 if __name__ == "__main__":
     main()

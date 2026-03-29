@@ -9,12 +9,39 @@ def main():
     prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 0
     force = "--force" in sys.argv
 
-    result_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
-    input_path = os.path.join(result_dir, "comparison_report.json")
-    output_path = os.path.join(result_dir, "comparison_report.md")
+    # Parse --llm-output-dir
+    llm_output_dir = None
+    for i, arg in enumerate(sys.argv):
+        if arg == "--llm-output-dir" and i + 1 < len(sys.argv):
+            llm_output_dir = sys.argv[i + 1]
+            break
+
+    # Determine input/output directory - use llm_output_dir if provided, otherwise use legacy path
+    if llm_output_dir:
+        input_dir = os.path.join(llm_output_dir, "evaluation")
+    else:
+        # Try to read from .last_refactor_output file first
+        last_output_file = "/home/guoxy/concrat/LLM/.last_refactor_output"
+        if os.path.exists(last_output_file):
+            with open(last_output_file) as f:
+                last_output_dir = f.read().strip()
+                if last_output_dir and os.path.isdir(last_output_dir):
+                    input_dir = os.path.join(last_output_dir, "evaluation")
+                else:
+                    input_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+        else:
+            input_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+    
+    input_path = os.path.join(input_dir, "comparison_report.json")
+    output_path = os.path.join(input_dir, "comparison_report.md")
 
     if os.path.exists(output_path) and not force:
         print(f"Report already exists: {output_path} (use --force to regenerate)")
+        return
+
+    if not os.path.exists(input_path):
+        print(f"❌ Input file not found: {input_path}")
+        print(f"   Searched in: {input_dir}")
         return
 
     with open(input_path) as f:

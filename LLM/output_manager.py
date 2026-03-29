@@ -121,6 +121,75 @@ class OutputManager:
         
         return filepath
     
+    def save_conversation_history(self, example_name: str, messages: List[Dict[str, Any]]) -> str:
+        """
+        Save conversation history with LLM for a specific example
+        
+        Args:
+            example_name: Name of the example
+            messages: List of message dicts with role and content
+            
+        Returns:
+            Path of saved file
+        """
+        example_dir = self.get_example_dir(example_name)
+        
+        conversation_file = os.path.join(example_dir, "conversation_history.json")
+        with open(conversation_file, "w") as f:
+            json.dump(messages, f, indent=2, ensure_ascii=False)
+        
+        return conversation_file
+    
+    def save_round_metadata(self, example_name: str, round_num: int, 
+                           passed: bool, compile_status: bool = None,
+                           error_data: Dict[str, Any] = None) -> str:
+        """
+        Save metadata for a specific round (compilation status, errors, etc.)
+        Accumulates all rounds in a single rounds_metadata.json file
+        
+        Args:
+            example_name: Name of the example
+            round_num: Iteration number
+            passed: Whether validation passed
+            compile_status: Whether code compiled (True/False/None)
+            error_data: Dictionary with error information
+            
+        Returns:
+            Path of metadata file
+        """
+        example_dir = self.get_example_dir(example_name)
+        
+        # Load existing metadata or start fresh
+        metadata_file = os.path.join(example_dir, "rounds_metadata.json")
+        if os.path.exists(metadata_file):
+            with open(metadata_file, "r") as f:
+                try:
+                    all_rounds = json.load(f)
+                except:
+                    all_rounds = {}
+        else:
+            all_rounds = {}
+        
+        # Add/update this round's metadata
+        round_meta = {
+            "round": round_num,
+            "passed": passed,
+            "compile_status": compile_status,
+            "timestamp": datetime.now().isoformat()
+        }
+        
+        # Add error data if provided
+        if error_data:
+            round_meta["errors"] = error_data
+        
+        all_rounds[str(round_num)] = round_meta
+        
+        # Save consolidated metadata
+        with open(metadata_file, "w") as f:
+            json.dump(all_rounds, f, indent=2, ensure_ascii=False)
+        
+        return metadata_file
+    
     def save_config(self):
         """Save configuration file"""
         config_path = os.path.join(self.output_root, "config.json")
@@ -137,6 +206,27 @@ class OutputManager:
         self.config["failed_examples"] = failed_examples
         
         self.save_config()
+    
+    def finalize_with_round_info(self, examples_round_info: Dict[str, Any]):
+        """
+        Finalize output with round information for each example
+        
+        Args:
+            examples_round_info: Dict mapping example names to their round info
+                {
+                    "example_name": {
+                        "final_round": 3,
+                        "best_compile_round": 2,
+                        "final_passed": False,
+                        "best_compile_passed": True
+                    },
+                    ...
+                }
+        """
+        # Save round tracking information
+        round_tracking_file = os.path.join(self.output_root, "round_tracking.json")
+        with open(round_tracking_file, "w") as f:
+            json.dump(examples_round_info, f, indent=2, ensure_ascii=False, default=str)
     
     def copy_evaluation_results(self, src_dir: str):
         """

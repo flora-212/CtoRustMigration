@@ -49,12 +49,44 @@ def safety_metrics(code):
         "lines":        len(code.splitlines()),
     }
 
+def get_llm_final_round_info(llm_output_dir: str, example_name: str) -> dict:
+    """
+    Get metadata about which round was saved as final
+    
+    Returns:
+        {
+            "round": int or None,
+            "type": "validation_passed" | "best_compile_round" | "last_attempt",
+            "metadata": metadata dict or None
+        }
+    """
+    example_dir = os.path.join(llm_output_dir, "examples", example_name)
+    metadata_file = os.path.join(example_dir, "final_metadata.json")
+    
+    info = {
+        "round": None,
+        "type": "unknown",
+        "metadata": None
+    }
+    
+    if os.path.exists(metadata_file):
+        with open(metadata_file) as f:
+            try:
+                metadata = json.load(f)
+                info["metadata"] = metadata
+                info["round"] = metadata.get("round")
+                info["type"] = metadata.get("result_type", "unknown")
+            except:
+                pass
+    
+    return info
+
 # ── Compilation Check ───────────────────────────────────────────────────────
 # Using CodeValidator from validator.py to ensure consistent compilation detection
 
 def try_compile_with_cargo(rs_file, example_dir):
     """Try compiling a .rs file using the example's Cargo.toml context."""
-    success, errors = VALIDATOR.try_compile_with_cargo(rs_file, example_dir)
+    success, errors = VALIDATOR.try_compile_standalone(rs_file, example_dir)
     # Convert ErrorInfo list to error string for backward compatibility
     err_str = "\n".join([str(e) for e in errors]) if errors else ""
     return success, err_str[:500]
@@ -192,9 +224,13 @@ def main():
             llm_output_dir = sys.argv[i + 1]
             break
 
-    report_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+    # Determine report directory - use llm_output_dir/evaluation if provided, otherwise use legacy path
+    if llm_output_dir:
+        report_dir = os.path.join(llm_output_dir, "evaluation")
+    else:
+        report_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+    
     report_path = os.path.join(report_dir, "comparison_report.json")
-
 
     if os.path.exists(report_path) and not force:
         print(f"Report already exists: {report_path} (use --force to regenerate)")
@@ -213,6 +249,12 @@ def main():
     summary = {"total": 0, "llm_compiles": 0, "concrat_compiles": 0,
                "llm_safer": 0, "concrat_safer": 0, "llm_lock_clean": 0, "concrat_lock_clean": 0}
 
+    # Print LLM source directory info
+    if llm_output_dir:
+        print(f"📁 LLM Output Directory: {llm_output_dir}")
+        print(f"   Looking for files at: {llm_output_dir}/examples/{{example_name}}/final.rs")
+        print()
+
     print("=" * 100)
     print(f"{'Example':<22} │ {'Version':<10} │ {'Compile':>8} │ {'unsafe':>7} │ {'pthread':>8} │ {'raw_ptr':>8} │ {'st_mut':>7} │ {'Mutex':>6} │ {'thread':>7} │ {'lines':>6}")
     print("─" * 100)
@@ -225,8 +267,10 @@ def main():
         # Try to read from llm_output_dir if provided, otherwise use the old location
         if llm_output_dir:
             llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")
+            example_dir_for_compile = os.path.join(EXAMPLES_DIR, name)
         else:
             llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
+            example_dir_for_compile = example_dir
 
         if not os.path.exists(original_rs):
             continue
@@ -270,12 +314,17 @@ def main():
             row["concrat"] = {"metrics": c_metrics, "compiles": c_compile, "lock_safety": c_lock}
 
         # ── LLM version ──
+        llm_round_info = None
         if os.path.exists(llm_rs):
             with open(llm_rs) as f:
                 llm_code = f.read()
             l_metrics = safety_metrics(llm_code)
-            l_compile, l_err = try_compile_standalone(llm_rs)
+            l_compile, l_err = try_compile_standalone(llm_rs, example_dir_for_compile)
             l_lock = analyze_lock_safety(llm_code, "llm")
+            
+            # Get round info if available
+            if llm_output_dir:
+                llm_round_info = get_llm_final_round_info(llm_output_dir, name)
 
             compile_str = "✅" if l_compile else "❌"
             if l_compile:
@@ -285,7 +334,8 @@ def main():
             if not l_lock["has_pthread"] and (l_lock["has_std_mutex"] or orig_metrics["pthread"] == 0):
                 summary["llm_lock_clean"] += 1
 
-            print(f"  {'':20} │ {'LLM':<10} │ {compile_str:>8} │ {l_metrics['unsafe']:>7} │ {l_metrics['pthread']:>8} │ {l_metrics['raw_ptr']:>8} │ {l_metrics['static_mut']:>7} │ {l_metrics['std_mutex']:>6} │ {l_metrics['std_thread']:>7} │ {l_metrics['lines']:>6}")
+            round_str = f"(R{llm_round_info['round']})" if llm_round_info and llm_round_info["round"] else ""
+            print(f"  {'':20} │ {'LLM':<10} │ {compile_str:>8} │ {l_metrics['unsafe']:>7} │ {l_metrics['pthread']:>8} │ {l_metrics['raw_ptr']:>8} │ {l_metrics['static_mut']:>7} │ {l_metrics['std_mutex']:>6} │ {l_metrics['std_thread']:>7} │ {l_metrics['lines']:>6} {round_str}")
 
             if l_lock["issues"]:
                 for issue in l_lock["issues"]:
@@ -297,7 +347,18 @@ def main():
                 for e in first_err:
                     print(f"  {'':20} │   💥 {e[:80]}")
 
-            row["llm"] = {"metrics": l_metrics, "compiles": l_compile, "lock_safety": l_lock}
+            row["llm"] = {
+                "metrics": l_metrics, 
+                "compiles": l_compile, 
+                "lock_safety": l_lock,
+                "round_info": llm_round_info
+            }
+        else:
+            # LLM file not found - print diagnostic info
+            if llm_output_dir:
+                print(f"  {'':20} │ {'LLM':<10} │ {'⚠️':>8} │ {'(not':>7} │ {'found)':>8} │ at: {llm_rs}")
+            else:
+                print(f"  {'':20} │ {'LLM':<10} │ {'⚠️':>8} │ {'(no':>7} │ {'output)':>8} │ expected: {llm_rs}")
 
         print("─" * 100)
         results.append(row)
@@ -337,6 +398,37 @@ def main():
     print(f"{'Total raw pointers':<40} │ {orig_total['raw_ptr']:>10} │ {concrat_total['raw_ptr']:>10} │ {llm_total['raw_ptr']:>10}")
     print(f"{'Total static mut':<40} │ {orig_total['static_mut']:>10} │ {concrat_total['static_mut']:>10} │ {llm_total['static_mut']:>10}")
     print(f"{'Total std::sync::Mutex':<40} │ {'N/A':>10} │ {concrat_total['std_mutex']:>10} │ {llm_total['std_mutex']:>10}")
+
+    # Analyze round distribution for LLM results (if using timestamped output)
+    if llm_output_dir:
+        llm_round_stats = {}
+        llm_round_types = {}
+        for r in results:
+            if "llm" in r and "round_info" in r["llm"]:
+                round_info = r["llm"]["round_info"]
+                if round_info and round_info["round"]:
+                    round_num = round_info["round"]
+                    result_type = round_info.get("type", "unknown")
+                    
+                    llm_round_stats[round_num] = llm_round_stats.get(round_num, 0) + 1
+                    llm_round_types[result_type] = llm_round_types.get(result_type, 0) + 1
+        
+        if llm_round_stats:
+            print(f"\n{'LLM Round Distribution':<40}")
+            print("─" * 50)
+            # Sort and display round distribution
+            for round_num in sorted(llm_round_stats.keys()):
+                count = llm_round_stats[round_num]
+                percentage = (count / total * 100) if total > 0 else 0
+                print(f"  Round {round_num:<30} │ {count:>3}/{total} ({percentage:>5.1f}%)")
+            
+            if llm_round_types:
+                print(f"\n{'Result Types':<40}")
+                print("─" * 50)
+                for result_type in sorted(llm_round_types.keys()):
+                    count = llm_round_types[result_type]
+                    percentage = (count / total * 100) if total > 0 else 0
+                    print(f"  {result_type:<30} │ {count:>3}/{total} ({percentage:>5.1f}%)")
 
     # Save JSON report
     # Convert lock_safety for JSON serialization

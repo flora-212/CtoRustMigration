@@ -236,7 +236,19 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo "📈 Step 4: Generate Comparison Report"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
-python3 "$SCRIPT_DIR/evaluation/generate_comparison.py" "$PROMPT_IDX" $FORCE_GENERATE
+# Read the output directory from refractor.py for comparison report generation
+if [ -z "$REFACTOR_OUTPUT_DIR" ]; then
+    LAST_OUTPUT_FILE="$SCRIPT_DIR/.last_refactor_output"
+    if [ -f "$LAST_OUTPUT_FILE" ]; then
+        REFACTOR_OUTPUT_DIR=$(cat "$LAST_OUTPUT_FILE")
+    fi
+fi
+
+if [ ! -z "$REFACTOR_OUTPUT_DIR" ]; then
+    python3 "$SCRIPT_DIR/evaluation/generate_comparison.py" "$PROMPT_IDX" $FORCE_GENERATE --llm-output-dir "$REFACTOR_OUTPUT_DIR"
+else
+    python3 "$SCRIPT_DIR/evaluation/generate_comparison.py" "$PROMPT_IDX" $FORCE_GENERATE
+fi
 
 COMPARE_STATUS=$?
 if [ $COMPARE_STATUS -eq 0 ]; then

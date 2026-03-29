@@ -124,7 +124,12 @@ def main() -> None:
             llm_output_dir = sys.argv[i + 1]
             break
 
-    result_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+    # Determine result directory - use llm_output_dir/evaluation if provided, otherwise use legacy path
+    if llm_output_dir:
+        result_dir = os.path.join(llm_output_dir, "evaluation")
+    else:
+        result_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+    
     json_path = os.path.join(result_dir, "clippy_concurrency_report.json")
     md_path = os.path.join(result_dir, "clippy_concurrency_report.md")
 
@@ -135,6 +140,12 @@ def main() -> None:
     os.makedirs(result_dir, exist_ok=True)
 
     examples = sorted([d for d in glob.glob(f"{EXAMPLES_DIR}/*/") if os.path.isdir(d)])
+
+    # Print LLM source directory info
+    if llm_output_dir:
+        print(f"📁 LLM Output Directory: {llm_output_dir}")
+        print(f"   Looking for files at: {llm_output_dir}/examples/{{example_name}}/final.rs")
+        print()
 
     rows = []
     summary = {
@@ -171,8 +182,17 @@ def main() -> None:
             ok_text = "yes" if item["ok"] else "no"
             lint_text = ", ".join(item["unique_lints"][:2]) if item["unique_lints"] else "-"
             prefix = name if version == "original" else ""
+            
+            # Add diagnostic info if file not found
+            diagnostic = ""
+            if version == "llm" and not item["exists"]:
+                if llm_output_dir:
+                    diagnostic = f" 📍 not at {llm_rs}"
+                else:
+                    diagnostic = f" 📍 expected {llm_rs}"
+            
             print(
-                f"{prefix:<24} | {version:<10} | {ok_text:<10} | {item['warning_count']:>8} | {lint_text:<50}"
+                f"{prefix:<24} | {version:<10} | {ok_text:<10} | {item['warning_count']:>8} | {lint_text:<50}{diagnostic}"
             )
 
         summary["concrat_warn_total"] += row["concrat"]["warning_count"]

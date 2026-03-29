@@ -150,6 +150,15 @@ class CodeValidator:
                             col_num = int(loc_match.group(3))
                             location = f"{file_path}:{line_num}:{col_num}"
                     
+                    # Find the end of this error's details (up to next error or end)
+                    error_start = i
+                    error_end = i + 1
+                    while error_end < len(lines) and not lines[error_end].startswith('error'):
+                        error_end += 1
+                    
+                    # Collect details for this specific error
+                    error_details = '\n'.join(lines[error_start:error_end])
+                    
                     error_info = ErrorInfo(
                         error_type="compile_error",
                         error_code=error_code,
@@ -157,7 +166,7 @@ class CodeValidator:
                         location=location,
                         line=line_num,
                         column=col_num,
-                        details=stderr[:1000]  # Store first 1000 chars of full stderr
+                        details=error_details[:1000]  # Store this error's details only
                     )
                     errors.append(error_info)
             
@@ -269,7 +278,7 @@ class CodeValidator:
                     errors = [ErrorInfo(
                         error_type="compile_error",
                         message="Compilation failed",
-                        details=result.stderr[:500]
+                        details=result.stderr[:1000]
                     )]
                 return False, errors
         
@@ -322,7 +331,7 @@ class CodeValidator:
                 errors = [ErrorInfo(
                     error_type="compile_error",
                     message="Compilation failed",
-                    details=result.stderr[:500]
+                    details=result.stderr[:1000]
                 )]
             return False, errors
         
