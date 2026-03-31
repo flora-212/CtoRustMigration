@@ -237,12 +237,19 @@ def main():
 
     os.makedirs(report_dir, exist_ok=True)
 
-    examples = sorted([d for d in glob.glob(f"{EXAMPLES_DIR}/*/") if os.path.isdir(d)])
+    # Load both positive and negative examples
+    positive_examples = sorted([d for d in glob.glob(f"{EXAMPLES_DIR}/*/") if os.path.isdir(d)])
+    negative_examples = sorted([d for d in glob.glob(f"/home/guoxy/concrat/examples_negative/*/") if os.path.isdir(d)])
+    examples = positive_examples + negative_examples
+    
+    sample_type = "positive + negative" if negative_examples else "positive only"
+    print(f"📊 Examples: {sample_type} ({len(positive_examples)} + {len(negative_examples)})")
+    print()
 
-    # Load or build concrat cache
+    # Load or build concrat cache (only for positive examples, as negative ones are expected to fail)
     concrat_cache = load_concrat_cache()
     if concrat_cache is None or clear:
-        concrat_cache = build_concrat_cache(examples)
+        concrat_cache = build_concrat_cache(positive_examples)
 
     results = []
     summary = {"total": 0, "llm_compiles": 0, "concrat_compiles": 0,
@@ -261,12 +268,19 @@ def main():
     for example_dir in examples:
         name = os.path.basename(example_dir.rstrip("/"))
         summary["total"] += 1
-
+        
+        # Check if this is a negative example
+        is_negative = "examples_negative" in example_dir
+        
         original_rs = os.path.join(example_dir, "main.c2rust.rs")
         # Try to read from llm_output_dir if provided, otherwise use the old location
         if llm_output_dir:
             llm_rs = os.path.join(llm_output_dir, "examples", name, "final.rs")
-            example_dir_for_compile = os.path.join(EXAMPLES_DIR, name)
+            # Use the correct source directory for compile context
+            if is_negative:
+                example_dir_for_compile = os.path.join("/home/guoxy/concrat/examples_negative", name)
+            else:
+                example_dir_for_compile = os.path.join(EXAMPLES_DIR, name)
         else:
             llm_rs = os.path.join(example_dir, f"main_rewritten_{prompt_idx}.rs")
             example_dir_for_compile = example_dir
@@ -286,9 +300,11 @@ def main():
 
         row = {"name": name}
         row["original"] = {"metrics": orig_metrics, "lock_safety": orig_lock}
+        row["is_negative"] = is_negative  # Mark whether this is a negative example
 
-        # Always print original
-        print(f"  {name:<20} │ {'original':<10} │ {'(base)':>8} │ {orig_metrics['unsafe']:>7} │ {orig_metrics['pthread']:>8} │ {orig_metrics['raw_ptr']:>8} │ {orig_metrics['static_mut']:>7} │ {orig_metrics['std_mutex']:>6} │ {orig_metrics['std_thread']:>7} │ {orig_metrics['lines']:>6}")
+        # Always print original with sample type indicator
+        sample_mark = "[NEG]" if is_negative else "[POS]"
+        print(f"  {sample_mark} {name:<16} │ {'original':<10} │ {'(base)':>8} │ {orig_metrics['unsafe']:>7} │ {orig_metrics['pthread']:>8} │ {orig_metrics['raw_ptr']:>8} │ {orig_metrics['static_mut']:>7} │ {orig_metrics['std_mutex']:>6} │ {orig_metrics['std_thread']:>7} │ {orig_metrics['lines']:>6}")
 
         # ── Concrat version (from cache) ──
         if "concrat" in cached:

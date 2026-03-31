@@ -104,26 +104,35 @@ Requirements:
 Output only the complete rewritten code, no explanations
 """
 
-# FIXING_PROMPT = """Your previous code failed validation.
+SYSTEM_PROMPT_6 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
 
-# {feedback}
+Requirements:
+1 The code MUST compile on stable Rust only. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
+2. Follow Rust's ownership, borrowing, and concurrency rules
+3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+4. Ensure all data shared across threads is safe:
+   - Use Arc<T> for shared ownership
+   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+   - If shared mutable access is needed, use Arc<Mutex<T>> or Arc<RwLock<T>>
+   - Only call `.lock()` on Mutex<T> or RwLock<T>. Do not call '.lock()' on Arc<Mutex<T>> or Arc<RwLock<T>> directly; instead, clone the Arc and then lock the inner Mutex/RwLock.
+5. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+6. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
+7. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+8. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+   - Use std::thread::spawn instead of pthread_create
+   - Use JoinHandle::join instead of pthread_join
+   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+   - Ensure all concurrency is implemented using safe Rust abstractions
+9. When initializing arrays:
+    - Do NOT use `[expr; N]` if the element type does not implement Copy
+    - For non-Copy types (e.g., Mutex, Arc, Vec), initialize each element explicitly or use `std::array::from_fn`
+10. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+11. Preserve the program's logical behavior, but not necessarily its exact structure
+12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
 
-# Requirements:
-# 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
-# 2. Then address safety and concurrency issues
-# 3. Do not use non-thread-safe types across threads
-# 4. Replace unsafe patterns with safe Rust abstractions
-# 5. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+Output only the complete rewritten code, no explanations
+"""
 
-# You are allowed to restructure the code as needed:
-# - Remove or redesign *mut c_void arguments
-# - Replace global static mut with Arc<Mutex<T>>
-# - Redesign thread interaction patterns
-# - Change function signatures to be more idiomatic Rust
-# - Use Arc, Mutex, RwLock, and other standard library synchronization primitives
-
-# **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
-# """
 
 FIXING_PROMPT = """Your previous code failed validation.
 
@@ -155,12 +164,79 @@ You are allowed to restructure the code as needed:
 **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
 """
 
+# FIXING_PROMPT = """Your previous code failed validation.
+
+# {feedback}
+
+# Requirements:
+# 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
+# 2. Then address safety and concurrency issues
+# 3. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
+# 4. Follow Rust's ownership, borrowing, and concurrency rules
+# 5. Ensure all data shared across threads is safe:
+#    - Use Arc<T> for shared ownership
+#    - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+#    - If shared mutable access is needed, use Arc<Mutex<T>> or Arc<RwLock<T>>
+#    - Only call `.lock()` on Mutex<T> or RwLock<T>. Do not call '.lock()' on Arc<Mutex<T>> or Arc<RwLock<T>> directly; instead, clone the Arc and then lock the inner Mutex/RwLock.
+# 6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+# 7. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
+# 8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+# 9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+#    - Use std::thread::spawn instead of pthread_create
+#    - Use JoinHandle::join instead of pthread_join
+#    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+#    - Ensure all concurrency is implemented using safe Rust abstractions
+# 10. When initializing arrays:
+#     - Do NOT use `[expr; N]` if the element type does not implement Copy
+#     - For non-Copy types (e.g., Mutex, Arc, Vec), initialize each element explicitly or use `std::array::from_fn`
+# 11. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+# 12. Preserve the program's logical behavior, but not necessarily its exact structure
+# 13. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+
+# You are allowed to restructure the code as needed:
+# - Remove or redesign *mut c_void arguments
+# - Replace global static mut with Arc<Mutex<T>>
+# - Redesign thread interaction patterns
+# - Change function signatures to be more idiomatic Rust
+# - Use Arc, Mutex, RwLock, and other standard library synchronization primitives
+
+# **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
+# """
+
 SYSTEM_PROMPTS = {
     int(k.split("_")[-1]): v
     for k, v in globals().items()
     if k.startswith("SYSTEM_PROMPT_") and isinstance(v, str)
 
 }
+
+# ────────────────────────────────────────────────────────────────────────────
+# Parameterized Prompt Configuration
+# ────────────────────────────────────────────────────────────────────────────
+# This structure allows easy switching between different prompt combinations
+# for both system prompts and fixing prompts
+# Future extension: can support different prompt sets per prompt_idx if needed
+
+PROMPT_CONFIGS = {
+    # prompt_idx: {
+    #     "system_prompt": SYSTEM_PROMPT_X,
+    #     "fixing_prompt": FIXING_PROMPT (or custom variant)
+    # }
+    # Currently all indices use the same fixing prompt, but structure allows per-index customization
+}
+
+# Initialize PROMPT_CONFIGS with all available system prompts
+for idx in SYSTEM_PROMPTS.keys():
+    PROMPT_CONFIGS[idx] = {
+        "system_prompt": SYSTEM_PROMPTS[idx],
+        "fixing_prompt": FIXING_PROMPT,  # Same for all now, but customizable later
+    }
+
+def get_prompt_config(prompt_idx: int) -> dict:
+    """Get prompt configuration for a given index"""
+    if prompt_idx not in PROMPT_CONFIGS:
+        raise ValueError(f"Prompt config {prompt_idx} not found. Available: {list(PROMPT_CONFIGS.keys())}")
+    return PROMPT_CONFIGS[prompt_idx]
 
 # ────────────────────────────────────────────────────────────────────────────
 # Configuration
@@ -301,6 +377,7 @@ def rewrite_file(filepath: str, system_prompt: str) -> str:
 def rewrite_file_with_validation(
     filepath: str,
     system_prompt: str,
+    fixing_prompt: str,
     example_dir: str,
     max_iterations: int = 5,
     validation_strategy: ValidationStrategy = ValidationStrategy.COMPILE,
@@ -451,7 +528,7 @@ def rewrite_file_with_validation(
                     
                     messages.append({
                         "role": "user", 
-                        "content": FIXING_PROMPT.format(feedback=llm_feedback)
+                        "content": fixing_prompt.format(feedback=llm_feedback)
                     })
                     
                     # Rate limit before next attempt
@@ -706,6 +783,8 @@ def main():
     prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 3
     force = "--force" in sys.argv
     validate = "--validate" in sys.argv
+    include_negative = "--include-negative" in sys.argv
+    negative_only = "--negative-only" in sys.argv
     
     # Parse command line arguments
     strategy_str = "compile"
@@ -724,13 +803,32 @@ def main():
         print(f"Available: {', '.join([s.value for s in ValidationStrategy])}")
         sys.exit(1)
     
-    if prompt_idx not in SYSTEM_PROMPTS:
-        print(f"Error: SYSTEM_PROMPT_{prompt_idx} does not exist. Available: {list(SYSTEM_PROMPTS.keys())}")
+    # Get prompt configuration
+    try:
+        prompt_config = get_prompt_config(prompt_idx)
+        system_prompt = prompt_config["system_prompt"]
+        fixing_prompt = prompt_config["fixing_prompt"]
+    except ValueError as e:
+        print(f"Error: {e}")
+        print(f"Available prompt indices: {list(PROMPT_CONFIGS.keys())}")
         sys.exit(1)
 
-    system_prompt = SYSTEM_PROMPTS[prompt_idx]
+    # Determine data sources
+    if negative_only:
+        sample_type = "negative only"
+        examples = sorted(glob.glob("/home/guoxy/concrat/examples_negative/*/main.c2rust.rs"))
+    elif include_negative:
+        sample_type = "positive + negative"
+        positive = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
+        negative = sorted(glob.glob("/home/guoxy/concrat/examples_negative/*/main.c2rust.rs"))
+        examples = positive + negative
+    else:
+        sample_type = "positive only"
+        examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
+
     mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(no validation)" if not force else ""
     print(f"🔧 Using SYSTEM_PROMPT_{prompt_idx} {mode_str}")
+    print(f"📋 Examples: {sample_type}")
     print(f"📋 Strategy: Save best compilable version + original fallback\n")
     
     # Initialize OutputManager with timestamp-based directory
@@ -744,17 +842,21 @@ def main():
     )
     print(f"📁 Output to: {output_root}\n")
 
-    examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
     total = len(examples)
     success = 0
     failed = []
 
-    print(f"🔎 Found {total} examples to process\n")
+    print(f"🔎 Found {total} examples to process ({sample_type})\n")
 
     for i, filepath in enumerate(examples, 1):
         example_dir = os.path.dirname(filepath)
         example_name = os.path.basename(example_dir)
-        print(f"[{i:2d}/{total}] 🔄 {example_name}")
+        
+        # Check if this is a negative sample
+        is_negative = "/examples_negative/" in filepath
+        sample_prefix = "[NEG]" if is_negative else "[POS]"
+        
+        print(f"[{i:2d}/{total}] {sample_prefix} 🔄 {example_name}")
 
         # CRITICAL: Ensure main.rs exists for module resolution (pub mod main; in c2rust-lib.rs)
         # Copy main.c2rust.rs to main.rs if it doesn't exist
@@ -775,6 +877,7 @@ def main():
                 passed, code, report, iterations_used = rewrite_file_with_validation(
                     filepath,
                     system_prompt,
+                    fixing_prompt,  # Pass the fixing_prompt here
                     example_dir,
                     max_iterations=max_iterations,
                     validation_strategy=validation_strategy,
@@ -828,6 +931,7 @@ def main():
     print(f"   └── evaluation/")
     
     print(f"\n📊 Summary:")
+    print(f"   - Sample type: {sample_type}")
     print(f"   - Total processed: {total}")
     print(f"   - Validation passed: {success}")
     print(f"   - Using fallback/best: {total - success}")

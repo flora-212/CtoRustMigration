@@ -21,12 +21,14 @@ set -e
 PROMPT_IDX=3                          # Default to prompt 3
 VALIDATE_FLAG="--validate"            # Enable validation by default
 STRATEGY="compile"                    # Validation strategy
-MAX_ITERATIONS=5                      # Maximum iteration count
+MAX_ITERATIONS=10                      # Maximum iteration count
 FORCE_REWRITE=""
 FORCE_EVAL=""
 FORCE_GENERATE=""
 CLEAR_FLAG=""
 VERBOSE=""
+INCLUDE_NEGATIVE=""                 # Include negative samples
+NEGATIVE_ONLY=""                    # Only run negative samples
 
 # Check for --help first
 for arg in "$@"; do
@@ -34,14 +36,16 @@ for arg in "$@"; do
         echo "Complete workflow script for iterative generation-validation-evaluation"
         echo ""
         echo "Usage:"
-        echo "  ./run.sh                                    # Default: prompt=1, validate=true"
-        echo "  ./run.sh 0                                  # Use SYSTEM_PROMPT_0"
-        echo "  ./run.sh 1 --validate                       # Enable validation"
-        echo "  ./run.sh 1 --no-validate                    # Disable validation"
-        echo "  ./run.sh 1 --strategy {compile|safety|...}  # Validation strategy"
-        echo "  ./run.sh 1 --max-iterations 5               # Iteration count"
-        echo "  ./run.sh 1 --force                          # Force re-execution"
-        echo "  ./run.sh 1 --verbose                        # Verbose output"
+        echo "  ./run.sh                                        # Default: prompt=3, validate=true"
+        echo "  ./run.sh 0                                      # Use SYSTEM_PROMPT_0"
+        echo "  ./run.sh 1 --validate                           # Enable validation"
+        echo "  ./run.sh 1 --no-validate                        # Disable validation"
+        echo "  ./run.sh 1 --strategy {compile|safety|...}      # Validation strategy"
+        echo "  ./run.sh 1 --max-iterations 5                   # Iteration count"
+        echo "  ./run.sh 1 --force                              # Force re-execution"
+        echo "  ./run.sh 1 --include-negative                   # Include negative samples"
+        echo "  ./run.sh 1 --negative-only                      # Only run negative samples"
+        echo "  ./run.sh 1 --verbose                            # Verbose output"
         echo ""
         echo "Strategies:"
         echo "  compile        - Compilation check (fastest)"
@@ -106,6 +110,13 @@ while [ $# -gt 0 ]; do
         --verbose)
             VERBOSE="--verbose"
             ;;
+        --include-negative)
+            INCLUDE_NEGATIVE="--include-negative"
+            ;;
+        --negative-only)
+            NEGATIVE_ONLY="--negative-only"
+            INCLUDE_NEGATIVE="--include-negative"
+            ;;
         *)
             echo "❌ Unknown argument: $1"
             exit 1
@@ -131,6 +142,10 @@ echo "   - Validation: ${VALIDATE_FLAG:-(disabled)}"
 if [ ! -z "$VALIDATE_FLAG" ]; then
     echo "   - Strategy: $STRATEGY"
     echo "   - Max Iterations: $MAX_ITERATIONS"
+fi
+echo "   - Include Negative: ${INCLUDE_NEGATIVE:-(no)}"
+if [ ! -z "$NEGATIVE_ONLY" ]; then
+    echo "   - Negative Only: yes"
 fi
 echo "   - Force Rewrite: ${FORCE_REWRITE:-(no)}"
 echo "   - Force Eval: ${FORCE_EVAL:-(no)}"
@@ -184,11 +199,16 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
         $VALIDATE_FLAG \
         --strategy "$STRATEGY" \
         --max-iterations "$MAX_ITERATIONS" \
+        $INCLUDE_NEGATIVE \
+        $NEGATIVE_ONLY \
         $FORCE_REWRITE \
         $VERBOSE
 else
     # No validation loop
-    python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" $FORCE_REWRITE $VERBOSE
+    python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
+        $INCLUDE_NEGATIVE \
+        $NEGATIVE_ONLY \
+        $FORCE_REWRITE $VERBOSE
 fi
 
 REFACTOR_STATUS=$?
