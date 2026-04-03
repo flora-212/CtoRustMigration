@@ -432,7 +432,14 @@ def main():
             print(f"\n{'LLM Round Distribution':<40}")
             print("─" * 50)
             # Sort and display round distribution
-            for round_num in sorted(llm_round_stats.keys()):
+            # Custom sort: numbers first (ascending), then strings (alphabetically)
+            def sort_key(x):
+                if isinstance(x, int):
+                    return (0, x)  # Numbers get priority (0) and sort by value
+                else:
+                    return (1, str(x))  # Strings get second priority (1) and sort alphabetically
+            
+            for round_num in sorted(llm_round_stats.keys(), key=sort_key):
                 count = llm_round_stats[round_num]
                 percentage = (count / total * 100) if total > 0 else 0
                 print(f"  Round {round_num:<30} │ {count:>3}/{total} ({percentage:>5.1f}%)")
