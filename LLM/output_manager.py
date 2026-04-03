@@ -43,7 +43,7 @@ class OutputManager:
         
     def initialize(self, prompt_idx: int, validate: bool = False, 
                    strategy: str = "compile", max_iterations: int = 3,
-                   force: bool = False):
+                   force: bool = False, model: str = "qwen2.5-coder:14b"):
         """Initialize output directory with timestamp"""
         self.prompt_idx = prompt_idx
         self.timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -73,6 +73,7 @@ class OutputManager:
             "strategy": strategy,
             "max_iterations": max_iterations,
             "force": force,
+            "model": model,
             "start_time": datetime.now().isoformat(),
             "end_time": None,
             "total_files": 0,

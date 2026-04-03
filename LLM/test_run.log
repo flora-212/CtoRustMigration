@@ -1,0 +1,154 @@
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║           Complete Workflow: Generation - Validation - Evaluation          ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+✅ Configuration:
+   - Prompt Index: 0
+   - Validation: --validate
+   - Strategy: compile
+   - Max Iterations: 15
+   - Include Negative: (no)
+   - Force Rewrite: (no)
+   - Force Eval: (no)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📡 Step 1: Start Ollama LLM Service
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Ollama is already running
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔄 Step 2: Generate Code (SYSTEM_PROMPT_0)
+   + Iterative validation loop (strategy: compile, max iterations: 15)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 Using SYSTEM_PROMPT_0 (validate: compile, max_iterations: 15)
+📋 Examples: positive only
+📋 Strategy: Save best compilable version + original fallback
+
+📁 Output to: /home/guoxy/concrat/LLM/result/20260403_125936_0_compile
+
+🔎 Found 30 examples to process (positive only)
+
+[ 1/30] [POS] 🔄 array_const
+       🔄 Iterative validation (max 15 rounds)
+       [R1/15] Failed (❌ compile)
+  Failed checks: 1/1
+  Total errors: 17
+  ❌ compile: Compilation failed
+     • feature has been removed
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • mismatched types
+     • missing fields `__align` and `__size` in initializer of `main::pthread_mutex_t`
+     • mismatched types
+     • the trait bound `main::pthread_mutex_t: Clone` is not satisfied
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • expected function, found type alias `pthread_t`
+     • expected function, found type alias `pthread_t`
+     • could not compile `c2rust_out` (lib) due to 16 previous errors
+ 🔄 trying again...
+       [R2/15] Failed (❌ compile)
+  Failed checks: 1/1
+  Total errors: 33
+  ❌ compile: Compilation failed
+     • feature has been removed
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • mismatched types
+     • missing fields `__align` and `__size` in initializer of `main::pthread_mutex_t`
+     • mismatched types
+     • the trait bound `main::pthread_mutex_t: Clone` is not satisfied
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • expected function, found type alias `pthread_t`
+     • expected function, found type alias `pthread_t`
+     • could not compile `c2rust_out` (lib) due to 32 previous errors
+ 🔄 trying again...
+       [R3/15] Failed (❌ compile)
+  Failed checks: 1/1
+  Total errors: 33
+  ❌ compile: Compilation failed
+     • feature has been removed
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • unknown start of token: \u{230a}
+     • unknown start of token: \u{230b}
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • mismatched types
+     • missing fields `__align` and `__size` in initializer of `main::pthread_mutex_t`
+     • mismatched types
+     • the trait bound `main::pthread_mutex_t: Clone` is not satisfied
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • expected function, found type alias `pthread_t`
+     • expected function, found type alias `pthread_t`
+     • could not compile `c2rust_out` (lib) due to 32 previous errors
+ 🔄 trying again...
+       [R4/15] Failed (❌ compile)
+  Failed checks: 1/1
+  Total errors: 17
+  ❌ compile: Compilation failed
+     • feature has been removed
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • cannot find type `C_void` in module `std::ffi`
+     • mismatched types
+     • missing fields `__align` and `__size` in initializer of `main::pthread_mutex_t`
+     • mismatched types
+     • the trait bound `main::pthread_mutex_t: Clone` is not satisfied
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • no method named `lock` found for mutable reference `&mut main::pthread_mutex_t` in the current scope
+     • no method named `unlock` found for mutable reference `&mut main::pthread_mutex_t` in the current ...
+     • expected function, found type alias `pthread_t`
+     • expected function, found type alias `pthread_t`
+     • could not compile `c2rust_out` (lib) due to 16 previous errors
+ 🔄 trying again...
+       [R5/15] 

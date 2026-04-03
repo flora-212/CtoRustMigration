@@ -445,16 +445,36 @@ def main():
                     percentage = (count / total * 100) if total > 0 else 0
                     print(f"  {result_type:<30} │ {count:>3}/{total} ({percentage:>5.1f}%)")
 
-    # Save JSON report
+    # Save JSON reports (split by sample type + combined)
     # Convert lock_safety for JSON serialization
     for r in results:
         for version in ["original", "concrat", "llm"]:
             if version in r and "lock_safety" in r[version]:
                 # already dict, should be fine
                 pass
-    with open(report_path, "w") as f:
-        json.dump(results, f, indent=2, default=str)
-    print(f"\nDetailed report saved to: {report_path}")
+    
+    # Split results by type
+    results_positive = [r for r in results if not r.get("is_negative", False)]
+    results_negative = [r for r in results if r.get("is_negative", False)]
+    results_all = results
+    
+    # Save all three versions
+    reports = {
+        "all": (results_all, report_path),
+        "positive_only": (results_positive, report_path.replace("comparison_report.json", "comparison_report_positive_only.json")),
+        "negative_only": (results_negative, report_path.replace("comparison_report.json", "comparison_report_negative_only.json")),
+    }
+    
+    for report_type, (data, path) in reports.items():
+        if data:  # Only save if there are results
+            with open(path, "w") as f:
+                json.dump(data, f, indent=2, default=str)
+            print(f"✅ Detailed report saved to: {path}")
+    
+    if not results_positive:
+        print(f"⚠️  No positive samples to save")
+    if not results_negative:
+        print(f"⚠️  No negative samples to save")
 
 
 if __name__ == "__main__":

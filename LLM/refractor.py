@@ -82,53 +82,26 @@ Output only the complete rewritten code, no explanations
 SYSTEM_PROMPT_5 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
 
 Requirements:
-1 The code MUST compile on stable Rust only. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
-2. Follow Rust's ownership, borrowing, and concurrency rules
-3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
-4. Ensure all data shared across threads is safe:
+1. The code MUST compile on stable Rust only. Do NOT use any unstable or removed features or APIs (including core::ffi::c_* and removed features such as `untagged_unions`). Use stable alternatives such as std::ffi or libc. For unions, use only stable Rust unions with fields restricted to Copy types or wrapped in ManuallyDrop.
+2. Remove any crate-level feature flags (e.g., #![feature(...)]) that refer to unstable or removed features such as `untagged_unions`.
+3. Follow Rust's ownership, borrowing, and concurrency rules
+4. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+5. Ensure all data shared across threads is safe:
    - Use Arc<T> for shared ownership
    - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
-5. Do not use non-thread-safe types across threads; replace them with safe abstractions
-6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
-7. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
-8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
-9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
-   - Use std::thread::spawn instead of pthread_create
-   - Use JoinHandle::join instead of pthread_join
-   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+6. Do not use non-thread-safe types across threads; replace them with safe abstractions
+7. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+8. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
+9. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+10. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+    - Use std::thread::spawn instead of pthread_create
+    - Use JoinHandle::join instead of pthread_join
+    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
    - Ensure all concurrency is implemented using safe Rust abstractions
-10. You may restructure the code, including changing function signatures and removing FFI patterns if needed
-11. Preserve the program's logical behavior, but not necessarily its exact structure
-12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
-
-Output only the complete rewritten code, no explanations
-"""
-
-SYSTEM_PROMPT_6 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
-
-Requirements:
-1 The code MUST compile on stable Rust only. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
-2. Follow Rust's ownership, borrowing, and concurrency rules
-3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
-4. Ensure all data shared across threads is safe:
-   - Use Arc<T> for shared ownership
-   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
-   - If shared mutable access is needed, use Arc<Mutex<T>> or Arc<RwLock<T>>
-   - Only call `.lock()` on Mutex<T> or RwLock<T>. Do not call '.lock()' on Arc<Mutex<T>> or Arc<RwLock<T>> directly; instead, clone the Arc and then lock the inner Mutex/RwLock.
-5. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
-6. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
-7. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
-8. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
-   - Use std::thread::spawn instead of pthread_create
-   - Use JoinHandle::join instead of pthread_join
-   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
-   - Ensure all concurrency is implemented using safe Rust abstractions
-9. When initializing arrays:
-    - Do NOT use `[expr; N]` if the element type does not implement Copy
-    - For non-Copy types (e.g., Mutex, Arc, Vec), initialize each element explicitly or use `std::array::from_fn`
-10. You may restructure the code, including changing function signatures and removing FFI patterns if needed
-11. Preserve the program's logical behavior, but not necessarily its exact structure
-12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+11. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+12. Preserve the program's logical behavior, but not necessarily its exact structure
+13. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+14. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
 
 Output only the complete rewritten code, no explanations
 """
@@ -141,18 +114,22 @@ FIXING_PROMPT = """Your previous code failed validation.
 Requirements:
 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
 2. Then address safety and concurrency issues
-3. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
-4. Do not use non-thread-safe types across threads
-5. Replace unsafe patterns with safe Rust abstractions
-6. You may restructure the code, including changing function signatures and removing FFI patterns if needed
-7. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
-8. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
-9. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
-10. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+3. Do NOT use any unstable or removed features or APIs (including core::ffi::c_* and removed features such as `untagged_unions`). Use stable alternatives such as std::ffi or libc. For unions, use only stable Rust unions with fields restricted to Copy types or wrapped in ManuallyDrop.
+4. Remove any crate-level feature flags (e.g., #![feature(...)]) that refer to unstable or removed features such as `untagged_unions`.
+5. Do not use non-thread-safe types across threads
+6. Replace unsafe patterns with safe Rust abstractions
+7. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+8. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+9. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
+10. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+11. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
    - Use std::thread::spawn instead of pthread_create
    - Use JoinHandle::join instead of pthread_join
    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
    - Ensure all concurrency is implemented using safe Rust abstractions
+12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+13. You MUST make actual modifications to the code according to the feedback; do not return the original code unchanged.
+14. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
 
 You are allowed to restructure the code as needed:
 - Remove or redesign *mut c_void arguments
@@ -789,12 +766,19 @@ def main():
     # Parse command line arguments
     strategy_str = "compile"
     max_iterations = 5
+    model_name = "qwen2.5-coder:14b"  # Default model
     
     for i, arg in enumerate(sys.argv):
         if arg == "--strategy" and i + 1 < len(sys.argv):
             strategy_str = sys.argv[i + 1]
         elif arg == "--max-iterations" and i + 1 < len(sys.argv):
             max_iterations = int(sys.argv[i + 1])
+        elif arg == "--model" and i + 1 < len(sys.argv):
+            model_name = sys.argv[i + 1]
+    
+    # Set the global MODEL variable to use the provided model
+    global MODEL
+    MODEL = model_name
     
     try:
         validation_strategy = ValidationStrategy(strategy_str)
@@ -828,6 +812,7 @@ def main():
 
     mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(no validation)" if not force else ""
     print(f"🔧 Using SYSTEM_PROMPT_{prompt_idx} {mode_str}")
+    print(f"📋 Model: {model_name}")
     print(f"📋 Examples: {sample_type}")
     print(f"📋 Strategy: Save best compilable version + original fallback\n")
     
@@ -838,7 +823,8 @@ def main():
         validate=validate,
         strategy=strategy_str,
         max_iterations=max_iterations,
-        force=force
+        force=force,
+        model=model_name
     )
     print(f"📁 Output to: {output_root}\n")
 

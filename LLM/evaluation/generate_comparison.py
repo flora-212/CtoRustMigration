@@ -1,9 +1,404 @@
 #!/usr/bin/env python3
-"""Generate a clear Markdown comparison report from comparison_report.json."""
+"""Generate Markdown comparison reports from comparison_report.json files."""
 
 import json
 import os
 import sys
+
+def generate_markdown_report(data, report_type, output_path, positive_only_data=None):
+    """
+    Generate Markdown report from comparison data.
+    
+    report_type: "all", "positive_only", or "negative_only"
+    positive_only_data: optional list of positive samples (used for negative report lookup)
+    """
+    lines = []
+    w = lines.append
+
+    # Header based on report type
+    if report_type == "positive_only":
+        title = "Concurrency Transformation Comparison Report (Positive Samples Only)"
+        subtitle = "Comparing **Original** vs **ConCrat** vs **LLM** for positive examples"
+    elif report_type == "negative_only":
+        title = "Concurrency Transformation Comparison Report (Negative Samples Only)"
+        subtitle = "Analyzing **Original** and **LLM** for negative examples (expected to fail)"
+    else:  # all
+        title = "Concurrency Transformation Comparison Report"
+        subtitle = "Three-way comparison: **Original** (c2rust output) vs **ConCrat** (automated transform) vs **LLM** (LLM-based rewrite)"
+
+    w(f"# {title}")
+    w("")
+    w(subtitle)
+    w("")
+
+    # ── Summary table ──
+    w("## Summary Overview")
+    w("")
+    
+    if report_type == "negative_only":
+        w("| # | Example | Type | Pos | Compiles (L) | unsafe | pthread | raw_ptr | static_mut | libc | Lines |")
+        w("|---|---------|------|:--:|:----------:|--------|---------|---------|------------|------|-------|")
+    else:
+        w("| # | Example | Compiles (C / L) | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
+        w("|---|---------|:----------------:|--------|---------|---------|------------|------|-----------|------------|-------|")
+
+    metric_keys = ["unsafe", "pthread", "raw_ptr", "static_mut", "libc",
+                   "std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread", "lines"]
+
+    totals = {src: {k: 0 for k in metric_keys} for src in ["original", "concrat", "llm"]}
+    compile_stats = {"concrat": {"yes": 0, "no": 0}, "llm": {"yes": 0, "no": 0}}
+    sample_count = 0
+    
+    # Build a map of positive samples for quick lookup (used for negative sample status)
+    positive_samples = {}
+    if report_type == "negative_only" or report_type == "all":
+        # Use provided positive data if available (for negative_only reports)
+        positive_data_src = positive_only_data if positive_only_data else data
+        for item in positive_data_src:
+            if not item.get("is_negative", False):
+                positive_samples[item["name"]] = {
+                    "compiles": item.get("llm", {}).get("compiles", False),
+                    "item": item
+                }
+
+    for idx, item in enumerate(data, 1):
+        name = item["name"]
+        is_negative = item.get("is_negative", False)
+        om = item["original"]["metrics"]
+
+        # Skip based on report type filter
+        if report_type == "negative_only" and not is_negative:
+            continue
+        if report_type == "positive_only" and is_negative:
+            continue
+
+        # For negative samples, show Original → LLM only
+        if is_negative:
+            # Negative samples may not have LLM output
+            if "llm" in item:
+                lm = item["llm"]["metrics"]
+                lc = "✅" if item["llm"].get("compiles") else "❌"
+                compile_stats["llm"]["yes" if item["llm"].get("compiles") else "no"] += 1
+                for k in metric_keys:
+                    totals["llm"][k] += lm.get(k, 0)
+            else:
+                # No LLM attempt for this negative sample
+                lc = "⚠"  # Not attempted
+                lm = None
+            
+            for k in metric_keys:
+                totals["original"][k] += om.get(k, 0)
+                if lm:
+                    totals["llm"][k] += lm.get(k, 0)
+            
+            # Extract base sample name (remove ____xxx suffix) to find corresponding positive sample
+            base_name = name.split("____")[0]
+            pos_compiles = "✅" if positive_samples.get(base_name, {}).get("compiles") else "❌"
+            
+            if lm:
+                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {lc} "
+                  f"| {om['unsafe']}→{lm.get('unsafe', 0)} | {om['pthread']}→{lm.get('pthread', 0)} | {om['raw_ptr']}→{lm.get('raw_ptr', 0)} "
+                  f"| {om['static_mut']}→{lm.get('static_mut', 0)} | {om['libc']}→{lm.get('libc', 0)} "
+                  f"| {om['lines']}→{lm.get('lines', 0)} |")
+            else:
+                # No attempt
+                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {lc} "
+                  f"| {om['unsafe']}→— | {om['pthread']}→— | {om['raw_ptr']}→— "
+                  f"| {om['static_mut']}→— | {om['libc']}→— "
+                  f"| {om['lines']}→— |")
+            
+            sample_count += 1
+        else:
+            # Positive samples (show ConCrat)
+            if "concrat" in item:
+                cm = item["concrat"]["metrics"]
+                
+                # Only count compile stats if both exist
+                if "llm" in item:
+                    lm = item["llm"]["metrics"]
+                    cc = "✅" if item["concrat"].get("compiles") else "❌"
+                    lc = "✅" if item["llm"].get("compiles") else "❌"
+                    compile_stats["concrat"]["yes" if item["concrat"].get("compiles") else "no"] += 1
+                    compile_stats["llm"]["yes" if item["llm"].get("compiles") else "no"] += 1
+                else:
+                    cc = "✅" if item["concrat"].get("compiles") else "❌"
+                    lc = "⚠"  # No LLM output
+                    compile_stats["concrat"]["yes" if item["concrat"].get("compiles") else "no"] += 1
+                    lm = None
+
+                for k in metric_keys:
+                    totals["original"][k] += om.get(k, 0)
+                    totals["concrat"][k] += cm.get(k, 0)
+                    if lm:
+                        totals["llm"][k] += lm.get(k, 0)
+
+                if lm:
+                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
+                      f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→{lm.get('unsafe', 0)} | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→{lm.get('pthread', 0)} | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→{lm.get('raw_ptr', 0)} "
+                      f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→{lm.get('static_mut', 0)} | {om.get('libc', 0)}→{cm.get('libc', 0)}→{lm.get('libc', 0)} | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→{lm.get('std_mutex', 0)} "
+                      f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→{lm.get('std_thread', 0)} | {om.get('lines', 0)}→{cm.get('lines', 0)}→{lm.get('lines', 0)} |")
+                else:
+                    # No LLM output - show ConCrat vs Original only
+                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
+                      f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→— | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→— | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→— "
+                      f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→— | {om.get('libc', 0)}→{cm.get('libc', 0)}→— | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→— "
+                      f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→— | {om.get('lines', 0)}→{cm.get('lines', 0)}→— |")
+                
+                sample_count += 1
+
+    # Totals row
+    if report_type == "negative_only":
+        total_llm = compile_stats['llm']['yes']
+        total_count = compile_stats['llm']['yes'] + compile_stats['llm']['no']
+        # Count positive samples that compile
+        pos_compile_count = sum(1 for v in positive_samples.values() if v.get("compiles"))
+        w(f"| | **TOTAL** | (NEG) | {pos_compile_count}/{len(positive_samples)} | {total_llm}/{total_count} "
+          f"| {totals['original']['unsafe']}→{totals['llm'].get('unsafe', 0)} "
+          f"| {totals['original']['pthread']}→{totals['llm'].get('pthread', 0)} "
+          f"| {totals['original']['raw_ptr']}→{totals['llm'].get('raw_ptr', 0)} "
+          f"| {totals['original']['static_mut']}→{totals['llm'].get('static_mut', 0)} "
+          f"| {totals['original']['libc']}→{totals['llm'].get('libc', 0)} "
+          f"| {totals['original']['lines']}→{totals['llm'].get('lines', 0)} |")
+    else:
+        def ttrio(key):
+            if totals["concrat"][key] == 0 and totals["llm"][key] == 0:
+                return f"{totals['original'][key]}→0→0"
+            return f"{totals['original'][key]}→{totals['concrat'].get(key, 0)}→{totals['llm'].get(key, 0)}"
+
+        total_count = compile_stats['concrat']['yes'] + compile_stats['concrat'].get('no', 0)
+        if total_count == 0:
+            total_count = sample_count
+
+        w(f"| | **TOTAL** | {compile_stats['concrat']['yes']}/{total_count} / {compile_stats['llm']['yes']}/{total_count} "
+          f"| {ttrio('unsafe')} | {ttrio('pthread')} | {ttrio('raw_ptr')} "
+          f"| {ttrio('static_mut')} | {ttrio('libc')} | {ttrio('std_mutex')} "
+          f"| {ttrio('std_thread')} | {ttrio('lines')} |")
+
+    w("")
+    
+    if report_type != "negative_only":
+        w("> **Reading the table**: Each metric cell shows **Original → ConCrat → LLM**. "
+          "Compiles column shows **ConCrat / LLM**.")
+    else:
+        w("> **Reading the table**: Each metric cell shows **Original → LLM**. "
+          "**Pos** column shows if the corresponding positive sample (before `____`) compiles with LLM. "
+          "Negative samples are expected to fail (used for validation).")
+    w("")
+
+    # ── Aggregate statistics ──
+    w("## Aggregate Statistics")
+    w("")
+    
+    if report_type == "negative_only":
+        w("| Metric | Original | LLM | vs Original |")
+        w("|--------|----------|-----|:------------:|")
+        for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
+            o = totals["original"][k]
+            l = totals["llm"][k]
+            diff = f"{(o - l) / o * 100:+.1f}%" if o > 0 else "—"
+            label = k.replace("_", "\\_")
+            w(f"| {label} | {o} | {l} | {diff} |")
+    else:
+        w("| Metric | Original | ConCrat | LLM | Reduction (O→C) | Reduction (O→L) |")
+        w("|--------|----------|---------|-----|:----------------:|:----------------:|")
+
+        for k in metric_keys:
+            o = totals["original"][k]
+            c = totals["concrat"].get(k, 0)
+            l = totals["llm"].get(k, 0)
+            rc = f"{(o - c) / o * 100:.1f}%" if o > 0 else "—"
+            rl = f"{(o - l) / o * 100:.1f}%" if o > 0 else "—"
+            label = k.replace("_", "\\_")
+            w(f"| {label} | {o} | {c} | {l} | {rc} | {rl} |")
+
+    w("")
+    
+    total_for_stats = sample_count if sample_count > 0 else len(data)
+    if report_type != "negative_only":
+        w(f"| **Compile success** | — | {compile_stats['concrat']['yes']}/{total_for_stats} "
+          f"({(compile_stats['concrat']['yes']/total_for_stats*100 if total_for_stats > 0 else 0):.0f}%) "
+          f"| {compile_stats['llm']['yes']}/{total_for_stats} "
+          f"({(compile_stats['llm']['yes']/total_for_stats*100 if total_for_stats > 0 else 0):.0f}%) | | |")
+    else:
+        total_for_llm = compile_stats['llm']['yes'] + compile_stats['llm'].get('no', 0)
+        w(f"| **LLM compile success** | — | {compile_stats['llm']['yes']}/{total_for_llm} "
+          f"({(compile_stats['llm']['yes']/total_for_llm*100 if total_for_llm > 0 else 0):.0f}%) |  |")
+    w("")
+
+    # ── Safety features adoption ──
+    if report_type != "negative_only":
+        w("## Safety Features Adoption")
+        w("")
+        w("| Example | std::sync::Mutex | Arc<Mutex> | RwLock | Condvar | std::thread | join() |")
+        w("|---------|:---:|:---:|:---:|:---:|:---:|:---:|")
+
+        for item in data:
+            if item.get("is_negative", False):
+                continue  # Skip negative samples in this section
+            
+            if "concrat" not in item:
+                continue
+                
+            name = item["name"]
+            cls = item["concrat"]["lock_safety"]
+            lls = item["llm"]["lock_safety"] if "llm" in item else {}
+
+            def icon(c_val, l_val):
+                c = "C" if c_val else "·"
+                l = "L" if l_val else "·"
+                return f"{c},{l}"
+
+            w(f"| {name} "
+              f"| {icon(cls['has_std_mutex'], lls.get('has_std_mutex', False))} "
+              f"| {icon(cls.get('has_arc_mutex', False), lls.get('has_arc_mutex', False))} "
+              f"| {icon(item['concrat']['metrics'].get('std_rwlock',0)>0, item['llm']['metrics'].get('std_rwlock',0)>0 if 'llm' in item else False)} "
+              f"| {icon(item['concrat']['metrics'].get('std_condvar',0)>0, item['llm']['metrics'].get('std_condvar',0)>0 if 'llm' in item else False)} "
+              f"| {icon(cls.get('has_thread_spawn', False), lls.get('has_thread_spawn', False))} "
+              f"| {icon(cls.get('has_join', False), lls.get('has_join', False))} |")
+
+        w("")
+        w("> **C** = ConCrat uses it, **L** = LLM uses it, **·** = not used")
+        w("")
+
+    # ── Per-example detailed cards ──
+    w("## Per-Example Details")
+    w("")
+
+    for item in data:
+        if report_type == "negative_only" and not item.get("is_negative", False):
+            continue
+        if report_type == "positive_only" and item.get("is_negative", False):
+            continue
+        
+        name = item["name"]
+        w(f"### {name}")
+        w("")
+
+        om = item["original"]["metrics"]
+        
+        # Handle negative samples (no concrat data, may not have llm data)
+        if item.get("is_negative", False):
+            if "llm" in item:
+                lm = item["llm"]["metrics"]
+                lc = "✅ Yes" if item["llm"].get("compiles") else "❌ No"
+                w(f"**Compiles**: LLM {lc}")
+                w("")
+                w("| Metric | Original | LLM | Difference |")
+                w("|--------|:--------:|:---:|:----------:|")
+                for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
+                    ov = om.get(k, 0)
+                    lv = lm.get(k, 0)
+                    diff = lv - ov
+                    diff_str = f"{diff:+d}"
+                    w(f"| {k} | {ov} | {lv} | {diff_str} |")
+                
+                l_issues = item["llm"]["lock_safety"].get("issues", [])
+                if l_issues:
+                    w("")
+                    w("**Remaining Issues:**")
+                    w("")
+                    w("- **LLM**: " + "; ".join(l_issues))
+            else:
+                # No LLM attempt for this negative sample
+                w("**Type**: Negative (expected to fail) - LLM output not attempted")
+                w("")
+                w("| Metric | Original |")
+                w("|--------|:--------:|")
+                for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
+                    ov = om.get(k, 0)
+                    w(f"| {k} | {ov} |")
+                
+                o_issues = item["original"]["lock_safety"].get("issues", [])
+                if o_issues:
+                    w("")
+                    w("**Issues in Original:**")
+                    w("")
+                    w("- " + "; ".join(o_issues))
+        else:
+            # Positive samples
+            if "concrat" in item:
+                cm = item["concrat"]["metrics"]
+                
+                if "llm" in item:
+                    lm = item["llm"]["metrics"]
+                    cc = "✅ Yes" if item["concrat"].get("compiles") else "❌ No"
+                    lc = "✅ Yes" if item["llm"].get("compiles") else "❌ No"
+                else:
+                    cc = "✅ Yes" if item["concrat"].get("compiles") else "❌ No"
+                    lc = "⚠ Not attempted"
+                    lm = None
+
+                w(f"**Compiles**: ConCrat {cc} | LLM {lc}")
+                w("")
+
+                w("| Metric | Original | ConCrat | LLM | Best |")
+                w("|--------|:--------:|:-------:|:---:|:----:|")
+
+                for k in metric_keys:
+                    ov = om.get(k, 0)
+                    cv = cm.get(k, 0)
+                    lv = lm.get(k, 0) if lm else 0
+                    
+                    # For these metrics, lower is better
+                    if k in ("unsafe", "pthread", "raw_ptr", "static_mut", "libc"):
+                        best_val = min(cv, lv)
+                        if not lm:
+                            best = "ConCrat"
+                        elif cv == lv:
+                            best = "tie"
+                        elif cv < lv:
+                            best = "ConCrat"
+                        else:
+                            best = "LLM"
+                    elif k in ("std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread"):
+                        # Higher is generally better (more idiomatic)
+                        best_val = max(cv, lv)
+                        if not lm:
+                            best = "ConCrat"
+                        elif cv == lv:
+                            best = "tie"
+                        elif cv > lv:
+                            best = "ConCrat"
+                        else:
+                            best = "LLM"
+                    else:  # lines
+                        if not lm:
+                            best = "ConCrat"
+                        elif cv == lv:
+                            best = "tie"
+                        elif cv < lv:
+                            best = "ConCrat"
+                        else:
+                            best = "LLM"
+                    label = k.replace("_", "\\_")
+                    
+                    if lm:
+                        w(f"| {label} | {ov} | {cv} | {lv} | {best} |")
+                    else:
+                        w(f"| {label} | {ov} | {cv} | — | {best} |")
+
+                # Issues
+                c_issues = item["concrat"]["lock_safety"].get("issues", [])
+                l_issues = item["llm"]["lock_safety"].get("issues", []) if "llm" in item else []
+
+                if c_issues or l_issues:
+                    w("")
+                    w("**Remaining Issues:**")
+                    w("")
+                    if c_issues:
+                        w("- **ConCrat**: " + "; ".join(c_issues))
+                    if l_issues:
+                        w("- **LLM**: " + "; ".join(l_issues))
+
+        w("")
+        w("---")
+        w("")
+
+    with open(output_path, "w") as f:
+        f.write("\n".join(lines))
+
+    return output_path
+
 
 def main():
     prompt_idx = int(sys.argv[1]) if len(sys.argv) > 1 and not sys.argv[1].startswith("--") else 0
@@ -16,9 +411,14 @@ def main():
             llm_output_dir = sys.argv[i + 1]
             break
 
-    # Determine input/output directory - use llm_output_dir if provided, otherwise use legacy path
+    # Determine input/output directory - try multiple locations
+    input_dirs = []
+    
     if llm_output_dir:
-        input_dir = os.path.join(llm_output_dir, "evaluation")
+        # Primary: timestamped output directory evaluation path
+        input_dirs.append(os.path.join(llm_output_dir, "evaluation"))
+        # Fallback: timestamped output directory root (compare_all.py might save there)
+        input_dirs.append(llm_output_dir)
     else:
         # Try to read from .last_refactor_output file first
         last_output_file = "/home/guoxy/concrat/LLM/.last_refactor_output"
@@ -26,211 +426,75 @@ def main():
             with open(last_output_file) as f:
                 last_output_dir = f.read().strip()
                 if last_output_dir and os.path.isdir(last_output_dir):
-                    input_dir = os.path.join(last_output_dir, "evaluation")
-                else:
-                    input_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
-        else:
-            input_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+                    # Timestamped directory - primary in evaluation/
+                    input_dirs.append(os.path.join(last_output_dir, "evaluation"))
+                    # Fallback in root
+                    input_dirs.append(last_output_dir)
+        
+        # Also try legacy result/{prompt_idx} path
+        legacy_dir = f"/home/guoxy/concrat/LLM/result/{prompt_idx}"
+        if os.path.isdir(legacy_dir):
+            input_dirs.append(legacy_dir)
     
-    input_path = os.path.join(input_dir, "comparison_report.json")
-    output_path = os.path.join(input_dir, "comparison_report.md")
+    # Process all three report types
+    report_versions = [
+        ("all", "comparison_report.json", "comparison_report.md"),
+        ("positive_only", "comparison_report_positive_only.json", "comparison_report_positive_only.md"),
+        ("negative_only", "comparison_report_negative_only.json", "comparison_report_negative_only.md"),
+    ]
+    
+    for report_type, input_file, output_file in report_versions:
+        # Try to find input file in any of the directories
+        input_path = None
+        input_dir = None
+        output_dir = None
+        
+        for candidate_dir in input_dirs:
+            candidate_path = os.path.join(candidate_dir, input_file)
+            if os.path.exists(candidate_path):
+                input_path = candidate_path
+                input_dir = candidate_dir
+                output_dir = candidate_dir
+                break
+        
+        if not input_path:
+            print(f"⚠️  Input file not found: {input_file}")
+            print(f"    Searched in: {', '.join(input_dirs)}")
+            continue
+        
+        output_path = os.path.join(output_dir, output_file)
 
-    if os.path.exists(output_path) and not force:
-        print(f"Report already exists: {output_path} (use --force to regenerate)")
-        return
+        if os.path.exists(output_path) and not force:
+            print(f"Report already exists: {output_path} (use --force to regenerate)")
+            continue
 
-    if not os.path.exists(input_path):
-        print(f"❌ Input file not found: {input_path}")
-        print(f"   Searched in: {input_dir}")
-        return
+        with open(input_path) as f:
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError as e:
+                print(f"❌ Failed to parse {input_file}: {e}")
+                continue
 
-    with open(input_path) as f:
-        data = json.load(f)
+        if not data:
+            print(f"⚠️  No data in {input_file}, skipping {output_file}")
+            continue
 
-    lines = []
-    w = lines.append
+        # For negative_only reports, also load positive_only data for lookup
+        positive_only_data = None
+        if report_type == "negative_only":
+            positive_file = "comparison_report_positive_only.json"
+            for candidate_dir in input_dirs:
+                positive_path = os.path.join(candidate_dir, positive_file)
+                if os.path.exists(positive_path):
+                    with open(positive_path) as f:
+                        try:
+                            positive_only_data = json.load(f)
+                        except json.JSONDecodeError:
+                            pass
+                    break
 
-    w("# Concurrency Transformation Comparison Report")
-    w("")
-    w("Three-way comparison: **Original** (c2rust output) vs **ConCrat** (automated transform) vs **LLM** (LLM-based rewrite)")
-    w("")
-
-    # ── Summary table ──
-    w("## Summary Overview")
-    w("")
-    w("| # | Example | Compiles (C / L) | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
-    w("|---|---------|:----------------:|--------|---------|---------|------------|------|-----------|------------|-------|")
-
-    metric_keys = ["unsafe", "pthread", "raw_ptr", "static_mut", "libc",
-                   "std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread", "lines"]
-
-    totals = {src: {k: 0 for k in metric_keys} for src in ["original", "concrat", "llm"]}
-    compile_stats = {"concrat": {"yes": 0, "no": 0}, "llm": {"yes": 0, "no": 0}}
-
-    for idx, item in enumerate(data, 1):
-        name = item["name"]
-        om = item["original"]["metrics"]
-        cm = item["concrat"]["metrics"]
-        lm = item["llm"]["metrics"]
-
-        cc = "✅" if item["concrat"].get("compiles") else "❌"
-        lc = "✅" if item["llm"].get("compiles") else "❌"
-
-        compile_stats["concrat"]["yes" if item["concrat"].get("compiles") else "no"] += 1
-        compile_stats["llm"]["yes" if item["llm"].get("compiles") else "no"] += 1
-
-        for src, m in [("original", om), ("concrat", cm), ("llm", lm)]:
-            for k in metric_keys:
-                totals[src][k] += m.get(k, 0)
-
-        # Show O → C → L for key metrics
-        def trio(key):
-            return f"{om[key]}→{cm[key]}→{lm[key]}"
-
-        w(f"| {idx} | [{name}](#{name}) | {cc} / {lc} "
-          f"| {trio('unsafe')} | {trio('pthread')} | {trio('raw_ptr')} "
-          f"| {trio('static_mut')} | {trio('libc')} | {trio('std_mutex')} "
-          f"| {trio('std_thread')} | {trio('lines')} |")
-
-    # Totals row
-    def ttrio(key):
-        return f"{totals['original'][key]}→{totals['concrat'][key]}→{totals['llm'][key]}"
-
-    w(f"| | **TOTAL** | {compile_stats['concrat']['yes']}/{len(data)} / {compile_stats['llm']['yes']}/{len(data)} "
-      f"| {ttrio('unsafe')} | {ttrio('pthread')} | {ttrio('raw_ptr')} "
-      f"| {ttrio('static_mut')} | {ttrio('libc')} | {ttrio('std_mutex')} "
-      f"| {ttrio('std_thread')} | {ttrio('lines')} |")
-
-    w("")
-    w("> **Reading the table**: Each metric cell shows **Original → ConCrat → LLM**. "
-      "Compiles column shows **ConCrat / LLM**.")
-    w("")
-
-    # ── Aggregate statistics ──
-    w("## Aggregate Statistics")
-    w("")
-    w("| Metric | Original | ConCrat | LLM | Reduction (O→C) | Reduction (O→L) |")
-    w("|--------|----------|---------|-----|:----------------:|:----------------:|")
-
-    for k in metric_keys:
-        o = totals["original"][k]
-        c = totals["concrat"][k]
-        l = totals["llm"][k]
-        rc = f"{(o - c) / o * 100:.1f}%" if o > 0 else "—"
-        rl = f"{(o - l) / o * 100:.1f}%" if o > 0 else "—"
-        label = k.replace("_", "\\_")
-        w(f"| {label} | {o} | {c} | {l} | {rc} | {rl} |")
-
-    w("")
-    w(f"| **Compile success** | — | {compile_stats['concrat']['yes']}/{len(data)} "
-      f"({compile_stats['concrat']['yes']/len(data)*100:.0f}%) "
-      f"| {compile_stats['llm']['yes']}/{len(data)} "
-      f"({compile_stats['llm']['yes']/len(data)*100:.0f}%) | | |")
-    w("")
-
-    # ── Safety features adoption ──
-    w("## Safety Features Adoption")
-    w("")
-    w("| Example | std::sync::Mutex | Arc<Mutex> | RwLock | Condvar | std::thread | join() |")
-    w("|---------|:---:|:---:|:---:|:---:|:---:|:---:|")
-
-    for item in data:
-        name = item["name"]
-        cls = item["concrat"]["lock_safety"]
-        lls = item["llm"]["lock_safety"]
-
-        def icon(c_val, l_val):
-            c = "C" if c_val else "·"
-            l = "L" if l_val else "·"
-            return f"{c},{l}"
-
-        w(f"| {name} "
-          f"| {icon(cls['has_std_mutex'], lls['has_std_mutex'])} "
-          f"| {icon(cls.get('has_arc_mutex', False), lls.get('has_arc_mutex', False))} "
-          f"| {icon(item['concrat']['metrics'].get('std_rwlock',0)>0, item['llm']['metrics'].get('std_rwlock',0)>0)} "
-          f"| {icon(item['concrat']['metrics'].get('std_condvar',0)>0, item['llm']['metrics'].get('std_condvar',0)>0)} "
-          f"| {icon(cls.get('has_thread_spawn', False), lls.get('has_thread_spawn', False))} "
-          f"| {icon(cls.get('has_join', False), lls.get('has_join', False))} |")
-
-    w("")
-    w("> **C** = ConCrat uses it, **L** = LLM uses it, **·** = not used")
-    w("")
-
-    # ── Per-example detailed cards ──
-    w("## Per-Example Details")
-    w("")
-
-    for item in data:
-        name = item["name"]
-        w(f"### {name}")
-        w("")
-
-        om = item["original"]["metrics"]
-        cm = item["concrat"]["metrics"]
-        lm = item["llm"]["metrics"]
-
-        cc = "✅ Yes" if item["concrat"].get("compiles") else "❌ No"
-        lc = "✅ Yes" if item["llm"].get("compiles") else "❌ No"
-
-        w(f"**Compiles**: ConCrat {cc} | LLM {lc}")
-        w("")
-
-        w("| Metric | Original | ConCrat | LLM | Best |")
-        w("|--------|:--------:|:-------:|:---:|:----:|")
-
-        for k in metric_keys:
-            ov = om.get(k, 0)
-            cv = cm.get(k, 0)
-            lv = lm.get(k, 0)
-            # For these metrics, lower is better (except std_mutex/std_thread/lines where context matters)
-            if k in ("unsafe", "pthread", "raw_ptr", "static_mut", "libc"):
-                best_val = min(cv, lv)
-                if cv == lv:
-                    best = "tie"
-                elif cv < lv:
-                    best = "ConCrat"
-                else:
-                    best = "LLM"
-            elif k in ("std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread"):
-                # Higher is generally better (more idiomatic)
-                best_val = max(cv, lv)
-                if cv == lv:
-                    best = "tie"
-                elif cv > lv:
-                    best = "ConCrat"
-                else:
-                    best = "LLM"
-            else:  # lines
-                if cv == lv:
-                    best = "tie"
-                elif cv < lv:
-                    best = "ConCrat"
-                else:
-                    best = "LLM"
-            label = k.replace("_", "\\_")
-            w(f"| {label} | {ov} | {cv} | {lv} | {best} |")
-
-        # Issues
-        c_issues = item["concrat"]["lock_safety"].get("issues", [])
-        l_issues = item["llm"]["lock_safety"].get("issues", [])
-
-        if c_issues or l_issues:
-            w("")
-            w("**Remaining Issues:**")
-            w("")
-            if c_issues:
-                w("- **ConCrat**: " + "; ".join(c_issues))
-            if l_issues:
-                w("- **LLM**: " + "; ".join(l_issues))
-
-        w("")
-        w("---")
-        w("")
-
-    with open(output_path, "w") as f:
-        f.write("\n".join(lines))
-
-    print(f"Generated: {output_path}")
+        output = generate_markdown_report(data, report_type, output_path, positive_only_data)
+        print(f"✅ Generated: {output}")
 
 
 if __name__ == "__main__":

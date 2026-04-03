@@ -21,7 +21,8 @@ set -e
 PROMPT_IDX=3                          # Default to prompt 3
 VALIDATE_FLAG="--validate"            # Enable validation by default
 STRATEGY="compile"                    # Validation strategy
-MAX_ITERATIONS=10                      # Maximum iteration count
+MAX_ITERATIONS=15                      # Maximum iteration count
+MODEL="qwen2.5-coder:14b"                         # Default model
 FORCE_REWRITE=""
 FORCE_EVAL=""
 FORCE_GENERATE=""
@@ -42,6 +43,7 @@ for arg in "$@"; do
         echo "  ./run.sh 1 --no-validate                        # Disable validation"
         echo "  ./run.sh 1 --strategy {compile|safety|...}      # Validation strategy"
         echo "  ./run.sh 1 --max-iterations 5                   # Iteration count"
+        echo "  ./run.sh 1 --model {qwen|...}                   # Specify LLM model (default: qwen)"
         echo "  ./run.sh 1 --force                              # Force re-execution"
         echo "  ./run.sh 1 --include-negative                   # Include negative samples"
         echo "  ./run.sh 1 --negative-only                      # Only run negative samples"
@@ -107,6 +109,14 @@ while [ $# -gt 0 ]; do
             MAX_ITERATIONS="$2"
             shift
             ;;
+        --model)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --model requires an argument"
+                exit 1
+            fi
+            MODEL="$2"
+            shift
+            ;;
         --verbose)
             VERBOSE="--verbose"
             ;;
@@ -138,6 +148,7 @@ echo "╚═══════════════════════�
 echo ""
 echo "✅ Configuration:"
 echo "   - Prompt Index: $PROMPT_IDX"
+echo "   - Model: $MODEL"
 echo "   - Validation: ${VALIDATE_FLAG:-(disabled)}"
 if [ ! -z "$VALIDATE_FLAG" ]; then
     echo "   - Strategy: $STRATEGY"
@@ -199,6 +210,7 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
         $VALIDATE_FLAG \
         --strategy "$STRATEGY" \
         --max-iterations "$MAX_ITERATIONS" \
+        --model "$MODEL" \
         $INCLUDE_NEGATIVE \
         $NEGATIVE_ONLY \
         $FORCE_REWRITE \
@@ -206,6 +218,7 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
 else
     # No validation loop
     python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
+        --model "$MODEL" \
         $INCLUDE_NEGATIVE \
         $NEGATIVE_ONLY \
         $FORCE_REWRITE $VERBOSE
