@@ -20,7 +20,8 @@ set -e
 # Default values
 PROMPT_IDX=3                          # Default to prompt 3
 VALIDATE_FLAG="--validate"            # Enable validation by default
-STRATEGY="compile"                    # Validation strategy
+STRATEGY="compile"                    # Validation strategy (for backward compatibility)
+TOOLS="compile"                       # Validation tools (can be multiple, space-separated)
 MAX_ITERATIONS=15                      # Maximum iteration count
 MODEL="qwen2.5-coder:14b"                         # Default model
 FORCE_REWRITE=""
@@ -41,7 +42,9 @@ for arg in "$@"; do
         echo "  ./run.sh 0                                      # Use SYSTEM_PROMPT_0"
         echo "  ./run.sh 1 --validate                           # Enable validation"
         echo "  ./run.sh 1 --no-validate                        # Disable validation"
-        echo "  ./run.sh 1 --strategy {compile|safety|...}      # Validation strategy"
+        echo "  ./run.sh 1 --strategy compile                   # Single tool (backward compatibility)"
+        echo "  ./run.sh 1 --tools 'compile clippy'             # Multiple tools (new)"
+        echo "  ./run.sh 1 --tools 'compile clippy miri'        # Full validation"
         echo "  ./run.sh 1 --max-iterations 5                   # Iteration count"
         echo "  ./run.sh 1 --model {qwen|...}                   # Specify LLM model (default: qwen)"
         echo "  ./run.sh 1 --force                              # Force re-execution"
@@ -49,11 +52,21 @@ for arg in "$@"; do
         echo "  ./run.sh 1 --negative-only                      # Only run negative samples"
         echo "  ./run.sh 1 --verbose                            # Verbose output"
         echo ""
-        echo "Strategies:"
-        echo "  compile        - Compilation check (fastest)"
-        echo "  safety         - Safety check"
-        echo "  lock_safety    - Lock safety analysis"
-        echo "  comprehensive  - Comprehensive check"
+        echo "Available Tools (can be combined in --tools):"
+        echo "  compile        - cargo build - Compilation check (🚀 fast)"
+        echo "  clippy         - cargo clippy - Code style/performance (🚀 fast)"
+        echo "  miri           - cargo miri - Runtime UB detection (🐌 slow)"
+        echo "  loom           - Concurrency testing - Race condition detection (🐢 very slow)"
+        echo "  safety         - Static analysis - Unsafe patterns (⚡ very fast)"
+        echo "  lock_safety    - Static analysis - Lock usage patterns (⚡ very fast)"
+        echo "  comprehensive  - All tools (compile, clippy, safety, lock_safety)"
+        echo ""
+        echo "Examples:"
+        echo "  ./run.sh 3 --tools 'compile'                    # Only compile"
+        echo "  ./run.sh 3 --tools 'compile clippy'            # Compile + clippy"
+        echo "  ./run.sh 3 --tools 'compile clippy miri'       # Compile + clippy + miri"
+        echo "  ./run.sh 3 --tools 'compile clippy loom'       # Compile + clippy + loom"
+        echo "  ./run.sh 3 --tools 'safety lock_safety loom'   # Analysis + concurrency testing"
         exit 0
     fi
 done
@@ -99,6 +112,15 @@ while [ $# -gt 0 ]; do
                 exit 1
             fi
             STRATEGY="$2"
+            TOOLS="$2"  # Keep consistent with new tools parameter
+            shift
+            ;;
+        --tools)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --tools requires an argument"
+                exit 1
+            fi
+            TOOLS="$2"
             shift
             ;;
         --max-iterations)
@@ -146,13 +168,42 @@ echo "╔═══════════════════════�
 echo "║           Complete Workflow: Generation - Validation - Evaluation          ║"
 echo "╚════════════════════════════════════════════════════════════════════════════╝"
 echo ""
+
+# Print time information for debugging
+START_TIME=$(date '+%Y-%m-%d %H:%M:%S')
+START_SECONDS=$(date +%s)
+echo "⏱️  Start time: $START_TIME"
+echo ""
+
 echo "✅ Configuration:"
 echo "   - Prompt Index: $PROMPT_IDX"
 echo "   - Model: $MODEL"
 echo "   - Validation: ${VALIDATE_FLAG:-(disabled)}"
 if [ ! -z "$VALIDATE_FLAG" ]; then
-    echo "   - Strategy: $STRATEGY"
+    echo "   - Tools: $TOOLS"
     echo "   - Max Iterations: $MAX_ITERATIONS"
+    
+    # Warn about slow tools (miri, loom)
+    SLOW_TOOL_WARNING=""
+    if echo "$TOOLS" | grep -q "miri"; then
+        SLOW_TOOL_WARNING="yes"
+        echo ""
+        echo "⚠️  WARNING: 'miri' tool detected - this will be VERY SLOW!"
+        echo "    Miri runs code in an interpreter to detect undefined behavior."
+        echo "    Expected time: 5-15 minutes per example (may take hours total)"
+    fi
+    if echo "$TOOLS" | grep -q "loom"; then
+        SLOW_TOOL_WARNING="yes"
+        echo ""
+        echo "⚠️  WARNING: 'loom' tool detected - this will be EXTREMELY SLOW!"
+        echo "    Loom tests concurrency via permutation testing (C11 memory model)."
+        echo "    Expected time: 10-30 minutes per example (may take MANY HOURS total)"
+        echo "    Requires tests written with loom::model(|| {...}) wrapper"
+    fi
+    if [ ! -z "$SLOW_TOOL_WARNING" ]; then
+        echo "    Consider using: --tools 'compile' or --tools 'compile clippy' for faster runs"
+        echo ""
+    fi
 fi
 echo "   - Include Negative: ${INCLUDE_NEGATIVE:-(no)}"
 if [ ! -z "$NEGATIVE_ONLY" ]; then
@@ -169,6 +220,7 @@ echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "📡 Step 1: Start Ollama LLM Service"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+STEP1_START=$(date +%s)
 
 if pgrep -x ollama > /dev/null 2>&1; then
     echo "✅ Ollama is already running"
@@ -191,6 +243,9 @@ else
     done
 fi
 
+STEP1_END=$(date +%s)
+STEP1_DURATION=$((STEP1_END - STEP1_START))
+echo "⏱️  Step 1 took ${STEP1_DURATION}s"
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -200,15 +255,18 @@ echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "🔄 Step 2: Generate Code (SYSTEM_PROMPT_${PROMPT_IDX})"
 if [ ! -z "$VALIDATE_FLAG" ]; then
-    echo "   + Iterative validation loop (strategy: $STRATEGY, max iterations: $MAX_ITERATIONS)"
+    echo "   + Iterative validation loop (tools: $TOOLS, max iterations: $MAX_ITERATIONS)"
 fi
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+STEP2_START=$(date +%s)
 
 if [ ! -z "$VALIDATE_FLAG" ]; then
     # Use validation loop
+    echo "📊 Starting code generation with validation..."
+    echo "   (You will see progress updates as each example is processed)"
     python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
         $VALIDATE_FLAG \
-        --strategy "$STRATEGY" \
+        --tools "$TOOLS" \
         --max-iterations "$MAX_ITERATIONS" \
         --model "$MODEL" \
         $INCLUDE_NEGATIVE \
@@ -223,6 +281,11 @@ else
         $NEGATIVE_ONLY \
         $FORCE_REWRITE $VERBOSE
 fi
+
+STEP2_END=$(date +%s)
+STEP2_DURATION=$((STEP2_END - STEP2_START))
+echo ""
+echo "⏱️  Step 2 (Code Generation) took ${STEP2_DURATION}s ($(( STEP2_DURATION / 60 ))m $(( STEP2_DURATION % 60 ))s)"
 
 REFACTOR_STATUS=$?
 if [ $REFACTOR_STATUS -eq 0 ]; then
@@ -241,6 +304,7 @@ echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "📊 Step 3: Run Evaluation Suite"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+STEP3_START=$(date +%s)
 
 # Read the output directory from refractor.py
 REFACTOR_OUTPUT_DIR=""
@@ -252,11 +316,16 @@ fi
 
 bash "$SCRIPT_DIR/run_evaluation.sh" "$PROMPT_IDX" $FORCE_EVAL $CLEAR_FLAG --output-dir "$REFACTOR_OUTPUT_DIR"
 
+STEP3_END=$(date +%s)
+STEP3_DURATION=$((STEP3_END - STEP3_START))
+
 EVAL_STATUS=$?
 if [ $EVAL_STATUS -eq 0 ]; then
     echo "✅ Evaluation suite completed"
+    echo "⏱️  Step 3 took ${STEP3_DURATION}s ($(( STEP3_DURATION / 60 ))m $(( STEP3_DURATION % 60 ))s)"
 else
     echo "⚠️  Evaluation suite report (exit code: $EVAL_STATUS)"
+    echo "⏱️  Step 3 took ${STEP3_DURATION}s"
 fi
 
 echo ""
@@ -268,6 +337,7 @@ echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "📈 Step 4: Generate Comparison Report"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+STEP4_START=$(date +%s)
 
 # Read the output directory from refractor.py for comparison report generation
 if [ -z "$REFACTOR_OUTPUT_DIR" ]; then
@@ -283,11 +353,16 @@ else
     python3 "$SCRIPT_DIR/evaluation/generate_comparison.py" "$PROMPT_IDX" $FORCE_GENERATE
 fi
 
+STEP4_END=$(date +%s)
+STEP4_DURATION=$((STEP4_END - STEP4_START))
+
 COMPARE_STATUS=$?
 if [ $COMPARE_STATUS -eq 0 ]; then
     echo "✅ Comparison report generated"
+    echo "⏱️  Step 4 took ${STEP4_DURATION}s ($(( STEP4_DURATION / 60 ))m $(( STEP4_DURATION % 60 ))s)"
 else
     echo "❌ Comparison report generation failed (exit code: $COMPARE_STATUS)"
+    echo "⏱️  Step 4 took ${STEP4_DURATION}s"
 fi
 
 echo ""
@@ -299,6 +374,24 @@ echo ""
 echo "╔════════════════════════════════════════════════════════════════════════════╗"
 echo "║                     ✅ Workflow Execution Complete!                        ║"
 echo "╚════════════════════════════════════════════════════════════════════════════╝"
+echo ""
+
+# Calculate total time
+END_SECONDS=$(date +%s)
+TOTAL_DURATION=$((END_SECONDS - START_SECONDS))
+
+echo "⏱️  TIME SUMMARY:"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+[ ! -z "$STEP1_DURATION" ] && echo "  Step 1 (Start Ollama):        ${STEP1_DURATION}s"
+[ ! -z "$STEP2_DURATION" ] && echo "  Step 2 (Code Generation):     ${STEP2_DURATION}s ($(( STEP2_DURATION / 60 ))m $(( STEP2_DURATION % 60 ))s) ⭐"
+[ ! -z "$STEP3_DURATION" ] && echo "  Step 3 (Evaluation):          ${STEP3_DURATION}s ($(( STEP3_DURATION / 60 ))m $(( STEP3_DURATION % 60 ))s)"
+[ ! -z "$STEP4_DURATION" ] && echo "  Step 4 (Comparison Report):   ${STEP4_DURATION}s"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  TOTAL TIME:                   ${TOTAL_DURATION}s ($(( TOTAL_DURATION / 60 ))m $(( TOTAL_DURATION % 60 ))s)"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "⭐ = If miri/loom was used, Step 2 will be VERY slow"
+echo "     - miri: 5-15 min per example (interpreter-based UB detection)"
+echo "     - loom: 10-30 min per example (permutation-based concurrency testing)"
 echo ""
 echo "📁 Output file locations:"
 echo ""

@@ -5,8 +5,9 @@ import time
 import subprocess
 import json
 from datetime import datetime
+from typing import Optional, List
 import ollama
-from validator import CodeValidator, ValidationStrategy, ErrorInfo
+from validation import CodeValidator, ErrorInfo
 from output_manager import OutputManager
 
 # ────────────────────────────────────────────────────────────────────────────
@@ -106,6 +107,32 @@ Requirements:
 Output only the complete rewritten code, no explanations
 """
 
+SYSTEM_PROMPT_6 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
+
+Requirements:
+1. The code MUST compile on stable Rust only. Do NOT use any unstable or removed features or APIs (including core::ffi::c_* and removed features such as `untagged_unions`). Use stable alternatives such as std::ffi or libc. For unions, use only stable Rust unions with fields restricted to Copy types or wrapped in ManuallyDrop.
+2. Follow Rust's ownership, borrowing, and concurrency rules
+3. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+4. Ensure all data shared across threads is safe:
+   - Use Arc<T> for shared ownership
+   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+   - Do not call .lock() directly on an Arc<T>; instead, dereference the Arc to access the inner Mutex (e.g., Arc<Mutex<T>>), and call .lock() on that inner value
+5. Do not use non-thread-safe types across threads; replace them with safe abstractions
+6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+7. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
+8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+    - Use std::thread::spawn instead of pthread_create
+    - Use JoinHandle::join instead of pthread_join
+    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+   - Ensure all concurrency is implemented using safe Rust abstractions 
+10. Preserve the program's logical behavior, but not necessarily its exact structure. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+11. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+12. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
+
+Output only the complete rewritten code, no explanations
+"""
+
 
 FIXING_PROMPT = """Your previous code failed validation.
 
@@ -115,60 +142,23 @@ Requirements:
 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
 2. Then address safety and concurrency issues
 3. Do NOT use any unstable or removed features or APIs (including core::ffi::c_* and removed features such as `untagged_unions`). Use stable alternatives such as std::ffi or libc. For unions, use only stable Rust unions with fields restricted to Copy types or wrapped in ManuallyDrop.
-4. Remove any crate-level feature flags (e.g., #![feature(...)]) that refer to unstable or removed features such as `untagged_unions`.
-5. Do not use non-thread-safe types across threads
-6. Replace unsafe patterns with safe Rust abstractions
-7. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+4. Follow Rust's ownership, borrowing, and concurrency rules
+5. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and global mutable state
+6. Ensure all data shared across threads is safe:
+   - Use Arc<T> for shared ownership
+   - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
+   - Do not call .lock() directly on an Arc<T>; instead, dereference the Arc to access the inner Mutex (e.g., Arc<Mutex<T>>), and call .lock() on that inner value
+7. Do not use non-thread-safe types across threads; replace them with safe abstractions
 8. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
 9. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
 10. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
 11. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
-   - Use std::thread::spawn instead of pthread_create
-   - Use JoinHandle::join instead of pthread_join
-   - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
-   - Ensure all concurrency is implemented using safe Rust abstractions
+    - Use std::thread::spawn instead of pthread_create
+    - Use JoinHandle::join instead of pthread_join
+    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+   - Ensure all concurrency is implemented using safe Rust abstractions 
 12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
-13. You MUST make actual modifications to the code according to the feedback; do not return the original code unchanged.
-14. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
-
-You are allowed to restructure the code as needed:
-- Remove or redesign *mut c_void arguments
-- Replace global static mut with Arc<Mutex<T>>
-- Redesign thread interaction patterns
-- Change function signatures to be more idiomatic Rust
-- Use Arc, Mutex, RwLock, and other standard library synchronization primitives
-
-**Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
-"""
-
-# FIXING_PROMPT = """Your previous code failed validation.
-
-# {feedback}
-
-# Requirements:
-# 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
-# 2. Then address safety and concurrency issues
-# 3. Do NOT use any unstable features or APIs (including core::ffi::c_*); use stable alternatives such as std::ffi or libc.
-# 4. Follow Rust's ownership, borrowing, and concurrency rules
-# 5. Ensure all data shared across threads is safe:
-#    - Use Arc<T> for shared ownership
-#    - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
-#    - If shared mutable access is needed, use Arc<Mutex<T>> or Arc<RwLock<T>>
-#    - Only call `.lock()` on Mutex<T> or RwLock<T>. Do not call '.lock()' on Arc<Mutex<T>> or Arc<RwLock<T>> directly; instead, clone the Arc and then lock the inner Mutex/RwLock.
-# 6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
-# 7. In `static` initializations, only use const expressions; Use lazy initialization (e.g., OnceLock or Lazy) if calling non-const functions is necessary. 
-# 8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
-# 9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
-#    - Use std::thread::spawn instead of pthread_create
-#    - Use JoinHandle::join instead of pthread_join
-#    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
-#    - Ensure all concurrency is implemented using safe Rust abstractions
-# 10. When initializing arrays:
-#     - Do NOT use `[expr; N]` if the element type does not implement Copy
-#     - For non-Copy types (e.g., Mutex, Arc, Vec), initialize each element explicitly or use `std::array::from_fn`
-# 11. You may restructure the code, including changing function signatures and removing FFI patterns if needed
-# 12. Preserve the program's logical behavior, but not necessarily its exact structure
-# 13. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+13. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
 
 # You are allowed to restructure the code as needed:
 # - Remove or redesign *mut c_void arguments
@@ -179,6 +169,41 @@ You are allowed to restructure the code as needed:
 
 # **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
 # """
+
+# FIXING_PROMPT = """Your previous code failed validation.
+
+# {feedback}
+
+# Requirements:
+# 1. **Fix all compilation errors first** - these are critical and must be resolved immediately
+# 2. Then address safety and concurrency issues
+# 3. Do NOT use any unstable or removed features or APIs (including core::ffi::c_* and removed features such as `untagged_unions`). Use stable alternatives such as std::ffi or libc. For unions, use only stable Rust unions with fields restricted to Copy types or wrapped in ManuallyDrop.
+# 4. Remove any crate-level feature flags (e.g., #![feature(...)]) that refer to unstable or removed features such as `untagged_unions`.
+# 5. Do not use non-thread-safe types across threads
+# 6. Replace unsafe patterns with safe Rust abstractions
+# 7. You may restructure the code, including changing function signatures and removing FFI patterns if needed
+# 8. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+# 9. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
+# 10. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
+# 11. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:
+#    - Use std::thread::spawn instead of pthread_create
+#    - Use JoinHandle::join instead of pthread_join
+#    - Use std::sync::Mutex instead of pthread_mutex_t and related lock/unlock calls
+#    - Ensure all concurrency is implemented using safe Rust abstractions
+# 12. Remove Copy and Clone trait implementations if they are not needed, and replace them with appropriate ownership semantics
+# 13. You MUST make actual modifications to the code according to the feedback; do not return the original code unchanged.
+# 14. Do not derive or require `Copy` for types containing non-Copy fields (e.g., Mutex, Arc, Vec, String). Prefer `Clone` where appropriate, or use shared ownership patterns such as Arc<Mutex<T>> for concurrency.
+
+# You are allowed to restructure the code as needed:
+# - Remove or redesign *mut c_void arguments
+# - Replace global static mut with Arc<Mutex<T>>
+# - Redesign thread interaction patterns
+# - Change function signatures to be more idiomatic Rust
+# - Use Arc, Mutex, RwLock, and other standard library synchronization primitives
+
+# **Output ONLY the complete corrected code, starting with the first line of code. NO explanations, NO markdown code blocks, just the raw Rust code.**
+# """
+
 
 SYSTEM_PROMPTS = {
     int(k.split("_")[-1]): v
@@ -222,7 +247,7 @@ def get_prompt_config(prompt_idx: int) -> dict:
 MODEL = "qwen2.5-coder:14b"
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
-VALIDATION_STRATEGY = ValidationStrategy.COMPILE  # Default validation strategy
+VALIDATION_STRATEGY = ["compile"]  # Default validation tools (now a list)
 
 # ────────────────────────────────────────────────────────────────────────────
 # Error Formatting Utilities
@@ -357,7 +382,7 @@ def rewrite_file_with_validation(
     fixing_prompt: str,
     example_dir: str,
     max_iterations: int = 5,
-    validation_strategy: ValidationStrategy = ValidationStrategy.COMPILE,
+    validation_tools: Optional[List[str]] = None,
     output_manager: OutputManager = None,
     example_name: str = None
 ) -> tuple:
@@ -372,13 +397,17 @@ def rewrite_file_with_validation(
         system_prompt: System prompt for LLM
         example_dir: Directory containing Cargo.toml (for cargo build context)
         max_iterations: Maximum number of generation attempts
-        validation_strategy: What to validate (compile, safety, lock_safety, comprehensive)
+        validation_tools: Tools to validate with (e.g., ['compile', 'clippy', 'safety'])
         output_manager: OutputManager instance for saving intermediate results
         example_name: Name of the example for organizing outputs
     
     Returns:
         (success: bool, rewritten_code: str, report: str, iterations_used: int)
     """
+    # Provide default validation tools
+    if validation_tools is None:
+        validation_tools = ["compile"]
+    
     # Track failure reasons for all iterations
     iteration_errors = []
     validator = CodeValidator()
@@ -420,9 +449,16 @@ def rewrite_file_with_validation(
             
             # Validate the generated file
             # CRITICAL: Pass the actual generated file path (output_file) not the original
+            validation_msg = "Validating"
+            if any(tool in validation_tools for tool in ["miri"]):
+                validation_msg = "Validating (⏳ miri runs slowly, please be patient)"
+            print(f"           {validation_msg}... [1/{max_iterations}]", end="", flush=True)
+            
             passed, report, results = validator.validate_and_report(
-                output_file, rewritten_code, validation_strategy, example_dir
+                output_file, rewritten_code, validation_tools, example_dir
             )
+            
+            print(f"\r           Validated [1/{max_iterations}]")  # Clear the loading message
             
             # Track compilation status - check if compiler passed (only check "compilation" category)
             compilation_results = [r for r in results if r.category == "compilation"]
@@ -764,13 +800,16 @@ def main():
     negative_only = "--negative-only" in sys.argv
     
     # Parse command line arguments
-    strategy_str = "compile"
+    tools_str = "compile"
     max_iterations = 5
     model_name = "qwen2.5-coder:14b"  # Default model
     
     for i, arg in enumerate(sys.argv):
-        if arg == "--strategy" and i + 1 < len(sys.argv):
-            strategy_str = sys.argv[i + 1]
+        if arg == "--tools" and i + 1 < len(sys.argv):
+            tools_str = sys.argv[i + 1]
+        elif arg == "--strategy" and i + 1 < len(sys.argv):
+            # For backward compatibility, map old strategy names to tools
+            tools_str = sys.argv[i + 1]
         elif arg == "--max-iterations" and i + 1 < len(sys.argv):
             max_iterations = int(sys.argv[i + 1])
         elif arg == "--model" and i + 1 < len(sys.argv):
@@ -780,12 +819,8 @@ def main():
     global MODEL
     MODEL = model_name
     
-    try:
-        validation_strategy = ValidationStrategy(strategy_str)
-    except ValueError:
-        print(f"Error: Unknown strategy '{strategy_str}'")
-        print(f"Available: {', '.join([s.value for s in ValidationStrategy])}")
-        sys.exit(1)
+    # Convert tools string to list (support both space and comma separated)
+    validation_tools = tools_str.split() if ' ' in tools_str else [tools_str] if tools_str else ["compile"]
     
     # Get prompt configuration
     try:
@@ -810,7 +845,7 @@ def main():
         sample_type = "positive only"
         examples = sorted(glob.glob("/home/guoxy/concrat/examples/*/main.c2rust.rs"))
 
-    mode_str = f"(validate: {validation_strategy.value}, max_iterations: {max_iterations})" if validate else "(no validation)" if not force else ""
+    mode_str = f"(validate: {' '.join(validation_tools)}, max_iterations: {max_iterations})" if validate else "(no validation)" if not force else ""
     print(f"🔧 Using SYSTEM_PROMPT_{prompt_idx} {mode_str}")
     print(f"📋 Model: {model_name}")
     print(f"📋 Examples: {sample_type}")
@@ -821,7 +856,7 @@ def main():
     output_root = output_manager.initialize(
         prompt_idx=prompt_idx,
         validate=validate,
-        strategy=strategy_str,
+        strategy=tools_str,
         max_iterations=max_iterations,
         force=force,
         model=model_name
@@ -831,6 +866,8 @@ def main():
     total = len(examples)
     success = 0
     failed = []
+    
+    import time
 
     print(f"🔎 Found {total} examples to process ({sample_type})\n")
 
@@ -842,7 +879,8 @@ def main():
         is_negative = "/examples_negative/" in filepath
         sample_prefix = "[NEG]" if is_negative else "[POS]"
         
-        print(f"[{i:2d}/{total}] {sample_prefix} 🔄 {example_name}")
+        iter_start_time = time.time()
+        print(f"[{i:2d}/{total}] {sample_prefix} 🔄 {example_name} (starting...)")
 
         # CRITICAL: Ensure main.rs exists for module resolution (pub mod main; in c2rust-lib.rs)
         # Copy main.c2rust.rs to main.rs if it doesn't exist
@@ -866,7 +904,7 @@ def main():
                     fixing_prompt,  # Pass the fixing_prompt here
                     example_dir,
                     max_iterations=max_iterations,
-                    validation_strategy=validation_strategy,
+                    validation_tools=validation_tools,
                     output_manager=output_manager,
                     example_name=example_name
                 )
@@ -890,6 +928,16 @@ def main():
         except Exception as e:
             print(f"       ❌ Failed: {e}")
             failed.append(example_name)
+        
+        # Print elapsed time for this example
+        iter_elapsed = time.time() - iter_start_time
+        remaining = total - i
+        if remaining > 0:
+            avg_per_example = (time.time() - START_TIME if 'START_TIME' in dir() else iter_elapsed) / i
+            eta_seconds = remaining * avg_per_example
+            print(f"       ⏱️  Elapsed: {iter_elapsed:.1f}s | ETA: {eta_seconds:.0f}s for remaining {remaining} examples\n")
+        else:
+            print(f"       ⏱️  Elapsed: {iter_elapsed:.1f}s\n")
 
         # Rate limiting: avoid hitting API too fast
         time.sleep(1)

@@ -4,13 +4,15 @@
 import json
 import os
 import sys
+import re
 
-def generate_markdown_report(data, report_type, output_path, positive_only_data=None):
+def generate_markdown_report(data, report_type, output_path, positive_only_data=None, round_num=None):
     """
     Generate Markdown report from comparison data.
     
     report_type: "all", "positive_only", or "negative_only"
     positive_only_data: optional list of positive samples (used for negative report lookup)
+    round_num: optional round number to display in tables
     """
     lines = []
     w = lines.append
@@ -36,11 +38,11 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("")
     
     if report_type == "negative_only":
-        w("| # | Example | Type | Pos | Compiles (L) | unsafe | pthread | raw_ptr | static_mut | libc | Lines |")
-        w("|---|---------|------|:--:|:----------:|--------|---------|---------|------------|------|-------|")
+        w("| Round | # | Example | Type | Pos | Pos Round | Compiles (L) | unsafe | pthread | raw_ptr | static_mut | libc | Lines |")
+        w("|:-----:|---|---------|------|:--:|:----------:|:----------:|--------|---------|---------|------------|------|-------|")
     else:
-        w("| # | Example | Compiles (C / L) | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
-        w("|---|---------|:----------------:|--------|---------|---------|------------|------|-----------|------------|-------|")
+        w("| Round | # | Example | Compiles (C / L) | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
+        w("|:-----:|---|---------|:----------------:|--------|---------|---------|------------|------|-----------|------------|-------|")
 
     metric_keys = ["unsafe", "pthread", "raw_ptr", "static_mut", "libc",
                    "std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread", "lines"]
@@ -58,6 +60,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
             if not item.get("is_negative", False):
                 positive_samples[item["name"]] = {
                     "compiles": item.get("llm", {}).get("compiles", False),
+                    "round": round_num,  # Store the round number
                     "item": item
                 }
 
@@ -93,16 +96,18 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
             
             # Extract base sample name (remove ____xxx suffix) to find corresponding positive sample
             base_name = name.split("____")[0]
-            pos_compiles = "✅" if positive_samples.get(base_name, {}).get("compiles") else "❌"
+            pos_info = positive_samples.get(base_name, {})
+            pos_compiles = "✅" if pos_info.get("compiles") else "❌"
+            pos_round = pos_info.get("round") or "—"
             
             if lm:
-                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {lc} "
+                w(f"| {round_num or '—'} | {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {pos_round} | {lc} "
                   f"| {om['unsafe']}→{lm.get('unsafe', 0)} | {om['pthread']}→{lm.get('pthread', 0)} | {om['raw_ptr']}→{lm.get('raw_ptr', 0)} "
                   f"| {om['static_mut']}→{lm.get('static_mut', 0)} | {om['libc']}→{lm.get('libc', 0)} "
                   f"| {om['lines']}→{lm.get('lines', 0)} |")
             else:
                 # No attempt
-                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {lc} "
+                w(f"| {round_num or '—'} | {sample_count + 1} | [{name}](#{name}) | NEG | {pos_compiles} | {pos_round} | {lc} "
                   f"| {om['unsafe']}→— | {om['pthread']}→— | {om['raw_ptr']}→— "
                   f"| {om['static_mut']}→— | {om['libc']}→— "
                   f"| {om['lines']}→— |")
@@ -133,13 +138,13 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                         totals["llm"][k] += lm.get(k, 0)
 
                 if lm:
-                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
+                    w(f"| {round_num or '—'} | {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
                       f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→{lm.get('unsafe', 0)} | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→{lm.get('pthread', 0)} | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→{lm.get('raw_ptr', 0)} "
                       f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→{lm.get('static_mut', 0)} | {om.get('libc', 0)}→{cm.get('libc', 0)}→{lm.get('libc', 0)} | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→{lm.get('std_mutex', 0)} "
                       f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→{lm.get('std_thread', 0)} | {om.get('lines', 0)}→{cm.get('lines', 0)}→{lm.get('lines', 0)} |")
                 else:
                     # No LLM output - show ConCrat vs Original only
-                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
+                    w(f"| {round_num or '—'} | {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} "
                       f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→— | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→— | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→— "
                       f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→— | {om.get('libc', 0)}→{cm.get('libc', 0)}→— | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→— "
                       f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→— | {om.get('lines', 0)}→{cm.get('lines', 0)}→— |")
@@ -152,7 +157,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         total_count = compile_stats['llm']['yes'] + compile_stats['llm']['no']
         # Count positive samples that compile
         pos_compile_count = sum(1 for v in positive_samples.values() if v.get("compiles"))
-        w(f"| | **TOTAL** | (NEG) | {pos_compile_count}/{len(positive_samples)} | {total_llm}/{total_count} "
+        w(f"| {round_num or '—'} | | **TOTAL** | (NEG) | {pos_compile_count}/{len(positive_samples)} | — | {total_llm}/{total_count} "
           f"| {totals['original']['unsafe']}→{totals['llm'].get('unsafe', 0)} "
           f"| {totals['original']['pthread']}→{totals['llm'].get('pthread', 0)} "
           f"| {totals['original']['raw_ptr']}→{totals['llm'].get('raw_ptr', 0)} "
@@ -169,7 +174,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         if total_count == 0:
             total_count = sample_count
 
-        w(f"| | **TOTAL** | {compile_stats['concrat']['yes']}/{total_count} / {compile_stats['llm']['yes']}/{total_count} "
+        w(f"| {round_num or '—'} | | **TOTAL** | {compile_stats['concrat']['yes']}/{total_count} / {compile_stats['llm']['yes']}/{total_count} "
           f"| {ttrio('unsafe')} | {ttrio('pthread')} | {ttrio('raw_ptr')} "
           f"| {ttrio('static_mut')} | {ttrio('libc')} | {ttrio('std_mutex')} "
           f"| {ttrio('std_thread')} | {ttrio('lines')} |")
@@ -182,6 +187,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     else:
         w("> **Reading the table**: Each metric cell shows **Original → LLM**. "
           "**Pos** column shows if the corresponding positive sample (before `____`) compiles with LLM. "
+          "**Pos Round** shows which round the positive sample came from. "
           "Negative samples are expected to fail (used for validation).")
     w("")
 
@@ -229,8 +235,8 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     if report_type != "negative_only":
         w("## Safety Features Adoption")
         w("")
-        w("| Example | std::sync::Mutex | Arc<Mutex> | RwLock | Condvar | std::thread | join() |")
-        w("|---------|:---:|:---:|:---:|:---:|:---:|:---:|")
+        w("| Round | Example | std::sync::Mutex | Arc<Mutex> | RwLock | Condvar | std::thread | join() |")
+        w("|:-----:|---------|:---:|:---:|:---:|:---:|:---:|:---:|")
 
         for item in data:
             if item.get("is_negative", False):
@@ -248,7 +254,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 l = "L" if l_val else "·"
                 return f"{c},{l}"
 
-            w(f"| {name} "
+            w(f"| {round_num or '—'} | {name} "
               f"| {icon(cls['has_std_mutex'], lls.get('has_std_mutex', False))} "
               f"| {icon(cls.get('has_arc_mutex', False), lls.get('has_arc_mutex', False))} "
               f"| {icon(item['concrat']['metrics'].get('std_rwlock',0)>0, item['llm']['metrics'].get('std_rwlock',0)>0 if 'llm' in item else False)} "
@@ -479,6 +485,20 @@ def main():
             print(f"⚠️  No data in {input_file}, skipping {output_file}")
             continue
 
+        # Extract round number from directory path (format: YYYYmmdd_hhmmss_N[_description])
+        round_num = None
+        # Try to extract from input_dir path - check both current dir and parent if in evaluation/
+        check_dir = input_dir.rstrip('/')
+        if check_dir.endswith('/evaluation') or check_dir.endswith('evaluation'):
+            # If in evaluation subdir, use parent
+            check_dir = os.path.dirname(check_dir)
+        
+        dir_name = os.path.basename(check_dir)
+        # Match format: YYYYmmdd_hhmmss_N[_optional_suffix]
+        match = re.search(r'^\d{8}_\d{6}_(\d+)(?:_|$)', dir_name)
+        if match:
+            round_num = match.group(1)
+
         # For negative_only reports, also load positive_only data for lookup
         positive_only_data = None
         if report_type == "negative_only":
@@ -493,7 +513,7 @@ def main():
                             pass
                     break
 
-        output = generate_markdown_report(data, report_type, output_path, positive_only_data)
+        output = generate_markdown_report(data, report_type, output_path, positive_only_data, round_num)
         print(f"✅ Generated: {output}")
 
 

@@ -20,7 +20,7 @@ import json
 import tempfile
 import shutil
 sys.path.insert(0, '/home/guoxy/concrat/LLM')
-from validator import CodeValidator
+from validation import CodeValidator
 
 EXAMPLES_DIR = "/home/guoxy/concrat/examples"
 CONCRAT_DIR = "/tmp/concrat_results"
@@ -82,7 +82,7 @@ def get_llm_final_round_info(llm_output_dir: str, example_name: str) -> dict:
     return info
 
 # ── Compilation Check ───────────────────────────────────────────────────────
-# Using CodeValidator from validator.py to ensure consistent compilation detection
+# Using CodeValidator from validation module to ensure consistent compilation detection
 
 def try_compile_with_cargo(rs_file, example_dir):
     """Try compiling a .rs file using the example's Cargo.toml context."""
