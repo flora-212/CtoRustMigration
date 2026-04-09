@@ -110,7 +110,7 @@ Requirements:
    - Use Mutex<T>, RwLock<T>, or other safe primitives for mutation
    - Do not call .lock() directly on an Arc<T>; instead, dereference the Arc to access the inner Mutex (e.g., Arc<Mutex<T>>), and call .lock() on that inner value
 5. Do not use non-thread-safe types across threads; replace them with safe abstractions
-6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions
+6. Use capitalized variables and functions for static variables and functions, uncapitalize local variables and functions, following Rust naming conventions.
 7. In `static` initializations, only use const expressions; if non-const functions are required, use lazy initialization (e.g., OnceLock or Lazy) instead, and always import the corresponding types (e.g., use std::sync::OnceLock;) before use. 
 8. Do not use libc::NULL; use std::ptr::null() or std::ptr::null_mut() instead
 9. Do NOT use pthread_* functions. Replace them with Rust standard concurrency primitives:

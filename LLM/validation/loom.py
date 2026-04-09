@@ -9,6 +9,7 @@ import os
 import subprocess
 import tempfile
 import shutil
+import importlib.util
 from typing import Optional
 from .errors import ErrorInfo, ValidationResult
 from .utils import parse_compile_errors
@@ -17,7 +18,7 @@ from .utils import parse_compile_errors
 class LoomValidator:
     """Validator for concurrency testing with loom."""
     
-    NIGHTLY = "nightly-2022-07-05"
+    NIGHTLY = "nightly"
     LOOM_TIMEOUT = 3600  # 60 minutes
     
     @staticmethod
@@ -60,9 +61,39 @@ class LoomValidator:
                     f.write("extern crate libc;\n")
                     f.write("pub mod main;\n")
             
-            # Copy source file as main.rs
+            # Process rs_file with loom_converter before copying to main.rs
             src_main_rs = os.path.join(td, "main.rs")
-            shutil.copy(rs_file, src_main_rs)
+            temp_converted_rs = os.path.join(td, "converted.rs")
+            
+            # Import loom_converter and process the file
+            import sys
+            import importlib.util
+            validation_dir = os.path.dirname(os.path.abspath(__file__))
+            llm_dir = os.path.dirname(validation_dir)
+            loom_converter_path = os.path.join(validation_dir, "loom_converter.py")
+            
+            if os.path.exists(loom_converter_path):
+                spec = importlib.util.spec_from_file_location("loom_converter", loom_converter_path)
+                loom_converter = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(loom_converter)
+                
+                # Convert the file using loom_converter
+                try:
+                    loom_converter.convert_file(
+                        rs_file, 
+                        temp_converted_rs, 
+                        example_dir=example_dir, 
+                        standalone=True
+                    )
+                    # Use the converted file as main.rs
+                    shutil.copy(temp_converted_rs, src_main_rs)
+                except Exception as e:
+                    # Fallback to original file if conversion fails
+                    print(f"Warning: loom_converter failed ({e}), using original file")
+                    shutil.copy(rs_file, src_main_rs)
+            else:
+                # Fallback if loom_converter not found
+                shutil.copy(rs_file, src_main_rs)
             
             # Clean build artifacts
             cargo_lock = os.path.join(td, "Cargo.lock")

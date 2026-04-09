@@ -264,7 +264,7 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
     # Use validation loop
     echo "📊 Starting code generation with validation..."
     echo "   (You will see progress updates as each example is processed)"
-    python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
+    cd "$SCRIPT_DIR" && python3 -m refraction.main "$PROMPT_IDX" \
         $VALIDATE_FLAG \
         --tools "$TOOLS" \
         --max-iterations "$MAX_ITERATIONS" \
@@ -275,7 +275,7 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
         $VERBOSE
 else
     # No validation loop
-    python3 "$SCRIPT_DIR/refractor.py" "$PROMPT_IDX" \
+    cd "$SCRIPT_DIR" && python3 -m refraction.main "$PROMPT_IDX" \
         --model "$MODEL" \
         $INCLUDE_NEGATIVE \
         $NEGATIVE_ONLY \
@@ -306,7 +306,7 @@ echo "📊 Step 3: Run Evaluation Suite"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 STEP3_START=$(date +%s)
 
-# Read the output directory from refractor.py
+# Read the output directory from refraction.main
 REFACTOR_OUTPUT_DIR=""
 LAST_OUTPUT_FILE="$SCRIPT_DIR/.last_refactor_output"
 if [ -f "$LAST_OUTPUT_FILE" ]; then
@@ -339,7 +339,7 @@ echo "📈 Step 4: Generate Comparison Report"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 STEP4_START=$(date +%s)
 
-# Read the output directory from refractor.py for comparison report generation
+# Read the output directory from refraction.main for comparison report generation
 if [ -z "$REFACTOR_OUTPUT_DIR" ]; then
     LAST_OUTPUT_FILE="$SCRIPT_DIR/.last_refactor_output"
     if [ -f "$LAST_OUTPUT_FILE" ]; then
