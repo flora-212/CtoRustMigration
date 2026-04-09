@@ -1,20 +1,62 @@
-import os
-import sys
-import glob
-import time
-import subprocess
-import json
-from datetime import datetime
-from typing import Optional, List
-import ollama
-from validation import CodeValidator, ErrorInfo
-from output_manager import OutputManager
+"""
+Backward compatibility wrapper for the refactoring tool.
 
+This module maintains the original refractor.py interface while delegating
+to the modular refraction package for actual implementation.
+
+The original monolithic code has been refactored into the following modules:
+  - refraction/config.py - Configuration and constants
+  - refraction/prompts.py - System prompts and prompt configurations
+  - refraction/error_formatter.py - Error formatting utilities
+  - refraction/code_rewriter.py - Core code rewriting functionality
+  - refraction/utils.py - Utility functions
+  - refraction/main.py - Main entry point and CLI logic
+
+This file serves as the entry point for backward compatibility.
+"""
+
+from refraction.main import main
+
+if __name__ == "__main__":
+    main()
+"""
+Backward compatibility wrapper for the refactoring tool.
+
+This module maintains the original refractor.py interface while delegating
+to the modular refraction package for actual implementation.
+"""
+
+from refraction.main import main
+
+if __name__ == "__main__":
+    main()
+
+
+# Legacy code below for reference and documentation purposes
 # ────────────────────────────────────────────────────────────────────────────
-# System Prompts for different optimization levels
+# Import all public APIs from the refraction package for backward compatibility
 # ────────────────────────────────────────────────────────────────────────────
 
-SYSTEM_PROMPT_0 = """You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
+from refraction import (
+    SYSTEM_PROMPTS,
+    PROMPT_CONFIGS,
+    get_prompt_config,
+    FIXING_PROMPT,
+    MODEL,
+    MAX_RETRIES,
+    RETRY_DELAY,
+    VALIDATION_STRATEGY,
+    rewrite_file,
+    rewrite_file_with_validation,
+    extract_code,
+    format_errors_for_llm,
+    format_errors_for_display,
+    extract_errors_for_storage,
+    verify_syntax,
+)
+
+# Original SYSTEM_PROMPT_0 for reference
+"""You are a Rust expert. Rewrite the following C2Rust auto-translated Rust code into idiomatic, safe Rust.
 Requirements:
 1. Make sure the code compiles without errors
 2. Eliminate unsafe blocks as much as possible, especially those related to raw pointers and manual memory management
