@@ -49,4 +49,6 @@ int main() {
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
     pthread_join(id3, NULL);
+
+    printf("%d %d %d\n", s1.n1, s2.n1, s3.n1);
 }

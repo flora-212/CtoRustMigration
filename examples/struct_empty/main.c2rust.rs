@@ -18,6 +18,7 @@ extern "C" {
     ) -> ::core::ffi::c_int;
     fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
     fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 pub type size_t = usize;
 #[derive(Copy, Clone)]
@@ -74,8 +75,8 @@ pub struct ss {
     pub n: ::core::ffi::c_int,
     pub m: pthread_mutex_t,
 }
-pub const NULL: *mut ::core::ffi::c_void = ::core::ptr::null::<::core::ffi::c_void>()
-    as *mut ::core::ffi::c_void;
+pub const NULL: *mut ::core::ffi::c_void =
+    ::core::ptr::null::<::core::ffi::c_void>() as *mut ::core::ffi::c_void;
 #[no_mangle]
 pub static mut s1: ss = ss {
     n: 0 as ::core::ffi::c_int,
@@ -103,9 +104,7 @@ pub unsafe extern "C" fn f1(mut s: *mut ss) {
     pthread_mutex_unlock(&raw mut (*s).m);
 }
 #[no_mangle]
-pub unsafe extern "C" fn t_fun(
-    mut arg: *mut ::core::ffi::c_void,
-) -> *mut ::core::ffi::c_void {
+pub unsafe extern "C" fn t_fun(mut arg: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
     f1(&raw mut s1);
     f1(arg as *mut ss);
     return NULL;
@@ -120,27 +119,22 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     pthread_create(
         &raw mut id1,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         s as *mut ::core::ffi::c_void,
     );
     pthread_create(
         &raw mut id2,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         s as *mut ::core::ffi::c_void,
     );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(
+        b"%d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        (*s).n,
+        s1.n,
+    );
     return 0;
 }
 pub fn main() {

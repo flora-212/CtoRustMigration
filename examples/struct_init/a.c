@@ -38,4 +38,6 @@ int main() {
     pthread_create(&id2, NULL, t_fun, s3);
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
+
+    printf("%d %d %d\n", s1.n, s2.n, s3->n);
 }

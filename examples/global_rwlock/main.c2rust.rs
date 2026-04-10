@@ -14,6 +14,7 @@ extern "C" {
     fn pthread_rwlock_rdlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
     fn pthread_rwlock_wrlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
     fn pthread_rwlock_unlock(__rwlock: *mut pthread_rwlock_t) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 #[derive(Copy, Clone)]
 #[repr(C)]
@@ -50,8 +51,8 @@ pub const PTHREAD_RWLOCK_DEFAULT_NP: C2Rust_Unnamed = 0;
 pub const PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP: C2Rust_Unnamed = 2;
 pub const PTHREAD_RWLOCK_PREFER_WRITER_NP: C2Rust_Unnamed = 1;
 pub const PTHREAD_RWLOCK_PREFER_READER_NP: C2Rust_Unnamed = 0;
-pub const NULL: *mut ::core::ffi::c_void = ::core::ptr::null::<::core::ffi::c_void>()
-    as *mut ::core::ffi::c_void;
+pub const NULL: *mut ::core::ffi::c_void =
+    ::core::ptr::null::<::core::ffi::c_void>() as *mut ::core::ffi::c_void;
 #[no_mangle]
 pub static mut n: ::core::ffi::c_int = 0 as ::core::ffi::c_int;
 #[no_mangle]
@@ -94,9 +95,7 @@ pub unsafe extern "C" fn f2() {
     pthread_rwlock_unlock(&raw mut lock);
 }
 #[no_mangle]
-pub unsafe extern "C" fn t_fun(
-    mut arg: *mut ::core::ffi::c_void,
-) -> *mut ::core::ffi::c_void {
+pub unsafe extern "C" fn t_fun(mut arg: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
     f1();
     f2();
     return NULL;
@@ -107,27 +106,18 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     pthread_create(
         &raw mut id1,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         NULL,
     );
     pthread_create(
         &raw mut id2,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         NULL,
     );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(b"%d\n\0".as_ptr() as *const ::core::ffi::c_char, n);
     return 0;
 }
 pub fn main() {

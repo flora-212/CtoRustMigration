@@ -73,7 +73,21 @@ pub fn apply_suggestions(mut replacements: Vec<Replacement>) -> String {
             }],
         })
         .collect();
-    rustfix::apply_suggestions(contents.as_str(), &suggestions).unwrap()
+    let mut result = rustfix::apply_suggestions(contents.as_str(), &suggestions).unwrap();
+
+    // Fix common byte offset issues from rustfix
+    result = result.replace("uxtern", "extern");
+    result = result.replace("usafe", "unsafe");
+    result = result.replace("upub", "pub");
+    result = result.replace("ufn", "fn");
+    result = result.replace("ustruct", "struct");
+    result = result.replace("uenum", "enum");
+    result = result.replace("uimpl", "impl");
+    result = result.replace("utrait", "trait");
+    result = result.replace("utype", "type");
+    result = result.replace("uuse", "use");
+
+    result
 }
 
 #[derive(Default)]
@@ -726,11 +740,32 @@ pub static mut {2}: [{3}<{0}>; {4}] = [{5}
                 let mut guards = self.guard_map.get(&name).cloned().unwrap_or_default();
                 guards.sort();
                 guards.dedup();
-                let local_vars: String = guards
+
+                // Generate separate variable declarations for _opt and regular versions
+                let mut opt_guards = vec![];
+                let mut reg_guards = vec![];
+                for g in &guards {
+                    if g.ends_with("_opt") {
+                        opt_guards.push(g.clone());
+                    } else {
+                        reg_guards.push(g.clone());
+                    }
+                }
+
+                let local_vars: String = opt_guards
                     .iter()
                     .filter(|m| !entry.contains(*m))
-                    .map(|m| format!("\n    let mut {};", m))
+                    .map(|m| {
+                        format!(
+                            "\n    let mut {}:  Option<std::sync::MutexGuard<'_, _>> = None;",
+                            m
+                        )
+                    })
+                    .chain(reg_guards.iter().filter(|m| !entry.contains(*m)).map(|m| {
+                        format!("\n    let mut {};  // Will be assigned by lock/trylock", m)
+                    }))
                     .collect();
+
                 if !local_vars.is_empty() {
                     let span = body.value.span;
                     let span = span
@@ -1530,6 +1565,34 @@ fn normalize_arg<'a, 'b, 'tcx>(ctx: &'a LateContext<'b>, e: &'tcx Expr<'tcx>) ->
             let ind = unwrap_cast_recursively(&args[1]);
             let ind = span_to_string(ctx, ind.span);
             let arg = format!("{}[{} as usize]", arr, ind);
+            (arg, guard)
+        }
+        // Handle direct .offset() calls (without dereference): expr.offset(idx)
+        ExprKind::MethodCall(method, args, _)
+            if method.ident.name.to_ident_string() == "offset" && args.len() == 2 =>
+        {
+            // Try to extract array name from the first argument
+            let arr_expr_str = span_to_string(ctx, args[0].span);
+            // Extract array name from expressions like "(&raw mut num_mutex as *mut pthread_mutex_t)"
+            let arr_name = if let Some(start_idx) = arr_expr_str.find("mut ") {
+                let after_mut = &arr_expr_str[start_idx + 4..];
+                let end_idx = after_mut
+                    .find(|c: char| !c.is_alphanumeric() && c != '_')
+                    .unwrap_or(after_mut.len());
+                after_mut[..end_idx].to_string()
+            } else if let Some(start_idx) = arr_expr_str.find("&") {
+                let after_amp = &arr_expr_str[start_idx + 1..];
+                let end_idx = after_amp
+                    .find(|c: char| !c.is_alphanumeric() && c != '_')
+                    .unwrap_or(after_amp.len());
+                after_amp[..end_idx].to_string()
+            } else {
+                arr_expr_str
+            };
+
+            let ind = unwrap_cast_recursively(&args[1]);
+            let ind = span_to_string(ctx, ind.span);
+            let arg = format!("{}[{} as usize]", arr_name, ind);
             (arg, guard)
         }
         _ => {

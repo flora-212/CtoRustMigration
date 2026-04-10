@@ -35,4 +35,5 @@ int main() {
     pthread_create(&id2, NULL, t_fun, NULL);
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
+    printf("%d %d %d\n", n1[0], n1[1], n1[2]);
 }

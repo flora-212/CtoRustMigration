@@ -13,6 +13,7 @@ extern "C" {
     ) -> ::core::ffi::c_int;
     fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
     fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 #[derive(Copy, Clone)]
 #[repr(C)]
@@ -56,8 +57,8 @@ pub const PTHREAD_MUTEX_ADAPTIVE_NP: C2Rust_Unnamed = 3;
 pub const PTHREAD_MUTEX_ERRORCHECK_NP: C2Rust_Unnamed = 2;
 pub const PTHREAD_MUTEX_RECURSIVE_NP: C2Rust_Unnamed = 1;
 pub const PTHREAD_MUTEX_TIMED_NP: C2Rust_Unnamed = 0;
-pub const NULL: *mut ::core::ffi::c_void = ::core::ptr::null::<::core::ffi::c_void>()
-    as *mut ::core::ffi::c_void;
+pub const NULL: *mut ::core::ffi::c_void =
+    ::core::ptr::null::<::core::ffi::c_void>() as *mut ::core::ffi::c_void;
 #[no_mangle]
 pub static mut n1: ::core::ffi::c_int = 0 as ::core::ffi::c_int;
 #[no_mangle]
@@ -71,10 +72,8 @@ pub static mut num_mutex: pthread_mutex_t = pthread_mutex_t {
         __spins: 0 as ::core::ffi::c_short,
         __elision: 0 as ::core::ffi::c_short,
         __list: __pthread_internal_list {
-            __prev: ::core::ptr::null::<__pthread_internal_list>()
-                as *mut __pthread_internal_list,
-            __next: ::core::ptr::null::<__pthread_internal_list>()
-                as *mut __pthread_internal_list,
+            __prev: ::core::ptr::null::<__pthread_internal_list>() as *mut __pthread_internal_list,
+            __next: ::core::ptr::null::<__pthread_internal_list>() as *mut __pthread_internal_list,
         },
     },
 };
@@ -89,9 +88,7 @@ pub unsafe extern "C" fn f1() {
     pthread_mutex_unlock(&raw mut num_mutex);
 }
 #[no_mangle]
-pub unsafe extern "C" fn t_fun(
-    mut arg: *mut ::core::ffi::c_void,
-) -> *mut ::core::ffi::c_void {
+pub unsafe extern "C" fn t_fun(mut arg: *mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void {
     f1();
     return NULL;
 }
@@ -101,27 +98,18 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     pthread_create(
         &raw mut id1,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         NULL,
     );
     pthread_create(
         &raw mut id2,
         ::core::ptr::null::<pthread_attr_t>(),
-        Some(
-            t_fun
-                as unsafe extern "C" fn(
-                    *mut ::core::ffi::c_void,
-                ) -> *mut ::core::ffi::c_void,
-        ),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
         NULL,
     );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(b"%d\n\0".as_ptr() as *const ::core::ffi::c_char, n1);
     return 0;
 }
 pub fn main() {

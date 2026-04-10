@@ -26,4 +26,6 @@ int main() {
     pthread_join(id2, NULL);
 
     s.n1 = s.n1 + 1;
+
+    printf("%d\n", s.n1);
 }

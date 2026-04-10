@@ -33,5 +33,7 @@ int main() {
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
 
+    printf("%d\n", s->n);
+
     free(s);
 }

@@ -73,4 +73,6 @@ int main() {
     pthread_create(&id2, NULL, t_fun, (void *)1);
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
+
+    printf("%d %d\n", n1, n2);
 }

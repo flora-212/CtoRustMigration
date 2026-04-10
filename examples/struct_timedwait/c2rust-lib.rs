@@ -5,7 +5,11 @@
 #![allow(non_upper_case_globals)]
 #![allow(unused_assignments)]
 #![allow(unused_mut)]
+#![feature(core_ffi_c)]
+#![feature(raw_ref_op)]
+#![feature(rustc_private)]
 
 
 extern crate libc;
+extern crate core;
 pub mod main;

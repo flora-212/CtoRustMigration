@@ -11,6 +11,7 @@ extern "C" {
         __th: pthread_t,
         __thread_return: *mut *mut ::core::ffi::c_void,
     ) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 #[derive(Copy, Clone)]
 #[repr(C)]
@@ -195,6 +196,30 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n1[0 as ::core::ffi::c_int as usize],
+        n1[1 as ::core::ffi::c_int as usize],
+        n1[2 as ::core::ffi::c_int as usize],
+        n1[3 as ::core::ffi::c_int as usize],
+        n1[4 as ::core::ffi::c_int as usize],
+    );
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n2[0 as ::core::ffi::c_int as usize],
+        n2[1 as ::core::ffi::c_int as usize],
+        n2[2 as ::core::ffi::c_int as usize],
+        n2[3 as ::core::ffi::c_int as usize],
+        n2[4 as ::core::ffi::c_int as usize],
+    );
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n3[0 as ::core::ffi::c_int as usize],
+        n3[1 as ::core::ffi::c_int as usize],
+        n3[2 as ::core::ffi::c_int as usize],
+        n3[3 as ::core::ffi::c_int as usize],
+        n3[4 as ::core::ffi::c_int as usize],
+    );
     return 0;
 }
 pub fn main() {

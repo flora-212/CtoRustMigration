@@ -13,6 +13,7 @@ extern "C" {
     ) -> ::core::ffi::c_int;
     fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
     fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
 }
 #[derive(Copy, Clone)]
 #[repr(C)]
@@ -154,6 +155,13 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(
+        b"%d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        s.n1,
+        s.n2,
+        s.n3,
+        s.n4,
+    );
     return 0;
 }
 pub fn main() {

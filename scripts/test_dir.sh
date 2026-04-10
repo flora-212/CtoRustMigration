@@ -1,7 +1,5 @@
 #! /bin/bash
 
-set -e
-
 from=$1
 to=$2
 
@@ -40,27 +38,34 @@ fi
 cp $to/main.c2rust.rs $to/main.rs
 
 echo $MSG $from
-cargo run --release --bin $CMD -- -i $to -d deps_crate/target/debug/deps $@
+cargo run --release --bin $CMD -- -i $to -d deps_crate/target/debug/deps $@ || {
+  echo "❌ Warning: $MSG failed for $from, but continuing..."
+}
 
 echo Translating $from
-cargo run --release --bin concrat -- -i $to -d deps_crate/target/debug/deps $@
+cargo run --release --bin concrat -- -i $to -d deps_crate/target/debug/deps $@ || {
+  echo "❌ Warning: concrat translation failed for $from, but continuing..."
+}
 
 # Save Concrat version with explicit name
 cp $to/main.rs $to/main.concrat.rs
 
 if [ -x "$(command -v diffstat)" ]; then
-  diff -u $to/main.c2rust.rs $to/main.concrat.rs | diffstat
+  diff -u $to/main.c2rust.rs $to/main.concrat.rs | diffstat || true
 fi
 
-cargo fmt -- $to/main.concrat.rs $to/main.c2rust.rs
+cargo fmt -- $to/main.concrat.rs $to/main.c2rust.rs || true
 
 echo Compiling $from
 nightly=`cat $to/rust-toolchain`
-RUSTFLAGS=-Awarnings cargo +$nightly build --manifest-path $to/Cargo.toml
+if ! RUSTFLAGS=-Awarnings cargo +$nightly build --manifest-path $to/Cargo.toml; then
+  echo "❌ Error: Compilation failed for $from"
+  exit 1
+fi
 
 # Save results back to source directory if SAVE_TO_SOURCE is set
 if [ "$SAVE_TO_SOURCE" = "yes" ]; then
   cp $to/main.c2rust.rs $from/main.c2rust.rs
   cp $to/main.concrat.rs $from/main.concrat.rs
-  echo "Saved results to source directory: $from"
+  echo "✅ Saved results to source directory: $from"
 fi

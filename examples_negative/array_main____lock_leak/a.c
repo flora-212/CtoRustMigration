@@ -36,4 +36,6 @@ int main() {
 
     for (int i = 0; i < N; i++)
         n1[i] = n1[i] + 1;
+
+    printf("%d %d %d %d %d\n", n1[0], n1[1], n1[2], n1[3], n1[4]);
 }

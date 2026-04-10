@@ -24,9 +24,12 @@ void f1() {
 
     if (pthread_mutex_trylock(&m)) {
         pthread_mutex_lock(&m);
+        n = n + 1;
+        pthread_mutex_unlock(&m);
+    } else {
+        n = n + 1;
+        pthread_mutex_unlock(&m);
     }
-    n = n + 1;
-    pthread_mutex_unlock(&m);
 
     if (!pthread_mutex_trylock(&m)) {
         n = n + 1;
@@ -45,4 +48,6 @@ int main() {
     pthread_create(&id2, NULL, t_fun, NULL);
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
+
+    printf("%d\n", n);
 }

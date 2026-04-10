@@ -1,59 +1,249 @@
-use std::sync::{Arc, Mutex};
-use std::thread;
-
-const N: usize = 5;
-
+extern "C" {
+    fn pthread_create(
+        __newthread: *mut pthread_t,
+        __attr: *const pthread_attr_t,
+        __start_routine: Option<
+            unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void,
+        >,
+        __arg: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
+    fn pthread_join(
+        __th: pthread_t,
+        __thread_return: *mut *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
+    fn pthread_mutex_lock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
+    fn pthread_mutex_unlock(__mutex: *mut pthread_mutex_t) -> ::core::ffi::c_int;
+    fn printf(_: *const ::core::ffi::c_char, ...) -> ::core::ffi::c_int;
+}
+#[derive(Copy, Clone)]
+#[repr(C)]
+pub struct __pthread_internal_list {
+    pub __prev: *mut __pthread_internal_list,
+    pub __next: *mut __pthread_internal_list,
+}
+pub type __pthread_list_t = __pthread_internal_list;
+#[derive(Copy, Clone)]
+#[repr(C)]
+pub struct __pthread_mutex_s {
+    pub __lock: ::core::ffi::c_int,
+    pub __count: ::core::ffi::c_uint,
+    pub __owner: ::core::ffi::c_int,
+    pub __nusers: ::core::ffi::c_uint,
+    pub __kind: ::core::ffi::c_int,
+    pub __spins: ::core::ffi::c_short,
+    pub __elision: ::core::ffi::c_short,
+    pub __list: __pthread_list_t,
+}
+pub type pthread_t = ::core::ffi::c_ulong;
+#[derive(Copy, Clone)]
+#[repr(C)]
+pub union pthread_attr_t {
+    pub __size: [::core::ffi::c_char; 56],
+    pub __align: ::core::ffi::c_long,
+}
+#[derive(Copy, Clone)]
+#[repr(C)]
+pub union pthread_mutex_t {
+    pub __data: __pthread_mutex_s,
+    pub __size: [::core::ffi::c_char; 40],
+    pub __align: ::core::ffi::c_long,
+}
+pub type C2Rust_Unnamed = ::core::ffi::c_uint;
+pub const PTHREAD_MUTEX_DEFAULT: C2Rust_Unnamed = 0;
+pub const PTHREAD_MUTEX_ERRORCHECK: C2Rust_Unnamed = 2;
+pub const PTHREAD_MUTEX_RECURSIVE: C2Rust_Unnamed = 1;
+pub const PTHREAD_MUTEX_NORMAL: C2Rust_Unnamed = 0;
+pub const PTHREAD_MUTEX_ADAPTIVE_NP: C2Rust_Unnamed = 3;
+pub const PTHREAD_MUTEX_ERRORCHECK_NP: C2Rust_Unnamed = 2;
+pub const PTHREAD_MUTEX_RECURSIVE_NP: C2Rust_Unnamed = 1;
+pub const PTHREAD_MUTEX_TIMED_NP: C2Rust_Unnamed = 0;
+pub const NULL: *mut ::core::ffi::c_void = ::core::ptr::null::<::core::ffi::c_void>()
+    as *mut ::core::ffi::c_void;
+pub const N: ::core::ffi::c_int = 5 as ::core::ffi::c_int;
 #[no_mangle]
-static mut n1: [i32; N] = [0; N];
-
+pub static mut n1: [::core::ffi::c_int; 5] = [0; 5];
 #[no_mangle]
-static mut n2: [i32; N] = [1, 2, 3, 4, 5];
-
-#[no_mangle]
-static mut n3: [i32; N] = [1; N];
-
-#[no_mangle]
-static mut num_mutex: [Mutex<i32>; N] = [
-    Mutex::new(0),
-    Mutex::new(0),
-    Mutex::new(0),
-    Mutex::new(0),
-    Mutex::new(0),
+pub static mut n2: [::core::ffi::c_int; 5] = [
+    1 as ::core::ffi::c_int,
+    2 as ::core::ffi::c_int,
+    3 as ::core::ffi::c_int,
+    4 as ::core::ffi::c_int,
+    5 as ::core::ffi::c_int,
 ];
-
 #[no_mangle]
-unsafe extern "C" fn f1() {
-    for i in 0..N {
-        let x = n3[i];
-        let mut num_mutex_i = num_mutex[i].lock().unwrap();
-        n1[i] += x;
-        n2[i] += x;
+pub static mut n3: [::core::ffi::c_int; 5] = [
+    1 as ::core::ffi::c_int,
+    1 as ::core::ffi::c_int,
+    1 as ::core::ffi::c_int,
+    1 as ::core::ffi::c_int,
+    1 as ::core::ffi::c_int,
+];
+#[no_mangle]
+pub static mut num_mutex: [pthread_mutex_t; 5] = [
+    pthread_mutex_t {
+        __data: __pthread_mutex_s {
+            __lock: 0 as ::core::ffi::c_int,
+            __count: 0 as ::core::ffi::c_uint,
+            __owner: 0 as ::core::ffi::c_int,
+            __nusers: 0 as ::core::ffi::c_uint,
+            __kind: PTHREAD_MUTEX_TIMED_NP as ::core::ffi::c_int,
+            __spins: 0 as ::core::ffi::c_short,
+            __elision: 0 as ::core::ffi::c_short,
+            __list: __pthread_internal_list {
+                __prev: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+                __next: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+            },
+        },
+    },
+    pthread_mutex_t {
+        __data: __pthread_mutex_s {
+            __lock: 0 as ::core::ffi::c_int,
+            __count: 0 as ::core::ffi::c_uint,
+            __owner: 0 as ::core::ffi::c_int,
+            __nusers: 0 as ::core::ffi::c_uint,
+            __kind: PTHREAD_MUTEX_TIMED_NP as ::core::ffi::c_int,
+            __spins: 0 as ::core::ffi::c_short,
+            __elision: 0 as ::core::ffi::c_short,
+            __list: __pthread_internal_list {
+                __prev: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+                __next: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+            },
+        },
+    },
+    pthread_mutex_t {
+        __data: __pthread_mutex_s {
+            __lock: 0 as ::core::ffi::c_int,
+            __count: 0 as ::core::ffi::c_uint,
+            __owner: 0 as ::core::ffi::c_int,
+            __nusers: 0 as ::core::ffi::c_uint,
+            __kind: PTHREAD_MUTEX_TIMED_NP as ::core::ffi::c_int,
+            __spins: 0 as ::core::ffi::c_short,
+            __elision: 0 as ::core::ffi::c_short,
+            __list: __pthread_internal_list {
+                __prev: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+                __next: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+            },
+        },
+    },
+    pthread_mutex_t {
+        __data: __pthread_mutex_s {
+            __lock: 0 as ::core::ffi::c_int,
+            __count: 0 as ::core::ffi::c_uint,
+            __owner: 0 as ::core::ffi::c_int,
+            __nusers: 0 as ::core::ffi::c_uint,
+            __kind: PTHREAD_MUTEX_TIMED_NP as ::core::ffi::c_int,
+            __spins: 0 as ::core::ffi::c_short,
+            __elision: 0 as ::core::ffi::c_short,
+            __list: __pthread_internal_list {
+                __prev: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+                __next: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+            },
+        },
+    },
+    pthread_mutex_t {
+        __data: __pthread_mutex_s {
+            __lock: 0 as ::core::ffi::c_int,
+            __count: 0 as ::core::ffi::c_uint,
+            __owner: 0 as ::core::ffi::c_int,
+            __nusers: 0 as ::core::ffi::c_uint,
+            __kind: PTHREAD_MUTEX_TIMED_NP as ::core::ffi::c_int,
+            __spins: 0 as ::core::ffi::c_short,
+            __elision: 0 as ::core::ffi::c_short,
+            __list: __pthread_internal_list {
+                __prev: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+                __next: ::core::ptr::null::<__pthread_internal_list>()
+                    as *mut __pthread_internal_list,
+            },
+        },
+    },
+];
+#[no_mangle]
+pub unsafe extern "C" fn f1() {
+    let mut i: ::core::ffi::c_int = 0 as ::core::ffi::c_int;
+    while i < N {
+        let mut x: ::core::ffi::c_int = n3[i as usize];
+        pthread_mutex_lock(
+            (&raw mut num_mutex as *mut pthread_mutex_t).offset(i as isize)
+                as *mut pthread_mutex_t,
+        );
+        n1[i as usize] = n1[i as usize] + x;
+        n2[i as usize] = n2[i as usize] + x;
+        pthread_mutex_unlock(
+            (&raw mut num_mutex as *mut pthread_mutex_t).offset(i as isize)
+                as *mut pthread_mutex_t,
+        );
+        i += 1;
     }
 }
-
 #[no_mangle]
-unsafe extern "C" fn t_fun(_arg: *mut libc::c_void) -> *mut libc::c_void {
+pub unsafe extern "C" fn t_fun(
+    mut arg: *mut ::core::ffi::c_void,
+) -> *mut ::core::ffi::c_void {
     f1();
-    std::ptr::null_mut()
+    return NULL;
 }
-
-unsafe fn main_0() -> libc::c_int {
-    let mut handles = vec![];
-
-    for _ in 0..2 {
-        let handle = thread::spawn(|| {
-            f1();
-        });
-        handles.push(handle);
-    }
-
-    for handle in handles {
-        handle.join().unwrap();
-    }
-
-    0
+unsafe fn main_0() -> ::core::ffi::c_int {
+    let mut id1: pthread_t = 0;
+    let mut id2: pthread_t = 0;
+    pthread_create(
+        &raw mut id1,
+        ::core::ptr::null::<pthread_attr_t>(),
+        Some(
+            t_fun
+                as unsafe extern "C" fn(
+                    *mut ::core::ffi::c_void,
+                ) -> *mut ::core::ffi::c_void,
+        ),
+        NULL,
+    );
+    pthread_create(
+        &raw mut id2,
+        ::core::ptr::null::<pthread_attr_t>(),
+        Some(
+            t_fun
+                as unsafe extern "C" fn(
+                    *mut ::core::ffi::c_void,
+                ) -> *mut ::core::ffi::c_void,
+        ),
+        NULL,
+    );
+    pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n1[0 as ::core::ffi::c_int as usize],
+        n1[1 as ::core::ffi::c_int as usize],
+        n1[2 as ::core::ffi::c_int as usize],
+        n1[3 as ::core::ffi::c_int as usize],
+        n1[4 as ::core::ffi::c_int as usize],
+    );
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n2[0 as ::core::ffi::c_int as usize],
+        n2[1 as ::core::ffi::c_int as usize],
+        n2[2 as ::core::ffi::c_int as usize],
+        n2[3 as ::core::ffi::c_int as usize],
+        n2[4 as ::core::ffi::c_int as usize],
+    );
+    printf(
+        b"%d %d %d %d %d\n\0".as_ptr() as *const ::core::ffi::c_char,
+        n3[0 as ::core::ffi::c_int as usize],
+        n3[1 as ::core::ffi::c_int as usize],
+        n3[2 as ::core::ffi::c_int as usize],
+        n3[3 as ::core::ffi::c_int as usize],
+        n3[4 as ::core::ffi::c_int as usize],
+    );
+    return 0;
 }
-
 pub fn main() {
-    unsafe { std::process::exit(main_0() as i32) }
+    unsafe { ::std::process::exit(main_0() as i32) }
 }
