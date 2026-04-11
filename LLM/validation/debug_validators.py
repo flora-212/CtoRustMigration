@@ -436,7 +436,8 @@ class ValidatorDebugger:
                         print(f"    Details: {error.details[:200]}...")
         finally:
             # self._cleanup_main_rs()
-            self._cleanup_loom_test(loom_test_path)
+            # self._cleanup_loom_test(loom_test_path)
+            print("\nDebugging complete. Temporary files (main.rs, loom test) have been retained for inspection.\n")
 
 
 def main():

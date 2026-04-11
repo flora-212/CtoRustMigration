@@ -9,10 +9,23 @@ import os
 import subprocess
 import tempfile
 import shutil
-import importlib.util
+import sys
 from typing import Optional
 from .errors import ErrorInfo, ValidationResult
 from .utils import parse_compile_errors
+
+# Import loom_converter - add LLM to path first to find the loom_converter package
+llm_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if llm_dir not in sys.path:
+    sys.path.insert(0, llm_dir)
+
+try:
+    from loom_converter import convert_file as loom_convert_file
+except ImportError as e:
+    # Fallback for when loom_converter is not in path
+    loom_convert_file = None
+    import warnings
+    warnings.warn(f"Could not import loom_converter: {e}")
 
 
 class LoomValidator:
@@ -65,21 +78,10 @@ class LoomValidator:
             src_main_rs = os.path.join(td, "main.rs")
             temp_converted_rs = os.path.join(td, "converted.rs")
             
-            # Import loom_converter and process the file
-            import sys
-            import importlib.util
-            validation_dir = os.path.dirname(os.path.abspath(__file__))
-            llm_dir = os.path.dirname(validation_dir)
-            loom_converter_path = os.path.join(validation_dir, "loom_converter.py")
-            
-            if os.path.exists(loom_converter_path):
-                spec = importlib.util.spec_from_file_location("loom_converter", loom_converter_path)
-                loom_converter = importlib.util.module_from_spec(spec)
-                spec.loader.exec_module(loom_converter)
-                
-                # Convert the file using loom_converter
+            # Use loom_converter to process the file
+            if loom_convert_file:
                 try:
-                    loom_converter.convert_file(
+                    loom_convert_file(
                         rs_file, 
                         temp_converted_rs, 
                         example_dir=example_dir, 
@@ -92,7 +94,7 @@ class LoomValidator:
                     print(f"Warning: loom_converter failed ({e}), using original file")
                     shutil.copy(rs_file, src_main_rs)
             else:
-                # Fallback if loom_converter not found
+                # Fallback if loom_converter not available
                 shutil.copy(rs_file, src_main_rs)
             
             # Clean build artifacts
