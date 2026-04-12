@@ -31,6 +31,9 @@ CLEAR_FLAG=""
 VERBOSE=""
 INCLUDE_NEGATIVE=""                 # Include negative samples
 NEGATIVE_ONLY=""                    # Only run negative samples
+EVAL_TOOLS="all"                    # Evaluation tools (compare,clippy,safety,miri,loom or: all/fast/full)
+MIRI_TIMEOUT="300"                  # 5 minutes
+LOOM_TIMEOUT="600"                  # 10 minutes
 
 # Check for --help first
 for arg in "$@"; do
@@ -52,6 +55,18 @@ for arg in "$@"; do
         echo "  ./run.sh 1 --negative-only                      # Only run negative samples"
         echo "  ./run.sh 1 --verbose                            # Verbose output"
         echo ""
+        echo "Evaluation options (passed to run_evaluation.sh):"
+        echo "  --eval-tools TOOLS                              # Specify evaluation tools (default: all)"
+        echo "     all/full    - all tools (compare, clippy, safety, miri, loom)"
+        echo "     fast        - fast tools only (compare, clippy)"
+        echo "     none        - skip evaluation"
+        echo "     custom      - comma-separated: compare,clippy,safety,miri,loom"
+        echo "  --miri-timeout SEC                              # Miri timeout (default: 300s)"
+        echo "  --loom-timeout SEC                              # Loom timeout (default: 600s)"
+        echo ""
+        echo "  ./run.sh 1 --eval-tools fast                    # Only compare + clippy"
+        echo "  ./run.sh 1 --eval-tools 'compare,clippy,miri'   # Specific tools"
+        echo "  ./run.sh 1 --eval-tools none                    # No evaluation"
         echo "Available Tools (can be combined in --tools):"
         echo "  compile        - cargo build - Compilation check (🚀 fast)"
         echo "  clippy         - cargo clippy - Code style/performance (🚀 fast)"
@@ -149,6 +164,30 @@ while [ $# -gt 0 ]; do
             NEGATIVE_ONLY="--negative-only"
             INCLUDE_NEGATIVE="--include-negative"
             ;;
+        --eval-tools)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --eval-tools requires an argument"
+                exit 1
+            fi
+            EVAL_TOOLS="$2"
+            shift
+            ;;
+        --miri-timeout)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --miri-timeout requires an argument"
+                exit 1
+            fi
+            MIRI_TIMEOUT="$2"
+            shift
+            ;;
+        --loom-timeout)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --loom-timeout requires an argument"
+                exit 1
+            fi
+            LOOM_TIMEOUT="$2"
+            shift
+            ;;
         *)
             echo "❌ Unknown argument: $1"
             exit 1
@@ -211,6 +250,11 @@ if [ ! -z "$NEGATIVE_ONLY" ]; then
 fi
 echo "   - Force Rewrite: ${FORCE_REWRITE:-(no)}"
 echo "   - Force Eval: ${FORCE_EVAL:-(no)}"
+echo ""
+echo "   📊 Evaluation Configuration:"
+echo "      - Evaluation Tools: $EVAL_TOOLS"
+echo "      - Miri Timeout: ${MIRI_TIMEOUT}s"
+echo "      - Loom Timeout: ${LOOM_TIMEOUT}s"
 echo ""
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -314,7 +358,12 @@ if [ -f "$LAST_OUTPUT_FILE" ]; then
     echo "📁 Found refactor output directory: $REFACTOR_OUTPUT_DIR"
 fi
 
-bash "$SCRIPT_DIR/run_evaluation.sh" "$PROMPT_IDX" $FORCE_EVAL $CLEAR_FLAG --output-dir "$REFACTOR_OUTPUT_DIR"
+bash "$SCRIPT_DIR/run_evaluation.sh" "$PROMPT_IDX" \
+    $FORCE_EVAL $CLEAR_FLAG \
+    --output-dir "$REFACTOR_OUTPUT_DIR" \
+    --eval-tools "$EVAL_TOOLS" \
+    --miri-timeout "$MIRI_TIMEOUT" \
+    --loom-timeout "$LOOM_TIMEOUT"
 
 STEP3_END=$(date +%s)
 STEP3_DURATION=$((STEP3_END - STEP3_START))

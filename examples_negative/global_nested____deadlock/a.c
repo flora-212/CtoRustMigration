@@ -62,7 +62,7 @@ void *t_fun(void *arg) {
     if ((long)arg == 0) {
         f1();
     } else {
-        f2()
+        f2();
     }
     return NULL;
 }

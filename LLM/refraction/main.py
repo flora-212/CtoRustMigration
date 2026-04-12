@@ -28,6 +28,7 @@ def main():
     tools_str = "compile"
     max_iterations = 5
     model_name = DEFAULT_MODEL
+    fallback_strategy = "last-passed"  # Default strategy
     
     for i, arg in enumerate(sys.argv):
         if arg == "--tools" and i + 1 < len(sys.argv):
@@ -39,6 +40,8 @@ def main():
             max_iterations = int(sys.argv[i + 1])
         elif arg == "--model" and i + 1 < len(sys.argv):
             model_name = sys.argv[i + 1]
+        elif arg == "--fallback-strategy" and i + 1 < len(sys.argv):
+            fallback_strategy = sys.argv[i + 1]
     
     # Convert tools string to list (support both space and comma separated)
     validation_tools = tools_str.split() if ' ' in tools_str else [tools_str] if tools_str else ["compile"]
@@ -70,7 +73,7 @@ def main():
     print(f"🔧 Using SYSTEM_PROMPT_{prompt_idx} {mode_str}")
     print(f"📋 Model: {model_name}")
     print(f"📋 Examples: {sample_type}")
-    print(f"📋 Strategy: Save best compilable version + original fallback\n")
+    print(f"📋 Fallback Strategy: {fallback_strategy}\n")
     
     # Initialize OutputManager with timestamp-based directory
     output_manager = OutputManager()
@@ -126,7 +129,8 @@ def main():
                     validation_tools=validation_tools,
                     output_manager=output_manager,
                     example_name=example_name,
-                    model=model_name
+                    model=model_name,
+                    fallback_strategy=fallback_strategy
                 )
                 
                 if passed:

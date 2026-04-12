@@ -114,6 +114,7 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     s1 = malloc(::core::mem::size_of::<ss>() as size_t) as *mut ss;
     s2 = malloc(::core::mem::size_of::<ss>() as size_t) as *mut ss;
     (*s1).n = 0 as ::core::ffi::c_int;
+    (*s2).n = 0 as ::core::ffi::c_int;
     let mut a: args = args { s1, s2 };
     pthread_mutex_init(&raw mut (*s1).m, ::core::ptr::null::<pthread_mutexattr_t>());
     pthread_mutex_init(&raw mut (*s2).m, ::core::ptr::null::<pthread_mutexattr_t>());

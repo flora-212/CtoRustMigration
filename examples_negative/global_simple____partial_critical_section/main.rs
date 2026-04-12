@@ -83,7 +83,7 @@ pub static mut num_mutex: pthread_mutex_t = pthread_mutex_t {
 };
 #[no_mangle]
 pub unsafe extern "C" fn f1() {
-    let mut x: ::core::ffi::c_int = n1;
+    let mut x: ::core::ffi::c_int = n3;
     pthread_mutex_lock(&raw mut num_mutex);
     n1 = n1 + x;
     n2 = n2 + x;

@@ -343,8 +343,8 @@ def main():
 
             compile_str = "✅" if l_compile else "❌"
             # 添加来源标记
-            if compile_source == "metadata":
-                compile_str += " [@meta]"
+            # if compile_source == "metadata":
+            #     compile_str += " [@meta]"
             if l_compile:
                 summary["llm_compiles"] += 1
             if l_metrics["unsafe"] < orig_metrics["unsafe"]:

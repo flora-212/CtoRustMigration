@@ -7,7 +7,7 @@ pthread_mutex_t num_mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
 void f1() {
-    n2 = n2 + 1
+    n2 = n2 + 1;
     pthread_mutex_lock(&num_mutex);
     n1 = n1 + 1;
     if (n1 == 1) {
@@ -25,7 +25,7 @@ void f1() {
         pthread_cond_broadcast(&cond);
     }
     pthread_mutex_unlock(&num_mutex);
-    n1 = n1 + 1
+    n1 = n1 + 1;
 }
 
 void *t_fun(void *arg) {

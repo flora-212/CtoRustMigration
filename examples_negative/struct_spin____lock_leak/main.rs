@@ -97,6 +97,9 @@ pub union pthread_rwlockattr_t {
     pub __align: ::core::ffi::c_long,
 }
 pub type pthread_spinlock_t = ::core::ffi::c_int;
+pub type C2Rust_Unnamed = ::core::ffi::c_uint;
+pub const PTHREAD_PROCESS_SHARED: C2Rust_Unnamed = 1;
+pub const PTHREAD_PROCESS_PRIVATE: C2Rust_Unnamed = 0;
 #[derive(Copy, Clone)]
 #[repr(C)]
 pub struct ss {
@@ -166,7 +169,7 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     s.n2 = 2 as ::core::ffi::c_int;
     pthread_rwlock_init(&raw mut s.m2, ::core::ptr::null::<pthread_rwlockattr_t>());
     s.n3 = 3 as ::core::ffi::c_int;
-    pthread_spin_init(&raw mut s.m3, NULL as ::core::ffi::c_int);
+    pthread_spin_init(&raw mut s.m3, PTHREAD_PROCESS_PRIVATE as ::core::ffi::c_int);
     let mut id1: pthread_t = 0;
     let mut id2: pthread_t = 0;
     pthread_create(

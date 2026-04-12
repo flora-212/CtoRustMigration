@@ -104,6 +104,9 @@ pub union pthread_rwlockattr_t {
     pub __align: ::core::ffi::c_long,
 }
 pub type pthread_spinlock_t = ::core::ffi::c_int;
+pub type C2Rust_Unnamed = ::core::ffi::c_uint;
+pub const PTHREAD_PROCESS_SHARED: C2Rust_Unnamed = 1;
+pub const PTHREAD_PROCESS_PRIVATE: C2Rust_Unnamed = 0;
 
 #[repr(C)]
 pub struct ss {

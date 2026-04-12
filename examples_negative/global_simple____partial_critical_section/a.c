@@ -7,7 +7,7 @@ int n3 = 1;
 pthread_mutex_t num_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 void f1() {
-    int x = n1;
+    int x = n3;
 
     pthread_mutex_lock(&num_mutex);
 

@@ -32,7 +32,7 @@ int main() {
     s.n2 = 2;
     pthread_rwlock_init(&s.m2, NULL);
     s.n3 = 3;
-    pthread_spin_init(&s.m3, NULL);
+    pthread_spin_init(&s.m3, PTHREAD_PROCESS_PRIVATE);
 
     pthread_t id1, id2;
     pthread_create(&id1, NULL, t_fun, &s);

@@ -126,6 +126,7 @@ unsafe fn main_0() -> ::core::ffi::c_int {
     pthread_mutex_init(&raw mut s1.m, ::core::ptr::null::<pthread_mutexattr_t>());
     s1.n = 0 as ::core::ffi::c_int;
     pthread_mutex_init(&raw mut s2.m, ::core::ptr::null::<pthread_mutexattr_t>());
+    s2.n = 0 as ::core::ffi::c_int;
     s3 = malloc(::core::mem::size_of::<ss>() as size_t) as *mut ss;
     (*s3).n = 0 as ::core::ffi::c_int;
     pthread_mutex_init(&raw mut (*s3).m, ::core::ptr::null::<pthread_mutexattr_t>());

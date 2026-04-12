@@ -50,7 +50,7 @@ int main() {
 
     s1 = malloc(sizeof(ss));
     s2 = malloc(sizeof(ss));
-    s1->n = 0; s2->n = ;
+    s1->n = 0; s2->n = 0;
     args a = {s1, s2};
 
     pthread_mutex_init(&s1->m, NULL);

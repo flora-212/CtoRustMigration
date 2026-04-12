@@ -1,14 +1,19 @@
 #!/bin/bash
-# Usage: ./run_evaluation.sh [prompt_index] [--force] [--force-compare] [--force-clippy] [--clear] [--output-dir DIR] [--timestamp TIMESTAMP]
+# Usage: ./run_evaluation.sh [prompt_index] [options]
 #   prompt_index: 0, 1, ... (default: 0)
-#   --force: force both compare_all.py and clippy_concurrency_eval.py
-#   --force-compare: force compare_all.py only
-#   --force-clippy: force clippy_concurrency_eval.py only
-#   --clear: pass through to compare_all.py and also force both test steps
-#   --output-dir: use specific output directory (e.g., from refractor.py)
-#   --timestamp: use specific timestamp directory (default: auto-detect latest)
-
-set -e
+#   
+# Options:
+#   --force              force re-run all evaluations
+#   --force-compare      force compare_all.py only
+#   --force-clippy       force clippy_concurrency_eval.py only
+#   --clear              clear and force both compare and clippy
+#   --output-dir DIR     use specific output directory
+#   --timestamp TM       use specific timestamp directory
+#   --eval-tools TOOLS   specify evaluation tools (default: all)
+#                        comma-separated: compare,clippy,safety,miri,loom
+#                        or: fast (compare+clippy), full (all), none
+#   --miri-timeout SEC   miri timeout in seconds (default: 300)
+#   --loom-timeout SEC   loom timeout in seconds (default: 600)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 RESULT_DIR="$SCRIPT_DIR/result"
@@ -18,6 +23,9 @@ FORCE_CLIPPY=""
 CLEAR_FLAG=""
 TIMESTAMP=""
 OUTPUT_DIR=""
+EVAL_TOOLS="all"           # Default: run all evaluations
+MIRI_TIMEOUT="300"         # 5 minutes
+LOOM_TIMEOUT="600"         # 10 minutes
 
 # Parse arguments
 i=2  # Start from second argument (first is prompt_idx)
@@ -49,6 +57,24 @@ while [ $i -le $# ]; do
             i=$((i+1))
             if [ $i -le $# ]; then
                 TIMESTAMP="${!i}"
+            fi
+            ;;
+        --eval-tools)
+            i=$((i+1))
+            if [ $i -le $# ]; then
+                EVAL_TOOLS="${!i}"
+            fi
+            ;;
+        --miri-timeout)
+            i=$((i+1))
+            if [ $i -le $# ]; then
+                MIRI_TIMEOUT="${!i}"
+            fi
+            ;;
+        --loom-timeout)
+            i=$((i+1))
+            if [ $i -le $# ]; then
+                LOOM_TIMEOUT="${!i}"
             fi
             ;;
     esac
@@ -99,17 +125,91 @@ if [ ! -d "$TIMESTAMPED_DIR" ]; then
     exit 1
 fi
 
+# Ensure evaluation directory exists
+mkdir -p "$TIMESTAMPED_DIR/evaluation"
+
+set -e
+
 echo "📁 Using timestamped output directory: $TIMESTAMPED_DIR"
+echo "🔧 Evaluation tools: $EVAL_TOOLS"
 echo ""
+
+# Expand eval tools aliases
+case "$EVAL_TOOLS" in
+    all)
+        EVAL_TOOLS="compare,clippy,safety,miri,loom"
+        ;;
+    fast)
+        EVAL_TOOLS="compare,clippy"
+        ;;
+    full)
+        EVAL_TOOLS="compare,clippy,safety,miri,loom"
+        ;;
+    none)
+        EVAL_TOOLS=""
+        ;;
+    *)
+        # User specified custom list - use as-is
+        ;;
+esac
 
 EVAL_DIR="$SCRIPT_DIR/evaluation"
 
-echo "=== Running compare_all.py ==="
-python3 "$EVAL_DIR/compare_all.py" "$PROMPT_IDX" $FORCE_COMPARE $CLEAR_FLAG --llm-output-dir "$TIMESTAMPED_DIR"
+# Function to check if tool should be run
+should_run_tool() {
+    local tool=$1
+    if [[ ",$EVAL_TOOLS," == *",$tool,"* ]]; then
+        return 0
+    fi
+    return 1
+}
+
+# Run evaluations based on EVAL_TOOLS
+echo "=== Running compare_all.py (baseline comparison) ==="
+if should_run_tool "compare"; then
+    python3 "$EVAL_DIR/compare_all.py" "$PROMPT_IDX" $FORCE_COMPARE $CLEAR_FLAG --llm-output-dir "$TIMESTAMPED_DIR"
+else
+    echo "⏭️  Skipped (not in EVAL_TOOLS)"
+fi
 
 echo ""
-echo "=== Running clippy_concurrency_eval.py ==="
-python3 "$EVAL_DIR/clippy_concurrency_eval.py" "$PROMPT_IDX" $FORCE_CLIPPY --llm-output-dir "$TIMESTAMPED_DIR"
+echo "=== Running clippy_concurrency_eval.py (code safety analysis) ==="
+if should_run_tool "clippy"; then
+    python3 "$EVAL_DIR/clippy_concurrency_eval.py" "$PROMPT_IDX" $FORCE_CLIPPY --llm-output-dir "$TIMESTAMPED_DIR"
+else
+    echo "⏭️  Skipped (not in EVAL_TOOLS)"
+fi
+
+echo ""
+echo "=== Running loom_eval.py (loom concurrency testing) ==="
+if should_run_tool "loom"; then
+    echo "⚠️  Note: Loom testing is VERY SLOW (10+ min per example). Timeout: ${LOOM_TIMEOUT}s"
+    python3 "$EVAL_DIR/loom_eval.py" \
+        --output-dir "$TIMESTAMPED_DIR" \
+        --report-output "$TIMESTAMPED_DIR/evaluation/loom_report.md" \
+        --json-output "$TIMESTAMPED_DIR/evaluation/loom_results.json" \
+        --timeout "$LOOM_TIMEOUT" \
+        2>&1 || {
+        echo "⚠️  Loom evaluation completed with warnings or failures (this is normal if some tests fail)"
+    }
+else
+    echo "⏭️  Skipped (not in EVAL_TOOLS)"
+fi
+
+echo ""
+echo "=== Running miri_eval.py (undefined behavior detection) ==="
+if should_run_tool "miri"; then
+    python3 "$EVAL_DIR/miri_eval.py" \
+        --output-dir "$TIMESTAMPED_DIR" \
+        --report-output "$TIMESTAMPED_DIR/evaluation/miri_report.md" \
+        --json-output "$TIMESTAMPED_DIR/evaluation/miri_results.json" \
+        --timeout "$MIRI_TIMEOUT" \
+        2>&1 || {
+        echo "⚠️  Miri evaluation completed with warnings or failures (this is normal if some tests fail)"
+    }
+else
+    echo "⏭️  Skipped (not in EVAL_TOOLS)"
+fi
 
 echo ""
 echo "=== Verification: Checking evaluation results in timestamped directory ==="

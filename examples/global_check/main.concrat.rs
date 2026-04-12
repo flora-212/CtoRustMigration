@@ -89,9 +89,7 @@ pub unsafe extern "C" fn f1() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;
@@ -117,9 +115,7 @@ pub unsafe extern "C" fn f2() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;
@@ -145,9 +141,7 @@ pub unsafe extern "C" fn f3() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;
@@ -163,9 +157,7 @@ pub unsafe extern "C" fn f3() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;
@@ -191,9 +183,7 @@ pub unsafe extern "C" fn f4() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;
@@ -209,9 +199,7 @@ pub unsafe extern "C" fn f4() {
         }
     };
     match m_guard_opt {
-        None => {
-            return;
-        }
+        None => return,
         Some(m_guard_tmp) => {
             m_guard = m_guard_tmp;
             (*m_guard).n = (*m_guard).n + 1 as ::core::ffi::c_int;

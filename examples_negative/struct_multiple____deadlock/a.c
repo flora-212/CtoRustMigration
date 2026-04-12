@@ -45,7 +45,7 @@ int main() {
     pthread_t id1, id2, id3;
     pthread_create(&id1, NULL, t_fun, (void *)2);
     pthread_create(&id2, NULL, t_fun, (void *)1);
-    pthread_create(&id3, NULL, t_fun, (void *)3)
+    pthread_create(&id3, NULL, t_fun, (void *)3);
     pthread_join(id1, NULL);
     pthread_join(id2, NULL);
     pthread_join(id3, NULL);

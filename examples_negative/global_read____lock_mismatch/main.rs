@@ -1,4 +1,12 @@
 extern "C" {
+    fn pthread_create(
+        __newthread: *mut pthread_t,
+        __attr: *const pthread_attr_t,
+        __start_routine: Option<
+            unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void,
+        >,
+        __arg: *mut ::core::ffi::c_void,
+    ) -> ::core::ffi::c_int;
     fn pthread_join(
         __th: pthread_t,
         __thread_return: *mut *mut ::core::ffi::c_void,
@@ -27,6 +35,12 @@ pub struct __pthread_mutex_s {
     pub __list: __pthread_list_t,
 }
 pub type pthread_t = ::core::ffi::c_ulong;
+#[derive(Copy, Clone)]
+#[repr(C)]
+pub union pthread_attr_t {
+    pub __size: [::core::ffi::c_char; 56],
+    pub __align: ::core::ffi::c_long,
+}
 #[derive(Copy, Clone)]
 #[repr(C)]
 pub union pthread_mutex_t {
@@ -105,6 +119,18 @@ pub unsafe extern "C" fn t_fun(mut arg: *mut ::core::ffi::c_void) -> *mut ::core
 unsafe fn main_0() -> ::core::ffi::c_int {
     let mut id1: pthread_t = 0;
     let mut id2: pthread_t = 0;
+    pthread_create(
+        &raw mut id1,
+        ::core::ptr::null::<pthread_attr_t>(),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
+        ::core::ptr::null_mut::<::core::ffi::c_void>(),
+    );
+    pthread_create(
+        &raw mut id2,
+        ::core::ptr::null::<pthread_attr_t>(),
+        Some(t_fun as unsafe extern "C" fn(*mut ::core::ffi::c_void) -> *mut ::core::ffi::c_void),
+        1 as ::core::ffi::c_int as *mut ::core::ffi::c_void,
+    );
     pthread_join(id1, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     pthread_join(id2, ::core::ptr::null_mut::<*mut ::core::ffi::c_void>());
     printf(b"%d %d\n\0".as_ptr() as *const ::core::ffi::c_char, n1, n2);

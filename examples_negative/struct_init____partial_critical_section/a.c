@@ -27,6 +27,7 @@ int main() {
     s1.n = 0;
 
     pthread_mutex_init(&s2.m, NULL);
+    s2.n = 0;
 
     s3 = malloc(sizeof(ss));
     s3->n = 0;

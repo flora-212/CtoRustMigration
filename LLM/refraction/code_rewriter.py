@@ -59,7 +59,8 @@ def rewrite_file_with_validation(
     validation_tools: Optional[List[str]] = None,
     output_manager = None,
     example_name: str = None,
-    model: str = "qwen2.5-coder:14b"
+    model: str = "qwen2.5-coder:14b",
+    fallback_strategy: str = "last-passed"
 ) -> tuple:
     """
     Rewrite a Rust file with iterative validation and feedback.
@@ -77,6 +78,9 @@ def rewrite_file_with_validation(
         output_manager: OutputManager instance for saving intermediate results
         example_name: Name of the example for organizing outputs
         model: Model name to use
+        fallback_strategy: Strategy when max_iterations reached without passing:
+            - 'last-passed' (default): Save the last round that compiled
+            - 'last-round': Save the final round regardless of compilation status
     
     Returns:
         (success: bool, rewritten_code: str, report: str, iterations_used: int)
@@ -222,50 +226,59 @@ def rewrite_file_with_validation(
                     time.sleep(RETRY_DELAY)
                 else:
                     # All iterations done but still not validated
-                    # Try to use best compile-passing version
                     final_code = None
                     final_round = None
                     final_reason = None
                     
                     print()  # newline
-                    if best_compile_round is not None and best_compile_code is not None:
-                        print(f"       💾 Using best compile from round {best_compile_round}")
-                        final_code = best_compile_code
-                        final_round = best_compile_round
-                        final_reason = "best_compile_round"
+                    
+                    # Determine strategy
+                    if fallback_strategy == "last-round":
+                        # Strategy: Always save the final round regardless of compilation
+                        print(f"       💾 Using last round (round {max_iterations}) - fallback strategy: last-round")
+                        final_code = rewritten_code
+                        final_round = max_iterations
+                        final_reason = "last_round_fallback"
                     else:
-                        # No LLM-generated version compiled - try original code as fallback
-                        print(f"       🔄 Trying original unmodified code...")
-                        
-                        # Try to compile original code
-                        original_compile_ok = False
-                        try:
-                            # Write original code to temp file and check
-                            temp_file = os.path.join(
-                                output_manager.get_example_dir(example_name) if output_manager else "/tmp",
-                                "_original_check.rs"
-                            )
-                            with open(temp_file, "w") as f:
-                                f.write(original_code)
-                            
-                            original_compile_ok, _ = validator.try_compile_standalone(temp_file, example_dir)
-                            
-                            if os.path.exists(temp_file):
-                                os.remove(temp_file)
-                        except:
-                            original_compile_ok = False
-                        
-                        if original_compile_ok:
-                            print(f"       ✅ Original code compiles! Using it.")
-                            final_code = original_code
-                            final_round = "original"
-                            final_reason = "original_code_fallback"
+                        # Strategy: last-passed (default) - find best compiled version
+                        if best_compile_round is not None and best_compile_code is not None:
+                            print(f"       💾 Using best compile from round {best_compile_round}")
+                            final_code = best_compile_code
+                            final_round = best_compile_round
+                            final_reason = "best_compile_round"
                         else:
-                            # Last resort - save last attempted LLM version
-                            print(f"       ⚠️  Original also fails. Saving last LLM attempt.")
-                            final_code = rewritten_code
-                            final_round = max_iterations
-                            final_reason = "last_attempt_no_compile"
+                            # No LLM-generated version compiled - try original code as fallback
+                            print(f"       🔄 Trying original unmodified code...")
+                            
+                            # Try to compile original code
+                            original_compile_ok = False
+                            try:
+                                # Write original code to temp file and check
+                                temp_file = os.path.join(
+                                    output_manager.get_example_dir(example_name) if output_manager else "/tmp",
+                                    "_original_check.rs"
+                                )
+                                with open(temp_file, "w") as f:
+                                    f.write(original_code)
+                                
+                                original_compile_ok, _ = validator.try_compile_standalone(temp_file, example_dir)
+                                
+                                if os.path.exists(temp_file):
+                                    os.remove(temp_file)
+                            except:
+                                original_compile_ok = False
+                            
+                            if original_compile_ok:
+                                print(f"       ✅ Original code compiles! Using it.")
+                                final_code = original_code
+                                final_round = "original"
+                                final_reason = "original_code_fallback"
+                            else:
+                                # Last resort - save last attempted LLM version
+                                print(f"       ⚠️  Original also fails. Saving last LLM attempt.")
+                                final_code = rewritten_code
+                                final_round = max_iterations
+                                final_reason = "last_attempt_no_compile"
                     
                     # Save final version
                     if final_code:
