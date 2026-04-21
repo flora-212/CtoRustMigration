@@ -16,7 +16,7 @@ from .utils import extract_code
 from validation import CodeValidator
 
 
-def rewrite_file(filepath: str, system_prompt: str, model: str = "qwen2.5-coder:14b") -> str:
+def rewrite_file(filepath: str, system_prompt: str, model: str = "qwen2.5-coder:14b", temperature: float = 0.2) -> str:
     """
     Simple rewrite of a file without validation.
     
@@ -24,6 +24,7 @@ def rewrite_file(filepath: str, system_prompt: str, model: str = "qwen2.5-coder:
         filepath: Path to the .rs file to rewrite
         system_prompt: System prompt for the LLM
         model: Model name to use
+        temperature: Temperature for LLM sampling (0.0-2.0, lower = more deterministic)
     
     Returns:
         The rewritten code
@@ -39,7 +40,7 @@ def rewrite_file(filepath: str, system_prompt: str, model: str = "qwen2.5-coder:
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"Rewrite the following code:\n\n```rust\n{code}\n```"},
                 ],
-                options={"num_ctx": 8192, "temperature": 0.2},
+                options={"num_ctx": 8192, "temperature": temperature},
             )
             return response.message.content
         except Exception as e:
@@ -60,7 +61,8 @@ def rewrite_file_with_validation(
     output_manager = None,
     example_name: str = None,
     model: str = "qwen2.5-coder:14b",
-    fallback_strategy: str = "last-passed"
+    fallback_strategy: str = "last-round",
+    temperature: float = 0.2
 ) -> tuple:
     """
     Rewrite a Rust file with iterative validation and feedback.
@@ -81,6 +83,7 @@ def rewrite_file_with_validation(
         fallback_strategy: Strategy when max_iterations reached without passing:
             - 'last-passed' (default): Save the last round that compiled
             - 'last-round': Save the final round regardless of compilation status
+        temperature: Temperature for LLM sampling (0.0-2.0, lower = more deterministic)
     
     Returns:
         (success: bool, rewritten_code: str, report: str, iterations_used: int)
@@ -115,7 +118,7 @@ def rewrite_file_with_validation(
             response = ollama.chat(
                 model=model,
                 messages=messages,
-                options={"num_ctx": 8192, "temperature": 0.2},
+                options={"num_ctx": 8192, "temperature": temperature},
             )
             
             rewritten_code = extract_code(response.message.content)

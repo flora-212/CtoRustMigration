@@ -6,30 +6,31 @@ import os
 import sys
 import re
 
-def get_round_from_metadata(sample_name, examples_dir):
-    """
-    Extract round number from rounds_metadata.json for a sample.
-    Returns the last successful round number, or "c2rust" if no round compiled successfully.
-    """
-    metadata_path = os.path.join(examples_dir, sample_name, "rounds_metadata.json")
-    if not os.path.exists(metadata_path):
-        return "c2rust"
-    
-    try:
-        with open(metadata_path) as f:
-            data = json.load(f)
-            # Find last successful round
-            last_successful_round = None
-            for round_key in sorted(data.keys(), key=lambda x: int(x)):
-                if data[round_key].get("compile_status"):
-                    last_successful_round = round_key
-            
-            # Return last successful round if found, otherwise "c2rust"
-            return last_successful_round if last_successful_round else "c2rust"
-    except (json.JSONDecodeError, ValueError, KeyError):
-        pass
-    
-    return "c2rust"
+# Ensure we can import from the same directory
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from metadata_utils import (
+    get_round_from_metadata,
+    extract_round_from_dirname,
+    find_examples_dir,
+    find_input_file
+)
+from report_config import (
+    REPORT_TYPE_POSITIVE_ONLY,
+    REPORT_TYPE_NEGATIVE_ONLY,
+    REPORT_TYPE_ALL,
+    ALL_METRICS,
+    NEGATIVE_SAMPLE_METRICS,
+    METRICS_LOWER_IS_BETTER,
+    METRICS_HIGHER_IS_BETTER,
+    IS_NEGATIVE_FIELD,
+    NEGATIVE_SAMPLE_SEPARATOR,
+    extract_positive_sample_name,
+    is_negative_sample,
+    get_metric_display_name,
+    is_lower_better,
+    is_higher_better
+)
 
 
 def generate_markdown_report(data, report_type, output_path, positive_only_data=None, round_num=None, get_sample_round=None):
@@ -45,13 +46,13 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w = lines.append
 
     # Header based on report type
-    if report_type == "positive_only":
+    if report_type == REPORT_TYPE_POSITIVE_ONLY:
         title = "Concurrency Transformation Comparison Report (Positive Samples Only)"
         subtitle = "Comparing **Original** vs **ConCrat** vs **LLM** for positive examples"
-    elif report_type == "negative_only":
+    elif report_type == REPORT_TYPE_NEGATIVE_ONLY:
         title = "Concurrency Transformation Comparison Report (Negative Samples Only)"
         subtitle = "Analyzing **Original** and **LLM** for negative examples (expected to fail)"
-    else:  # all
+    else:  # REPORT_TYPE_ALL
         title = "Concurrency Transformation Comparison Report"
         subtitle = "Three-way comparison: **Original** (c2rust output) vs **ConCrat** (automated transform) vs **LLM** (LLM-based rewrite)"
 
@@ -64,15 +65,14 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("## Summary Overview")
     w("")
     
-    if report_type == "negative_only":
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY:
         w("| # | Example | Type | Compiles (L) | Round | Pos | Pos Round | unsafe | pthread | raw_ptr | static_mut | libc | Lines |")
         w("|---|---------|------|:----------:|:---:|:--:|:----------:|--------|---------|---------|------------|------|-------|")
     else:
         w("| # | Example | Compiles (C / L) | Round | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
         w("|---|---------|:----------------:|:---:|--------|---------|---------|------------|------|-----------|------------|-------|")
 
-    metric_keys = ["unsafe", "pthread", "raw_ptr", "static_mut", "libc",
-                   "std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread", "lines"]
+    metric_keys = ALL_METRICS
 
     totals = {src: {k: 0 for k in metric_keys} for src in ["original", "concrat", "llm"]}
     compile_stats = {"concrat": {"yes": 0, "no": 0}, "llm": {"yes": 0, "no": 0}}
@@ -80,11 +80,11 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     
     # Build a map of positive samples for quick lookup (used for negative sample status)
     positive_samples = {}
-    if report_type == "negative_only" or report_type == "all":
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY or report_type == REPORT_TYPE_ALL:
         # Use provided positive data if available (for negative_only reports)
         positive_data_src = positive_only_data if positive_only_data else data
         for item in positive_data_src:
-            if not item.get("is_negative", False):
+            if not item.get(IS_NEGATIVE_FIELD, False):
                 # Get sample round from metadata if available
                 sample_round = None
                 if get_sample_round:
@@ -98,13 +98,13 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
 
     for idx, item in enumerate(data, 1):
         name = item["name"]
-        is_negative = item.get("is_negative", False)
+        is_negative = item.get(IS_NEGATIVE_FIELD, False)
         om = item["original"]["metrics"]
 
         # Skip based on report type filter
-        if report_type == "negative_only" and not is_negative:
+        if report_type == REPORT_TYPE_NEGATIVE_ONLY and not is_negative:
             continue
-        if report_type == "positive_only" and is_negative:
+        if report_type == REPORT_TYPE_POSITIVE_ONLY and is_negative:
             continue
 
         # For negative samples, show Original → LLM only
@@ -127,7 +127,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                     totals["llm"][k] += lm.get(k, 0)
             
             # Extract base sample name (remove ____xxx suffix) to find corresponding positive sample
-            base_name = name.split("____")[0]
+            base_name = extract_positive_sample_name(name)
             pos_info = positive_samples.get(base_name, {})
             pos_compiles = "✅" if pos_info.get("compiles") else "❌"
             pos_round = pos_info.get("round") or "—"
@@ -190,7 +190,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 sample_count += 1
 
     # Totals row
-    if report_type == "negative_only":
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY:
         total_llm = compile_stats['llm']['yes']
         total_count = compile_stats['llm']['yes'] + compile_stats['llm']['no']
         # Count positive samples that compile
@@ -219,7 +219,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
 
     w("")
     
-    if report_type != "negative_only":
+    if report_type != REPORT_TYPE_NEGATIVE_ONLY:
         w("> **Reading the table**: Each metric cell shows **Original → ConCrat → LLM**. "
           "Compiles column shows **ConCrat / LLM**.")
     else:
@@ -233,14 +233,14 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("## Aggregate Statistics")
     w("")
     
-    if report_type == "negative_only":
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY:
         w("| Metric | Original | LLM | vs Original |")
         w("|--------|----------|-----|:------------:|")
         for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
             o = totals["original"][k]
             l = totals["llm"][k]
             diff = f"{(o - l) / o * 100:+.1f}%" if o > 0 else "—"
-            label = k.replace("_", "\\_")
+            label = get_metric_display_name(k)
             w(f"| {label} | {o} | {l} | {diff} |")
     else:
         w("| Metric | Original | ConCrat | LLM | Reduction (O→C) | Reduction (O→L) |")
@@ -252,13 +252,13 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
             l = totals["llm"].get(k, 0)
             rc = f"{(o - c) / o * 100:.1f}%" if o > 0 else "—"
             rl = f"{(o - l) / o * 100:.1f}%" if o > 0 else "—"
-            label = k.replace("_", "\\_")
+            label = get_metric_display_name(k)
             w(f"| {label} | {o} | {c} | {l} | {rc} | {rl} |")
 
     w("")
     
     total_for_stats = sample_count if sample_count > 0 else len(data)
-    if report_type != "negative_only":
+    if report_type != REPORT_TYPE_NEGATIVE_ONLY:
         w(f"| **Compile success** | — | {compile_stats['concrat']['yes']}/{total_for_stats} "
           f"({(compile_stats['concrat']['yes']/total_for_stats*100 if total_for_stats > 0 else 0):.0f}%) "
           f"| {compile_stats['llm']['yes']}/{total_for_stats} "
@@ -270,14 +270,14 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("")
 
     # ── Safety features adoption ──
-    if report_type != "negative_only":
+    if report_type != REPORT_TYPE_NEGATIVE_ONLY:
         w("## Safety Features Adoption")
         w("")
         w("| Example | Round | std::sync::Mutex | Arc<Mutex> | RwLock | Condvar | std::thread | join() |")
         w("|---------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|")
 
         for item in data:
-            if item.get("is_negative", False):
+            if item.get(IS_NEGATIVE_FIELD, False):
                 continue  # Skip negative samples in this section
             
             if "concrat" not in item:
@@ -312,9 +312,9 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("")
 
     for item in data:
-        if report_type == "negative_only" and not item.get("is_negative", False):
+        if report_type == REPORT_TYPE_NEGATIVE_ONLY and not item.get(IS_NEGATIVE_FIELD, False):
             continue
-        if report_type == "positive_only" and item.get("is_negative", False):
+        if report_type == REPORT_TYPE_POSITIVE_ONLY and item.get(IS_NEGATIVE_FIELD, False):
             continue
         
         name = item["name"]
@@ -324,7 +324,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         om = item["original"]["metrics"]
         
         # Handle negative samples (no concrat data, may not have llm data)
-        if item.get("is_negative", False):
+        if item.get(IS_NEGATIVE_FIELD, False):
             if "llm" in item:
                 lm = item["llm"]["metrics"]
                 lc = "✅ Yes" if item["llm"].get("compiles") else "❌ No"
@@ -332,7 +332,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 w("")
                 w("| Metric | Original | LLM | Difference |")
                 w("|--------|:--------:|:---:|:----------:|")
-                for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
+                for k in NEGATIVE_SAMPLE_METRICS:
                     ov = om.get(k, 0)
                     lv = lm.get(k, 0)
                     diff = lv - ov
@@ -351,7 +351,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 w("")
                 w("| Metric | Original |")
                 w("|--------|:--------:|")
-                for k in ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "lines"]:
+                for k in NEGATIVE_SAMPLE_METRICS:
                     ov = om.get(k, 0)
                     w(f"| {k} | {ov} |")
                 
@@ -386,8 +386,8 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                     cv = cm.get(k, 0)
                     lv = lm.get(k, 0) if lm else 0
                     
-                    # For these metrics, lower is better
-                    if k in ("unsafe", "pthread", "raw_ptr", "static_mut", "libc"):
+                    # Determine if lower or higher is better for this metric
+                    if is_lower_better(k):
                         best_val = min(cv, lv)
                         if not lm:
                             best = "ConCrat"
@@ -397,7 +397,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                             best = "ConCrat"
                         else:
                             best = "LLM"
-                    elif k in ("std_mutex", "std_arc", "std_rwlock", "std_condvar", "std_thread"):
+                    elif is_higher_better(k):
                         # Higher is generally better (more idiomatic)
                         best_val = max(cv, lv)
                         if not lm:
@@ -408,7 +408,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                             best = "ConCrat"
                         else:
                             best = "LLM"
-                    else:  # lines
+                    else:  # Default to lower_better for unknown metrics
                         if not lm:
                             best = "ConCrat"
                         elif cv == lv:
@@ -417,7 +417,7 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                             best = "ConCrat"
                         else:
                             best = "LLM"
-                    label = k.replace("_", "\\_")
+                    label = get_metric_display_name(k)
                     
                     if lm:
                         w(f"| {label} | {ov} | {cv} | {lv} | {best} |")
@@ -485,24 +485,15 @@ def main():
     
     # Process all three report types
     report_versions = [
-        ("all", "comparison_report.json", "comparison_report.md"),
-        ("positive_only", "comparison_report_positive_only.json", "comparison_report_positive_only.md"),
-        ("negative_only", "comparison_report_negative_only.json", "comparison_report_negative_only.md"),
+        (REPORT_TYPE_ALL, "comparison_report.json", "comparison_report.md"),
+        (REPORT_TYPE_POSITIVE_ONLY, "comparison_report_positive_only.json", "comparison_report_positive_only.md"),
+        (REPORT_TYPE_NEGATIVE_ONLY, "comparison_report_negative_only.json", "comparison_report_negative_only.md"),
     ]
     
     for report_type, input_file, output_file in report_versions:
         # Try to find input file in any of the directories
-        input_path = None
-        input_dir = None
-        output_dir = None
-        
-        for candidate_dir in input_dirs:
-            candidate_path = os.path.join(candidate_dir, input_file)
-            if os.path.exists(candidate_path):
-                input_path = candidate_path
-                input_dir = candidate_dir
-                output_dir = candidate_dir
-                break
+        input_path, input_dir = find_input_file(input_file, input_dirs)
+        output_dir = input_dir
         
         if not input_path:
             print(f"⚠️  Input file not found: {input_file}")
@@ -510,16 +501,7 @@ def main():
             continue
         
         # Find examples directory (for reading rounds_metadata.json)
-        examples_dir = None
-        if input_dir.endswith('/evaluation') or input_dir.endswith('evaluation'):
-            # If input_dir is evaluation/, check parent for examples
-            parent_dir = os.path.dirname(input_dir.rstrip('/'))
-            if os.path.isdir(os.path.join(parent_dir, 'examples')):
-                examples_dir = os.path.join(parent_dir, 'examples')
-        else:
-            # If input_dir is root, check for examples
-            if os.path.isdir(os.path.join(input_dir, 'examples')):
-                examples_dir = os.path.join(input_dir, 'examples')
+        examples_dir = find_examples_dir(input_dir)
         
         # Create a function to get sample rounds
         def get_sample_round(sample_name):
@@ -544,23 +526,12 @@ def main():
             print(f"⚠️  No data in {input_file}, skipping {output_file}")
             continue
 
-        # Extract round number from directory path (format: YYYYmmdd_hhmmss_N[_description])
-        round_num = None
-        # Try to extract from input_dir path - check both current dir and parent if in evaluation/
-        check_dir = input_dir.rstrip('/')
-        if check_dir.endswith('/evaluation') or check_dir.endswith('evaluation'):
-            # If in evaluation subdir, use parent
-            check_dir = os.path.dirname(check_dir)
-        
-        dir_name = os.path.basename(check_dir)
-        # Match format: YYYYmmdd_hhmmss_N[_optional_suffix]
-        match = re.search(r'^\d{8}_\d{6}_(\d+)(?:_|$)', dir_name)
-        if match:
-            round_num = match.group(1)
+        # Extract round number from directory path
+        round_num = extract_round_from_dirname(input_dir)
 
         # For negative_only reports, also load positive_only data for lookup
         positive_only_data = None
-        if report_type == "negative_only":
+        if report_type == REPORT_TYPE_NEGATIVE_ONLY:
             positive_file = "comparison_report_positive_only.json"
             for candidate_dir in input_dirs:
                 positive_path = os.path.join(candidate_dir, positive_file)

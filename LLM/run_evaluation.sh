@@ -10,10 +10,11 @@
 #   --output-dir DIR     use specific output directory
 #   --timestamp TM       use specific timestamp directory
 #   --eval-tools TOOLS   specify evaluation tools (default: all)
-#                        comma-separated: compare,clippy,safety,miri,loom
+#                        comma-separated: compare,clippy,safety,miri,loom,output_verification
 #                        or: fast (compare+clippy), full (all), none
 #   --miri-timeout SEC   miri timeout in seconds (default: 300)
 #   --loom-timeout SEC   loom timeout in seconds (default: 600)
+#   --output-verification-timeout SEC   output verification timeout in seconds (default: 300)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 RESULT_DIR="$SCRIPT_DIR/result"
@@ -26,6 +27,7 @@ OUTPUT_DIR=""
 EVAL_TOOLS="all"           # Default: run all evaluations
 MIRI_TIMEOUT="300"         # 5 minutes
 LOOM_TIMEOUT="600"         # 10 minutes
+OUTPUT_VERIFICATION_TIMEOUT="300"  # 5 minutes
 
 # Parse arguments
 i=2  # Start from second argument (first is prompt_idx)
@@ -75,6 +77,12 @@ while [ $i -le $# ]; do
             i=$((i+1))
             if [ $i -le $# ]; then
                 LOOM_TIMEOUT="${!i}"
+            fi
+            ;;
+        --output-verification-timeout)
+            i=$((i+1))
+            if [ $i -le $# ]; then
+                OUTPUT_VERIFICATION_TIMEOUT="${!i}"
             fi
             ;;
     esac
@@ -137,13 +145,13 @@ echo ""
 # Expand eval tools aliases
 case "$EVAL_TOOLS" in
     all)
-        EVAL_TOOLS="compare,clippy,safety,miri,loom"
+        EVAL_TOOLS="compare,clippy,safety,miri,loom,output_verification"
         ;;
     fast)
         EVAL_TOOLS="compare,clippy"
         ;;
     full)
-        EVAL_TOOLS="compare,clippy,safety,miri,loom"
+        EVAL_TOOLS="compare,clippy,safety,miri,loom,output_verification"
         ;;
     none)
         EVAL_TOOLS=""
@@ -206,6 +214,21 @@ if should_run_tool "miri"; then
         --timeout "$MIRI_TIMEOUT" \
         2>&1 || {
         echo "⚠️  Miri evaluation completed with warnings or failures (this is normal if some tests fail)"
+    }
+else
+    echo "⏭️  Skipped (not in EVAL_TOOLS)"
+fi
+
+echo ""
+echo "=== Running output_verification_eval.py (output correctness verification) ==="
+if should_run_tool "output_verification"; then
+    python3 "$EVAL_DIR/output_verification_eval.py" \
+        --output-dir "$TIMESTAMPED_DIR" \
+        --report-output "$TIMESTAMPED_DIR/evaluation/output_verification_report.md" \
+        --json-output "$TIMESTAMPED_DIR/evaluation/output_verification_results.json" \
+        --timeout "$OUTPUT_VERIFICATION_TIMEOUT" \
+        2>&1 || {
+        echo "⚠️  Output verification evaluation completed with warnings or failures (this is normal if some outputs don't match)"
     }
 else
     echo "⏭️  Skipped (not in EVAL_TOOLS)"

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Miri-based undefined behavior detection for LLM-generated Rust code.
+Output verification for LLM-generated Rust code.
 
-Tests generated code with miri (Rust interpreter for detecting UB).
-Reads final.rs files, appends test module, and runs MIRI_BACKTRACE=1 cargo +nightly miri test.
+Verifies that generated code produces correct output.
+Reads final.rs files, appends test module for output verification, and runs cargo test.
 Generates readable markdown table report.
 """
 
@@ -22,38 +22,12 @@ import time
 
 # Paths
 EXAMPLES_DIR = "/home/guoxy/concrat/examples"
-EXAMPLES_NEGATIVE_DIR = "/home/guoxy/concrat/examples_negative"
-NIGHTLY = "nightly"
-MIRI_TIMEOUT = 300  # 5 minutes per test (miri runs should be faster than loom)
+# EXAMPLES_NEGATIVE_DIR = "/home/guoxy/concrat/examples_negative"
+TEST_TIMEOUT = 300  # 5 minutes per test
 
 
-def generate_test_module(expected_output: str) -> str:
-    """
-    Generate test module for Miri UB detection only.
-    
-    Args:
-        expected_output: Expected output from output.txt (unused, for consistency)
-        
-    Returns:
-        Test module code as string
-    """
-    test_code = '''
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn miri_no_ub_test() {
-        for _ in 0..10 {
-            // Miri will detect any undefined behavior during execution
-            // If code runs without panic/UB, it passes
-        }
-    }
-}
-'''
-    return test_code
-
-
-class MiriTestResult:
-    """Represents result of miri testing one example."""
+class OutputTestResult:
+    """Represents result of output verification testing one example."""
     
     def __init__(self, example_name: str, success: bool, message: str = "", details: str = "", time_sec: float = 0.0):
         self.example_name = example_name
@@ -78,43 +52,42 @@ def find_example_dir(example_name: str) -> Optional[str]:
     if os.path.exists(positive):
         return positive
     
-    negative = os.path.join(EXAMPLES_NEGATIVE_DIR, example_name)
-    if os.path.exists(negative):
-        return negative
+    # negative = os.path.join(EXAMPLES_NEGATIVE_DIR, example_name)
+    # if os.path.exists(negative):
+    #     return negative
     
     return None
 
 
-def setup_miri_test_dir(
+def setup_output_test_dir(
     final_rs: str,
     example_dir: str,
     example_name: str,
     test_dir: str
 ) -> Tuple[bool, str]:
     """
-    Set up a test directory with miri-compatible code.
+    Set up a test directory with build configuration.
     
     Args:
         final_rs: Path to final.rs file
         example_dir: Path to original example directory
-        example_name: Name of the example (for reading output.txt)
+        example_name: Name of the example
         test_dir: Temporary test directory
     
     Returns: (success: bool, main_rs_path: str)
     """
     try:
-        # Create a minimal Cargo.toml for binary testing
-        # We skip the original Cargo.toml to avoid lib/binary conflicts
+        # Create Cargo.toml for binary compilation
         cargo_toml_dst = os.path.join(test_dir, "Cargo.toml")
         
         with open(cargo_toml_dst, "w") as f:
             f.write('''[package]
-name = "miri_test"
+name = "output_test"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "miri_test"
+name = "output_test"
 path = "src/main.rs"
 
 [dependencies]
@@ -127,31 +100,13 @@ once_cell = "1.18"
         src_dir = os.path.join(test_dir, "src")
         os.makedirs(src_dir, exist_ok=True)
         
-        # Read expected output from output.txt
-        expected_output = ""
-        output_txt_path = os.path.join(example_dir, "output.txt")
-        if os.path.exists(output_txt_path):
-            try:
-                with open(output_txt_path, 'r') as f:
-                    expected_output = f.read().strip()
-            except Exception as e:
-                # If we can't read output.txt, still proceed with empty output
-                pass
-        
-        # Read final.rs and append dynamically generated test module
+        # Copy final.rs as main.rs
+        main_rs_dst = os.path.join(src_dir, "main.rs")
         with open(final_rs, 'r') as f:
             final_content = f.read()
         
-        # Generate test module with expected output
-        test_module = generate_test_module(expected_output)
-        
-        # Combine final code with test module
-        final_with_tests = final_content + "\n\n" + test_module
-        
-        # Write to main.rs
-        main_rs_dst = os.path.join(src_dir, "main.rs")
         with open(main_rs_dst, 'w') as f:
-            f.write(final_with_tests)
+            f.write(final_content)
         
         return True, main_rs_dst
     
@@ -159,83 +114,88 @@ once_cell = "1.18"
         return False, str(e)
 
 
-def run_miri_test(test_dir: str, timeout: int = MIRI_TIMEOUT) -> MiriTestResult:
+def run_output_test(test_dir: str, expected_output: str, timeout: int = TEST_TIMEOUT) -> OutputTestResult:
     """
-    Run miri test on prepared directory.
+    Run output verification test on prepared directory.
     
-    Returns: MiriTestResult with test outcome
+    1. Compile the program with cargo build
+    2. Run the binary and capture output
+    3. Compare with expected output
+    
+    Returns: OutputTestResult with test outcome
     """
     try:
         cargo_toml = os.path.join(test_dir, "Cargo.toml")
-        
-        # Get rust-toolchain if available
-        nightly = NIGHTLY
-        tc_file = os.path.join(test_dir, "rust-toolchain")
-        if os.path.exists(tc_file):
-            with open(tc_file) as f:
-                nightly = f.read().strip()
+        target_dir = os.path.join(test_dir, "target")
+        binary_path = os.path.join(target_dir, "debug", "output_test")
         
         # Clean previous build
-        target_dir = os.path.join(test_dir, "target")
         if os.path.exists(target_dir):
             shutil.rmtree(target_dir, ignore_errors=True)
         
-        # Setup environment for miri
-        env = os.environ.copy()
-        env["MIRIFLAGS"] = "-Zmiri-strict-provenance -Zmiri-preemption-rate=0"
-        env["MIRI_BACKTRACE"] = "1"
-        env["RUST_BACKTRACE"] = "1"
-        
-        # Run miri test
+        # Step 1: Build the program
         start = time.time()
         
-        result = subprocess.run(
-            ["cargo", f"+{nightly}", "miri", "test", "--manifest-path", cargo_toml],
+        build_result = subprocess.run(
+            ["cargo", "build", "--manifest-path", cargo_toml],
             capture_output=True,
             text=True,
-            timeout=timeout,
-            env=env,
+            timeout=timeout // 2,  # Half timeout for build
             cwd=test_dir
         )
         
+        if build_result.returncode != 0:
+            return OutputTestResult(
+                example_name="",
+                success=False,
+                message="❌ Build failed",
+                details=build_result.stderr[:500],
+                time_sec=0.0
+            )
+        
+        # Step 2: Run the binary and capture output
+        run_result = subprocess.run(
+            [binary_path],
+            capture_output=True,
+            text=True,
+            timeout=timeout // 2,  # Half timeout for execution
+            cwd=test_dir
+        )
+        
+        # Step 3: Compare output
+        actual_output = run_result.stdout.strip()
+        expected_trimmed = expected_output.strip()
+        
         elapsed = time.time() - start
         
-        if result.returncode == 0:
-            return MiriTestResult(
+        if actual_output == expected_trimmed:
+            return OutputTestResult(
                 example_name="",
                 success=True,
-                message="✅ Miri tests passed (no UB detected)",
+                message="✅ Output verification passed",
                 time_sec=elapsed
             )
         else:
-            # Extract error message
-            output = result.stderr + "\n" + result.stdout
-            
-            # Try to find the main error
-            error_msg = "Miri test failed"
-            for line in output.split('\n'):
-                if 'error' in line.lower() or 'ub' in line.lower() or 'undefined' in line.lower():
-                    error_msg = line.strip()[:100]
-                    break
-            
-            return MiriTestResult(
+            # Output mismatch
+            error_detail = f"Expected:\n{expected_trimmed}\n\nActual:\n{actual_output}"
+            return OutputTestResult(
                 example_name="",
                 success=False,
-                message=f"❌ {error_msg}",
-                details=output[:500],
+                message="❌ Output mismatch",
+                details=error_detail[:500],
                 time_sec=elapsed
             )
     
     except subprocess.TimeoutExpired:
-        return MiriTestResult(
+        return OutputTestResult(
             example_name="",
             success=False,
             message=f"⏱️  Timeout (>{timeout}s)",
-            details="Miri test execution exceeded timeout",
+            details="Test execution exceeded timeout",
             time_sec=timeout
         )
     except Exception as e:
-        return MiriTestResult(
+        return OutputTestResult(
             example_name="",
             success=False,
             message=f"❌ {str(e)[:50]}",
@@ -248,35 +208,55 @@ def test_one_example(
     example_name: str,
     final_rs: str,
     example_root_dir: str
-) -> MiriTestResult:
+) -> OutputTestResult:
     """
-    Test one example with miri.
+    Test one example for output verification.
     
-    Sets up temp directory, adds test module, and runs miri tests.
+    Sets up temp directory, compiles code, runs binary, and compares output.
     """
-    test_dir = tempfile.mkdtemp(prefix=f"miri_test_{example_name}_")
+    test_dir = tempfile.mkdtemp(prefix=f"output_test_{example_name}_")
     
     try:
         # Find original example dir
         example_dir = find_example_dir(example_name)
         if not example_dir:
-            return MiriTestResult(
+            return OutputTestResult(
                 example_name=example_name,
                 success=False,
                 message="❌ Example dir not found"
             )
         
-        # Setup miri test directory
-        success, details = setup_miri_test_dir(final_rs, example_dir, example_name, test_dir)
+        # Read expected output from output.txt
+        expected_output = ""
+        output_txt_path = os.path.join(example_dir, "output.txt")
+        if os.path.exists(output_txt_path):
+            try:
+                with open(output_txt_path, 'r') as f:
+                    expected_output = f.read()
+            except Exception as e:
+                return OutputTestResult(
+                    example_name=example_name,
+                    success=False,
+                    message=f"❌ Failed to read output.txt: {str(e)[:40]}"
+                )
+        else:
+            return OutputTestResult(
+                example_name=example_name,
+                success=False,
+                message="❌ output.txt not found"
+            )
+        
+        # Setup test directory
+        success, details = setup_output_test_dir(final_rs, example_dir, example_name, test_dir)
         if not success:
-            return MiriTestResult(
+            return OutputTestResult(
                 example_name=example_name,
                 success=False,
                 message=f"❌ Setup failed: {details[:50]}"
             )
         
-        # Run miri test
-        result = run_miri_test(test_dir)
+        # Run test (compile and execute)
+        result = run_output_test(test_dir, expected_output)
         result.example_name = example_name
         return result
     
@@ -284,11 +264,11 @@ def test_one_example(
         shutil.rmtree(test_dir, ignore_errors=True)
 
 
-def evaluate_output_directory(output_dir: str) -> Dict[str, MiriTestResult]:
+def evaluate_output_directory(output_dir: str) -> Dict[str, OutputTestResult]:
     """
-    Evaluate all examples in an output directory for miri UB detection.
+    Evaluate all examples in an output directory for output correctness.
     
-    Returns: dict mapping example_name -> MiriTestResult
+    Returns: dict mapping example_name -> OutputTestResult
     """
     examples_dir = os.path.join(output_dir, "examples")
     if not os.path.exists(examples_dir):
@@ -297,9 +277,11 @@ def evaluate_output_directory(output_dir: str) -> Dict[str, MiriTestResult]:
     
     # Find all final.rs files
     final_files = glob.glob(os.path.join(examples_dir, "*/final.rs"))
+    # Filter out negative examples (those with ____ in the name)
+    final_files = [f for f in final_files if "____" not in os.path.basename(os.path.dirname(f))]
     total = len(final_files)
     
-    print(f"🔍 Found {total} examples to test with miri")
+    print(f"🔍 Found {total} examples to test for output correctness")
     print()
     
     results = {}
@@ -317,15 +299,15 @@ def evaluate_output_directory(output_dir: str) -> Dict[str, MiriTestResult]:
         status = "✅" if result.success else "❌"
         print(f"{status} ({result.time_sec:.1f}s)")
         
-        if result.message and result.message != "✅ Miri tests passed (no UB detected)":
+        if result.message and result.message != "✅ Output verification passed":
             print(f"       {result.message}")
     
     return results
 
 
-def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: str = None) -> str:
+def generate_markdown_report(results: Dict[str, OutputTestResult], output_path: str = None) -> str:
     """
-    Generate a readable markdown table report from miri test results.
+    Generate a readable markdown table report from output verification results.
     
     Returns: markdown string (and optionally writes to file)
     """
@@ -334,12 +316,12 @@ def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: st
     lines = []
     w = lines.append
     
-    w("# Miri Undefined Behavior Detection Report")
+    w("# Output Verification Report")
     w("")
     w(f"**Generated:** {timestamp}")
     w(f"**Total Examples:** {len(results)}")
-    w(f"**Passed (No UB):** {sum(1 for r in results.values() if r.success)}")
-    w(f"**Failed (UB Detected):** {sum(1 for r in results.values() if not r.success)}")
+    w(f"**Passed:** {sum(1 for r in results.values() if r.success)}")
+    w(f"**Failed:** {sum(1 for r in results.values() if not r.success)}")
     w("")
     
     # Summary statistics
@@ -348,7 +330,7 @@ def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: st
     
     w("## Summary")
     w("")
-    w(f"- **Clean Code Rate:** {passed_count}/{len(results)} ({100*passed_count/len(results):.1f}%)")
+    w(f"- **Pass Rate:** {passed_count}/{len(results)} ({100*passed_count/len(results):.1f}%)")
     w(f"- **Total Time:** {total_time:.1f}s")
     if len(results) > 0:
         w(f"- **Average Time:** {total_time/len(results):.1f}s per example")
@@ -373,7 +355,7 @@ def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: st
     # Failures section (if any)
     failures = {k: v for k, v in results.items() if not v.success}
     if failures:
-        w("## UB Detected (Failures)")
+        w("## Failed Examples")
         w("")
         
         for example_name in sorted(failures.keys()):
@@ -390,7 +372,7 @@ def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: st
     # Passed section (if any)
     passed = {k: v for k, v in results.items() if v.success}
     if passed:
-        w("## Safe Examples (No UB)")
+        w("## Passed Examples")
         w("")
         w("| Example | Time (s) |")
         w("|---------|----------|")
@@ -415,7 +397,7 @@ def generate_markdown_report(results: Dict[str, MiriTestResult], output_path: st
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Run miri-based UB detection tests on LLM-generated Rust code"
+        description="Run output verification tests on LLM-generated Rust code"
     )
     parser.add_argument(
         "--output-dir",
@@ -440,8 +422,8 @@ def main():
     parser.add_argument(
         "--timeout",
         type=int,
-        default=MIRI_TIMEOUT,
-        help=f"Timeout per test in seconds (default: {MIRI_TIMEOUT})"
+        default=TEST_TIMEOUT,
+        help=f"Timeout per test in seconds (default: {TEST_TIMEOUT})"
     )
     
     args = parser.parse_args()
@@ -501,11 +483,11 @@ def main():
     
     # Exit with appropriate code
     if all(r.success for r in results.values()):
-        print("✅ All examples passed miri testing!")
+        print("✅ All examples passed output verification!")
         sys.exit(0)
     else:
         failed_count = sum(1 for r in results.values() if not r.success)
-        print(f"❌ {failed_count} examples failed miri testing")
+        print(f"❌ {failed_count} examples failed output verification")
         sys.exit(1)
 
 

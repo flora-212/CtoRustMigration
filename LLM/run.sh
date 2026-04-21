@@ -24,6 +24,7 @@ STRATEGY="compile"                    # Validation strategy (for backward compat
 TOOLS="compile"                       # Validation tools (can be multiple, space-separated)
 MAX_ITERATIONS=20                      # Maximum iteration count
 MODEL="qwen2.5-coder:14b"                         # Default model
+FALLBACK_STRATEGY="last-round"        # Fallback strategy when validation fails
 FORCE_REWRITE=""
 FORCE_EVAL=""
 FORCE_GENERATE=""
@@ -34,6 +35,7 @@ NEGATIVE_ONLY=""                    # Only run negative samples
 EVAL_TOOLS="all"                    # Evaluation tools (compare,clippy,safety,miri,loom or: all/fast/full)
 MIRI_TIMEOUT="300"                  # 5 minutes
 LOOM_TIMEOUT="600"                  # 10 minutes
+OUTPUT_VERIFICATION_TIMEOUT="300"   # 5 minutes
 
 # Check for --help first
 for arg in "$@"; do
@@ -50,19 +52,26 @@ for arg in "$@"; do
         echo "  ./run.sh 1 --tools 'compile clippy miri'        # Full validation"
         echo "  ./run.sh 1 --max-iterations 5                   # Iteration count"
         echo "  ./run.sh 1 --model {qwen|...}                   # Specify LLM model (default: qwen)"
+        echo "  ./run.sh 1 --temperature 0.0                    # LLM temperature (default: 0.2)"
         echo "  ./run.sh 1 --force                              # Force re-execution"
         echo "  ./run.sh 1 --include-negative                   # Include negative samples"
         echo "  ./run.sh 1 --negative-only                      # Only run negative samples"
         echo "  ./run.sh 1 --verbose                            # Verbose output"
+        echo "  ./run.sh 1 --fallback-strategy {strategy}       # Fallback strategy (default: last-round)"
+        echo ""
+        echo "Fallback Strategies:"
+        echo "  last-round      - Use the last completed round (default)"
+        echo "  last-compiled  - Use first round that compiled"
         echo ""
         echo "Evaluation options (passed to run_evaluation.sh):"
         echo "  --eval-tools TOOLS                              # Specify evaluation tools (default: all)"
-        echo "     all/full    - all tools (compare, clippy, safety, miri, loom)"
+        echo "     all/full    - all tools (compare, clippy, safety, miri, loom, output_verification)"
         echo "     fast        - fast tools only (compare, clippy)"
         echo "     none        - skip evaluation"
-        echo "     custom      - comma-separated: compare,clippy,safety,miri,loom"
+        echo "     custom      - comma-separated: compare,clippy,safety,miri,loom,output_verification"
         echo "  --miri-timeout SEC                              # Miri timeout (default: 300s)"
         echo "  --loom-timeout SEC                              # Loom timeout (default: 600s)"
+        echo "  --output-verification-timeout SEC               # Output verification timeout (default: 300s)"
         echo ""
         echo "  ./run.sh 1 --eval-tools fast                    # Only compare + clippy"
         echo "  ./run.sh 1 --eval-tools 'compare,clippy,miri'   # Specific tools"
@@ -154,6 +163,14 @@ while [ $# -gt 0 ]; do
             MODEL="$2"
             shift
             ;;
+        --temperature)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --temperature requires an argument"
+                exit 1
+            fi
+            TEMPERATURE="$2"
+            shift
+            ;;
         --verbose)
             VERBOSE="--verbose"
             ;;
@@ -188,6 +205,22 @@ while [ $# -gt 0 ]; do
             LOOM_TIMEOUT="$2"
             shift
             ;;
+        --output-verification-timeout)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --output-verification-timeout requires an argument"
+                exit 1
+            fi
+            OUTPUT_VERIFICATION_TIMEOUT="$2"
+            shift
+            ;;
+        --fallback-strategy)
+            if [ -z "$2" ]; then
+                echo "❌ Error: --fallback-strategy requires an argument"
+                exit 1
+            fi
+            FALLBACK_STRATEGY="$2"
+            shift
+            ;;
         *)
             echo "❌ Unknown argument: $1"
             exit 1
@@ -217,6 +250,7 @@ echo ""
 echo "✅ Configuration:"
 echo "   - Prompt Index: $PROMPT_IDX"
 echo "   - Model: $MODEL"
+echo "   - Temperature: $TEMPERATURE"
 echo "   - Validation: ${VALIDATE_FLAG:-(disabled)}"
 if [ ! -z "$VALIDATE_FLAG" ]; then
     echo "   - Tools: $TOOLS"
@@ -250,6 +284,7 @@ if [ ! -z "$NEGATIVE_ONLY" ]; then
 fi
 echo "   - Force Rewrite: ${FORCE_REWRITE:-(no)}"
 echo "   - Force Eval: ${FORCE_EVAL:-(no)}"
+echo "   - Fallback Strategy: ${FALLBACK_STRATEGY:-(last-round)}"
 echo ""
 echo "   📊 Evaluation Configuration:"
 echo "      - Evaluation Tools: $EVAL_TOOLS"
@@ -313,6 +348,7 @@ if [ ! -z "$VALIDATE_FLAG" ]; then
         --tools "$TOOLS" \
         --max-iterations "$MAX_ITERATIONS" \
         --model "$MODEL" \
+        --fallback-strategy "$FALLBACK_STRATEGY" \
         $INCLUDE_NEGATIVE \
         $NEGATIVE_ONLY \
         $FORCE_REWRITE \
@@ -321,6 +357,7 @@ else
     # No validation loop
     cd "$SCRIPT_DIR" && python3 -m refraction.main "$PROMPT_IDX" \
         --model "$MODEL" \
+        --fallback-strategy "$FALLBACK_STRATEGY" \
         $INCLUDE_NEGATIVE \
         $NEGATIVE_ONLY \
         $FORCE_REWRITE $VERBOSE
@@ -363,7 +400,8 @@ bash "$SCRIPT_DIR/run_evaluation.sh" "$PROMPT_IDX" \
     --output-dir "$REFACTOR_OUTPUT_DIR" \
     --eval-tools "$EVAL_TOOLS" \
     --miri-timeout "$MIRI_TIMEOUT" \
-    --loom-timeout "$LOOM_TIMEOUT"
+    --loom-timeout "$LOOM_TIMEOUT" \
+    --output-verification-timeout "$OUTPUT_VERIFICATION_TIMEOUT"
 
 STEP3_END=$(date +%s)
 STEP3_DURATION=$((STEP3_END - STEP3_START))

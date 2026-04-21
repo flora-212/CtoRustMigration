@@ -28,7 +28,8 @@ def main():
     tools_str = "compile"
     max_iterations = 5
     model_name = DEFAULT_MODEL
-    fallback_strategy = "last-passed"  # Default strategy
+    temperature = 0.2  # Default temperature
+    fallback_strategy = "last-round"  # Default strategy
     
     for i, arg in enumerate(sys.argv):
         if arg == "--tools" and i + 1 < len(sys.argv):
@@ -40,6 +41,8 @@ def main():
             max_iterations = int(sys.argv[i + 1])
         elif arg == "--model" and i + 1 < len(sys.argv):
             model_name = sys.argv[i + 1]
+        elif arg == "--temperature" and i + 1 < len(sys.argv):
+            temperature = float(sys.argv[i + 1])
         elif arg == "--fallback-strategy" and i + 1 < len(sys.argv):
             fallback_strategy = sys.argv[i + 1]
     
@@ -130,7 +133,8 @@ def main():
                     output_manager=output_manager,
                     example_name=example_name,
                     model=model_name,
-                    fallback_strategy=fallback_strategy
+                    fallback_strategy=fallback_strategy,
+                    temperature=temperature
                 )
                 
                 if passed:
@@ -141,7 +145,7 @@ def main():
                     failed.append(example_name)
             else:
                 # Original mode (no validation)
-                result = rewrite_file(filepath, system_prompt, model=model_name)
+                result = rewrite_file(filepath, system_prompt, model=model_name, temperature=temperature)
                 code = extract_code(result)
                 
                 # Save to timestamped output directory
