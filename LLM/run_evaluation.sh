@@ -33,6 +33,36 @@ OUTPUT_VERIFICATION_TIMEOUT="300"  # 5 minutes
 i=2  # Start from second argument (first is prompt_idx)
 while [ $i -le $# ]; do
     arg="${!i}"
+    
+    # Handle --option=value format
+    if [[ "$arg" =~ ^--([^=]+)=(.*)$ ]]; then
+        option="${BASH_REMATCH[1]}"
+        value="${BASH_REMATCH[2]}"
+        case "--$option" in
+            --output-dir)
+                OUTPUT_DIR="$value"
+                ;;
+            --timestamp)
+                TIMESTAMP="$value"
+                ;;
+            --eval-tools)
+                EVAL_TOOLS="$value"
+                ;;
+            --miri-timeout)
+                MIRI_TIMEOUT="$value"
+                ;;
+            --loom-timeout)
+                LOOM_TIMEOUT="$value"
+                ;;
+            --output-verification-timeout)
+                OUTPUT_VERIFICATION_TIMEOUT="$value"
+                ;;
+        esac
+        i=$((i+1))
+        continue
+    fi
+    
+    # Handle --option value format
     case "$arg" in
         --force)
             FORCE_COMPARE="--force"

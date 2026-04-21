@@ -95,10 +95,9 @@ get_failed_examples() {
 # 检查是否为failed example
 is_failed_example() {
     local example_name="$1"
-    local base_name=$(get_example_base_name "$example_name")
     
-    # 检查是否在failed列表中（支持全名和base_name）
-    if [[ "$FAILED_LIST" == *"$example_name"* ]] || [[ "$FAILED_LIST" == *"$base_name"* ]]; then
+    # 使用grep进行精确行匹配，避免子字符串误匹配
+    if echo "$FAILED_LIST" | grep -Fx "$example_name" > /dev/null 2>&1; then
         return 0
     fi
     return 1
