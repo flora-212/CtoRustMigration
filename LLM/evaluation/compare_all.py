@@ -20,7 +20,7 @@ import json
 import tempfile
 import shutil
 sys.path.insert(0, '/home/guoxy/concrat/LLM')
-from validation import CodeValidator
+from validation.core import CodeValidator
 
 EXAMPLES_DIR = "/home/guoxy/concrat/examples"
 CONCRAT_DIR = "/tmp/concrat_results"
@@ -46,6 +46,10 @@ def safety_metrics(code):
         "std_rwlock":   count_pattern(code, r'\bRwLock\b'),
         "std_condvar":  count_pattern(code, r'\bCondvar\b'),
         "std_thread":   count_pattern(code, r'\bthread::spawn\b'),
+        "move_closure": count_pattern(code, r'\bmove\s*\|'),
+        "arc_clone":    count_pattern(code, r'\bArc::\s*clone\b|\bclone\s*\('),
+        "join_handle":  count_pattern(code, r'\.join\(\)|\bJoinHandle\b'),
+        "arc_mutex_combo": count_pattern(code, r'\bArc\s*<[^>]*Mutex\s*<'),
         "lines":        len(code.splitlines()),
     }
 

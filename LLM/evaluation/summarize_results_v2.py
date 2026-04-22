@@ -47,6 +47,35 @@ def load_evaluation_results(eval_dir: Path) -> Dict:
                 results[eval_type] = {}
     
     return results
+def get_iteration_count_from_rounds(exp_dir: Path, example: str) -> int:
+    """Get iteration count from rounds_metadata.json in the example directory."""
+    rounds_metadata_path = exp_dir / 'examples' / example / 'rounds_metadata.json'
+    if not rounds_metadata_path.exists():
+        return None
+    
+    try:
+        with open(rounds_metadata_path) as f:
+            rounds_data = json.load(f)
+            # Match comparison report semantics:
+            # use last successful compile round; if none succeeded, treat as c2rust (=20).
+            last_successful_round = None
+            for round_key in sorted(rounds_data.keys(), key=lambda x: int(x) if x.isdigit() else 0):
+                round_data = rounds_data[round_key]
+                if round_data.get('compile_status'):
+                    if isinstance(round_data.get('round'), int):
+                        last_successful_round = round_data.get('round')
+                    elif isinstance(round_key, str) and round_key.isdigit():
+                        last_successful_round = int(round_key)
+
+            if last_successful_round is not None:
+                return last_successful_round
+
+            # No successful round in metadata => "c2rust" in report, map to 20 iterations.
+            return 20
+    except Exception as e:
+        pass
+    return None
+
 
 def extract_example_results(results: Dict) -> Dict[str, Dict]:
     """Extract results for each example across all evaluation types."""
@@ -113,19 +142,11 @@ def extract_example_results(results: Dict) -> Dict[str, Dict]:
             compiles = llm_data.get('compiles', False)
             metrics = llm_data.get('metrics', {})
             
-            # Extract iteration info
-            round_info = llm_data.get('round_info', {})
-            iterations = None
-            if round_info and isinstance(round_info, dict):
-                r = round_info.get('round')
-                if isinstance(r, int):
-                    iterations = r
-            
             example_results[example]['compile_pass_rate'] = {
                 'compiles': compiles,
-                'metrics': metrics,
-                'iterations': iterations
+                'metrics': metrics
             }
+            
     
     return dict(example_results)
 
@@ -136,7 +157,8 @@ def summarize_group(group_name: str, dirs: List[Path]) -> Dict[str, List]:
         'miri': {'pass': [], 'fail': []},
         'output': {'pass': [], 'fail': []},
         'clippy': {'pass': [], 'fail': []},
-        'compile_pass_rate': {'pass': [], 'fail': []}
+        'compile_pass_rate': {'pass': [], 'fail': []},
+        'metrics': []  # Store all metrics for averaging
     })
     
     print(f"Processing {group_name} ({len(dirs)} experiments)")
@@ -153,14 +175,22 @@ def summarize_group(group_name: str, dirs: List[Path]) -> Dict[str, List]:
         examples = extract_example_results(results)
         
         for example, data in examples.items():
+            # Get iteration count from rounds_metadata if available
+            iterations = get_iteration_count_from_rounds(exp_dir, example)
+            
             for eval_type in ['loom', 'miri', 'output', 'clippy', 'compile_pass_rate']:
                 if eval_type == 'compile_pass_rate':
                     compiles = data.get('compile_pass_rate', {}).get('compiles', False)
-                    iterations = data.get('compile_pass_rate', {}).get('iterations')
+                    metrics = data.get('compile_pass_rate', {}).get('metrics', {})
+                    
+                    # Store metrics for later averaging
+                    if metrics:
+                        group_summary[example]['metrics'].append(metrics)
+                    
                     if compiles:
                         group_summary[example]['compile_pass_rate']['pass'].append({
                             'run': exp_dir.name,
-                            'metrics': data['compile_pass_rate'].get('metrics', {}),
+                            'metrics': metrics,
                             'iterations': iterations
                         })
                     else:
@@ -180,7 +210,7 @@ def summarize_group(group_name: str, dirs: List[Path]) -> Dict[str, List]:
         
         print(" ✓")
     
-    # Calculate average iterations for compile_pass_rate
+    # Calculate average iterations and metrics for compile_pass_rate
     for example in group_summary:
         pass_data = group_summary[example]['compile_pass_rate']['pass']
         fail_data = group_summary[example]['compile_pass_rate']['fail']
@@ -190,14 +220,46 @@ def summarize_group(group_name: str, dirs: List[Path]) -> Dict[str, List]:
         for item in pass_data:
             if isinstance(item, dict) and item.get('iterations') is not None:
                 all_iters.append(item['iterations'])
+            elif isinstance(item, str):
+                # item is just the run name (backward compat)
+                pass
         for item in fail_data:
             if isinstance(item, dict) and item.get('iterations') is not None:
                 all_iters.append(item['iterations'])
+            elif isinstance(item, str):
+                # item is a run name string (shouldn't happen for fail but be safe)
+                pass
         
-        # Calculate average
+        # Calculate average iterations
         if all_iters:
             avg = sum(all_iters) / len(all_iters)
             group_summary[example]['compile_pass_rate']['avg_iterations'] = f"{avg:.1f}"
+        
+        # Calculate average metrics
+        all_metrics = group_summary[example]['metrics']
+        if all_metrics:
+            # Initialize averages
+            metrics_avg = defaultdict(list)
+            
+            # Collect all values for each metric key
+            for metric_dict in all_metrics:
+                for key, value in metric_dict.items():
+                    if isinstance(value, (int, float)):
+                        metrics_avg[key].append(value)
+            
+            # Calculate averages for each metric
+            avg_metrics = {}
+            for key, values in metrics_avg.items():
+                if values:
+                    avg_metrics[key] = f"{sum(values) / len(values):.2f}"
+            
+            # Add missing metrics that are always 0
+            missing_metrics = ['move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']
+            for metric in missing_metrics:
+                if metric not in avg_metrics:
+                    avg_metrics[metric] = "0.00"
+            
+            group_summary[example]['metrics_avg'] = avg_metrics
     
     return dict(group_summary)
 
@@ -263,6 +325,11 @@ def generate_json_report(non_c2rust_summary: Dict, c2rust_summary: Dict) -> Dict
             report['groups']['non_c2rust']['summary'][eval_type]['passed'] += pass_count
             report['groups']['non_c2rust']['summary'][eval_type]['failed'] += fail_count
         
+        # Add metrics averages (excluding lines)
+        if 'metrics_avg' in non_c2rust:
+            metrics_without_lines = {k: v for k, v in non_c2rust['metrics_avg'].items() if k != 'lines'}
+            report['examples'][example]['non_c2rust']['metrics_avg'] = metrics_without_lines
+        
         # Process c2rust group
         c2rust = c2rust_summary.get(example, {})
         for eval_type in ['loom', 'miri', 'output', 'clippy', 'compile_pass_rate']:
@@ -299,6 +366,57 @@ def generate_json_report(non_c2rust_summary: Dict, c2rust_summary: Dict) -> Dict
             
             report['groups']['c2rust']['summary'][eval_type]['passed'] += pass_count
             report['groups']['c2rust']['summary'][eval_type]['failed'] += fail_count
+        
+        # Add metrics averages (excluding lines)
+        if 'metrics_avg' in c2rust:
+            metrics_without_lines = {k: v for k, v in c2rust['metrics_avg'].items() if k != 'lines'}
+            report['examples'][example]['c2rust']['metrics_avg'] = metrics_without_lines
+
+        # Add per-example average iteration statistics
+        non_c2rust_iter = report['examples'][example]['non_c2rust']['compile_pass_rate'].get('avg_iterations')
+        c2rust_iter = report['examples'][example]['c2rust']['compile_pass_rate'].get('avg_iterations')
+        iter_values = []
+        if non_c2rust_iter is not None:
+            iter_values.append(float(non_c2rust_iter))
+        if c2rust_iter is not None:
+            iter_values.append(float(c2rust_iter))
+
+        report['examples'][example]['iteration_stats'] = {
+            'non_c2rust_avg_iterations': non_c2rust_iter,
+            'c2rust_avg_iterations': c2rust_iter,
+            'overall_avg_iterations': f"{sum(iter_values) / len(iter_values):.1f}" if iter_values else None
+        }
+    
+    # Add global metrics totals
+    lower_is_better = ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']
+    higher_is_better = ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']
+    
+    non_c2rust_lower_sum = 0.0
+    non_c2rust_higher_sum = 0.0
+    c2rust_lower_sum = 0.0
+    c2rust_higher_sum = 0.0
+    
+    for example in all_examples:
+        if example in non_c2rust_summary and 'metrics_avg' in non_c2rust_summary[example]:
+            metrics = non_c2rust_summary[example]['metrics_avg']
+            non_c2rust_lower_sum += sum(float(metrics.get(k, 0)) for k in lower_is_better)
+            non_c2rust_higher_sum += sum(float(metrics.get(k, 0)) for k in higher_is_better)
+        
+        if example in c2rust_summary and 'metrics_avg' in c2rust_summary[example]:
+            metrics = c2rust_summary[example]['metrics_avg']
+            c2rust_lower_sum += sum(float(metrics.get(k, 0)) for k in lower_is_better)
+            c2rust_higher_sum += sum(float(metrics.get(k, 0)) for k in higher_is_better)
+    
+    report['metrics_totals'] = {
+        'non_c2rust': {
+            'sum_lower_is_better': f"{non_c2rust_lower_sum:.2f}",
+            'sum_higher_is_better': f"{non_c2rust_higher_sum:.2f}"
+        },
+        'c2rust': {
+            'sum_lower_is_better': f"{c2rust_lower_sum:.2f}",
+            'sum_higher_is_better': f"{c2rust_higher_sum:.2f}"
+        }
+    }
     
     return report
 
@@ -312,8 +430,57 @@ def format_text_report(non_c2rust_summary: Dict, c2rust_summary: Dict) -> str:
     output.append("COMPREHENSIVE EVALUATION RESULTS SUMMARY")
     output.append("="*100)
     
+    # Add global metrics summary
+    lower_is_better = ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']
+    higher_is_better = ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']
+    
+    # Calculate global sums for non-c2rust
+    non_c2rust_lower_sum = 0.0
+    non_c2rust_higher_sum = 0.0
+    for example in all_examples:
+        if example in non_c2rust_summary and 'metrics_avg' in non_c2rust_summary[example]:
+            metrics = non_c2rust_summary[example]['metrics_avg']
+            non_c2rust_lower_sum += sum(float(metrics.get(k, 0)) for k in lower_is_better)
+            non_c2rust_higher_sum += sum(float(metrics.get(k, 0)) for k in higher_is_better)
+    
+    # Calculate global sums for c2rust
+    c2rust_lower_sum = 0.0
+    c2rust_higher_sum = 0.0
+    for example in all_examples:
+        if example in c2rust_summary and 'metrics_avg' in c2rust_summary[example]:
+            metrics = c2rust_summary[example]['metrics_avg']
+            c2rust_lower_sum += sum(float(metrics.get(k, 0)) for k in lower_is_better)
+            c2rust_higher_sum += sum(float(metrics.get(k, 0)) for k in higher_is_better)
+    
+    output.append(f"\n\n{'═'*100}")
+    output.append(f"  GLOBAL METRICS SUMMARY")
+    output.append(f"{'═'*100}")
+    output.append(f"\n  NON-C2RUST GROUP (All Examples)")
+    output.append(f"    ∑Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc):  {non_c2rust_lower_sum:.2f}")
+    output.append(f"    ∑Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo):  {non_c2rust_higher_sum:.2f}")
+    
+    output.append(f"\n  C2RUST GROUP (All Examples)")
+    output.append(f"    ∑Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc):  {c2rust_lower_sum:.2f}")
+    output.append(f"    ∑Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo):  {c2rust_higher_sum:.2f}")
+    output.append(f"{'═'*100}")
+    
     for example in all_examples:
         output.append(f"\n\n{'▼'*50} Example: {example} {'▼'*50}")
+
+        # Per-example average iteration statistics
+        non_c2rust_iter = non_c2rust_summary.get(example, {}).get('compile_pass_rate', {}).get('avg_iterations')
+        c2rust_iter = c2rust_summary.get(example, {}).get('compile_pass_rate', {}).get('avg_iterations')
+        iter_values = []
+        if non_c2rust_iter is not None:
+            iter_values.append(float(non_c2rust_iter))
+        if c2rust_iter is not None:
+            iter_values.append(float(c2rust_iter))
+        overall_iter = f"{sum(iter_values) / len(iter_values):.1f}" if iter_values else "-"
+        non_c2rust_iter_str = non_c2rust_iter if non_c2rust_iter is not None else "-"
+        c2rust_iter_str = c2rust_iter if c2rust_iter is not None else "-"
+        output.append(
+            f"  平均迭代次数: non-c2rust={non_c2rust_iter_str}, c2rust={c2rust_iter_str}, overall={overall_iter}"
+        )
         
         # Non-c2rust group
         non_c2rust = non_c2rust_summary.get(example, {})
@@ -343,6 +510,32 @@ def format_text_report(non_c2rust_summary: Dict, c2rust_summary: Dict) -> str:
                         else:
                             output.append(f"  ║    └─ Failed: {item}")
         
+        # Add metrics statistics for non-c2rust
+        if 'metrics_avg' in non_c2rust:
+            output.append(f"  ║")
+            output.append(f"  ╠══ Metrics Average (LLM) ══")
+            metrics_avg = non_c2rust['metrics_avg']
+            
+            # Lower is Better (excluding lines)
+            lower_is_better = ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']
+            lower_metrics = {k: v for k, v in metrics_avg.items() if k in lower_is_better}
+            lower_sum = sum(float(v) for v in lower_metrics.values())
+            if lower_metrics:
+                output.append(f"  ║  Lower is Better (excluding lines):")
+                for metric, value in sorted(lower_metrics.items()):
+                    output.append(f"  ║    {metric:15} {value}")
+                output.append(f"  ║    {'∑Lower':15} {lower_sum:.2f}")
+            
+            # Higher is Better
+            higher_is_better = ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']
+            higher_metrics = {k: v for k, v in metrics_avg.items() if k in higher_is_better}
+            higher_sum = sum(float(v) for v in higher_metrics.values())
+            if higher_metrics:
+                output.append(f"  ║  Higher is Better:")
+                for metric, value in sorted(higher_metrics.items()):
+                    output.append(f"  ║    {metric:15} {value}")
+                output.append(f"  ║    {'∑Higher':15} {higher_sum:.2f}")
+        
         # C2rust group
         c2rust = c2rust_summary.get(example, {})
         output.append(f"  ║")
@@ -371,6 +564,32 @@ def format_text_report(non_c2rust_summary: Dict, c2rust_summary: Dict) -> str:
                             output.append(f"     └─ {item.get('run', 'unknown')}: {error_msg}")
                         else:
                             output.append(f"     └─ Failed: {item}")
+        
+        # Add metrics statistics for c2rust
+        if 'metrics_avg' in c2rust:
+            output.append(f"")
+            output.append(f"  ╠══ Metrics Average (LLM) ══")
+            metrics_avg = c2rust['metrics_avg']
+            
+            # Lower is Better (excluding lines)
+            lower_is_better = ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']
+            lower_metrics = {k: v for k, v in metrics_avg.items() if k in lower_is_better}
+            lower_sum = sum(float(v) for v in lower_metrics.values())
+            if lower_metrics:
+                output.append(f"     Lower is Better (excluding lines):")
+                for metric, value in sorted(lower_metrics.items()):
+                    output.append(f"       {metric:15} {value}")
+                output.append(f"       {'∑Lower':15} {lower_sum:.2f}")
+            
+            # Higher is Better
+            higher_is_better = ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']
+            higher_metrics = {k: v for k, v in metrics_avg.items() if k in higher_is_better}
+            higher_sum = sum(float(v) for v in higher_metrics.values())
+            if higher_metrics:
+                output.append(f"     Higher is Better:")
+                for metric, value in sorted(higher_metrics.items()):
+                    output.append(f"       {metric:15} {value}")
+                output.append(f"       {'∑Higher':15} {higher_sum:.2f}")
     
     return "\n".join(output)
 

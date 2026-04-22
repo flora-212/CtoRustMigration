@@ -32,6 +32,10 @@ class SafetyAnalyzer:
             "std_rwlock":   SafetyAnalyzer.count_pattern(code, r'\bRwLock\b'),
             "std_condvar":  SafetyAnalyzer.count_pattern(code, r'\bCondvar\b'),
             "std_thread":   SafetyAnalyzer.count_pattern(code, r'\bthread::spawn\b'),
+            "move_closure": SafetyAnalyzer.count_pattern(code, r'\bmove\s*\|'),
+            "arc_clone":    SafetyAnalyzer.count_pattern(code, r'\bArc::\s*clone\b|\bclone\s*\('),
+            "join_handle":  SafetyAnalyzer.count_pattern(code, r'\.join\(\)|\bJoinHandle\b'),
+            "arc_mutex_combo": SafetyAnalyzer.count_pattern(code, r'\bArc\s*<[^>]*Mutex\s*<'),
             "lines":        len(code.splitlines()),
         }
     

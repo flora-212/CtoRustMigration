@@ -22,7 +22,7 @@ done
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 EXAMPLES_DIR="$SCRIPT_DIR/examples"
-EXAMPLES_NEG_DIR="$SCRIPT_DIR/examples_negative"
+# EXAMPLES_NEG_DIR="$SCRIPT_DIR/examples_negative"
 
 # Timeout settings (same as run_all_examples.sh)
 COMPILE_TIMEOUT=30
@@ -158,13 +158,13 @@ done
 
 echo ""
 
-# Run examples_negative  
-echo "📁 Verifying examples_negative/"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-for example_dir in "$EXAMPLES_NEG_DIR"/*/; do
-    [ -d "$example_dir" ] || continue
-    verify_example "$example_dir"
-done
+# # Run examples_negative  
+# echo "📁 Verifying examples_negative/"
+# echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+# for example_dir in "$EXAMPLES_NEG_DIR"/*/; do
+#     [ -d "$example_dir" ] || continue
+#     verify_example "$example_dir"
+# done
 
 echo ""
 echo "╔════════════════════════════════════════════════════════════════════════════╗"

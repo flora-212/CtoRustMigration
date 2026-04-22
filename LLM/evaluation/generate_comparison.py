@@ -65,12 +65,33 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
     w("## Summary Overview")
     w("")
     
+    # Define which metrics to show in the quick summary table
+    summary_metrics = ["unsafe", "pthread", "raw_ptr", "static_mut", "libc", "std_mutex", "std_thread"]
+    
     if report_type == REPORT_TYPE_NEGATIVE_ONLY:
-        w("| # | Example | Type | Compiles (L) | Round | Pos | Pos Round | unsafe | pthread | raw_ptr | static_mut | libc | Lines |")
-        w("|---|---------|------|:----------:|:---:|:--:|:----------:|--------|---------|---------|------------|------|-------|")
+        # Build header for negative samples
+        header_cols = "| # | Example | Type | Compiles (L) | Round | Pos | Pos Round |"
+        for m in summary_metrics:
+            header_cols += f" {get_metric_display_name(m)} |"
+        w(header_cols)
+        
+        # Build separator
+        sep_cols = "|---|---------|------|:----------:|:---:|:--:|:----------:|"
+        for m in summary_metrics:
+            sep_cols += "------|"
+        w(sep_cols)
     else:
-        w("| # | Example | Compiles (C / L) | Round | unsafe | pthread | raw_ptr | static_mut | libc | std_mutex | std_thread | Lines |")
-        w("|---|---------|:----------------:|:---:|--------|---------|---------|------------|------|-----------|------------|-------|")
+        # Build header for positive/all samples
+        header_cols = "| # | Example | Compiles (C / L) | Round |"
+        for m in summary_metrics:
+            header_cols += f" {get_metric_display_name(m)} |"
+        w(header_cols)
+        
+        # Build separator
+        sep_cols = "|---|---------|:----------------:|:---:|"
+        for m in summary_metrics:
+            sep_cols += "------|"
+        w(sep_cols)
 
     metric_keys = ALL_METRICS
 
@@ -136,16 +157,16 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
             sample_round = get_sample_round(name) if get_sample_round else "—"
             
             if lm:
-                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {lc} | {sample_round} | {pos_compiles} | {pos_round} "
-                  f"| {om['unsafe']}→{lm.get('unsafe', 0)} | {om['pthread']}→{lm.get('pthread', 0)} | {om['raw_ptr']}→{lm.get('raw_ptr', 0)} "
-                  f"| {om['static_mut']}→{lm.get('static_mut', 0)} | {om['libc']}→{lm.get('libc', 0)} "
-                  f"| {om['lines']}→{lm.get('lines', 0)} |")
+                row = f"| {sample_count + 1} | [{name}](#{name}) | NEG | {lc} | {sample_round} | {pos_compiles} | {pos_round} |"
+                for m in summary_metrics:
+                    row += f" {om.get(m, 0)}→{lm.get(m, 0)} |"
+                w(row)
             else:
                 # No attempt
-                w(f"| {sample_count + 1} | [{name}](#{name}) | NEG | {lc} | {sample_round} | {pos_compiles} | {pos_round} "
-                  f"| {om['unsafe']}→— | {om['pthread']}→— | {om['raw_ptr']}→— "
-                  f"| {om['static_mut']}→— | {om['libc']}→— "
-                  f"| {om['lines']}→— |")
+                row = f"| {sample_count + 1} | [{name}](#{name}) | NEG | {lc} | {sample_round} | {pos_compiles} | {pos_round} |"
+                for m in summary_metrics:
+                    row += f" {om.get(m, 0)}→— |"
+                w(row)
             
             sample_count += 1
         else:
@@ -176,16 +197,16 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 sample_round = get_sample_round(name) if get_sample_round else "—"
 
                 if lm:
-                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} | {sample_round} "
-                      f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→{lm.get('unsafe', 0)} | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→{lm.get('pthread', 0)} | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→{lm.get('raw_ptr', 0)} "
-                      f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→{lm.get('static_mut', 0)} | {om.get('libc', 0)}→{cm.get('libc', 0)}→{lm.get('libc', 0)} | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→{lm.get('std_mutex', 0)} "
-                      f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→{lm.get('std_thread', 0)} | {om.get('lines', 0)}→{cm.get('lines', 0)}→{lm.get('lines', 0)} |")
+                    row = f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} | {sample_round} |"
+                    for m in summary_metrics:
+                        row += f" {om.get(m, 0)}→{cm.get(m, 0)}→{lm.get(m, 0)} |"
+                    w(row)
                 else:
                     # No LLM output - show ConCrat vs Original only
-                    w(f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} | {sample_round} "
-                      f"| {om.get('unsafe', 0)}→{cm.get('unsafe', 0)}→— | {om.get('pthread', 0)}→{cm.get('pthread', 0)}→— | {om.get('raw_ptr', 0)}→{cm.get('raw_ptr', 0)}→— "
-                      f"| {om.get('static_mut', 0)}→{cm.get('static_mut', 0)}→— | {om.get('libc', 0)}→{cm.get('libc', 0)}→— | {om.get('std_mutex', 0)}→{cm.get('std_mutex', 0)}→— "
-                      f"| {om.get('std_thread', 0)}→{cm.get('std_thread', 0)}→— | {om.get('lines', 0)}→{cm.get('lines', 0)}→— |")
+                    row = f"| {sample_count + 1} | [{name}](#{name}) | {cc} / {lc} | {sample_round} |"
+                    for m in summary_metrics:
+                        row += f" {om.get(m, 0)}→{cm.get(m, 0)}→— |"
+                    w(row)
                 
                 sample_count += 1
 
@@ -195,13 +216,10 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         total_count = compile_stats['llm']['yes'] + compile_stats['llm']['no']
         # Count positive samples that compile
         pos_compile_count = sum(1 for v in positive_samples.values() if v.get("compiles"))
-        w(f"| | **TOTAL** | (NEG) | {total_llm}/{total_count} | — | {pos_compile_count}/{len(positive_samples)} | — "
-          f"| {totals['original']['unsafe']}→{totals['llm'].get('unsafe', 0)} "
-          f"| {totals['original']['pthread']}→{totals['llm'].get('pthread', 0)} "
-          f"| {totals['original']['raw_ptr']}→{totals['llm'].get('raw_ptr', 0)} "
-          f"| {totals['original']['static_mut']}→{totals['llm'].get('static_mut', 0)} "
-          f"| {totals['original']['libc']}→{totals['llm'].get('libc', 0)} "
-          f"| {totals['original']['lines']}→{totals['llm'].get('lines', 0)} |")
+        row = f"| | **TOTAL** | (NEG) | {total_llm}/{total_count} | — | {pos_compile_count}/{len(positive_samples)} | — |"
+        for m in summary_metrics:
+            row += f" {totals['original'][m]}→{totals['llm'].get(m, 0)} |"
+        w(row)
     else:
         def ttrio(key):
             if totals["concrat"][key] == 0 and totals["llm"][key] == 0:
@@ -212,10 +230,10 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         if total_count == 0:
             total_count = sample_count
 
-        w(f"| | **TOTAL** | {compile_stats['concrat']['yes']}/{total_count} / {compile_stats['llm']['yes']}/{total_count} | — "
-          f"| {ttrio('unsafe')} | {ttrio('pthread')} | {ttrio('raw_ptr')} "
-          f"| {ttrio('static_mut')} | {ttrio('libc')} | {ttrio('std_mutex')} "
-          f"| {ttrio('std_thread')} | {ttrio('lines')} |")
+        row = f"| | **TOTAL** | {compile_stats['concrat']['yes']}/{total_count} / {compile_stats['llm']['yes']}/{total_count} | — |"
+        for m in summary_metrics:
+            row += f" {ttrio(m)} |"
+        w(row)
 
     w("")
     
@@ -227,6 +245,83 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
           "**Pos** column shows if the corresponding positive sample (before `____`) compiles with LLM. "
           "**Pos Round** shows the last successful round (1-N) for the positive sample, or `c2rust` if none compiled successfully. "
           "Negative samples are expected to fail (used for validation).")
+    w("")
+
+    # ── All Metrics Summary Table ──
+    w("## All Metrics Summary")
+    w("")
+    w("This section displays all 15 metrics for each sample in a compact format.")
+    w("")
+    
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY:
+        w("| Example | " + " | ".join([get_metric_display_name(m) for m in ALL_METRICS]) + " |")
+        w("|---------|" + "|".join(["-----" for _ in ALL_METRICS]) + "|")
+        
+        for item in data:
+            if not item.get(IS_NEGATIVE_FIELD, False):
+                continue
+            name = item["name"]
+            om = item["original"]["metrics"]
+            if "llm" in item:
+                lm = item["llm"]["metrics"]
+                row = f"| {name} |"
+                for k in ALL_METRICS:
+                    ov = om.get(k, 0)
+                    lv = lm.get(k, 0)
+                    row += f" {ov}→{lv} |"
+                w(row)
+            else:
+                row = f"| {name} |"
+                for k in ALL_METRICS:
+                    ov = om.get(k, 0)
+                    row += f" {ov}→— |"
+                w(row)
+        
+        # Totals for negative samples
+        row = f"| **TOTAL** |"
+        for k in ALL_METRICS:
+            ov = totals["original"][k]
+            lv = totals["llm"].get(k, 0)
+            row += f" {ov}→{lv} |"
+        w(row)
+    else:
+        w("| Example | " + " | ".join([get_metric_display_name(m) for m in ALL_METRICS]) + " |")
+        w("|---------|" + "|".join(["-----" for _ in ALL_METRICS]) + "|")
+        
+        for item in data:
+            if item.get(IS_NEGATIVE_FIELD, False):
+                continue
+            if "concrat" not in item:
+                continue
+            
+            name = item["name"]
+            om = item["original"]["metrics"]
+            cm = item["concrat"]["metrics"]
+            lm = item["llm"]["metrics"] if "llm" in item else None
+            
+            row = f"| {name} |"
+            for k in ALL_METRICS:
+                ov = om.get(k, 0)
+                cv = cm.get(k, 0)
+                if lm:
+                    lv = lm.get(k, 0)
+                    row += f" {ov}→{cv}→{lv} |"
+                else:
+                    row += f" {ov}→{cv}→— |"
+            w(row)
+        
+        # Totals for positive samples
+        row = f"| **TOTAL** |"
+        for k in ALL_METRICS:
+            ov = totals["original"][k]
+            cv = totals["concrat"].get(k, 0)
+            lv = totals["llm"].get(k, 0)
+            row += f" {ov}→{cv}→{lv} |"
+        w(row)
+    
+    w("")
+    w("> **All Metrics** table shows all 15 metrics (including std\\_arc, std\\_rwlock, std\\_condvar, move\\_closure, arc\\_clone, join\\_handle, arc\\_mutex\\_combo) for each sample. "
+          "Format: **Original → ConCrat → LLM** (or **Original → LLM** for negative samples).")
     w("")
 
     # ── Aggregate statistics ──
@@ -267,6 +362,63 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
         total_for_llm = compile_stats['llm']['yes'] + compile_stats['llm'].get('no', 0)
         w(f"| **LLM compile success** | — | {compile_stats['llm']['yes']}/{total_for_llm} "
           f"({(compile_stats['llm']['yes']/total_for_llm*100 if total_for_llm > 0 else 0):.0f}%) |  |")
+    w("")
+
+    # ── Metric Categories Summary ──
+    w("## Metric Categories Summary")
+    w("")
+    w("Aggregate of metrics grouped by category (Lower is Better vs Higher is Better):")
+    w("")
+    
+    if report_type == REPORT_TYPE_NEGATIVE_ONLY:
+        w("| Category | Original | LLM | vs Original |")
+        w("|----------|----------|-----|:------------:|")
+        
+        # Lower is better
+        lower_total_o = sum(totals["original"].get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+        lower_total_l = sum(totals["llm"].get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+        lower_diff = f"{(lower_total_o - lower_total_l) / lower_total_o * 100:+.1f}%" if lower_total_o > 0 else "—"
+        num_lower_metrics = len(METRICS_LOWER_IS_BETTER)
+        lower_avg_o = round(lower_total_o / num_lower_metrics, 2)
+        lower_avg_l = round(lower_total_l / num_lower_metrics, 2)
+        w(f"| **Lower is Better** (∑unsafe, pthread, raw_ptr, static_mut, libc) | {lower_total_o} ({lower_avg_o}) | {lower_total_l} ({lower_avg_l}) | {lower_diff} |")
+        
+        # Higher is better
+        higher_total_o = sum(totals["original"].get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+        higher_total_l = sum(totals["llm"].get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+        higher_diff = f"{(higher_total_l - higher_total_o) / higher_total_o * 100:+.1f}%" if higher_total_o > 0 else "—"
+        num_higher_metrics = len(METRICS_HIGHER_IS_BETTER)
+        higher_avg_o = round(higher_total_o / num_higher_metrics, 2)
+        higher_avg_l = round(higher_total_l / num_higher_metrics, 2)
+        w(f"| **Higher is Better** (∑std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_total_o} ({higher_avg_o}) | {higher_total_l} ({higher_avg_l}) | {higher_diff} |")
+    else:
+        w("| Category | Original | ConCrat | LLM | Reduction (O→C) | Reduction (O→L) |")
+        w("|----------|----------|---------|-----|:----------------:|:----------------:|")
+        
+        # Lower is better
+        lower_total_o = sum(totals["original"].get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+        lower_total_c = sum(totals["concrat"].get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+        lower_total_l = sum(totals["llm"].get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+        lower_rc = f"{(lower_total_o - lower_total_c) / lower_total_o * 100:.1f}%" if lower_total_o > 0 else "—"
+        lower_rl = f"{(lower_total_o - lower_total_l) / lower_total_o * 100:.1f}%" if lower_total_o > 0 else "—"
+        num_lower_metrics = len(METRICS_LOWER_IS_BETTER)
+        lower_avg_o = round(lower_total_o / num_lower_metrics, 2)
+        lower_avg_c = round(lower_total_c / num_lower_metrics, 2)
+        lower_avg_l = round(lower_total_l / num_lower_metrics, 2)
+        w(f"| **Lower is Better** (∑unsafe, pthread, raw_ptr, static_mut, libc) | {lower_total_o} ({lower_avg_o}) | {lower_total_c} ({lower_avg_c}) | {lower_total_l} ({lower_avg_l}) | {lower_rc} | {lower_rl} |")
+        
+        # Higher is better
+        higher_total_o = sum(totals["original"].get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+        higher_total_c = sum(totals["concrat"].get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+        higher_total_l = sum(totals["llm"].get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+        higher_rc = f"{(higher_total_c - higher_total_o) / higher_total_o * 100:.1f}%" if higher_total_o > 0 else "—"
+        higher_rl = f"{(higher_total_l - higher_total_o) / higher_total_o * 100:.1f}%" if higher_total_o > 0 else "—"
+        num_higher_metrics = len(METRICS_HIGHER_IS_BETTER)
+        higher_avg_o = round(higher_total_o / num_higher_metrics, 2)
+        higher_avg_c = round(higher_total_c / num_higher_metrics, 2)
+        higher_avg_l = round(higher_total_l / num_higher_metrics, 2)
+        w(f"| **Higher is Better** (∑std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_total_o} ({higher_avg_o}) | {higher_total_c} ({higher_avg_c}) | {higher_total_l} ({higher_avg_l}) | {higher_rc} | {higher_rl} |")
+    
     w("")
 
     # ── Safety features adoption ──
@@ -339,6 +491,25 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                     diff_str = f"{diff:+d}"
                     w(f"| {k} | {ov} | {lv} | {diff_str} |")
                 
+                # Category totals for negative sample
+                w("")
+                w("**Category Totals:**")
+                w("")
+                w("| Category | Original | LLM |")
+                w("|----------|:--------:|:---:|")
+                lower_sum_o = sum(om.get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+                lower_sum_l = sum(lm.get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+                num_lower_metrics = len(METRICS_LOWER_IS_BETTER)
+                lower_avg_o = round(lower_sum_o / num_lower_metrics, 2)
+                lower_avg_l = round(lower_sum_l / num_lower_metrics, 2)
+                w(f"| Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc) | {lower_sum_o} ({lower_avg_o}) | {lower_sum_l} ({lower_avg_l}) |")
+                higher_sum_o = sum(om.get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+                higher_sum_l = sum(lm.get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+                num_higher_metrics = len(METRICS_HIGHER_IS_BETTER)
+                higher_avg_o = round(higher_sum_o / num_higher_metrics, 2)
+                higher_avg_l = round(higher_sum_l / num_higher_metrics, 2)
+                w(f"| Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_sum_o} ({higher_avg_o}) | {higher_sum_l} ({higher_avg_l}) |")
+                
                 l_issues = item["llm"]["lock_safety"].get("issues", [])
                 if l_issues:
                     w("")
@@ -354,6 +525,21 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                 for k in NEGATIVE_SAMPLE_METRICS:
                     ov = om.get(k, 0)
                     w(f"| {k} | {ov} |")
+                
+                # Category totals for negative sample (no LLM attempt)
+                w("")
+                w("**Category Totals:**")
+                w("")
+                w("| Category | Original |")
+                w("|----------|:--------:|")
+                lower_sum_o = sum(om.get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+                num_lower_metrics = len(METRICS_LOWER_IS_BETTER)
+                lower_avg_o = round(lower_sum_o / num_lower_metrics, 2)
+                w(f"| Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc) | {lower_sum_o} ({lower_avg_o}) |")
+                higher_sum_o = sum(om.get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+                num_higher_metrics = len(METRICS_HIGHER_IS_BETTER)
+                higher_avg_o = round(higher_sum_o / num_higher_metrics, 2)
+                w(f"| Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_sum_o} ({higher_avg_o}) |")
                 
                 o_issues = item["original"]["lock_safety"].get("issues", [])
                 if o_issues:
@@ -423,6 +609,35 @@ def generate_markdown_report(data, report_type, output_path, positive_only_data=
                         w(f"| {label} | {ov} | {cv} | {lv} | {best} |")
                     else:
                         w(f"| {label} | {ov} | {cv} | — | {best} |")
+
+                # Category totals for positive sample
+                w("")
+                w("**Category Totals:**")
+                w("")
+                w("| Category | Original | ConCrat | LLM |")
+                w("|----------|:--------:|:-------:|:---:|")
+                lower_sum_o = sum(om.get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+                lower_sum_c = sum(cm.get(k, 0) for k in METRICS_LOWER_IS_BETTER)
+                lower_sum_l = sum(lm.get(k, 0) for k in METRICS_LOWER_IS_BETTER) if lm else 0
+                num_lower_metrics = len(METRICS_LOWER_IS_BETTER)
+                lower_avg_o = round(lower_sum_o / num_lower_metrics, 2)
+                lower_avg_c = round(lower_sum_c / num_lower_metrics, 2)
+                if lm:
+                    lower_avg_l = round(lower_sum_l / num_lower_metrics, 2)
+                    w(f"| Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc) | {lower_sum_o} ({lower_avg_o}) | {lower_sum_c} ({lower_avg_c}) | {lower_sum_l} ({lower_avg_l}) |")
+                else:
+                    w(f"| Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc) | {lower_sum_o} ({lower_avg_o}) | {lower_sum_c} ({lower_avg_c}) | — |")
+                higher_sum_o = sum(om.get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+                higher_sum_c = sum(cm.get(k, 0) for k in METRICS_HIGHER_IS_BETTER)
+                higher_sum_l = sum(lm.get(k, 0) for k in METRICS_HIGHER_IS_BETTER) if lm else 0
+                num_higher_metrics = len(METRICS_HIGHER_IS_BETTER)
+                higher_avg_o = round(higher_sum_o / num_higher_metrics, 2)
+                higher_avg_c = round(higher_sum_c / num_higher_metrics, 2)
+                if lm:
+                    higher_avg_l = round(higher_sum_l / num_higher_metrics, 2)
+                    w(f"| Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_sum_o} ({higher_avg_o}) | {higher_sum_c} ({higher_avg_c}) | {higher_sum_l} ({higher_avg_l}) |")
+                else:
+                    w(f"| Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo) | {higher_sum_o} ({higher_avg_o}) | {higher_sum_c} ({higher_avg_c}) | — |")
 
                 # Issues
                 c_issues = item["concrat"]["lock_safety"].get("issues", [])

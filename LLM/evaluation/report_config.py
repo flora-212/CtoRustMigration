@@ -45,8 +45,7 @@ METRICS_LOWER_IS_BETTER = [
     "pthread",
     "raw_ptr",
     "static_mut",
-    "libc",
-    "lines"
+    "libc"
 ]
 
 # Metrics where HIGHER is better (idiomatic Rust patterns to maximize)

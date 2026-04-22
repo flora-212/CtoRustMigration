@@ -260,8 +260,19 @@ def generate_html():
     for example in sorted(data['examples'].keys()):
         example_data = data['examples'][example]
         
+        iter_stats = example_data.get('iteration_stats', {})
+        non_iter = iter_stats.get('non_c2rust_avg_iterations')
+        c2_iter = iter_stats.get('c2rust_avg_iterations')
+        overall_iter = iter_stats.get('overall_avg_iterations')
+        non_iter_text = non_iter if non_iter is not None else '-'
+        c2_iter_text = c2_iter if c2_iter is not None else '-'
+        overall_iter_text = overall_iter if overall_iter is not None else '-'
+
         html += f"""            <div class="example-card" data-example="{example}">
                 <div class="example-header">{example}</div>
+                <div style="padding: 0 20px 10px 20px; font-size: 0.9em; color: #4a5568;">
+                    平均迭代次数: non-c2rust={non_iter_text} | c2rust={c2_iter_text} | overall={overall_iter_text}
+                </div>
                 <div class="example-content">
                     <div class="group-section">
                         <div class="group-title">NON-C2RUST (5 runs)</div>
@@ -303,6 +314,32 @@ def generate_html():
                         </div>
 """
         
+        # Add metrics statistics for non-c2rust
+        if 'metrics_avg' in example_data['non_c2rust']:
+            metrics_avg = example_data['non_c2rust']['metrics_avg']
+            lower_metrics = {k: v for k, v in metrics_avg.items() if k in ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']}
+            higher_metrics = {k: v for k, v in metrics_avg.items() if k in ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']}
+            
+            lower_sum = sum(float(v) for v in lower_metrics.values()) if lower_metrics else 0.0
+            higher_sum = sum(float(v) for v in higher_metrics.values()) if higher_metrics else 0.0
+            
+            html += """                        <div class="eval-row" style="background: #f9f9f9; border-top: 1px solid #ddd; margin-top: 5px; padding-top: 8px;">
+                            <div class="eval-type" style="font-weight: bold; color: #667eea;">Metrics Avg</div>
+                            <div class="eval-stats" style="font-size: 0.9em;">
+"""
+            if lower_metrics:
+                html += "<strong>Lower↓:</strong> "
+                html += " | ".join([f"{k}:{v}" for k, v in sorted(lower_metrics.items())])
+                html += f" | <strong>∑:{lower_sum:.2f}</strong><br/>"
+            if higher_metrics:
+                html += "<strong>Higher↑:</strong> "
+                html += " | ".join([f"{k}:{v}" for k, v in sorted(higher_metrics.items())])
+                html += f" | <strong>∑:{higher_sum:.2f}</strong>"
+            
+            html += """                            </div>
+                        </div>
+"""
+        
         html += """                    </div>
                     <div class="group-section">
                         <div class="group-title">C2RUST (5 runs)</div>
@@ -341,6 +378,32 @@ def generate_html():
                                 <span class="{status_class}">{passed}/5</span>
                                 <span class="failure-reason">{failure_text}{iter_text}</span>
                             </div>
+                        </div>
+"""
+        
+        # Add metrics statistics for c2rust
+        if 'metrics_avg' in example_data['c2rust']:
+            metrics_avg = example_data['c2rust']['metrics_avg']
+            lower_metrics = {k: v for k, v in metrics_avg.items() if k in ['unsafe', 'pthread', 'raw_ptr', 'static_mut', 'libc']}
+            higher_metrics = {k: v for k, v in metrics_avg.items() if k in ['std_mutex', 'std_arc', 'std_rwlock', 'std_condvar', 'std_thread', 'move_closure', 'arc_clone', 'join_handle', 'arc_mutex_combo']}
+            
+            lower_sum = sum(float(v) for v in lower_metrics.values()) if lower_metrics else 0.0
+            higher_sum = sum(float(v) for v in higher_metrics.values()) if higher_metrics else 0.0
+            
+            html += """                        <div class="eval-row" style="background: #f9f9f9; border-top: 1px solid #ddd; margin-top: 5px; padding-top: 8px;">
+                            <div class="eval-type" style="font-weight: bold; color: #667eea;">Metrics Avg</div>
+                            <div class="eval-stats" style="font-size: 0.9em;">
+"""
+            if lower_metrics:
+                html += "<strong>Lower↓:</strong> "
+                html += " | ".join([f"{k}:{v}" for k, v in sorted(lower_metrics.items())])
+                html += f" | <strong>∑:{lower_sum:.2f}</strong><br/>"
+            if higher_metrics:
+                html += "<strong>Higher↑:</strong> "
+                html += " | ".join([f"{k}:{v}" for k, v in sorted(higher_metrics.items())])
+                html += f" | <strong>∑:{higher_sum:.2f}</strong>"
+            
+            html += """                            </div>
                         </div>
 """
         
