@@ -1,0 +1,829 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:40:52.874965",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `guard` in this scope",
+              "location": "main.rs",
+              "line": 35,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 28,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:41:15.741752",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:41:48.467875",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:42:12.328678",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:42:41.624014",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:43:12.630689",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:43:44.251044",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:44:15.701122",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:44:47.381936",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:45:19.307972",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:45:51.099559",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:46:22.938088",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:46:54.869903",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:47:27.403770",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:47:59.584230",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:48:31.832210",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:49:04.225209",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:49:36.791976",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:50:09.891402",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T18:50:42.845914",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `guard` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 6,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

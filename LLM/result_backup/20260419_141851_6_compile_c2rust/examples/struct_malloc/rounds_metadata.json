@@ -1,0 +1,802 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:25:59.738437",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:26:20.189524",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:26:41.138512",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:27:02.694257",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:27:25.404711",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:27:53.645071",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:28:25.194761",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:28:55.664784",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:29:25.276547",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:29:56.632186",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:30:25.960987",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:30:56.960171",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:31:26.818168",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:31:56.427622",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:32:27.037590",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:32:57.033692",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:33:28.971979",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:33:58.951940",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:34:29.697586",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:35:00.059494",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut guard);\n|             ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

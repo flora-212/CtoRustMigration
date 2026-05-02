@@ -1,0 +1,218 @@
+{
+  "timestamp": "2026-04-21T13:12:40.593775",
+  "total": 30,
+  "passed": 20,
+  "failed": 10,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 5.431032180786133,
+      "details": ""
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 6.846717834472656,
+      "details": "Expected:\n4 4 4 4 4\n\nActual:\n2 2 2 2 2"
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.3082232475280762,
+      "details": ""
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 5.833513259887695,
+      "details": "Expected:\n2\n\nActual:\n0"
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.0710217952728271,
+      "details": ""
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 4.953879117965698,
+      "details": ""
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 2.3153653144836426,
+      "details": "Expected:\n4\n\nActual:\n2"
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.530092477798462,
+      "details": ""
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.8920183181762695,
+      "details": ""
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 7.044286012649536,
+      "details": ""
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.568390369415283,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 4.948031663894653,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.1215920448303223,
+      "details": ""
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.8537743091583252,
+      "details": ""
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.6509058475494385,
+      "details": ""
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.2019767761230469,
+      "details": ""
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.162947654724121,
+      "details": ""
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8964293003082275,
+      "details": ""
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.262465238571167,
+      "details": ""
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 1.1596827507019043,
+      "details": "Expected:\n2 3 4\n\nActual:\n0 1 2"
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8984870910644531,
+      "details": ""
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.9200904369354248,
+      "details": "Expected:\n6 7 8 3\n\nActual:\n0 1 2 3"
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.0012924671173096,
+      "details": ""
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8748633861541748,
+      "details": ""
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.1523683071136475,
+      "details": ""
+    }
+  }
+}

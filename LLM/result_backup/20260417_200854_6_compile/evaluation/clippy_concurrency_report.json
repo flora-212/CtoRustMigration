@@ -1,0 +1,821 @@
+{
+  "summary": {
+    "total": 30,
+    "concrat_clean": 0,
+    "llm_clean": 30,
+    "concrat_warn_total": 0,
+    "llm_warn_total": 0
+  },
+  "results": [
+    {
+      "name": "array_const",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpho_0tibk)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp8re6mew9)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp3y6kgbhd)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpvj936qje)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp2gdxq6y3)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpacfgbam0)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp42uyvzbg)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpmztlz9ad)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume2",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpj7hfyuke)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpfo2026yb)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_check",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpi2k_rm9b)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpv4wdgqzh)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp1t7jl7jq)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp9t1gxfsx)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_custom",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp3guzwgr1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp0obmr7v3)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpyzg865i4)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp24jss1hc)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpv8xp9j09)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp8yltrk48)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_read",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp1q80tquz)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpfu28s_4j)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_rwlock",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp8dq42wva)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpvb8sojg5)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp80al0qtw)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpi9fvvwlf)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_trylock",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp_p5ohzrt)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpoyu1xe5o)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_while",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpelq2t61y)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpzktruqm0)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_alias",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpybr17qx_)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpv5rb76v1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpj5r76vsv)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpbe5_nuvb)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp7jpditos)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpzdi2lfuh)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_dup",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpevt4k73u)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmps94qp__i)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_empty",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpvs3hnred)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpci1b7hnb)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_init",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpyjioz8sm)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpgtcgqucf)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpp22oqi8i)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpl4dckzh_)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpx04lup8u)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpvxexvtop)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc2",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp_vb8hkl6)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpz61yvujv)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_multiple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpzovhvv5g)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpkftzmm1z)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmptolv_czo)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpjtwgvlzd)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpqsif42_c)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpxe088wea)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_spin",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmptbn0t39g)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpb_lzb4s_)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_timedwait",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpbqiog91l)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpb0c7ohkn)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "unused_func",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpye7_tytp)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpepadky6x)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    }
+  ]
+}

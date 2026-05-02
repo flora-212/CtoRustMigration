@@ -1,0 +1,821 @@
+{
+  "summary": {
+    "total": 30,
+    "concrat_clean": 0,
+    "llm_clean": 30,
+    "concrat_warn_total": 0,
+    "llm_warn_total": 0
+  },
+  "results": [
+    {
+      "name": "array_const",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmppdb3mlzb)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmptph0x1jp)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmppx2kuk1c)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp2l_lwchf)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "array_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpob06joum)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpdg05yo0u)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpj0pkjr_1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpohv3kehd)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_assume2",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp8me_2p_g)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpbk7lgq0a)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_check",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpk5_og8pl)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmplf51xsu1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmplosro2bc)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpk8gvmt27)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_custom",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpxx8zftxw)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpr9180y6q)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"\n   = note: if there is a `mod main` elsewhere in the crate already, import it with `use crate::...` instead\n",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp49bxe0bi)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpk4vqx98q)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmppqcfg3e5)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpw41rllko)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_read",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp2cdiiig1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpufo8m2gg)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_rwlock",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpd1pnrd5g)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp_1hyv0xa)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpykyptow_)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpntz46wdy)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_trylock",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpzailpoaj)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp16nq6ja1)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "global_while",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmppfrpelm5)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpgnqtmvog)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_alias",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpqvpq1fgs)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmph1odbrgr)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_assume",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpnt6w_xsh)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpdtnip9us)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_condvar",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp63y1l6_q)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpmapx73rj)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_dup",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpy0enb94z)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpammxho12)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_empty",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpss0mab8e)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpr5evsem4)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_init",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpmhalgjdr)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpgob83c3l)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_main",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpme4svexc)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpggzxx_il)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmpcijurm6l)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp7mcs8ulc)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_malloc2",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpfgnt1r3f)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpy6kc0ekq)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_multiple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp3_opsmuv)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp_zw295qg)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_nested",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpcdrzyddi)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpc5mq14wd)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_simple",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmptzvjyum6)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp6u7vzvts)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_spin",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmp3bnfa20j)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp68w65b69)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^",
+        "exists": true
+      }
+    },
+    {
+      "name": "struct_timedwait",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp4dnwxdjf)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpyrj2hx4l)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |\n   = help: to create the module `main`, create file \"main.rs\" or \"main/mod.rs\"",
+        "exists": true
+      }
+    },
+    {
+      "name": "unused_func",
+      "original": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking lazy_static v1.5.0\n    Checking once_cell v1.21.4\n    Checking c2rust_out v0.0.0 (/tmp/tmp5mx_q2f4)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;",
+        "exists": true
+      },
+      "concrat": {
+        "exists": false,
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "file not found"
+      },
+      "llm": {
+        "ok": false,
+        "warning_count": 0,
+        "unique_lints": [],
+        "lint_hits": {},
+        "excerpt": "\n    Blocking waiting for file lock on package cache\n    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n    Checking once_cell v1.21.4\n    Checking lazy_static v1.5.0\n    Checking c2rust_out v0.0.0 (/tmp/tmpe1lidq2m)\nerror[E0583]: file not found for module `main`\n  --> c2rust-lib.rs:15:1\n   |\n15 | pub mod main;\n   | ^^^^^^^^^^^^^\n   |",
+        "exists": true
+      }
+    }
+  ]
+}

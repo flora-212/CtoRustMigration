@@ -1,0 +1,241 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:34:25.130703",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpngqmvpzc)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:35:44.032515",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpf1kw2ml3)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:36:05.236063",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 21,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 34,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 52,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:37:28.757232",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpmcpipnfr)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:37:54.539968",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0368",
+              "message": "binary assignment operation `+=` cannot be applied to type `()`",
+              "location": "main.rs",
+              "line": 32,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0368",
+              "message": "binary assignment operation `+=` cannot be applied to type `()`",
+              "location": "main.rs",
+              "line": 45,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0368",
+              "message": "binary assignment operation `+=` cannot be applied to type `()`",
+              "location": "main.rs",
+              "line": 63,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-17T22:38:28.739256",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

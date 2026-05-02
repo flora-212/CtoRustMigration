@@ -1,0 +1,1027 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:53:45.304975",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for enum `Option<T>` in the current scope",
+              "location": "main.rs",
+              "line": 18,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for enum `Option<T>` in the current scope",
+              "location": "main.rs",
+              "line": 31,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 47,
+              "column": 14,
+              "details": "|\n47 |     X = Some(x.clone());\n|         ---- ^^^^^^^^^ expected `Arc<Ss>`, found `Arc<Mutex<Option<_>>>`\n|         |\n|         arguments to this enum variant are incorrect\n|\n= note: expected struct `Arc<Ss>`\nfound struct `Arc<std::sync::Mutex<Option<_>>>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for enum `Option<T>` in the current scope",
+              "location": "main.rs",
+              "line": 60,
+              "column": 15,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:54:05.918072",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Option<Arc<Ss>>>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 41,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 36,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:54:40.089839",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Option<Arc<Ss>>>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 41,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0282",
+              "message": "type annotations needed",
+              "location": "main.rs",
+              "line": 46,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 36,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:55:03.551171",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 25,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:55:32.543800",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:56:06.336954",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:56:38.899340",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:57:10.219848",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:57:41.599840",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:58:13.094856",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:58:48.551833",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:59:20.138116",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:59:51.800194",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:00:23.962015",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:00:55.858736",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:01:27.916724",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:01:59.998968",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:02:32.380511",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:03:04.760170",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:03:37.441548",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

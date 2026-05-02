@@ -1,0 +1,148 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:53:38.828301",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 13,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 15,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 16,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 58,
+              "column": 13,
+              "details": "|\n57 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n58 |             b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:54:04.618149",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 13,
+              "details": "|\n69 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n70 |             b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-17T23:54:31.735473",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

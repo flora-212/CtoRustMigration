@@ -1,0 +1,1090 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:56:36.938548",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 19,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `a` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 55,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `a` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 59,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "use of moved value: `a`",
+              "location": "main.rs",
+              "line": 58,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:56:59.084684",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "use of moved value: `a`",
+              "location": "main.rs",
+              "line": 53,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:57:23.078937",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:57:48.678915",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:58:20.091108",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:58:52.331776",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:59:25.309844",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:59:58.415775",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:00:31.717000",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:01:04.889999",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:01:38.509895",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:02:11.826627",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:02:45.782180",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:03:19.261173",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:03:53.484620",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:04:27.114888",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `main::Args` in the current scope",
+              "location": "main.rs",
+              "line": 58,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:05:02.530016",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:05:38.490518",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:06:14.211385",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T03:06:50.119751",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

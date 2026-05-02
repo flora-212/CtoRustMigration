@@ -1,0 +1,232 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T21:59:51.567473",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 56,
+              "column": 13,
+              "details": "|\n53 |         libc::pthread_create(\n|         -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|\n59 |         libc::pthread_create(\n|         -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:00:12.500205",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 25,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:00:35.358698",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 25,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:00:59.939205",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 25,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:01:25.697322",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 25,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-18T22:01:58.153904",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

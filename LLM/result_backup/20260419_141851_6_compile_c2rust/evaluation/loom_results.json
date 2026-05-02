@@ -1,0 +1,442 @@
+{
+  "timestamp": "2026-04-21T12:49:55.974723",
+  "total": 62,
+  "passed": 9,
+  "failed": 53,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 4.886521339416504,
+      "details": ""
+    },
+    "array_const____deadlock": {
+      "example_name": "array_const____deadlock",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 14.94365906715393,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4"
+    },
+    "array_const____lock_mismatch": {
+      "example_name": "array_const____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 16.822262287139893,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0."
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 17.84055495262146,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   "
+    },
+    "array_main____lock_leak": {
+      "example_name": "array_main____lock_leak",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 17.061264991760254,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8"
+    },
+    "array_main____partial_critical_section": {
+      "example_name": "array_main____partial_critical_section",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 17.17871403694153,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_sta"
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 16.47972083091736,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8"
+    },
+    "array_simple____partial_critical_section": {
+      "example_name": "array_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error: mismatched closing delimiter: `)`",
+      "time_sec": 17.454136610031128,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling lazy_sta"
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 18.197749376296997,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8"
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 16.88020658493042,
+      "details": ""
+    },
+    "global_assume2____self_lock": {
+      "example_name": "global_assume2____self_lock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `N1` in this scope",
+      "time_sec": 15.894816637039185,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8"
+    },
+    "global_assume____lock_leak": {
+      "example_name": "global_assume____lock_leak",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 23.57509136199951,
+      "details": ""
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 13.672445297241211,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4"
+    },
+    "global_check____lock_leak": {
+      "example_name": "global_check____lock_leak",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `M` in this scope",
+      "time_sec": 35.52748894691467,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling lazy_sta"
+    },
+    "global_check____lock_mismatch": {
+      "example_name": "global_check____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 12.391959190368652,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8"
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1729092) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 15.304326057434082,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   "
+    },
+    "global_condvar____lost_wakeup": {
+      "example_name": "global_condvar____lost_wakeup",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1732697) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 11.435041666030884,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling lazy_sta"
+    },
+    "global_condvar____partial_critical_section": {
+      "example_name": "global_condvar____partial_critical_section",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1736330) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 13.127978563308716,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8"
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 10.14746880531311,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling pin-proj"
+    },
+    "global_custom____self_lock": {
+      "example_name": "global_custom____self_lock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 12.352816820144653,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Co"
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 13.029039144515991,
+      "details": ""
+    },
+    "global_main____self_lock": {
+      "example_name": "global_main____self_lock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 10.844165086746216,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 11.590248346328735,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8"
+    },
+    "global_nested____deadlock": {
+      "example_name": "global_nested____deadlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `handle2` in this scope",
+      "time_sec": 16.24393916130066,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 13.632932662963867,
+      "details": ""
+    },
+    "global_read____lock_mismatch": {
+      "example_name": "global_read____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 11.297737121582031,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 15.640791654586792,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8"
+    },
+    "global_rwlock____lock_leak": {
+      "example_name": "global_rwlock____lock_leak",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 19.788644075393677,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling lazy_sta"
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 17.130282163619995,
+      "details": ""
+    },
+    "global_simple____partial_critical_section": {
+      "example_name": "global_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 17.07832431793213,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 15.745659112930298,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 14.133845329284668,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "global_while____lock_leak": {
+      "example_name": "global_while____lock_leak",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 12.214147567749023,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8"
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 17.114975929260254,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   "
+    },
+    "struct_alias____self_lock": {
+      "example_name": "struct_alias____self_lock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 11.84370231628418,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 14.24769926071167,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0"
+    },
+    "struct_assume____deadlock": {
+      "example_name": "struct_assume____deadlock",
+      "success": false,
+      "message": "\u274c error[E0133]: call to unsafe function `main::malloc` is unsafe and requires unsafe function or block",
+      "time_sec": 15.11241340637207,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   "
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 9.763539791107178,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2."
+    },
+    "struct_condvar____lost_wakeup": {
+      "example_name": "struct_condvar____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 13.226637363433838,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8"
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S1` in this scope",
+      "time_sec": 13.06004548072815,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8"
+    },
+    "struct_dup____deadlock": {
+      "example_name": "struct_dup____deadlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 11.696804523468018,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 10.968814373016357,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1."
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 13.050070524215698,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   "
+    },
+    "struct_init____partial_critical_section": {
+      "example_name": "struct_init____partial_critical_section",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 15.361188411712646,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8"
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1817021) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 17.51543951034546,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v"
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": false,
+      "message": "\u274c error[E0133]: call to unsafe function `main::malloc` is unsafe and requires unsafe function or block",
+      "time_sec": 15.568406105041504,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling libc v0."
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 12.352725505828857,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Co"
+    },
+    "struct_malloc2____lock_mismatch": {
+      "example_name": "struct_malloc2____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 18.657062530517578,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v"
+    },
+    "struct_malloc____lost_wakeup": {
+      "example_name": "struct_malloc____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0133]: call to unsafe function `main::malloc` is unsafe and requires unsafe function or block",
+      "time_sec": 18.181440353393555,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   "
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": false,
+      "message": "\u274c error[E0428]: the name `f1_loom_wrapper` is defined multiple times",
+      "time_sec": 10.703394174575806,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8"
+    },
+    "struct_multiple____deadlock": {
+      "example_name": "struct_multiple____deadlock",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 11.580310106277466,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   "
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S` in this scope",
+      "time_sec": 11.827781677246094,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   "
+    },
+    "struct_nested____self_lock": {
+      "example_name": "struct_nested____self_lock",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 16.90293574333191,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8"
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 16.52585244178772,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "struct_simple____partial_critical_section": {
+      "example_name": "struct_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find type `Once` in this scope",
+      "time_sec": 13.954676389694214,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   "
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": false,
+      "message": "\u274c error[E0133]: call to unsafe function `main::pthread_mutex_init` is unsafe and requires unsafe funct",
+      "time_sec": 11.96069860458374,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v"
+    },
+    "struct_spin____lock_leak": {
+      "example_name": "struct_spin____lock_leak",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 11.208895683288574,
+      "details": ""
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 12.187692880630493,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   "
+    },
+    "struct_timedwait____deadlock": {
+      "example_name": "struct_timedwait____deadlock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 15.461722135543823,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4"
+    },
+    "struct_timedwait____lost_wakeup": {
+      "example_name": "struct_timedwait____lost_wakeup",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 23.597414255142212,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v"
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 13.229325771331787,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v"
+    },
+    "unused_func____lock_mismatch": {
+      "example_name": "unused_func____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 13.457063674926758,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 30 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   "
+    }
+  }
+}

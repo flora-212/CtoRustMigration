@@ -1,0 +1,1144 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:06:02.934367",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 37,
+              "column": 19,
+              "details": "|\n37 |       thread::spawn(move || {\n|       ------------- ^------\n|       |             |\n|  _____|_____________within this `{closure@main.rs:37:19: 37:26}`\n| |     |\n| |     required by a bound introduced by this call\n38 | |         t_fun(s_ptr as *mut libc::c_void);\n39 | |     });\n| |_____^ `*mut Ss` cannot be sent between threads safely\n|\n= help: within `{closure@main.rs:37:19: 37:26}`, the trait `Send` is not implemented for `*mut Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:06:23.933240",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:06:46.404148",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:07:10.287962",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:07:38.950511",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:08:09.265981",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:08:40.557392",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:09:11.631099",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:09:42.794193",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:10:13.915681",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:10:45.340363",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:11:16.702043",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:11:48.420567",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:12:20.202932",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:12:51.824357",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:13:23.487422",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:13:55.356521",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:14:27.334621",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:14:59.626977",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T11:15:31.880720",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 23,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 47,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

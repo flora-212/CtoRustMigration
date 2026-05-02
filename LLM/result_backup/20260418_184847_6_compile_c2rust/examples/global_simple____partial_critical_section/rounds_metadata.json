@@ -1,0 +1,148 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:35:15.316623",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 18,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 19,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 20,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "call to unsafe function `t_fun` is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "call to unsafe function `t_fun` is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 46,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:35:38.445348",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "call to unsafe function `t_fun` is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 43,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "call to unsafe function `t_fun` is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 47,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-19T02:36:00.748950",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

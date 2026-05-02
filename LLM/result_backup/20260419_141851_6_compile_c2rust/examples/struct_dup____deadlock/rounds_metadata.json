@@ -1,0 +1,600 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:42:58.078873",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss1>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 27,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss2>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 27,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 36,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 44,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 45,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:43:30.594523",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss1>::new` in statics",
+              "location": "main.rs",
+              "line": 7,
+              "column": 27,
+              "details": "|\n7 |   static mut S1: Arc<Ss1> = Arc::new(Ss1 {\n|  ___________________________^\n8 | |     n1: 0,\n9 | |     n2: 1,"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss2>::new` in statics",
+              "location": "main.rs",
+              "line": 13,
+              "column": 27,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 51,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 58,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 59,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:44:11.904375",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 41,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 42,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:44:53.105875",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 29,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 32,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 43,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 55,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 56,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 65,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:45:36.381570",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 29,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 32,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 43,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 55,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 56,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 65,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:46:19.804103",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 29,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 32,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 43,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T19:47:03.604392",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 29,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S1` in this scope",
+              "location": "main.rs",
+              "line": 32,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 43,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `S2` in this scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-19T19:47:48.909982",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

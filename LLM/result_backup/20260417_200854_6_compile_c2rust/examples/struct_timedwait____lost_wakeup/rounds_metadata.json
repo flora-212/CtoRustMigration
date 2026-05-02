@@ -1,0 +1,1063 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:28:09.664673",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 38,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 54,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 14,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:28:38.923388",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 38,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 54,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 14,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:29:09.194163",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 36,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 44,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 52,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 14,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:29:45.456638",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:30:24.458375",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:31:03.616199",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:31:43.383440",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:32:22.578789",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:33:01.876945",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:33:41.122957",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:34:20.643207",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:35:00.625807",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:35:41.159102",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:36:20.807082",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:37:00.708739",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:37:40.827895",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:38:20.912645",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:39:01.339040",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:39:42.126382",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T02:40:22.801994",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 67,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 72,
+              "column": 15,
+              "details": "|\n64 |     let shared = initialize_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

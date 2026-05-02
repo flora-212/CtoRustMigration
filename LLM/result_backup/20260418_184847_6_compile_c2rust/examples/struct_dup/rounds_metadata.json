@@ -1,0 +1,345 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:28:53.689824",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 64,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 65,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 24,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:29:22.097212",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 11
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 65,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0530",
+              "message": "let bindings cannot shadow statics",
+              "location": "main.rs",
+              "line": 66,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 24,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss1>>::new` in statics",
+              "location": "main.rs",
+              "line": 21,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss2>>::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `std::sync::MutexGuard<'_, ss1>` in the current scope",
+              "location": "main.rs",
+              "line": 41,
+              "column": 25,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `std::sync::MutexGuard<'_, ss2>` in the current scope",
+              "location": "main.rs",
+              "line": 42,
+              "column": 25,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 10 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:29:52.049666",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 24,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss1>>::new` in statics",
+              "location": "main.rs",
+              "line": 21,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss2>>::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T20:30:27.147476",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 24,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss1>>::new` in statics",
+              "location": "main.rs",
+              "line": 21,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<()>>::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<ss2>>::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-18T20:31:05.636586",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

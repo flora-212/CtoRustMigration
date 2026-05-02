@@ -1,0 +1,1243 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:43:05.458364",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 16,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 21,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 46,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 47,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 48,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:43:32.828267",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S1` in the current scope",
+              "location": "main.rs",
+              "line": 47,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S2` in the current scope",
+              "location": "main.rs",
+              "line": 48,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S3` in the current scope",
+              "location": "main.rs",
+              "line": 49,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S1` in the current scope",
+              "location": "main.rs",
+              "line": 75,
+              "column": 12,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S2` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 12,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S3` in the current scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 12,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:44:06.814089",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 62,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 63,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 64,
+              "column": 16,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 90,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:44:46.231202",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:45:27.636892",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:46:10.034932",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:46:52.534220",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:47:35.990628",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:48:18.609084",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:49:01.455298",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:49:44.160679",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:50:27.429877",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:51:10.486548",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:51:53.730537",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:52:37.461465",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:53:21.167550",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:54:04.837839",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:54:48.593107",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:55:32.289403",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T02:56:16.245756",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 62,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s2` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 63,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s3` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 64,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

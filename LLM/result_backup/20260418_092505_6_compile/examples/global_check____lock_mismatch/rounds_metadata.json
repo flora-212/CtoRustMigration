@@ -1,0 +1,1531 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:27:03.040909",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `NULL` in crate `libc`",
+              "location": "main.rs",
+              "line": 76,
+              "column": 11,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 25,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 48,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 65,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:27:35.049658",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:28:06.234402",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:28:41.622906",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:29:20.044334",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:29:58.612861",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:30:37.909567",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:31:18.265814",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:31:57.077837",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:32:35.883391",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:33:15.024422",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:33:56.334271",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:34:35.462421",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:35:15.503112",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:35:54.930106",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:36:34.334855",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:37:14.462352",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:37:55.819336",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:38:36.681296",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:39:16.615126",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<i32>>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 27,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 49,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0600",
+              "message": "cannot apply unary operator `!` to type `()`",
+              "location": "main.rs",
+              "line": 66,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

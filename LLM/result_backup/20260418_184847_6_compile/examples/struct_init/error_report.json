@@ -1,0 +1,1458 @@
+{
+  "example_name": "struct_init",
+  "total_iterations": 20,
+  "failed_at_iteration": 20,
+  "best_compile_round": null,
+  "final_source": 20,
+  "summary": {
+    "total_checks": 1,
+    "failed_checks": 1,
+    "total_errors": 6
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<Ss>::new` in statics",
+              "location": "main.rs",
+              "line": 16,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow data in an `Arc` as mutable",
+              "location": "main.rs",
+              "line": 28,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow data in an `Arc` as mutable",
+              "location": "main.rs",
+              "line": 29,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 57,
+              "column": 9,
+              "details": "|\n35 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut Arc<Ss>` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut Arc<Ss>` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 6,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 7,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 8,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 9,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 10,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 11,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 12,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 13,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 14,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 15,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 16,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 17,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 18,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 19,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 20,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 38,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 38,
+              "column": 31,
+              "details": "|\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0658",
+              "message": "use of unstable library feature `get_mut_unchecked`",
+              "location": "main.rs",
+              "line": 39,
+              "column": 8,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 31,
+              "details": "|\n39 |     f1(Arc::get_mut_unchecked(s2) as *mut Ss);\n|        ---------------------- ^^ types differ in mutability\n|        |\n|        arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<Ss, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n47 |     let s3 = Arc::new(Ss {\n|         -- this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rounds_compile_status": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+    "11": false,
+    "12": false,
+    "13": false,
+    "14": false,
+    "15": false,
+    "16": false,
+    "17": false,
+    "18": false,
+    "19": false,
+    "20": false
+  }
+}

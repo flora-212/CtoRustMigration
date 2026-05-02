@@ -1,0 +1,774 @@
+{
+  "example_name": "global_nested",
+  "total_iterations": 20,
+  "failed_at_iteration": 20,
+  "best_compile_round": null,
+  "final_source": 20,
+  "summary": {
+    "total_checks": 1,
+    "failed_checks": 1,
+    "total_errors": 2
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `NULL` in crate `libc`",
+              "location": "main.rs",
+              "line": 34,
+              "column": 11,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 11,
+              "column": 47,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 43,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 7,
+              "column": 43,
+              "details": "|\n7 |   static mut SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  ___________________________________________^\n8 | |     n1: Mutex::new(0),\n9 | |     n2: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to immutable static item `SHARED_DATA`",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|\n8 | static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n| ----------------------------------- this `static` cannot be written to"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 6,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 7,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 8,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 9,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 10,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 11,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 12,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 13,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 14,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 15,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 16,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 17,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 18,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 19,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 20,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 8,
+              "column": 39,
+              "details": "|\n8 |   static SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {\n|  _______________________________________^\n9 | |     n1: Mutex::new(0),"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rounds_compile_status": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+    "11": false,
+    "12": false,
+    "13": false,
+    "14": false,
+    "15": false,
+    "16": false,
+    "17": false,
+    "18": false,
+    "19": false,
+    "20": false
+  }
+}

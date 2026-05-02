@@ -1,0 +1,327 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:21:56.920946",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 17,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 22,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 21,
+              "details": "|\n39 |     g(Arc::make_mut(s));\n|       ------------- ^ types differ in mutability\n|       |\n|       arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<_, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `St: CloneToUninit` is not satisfied",
+              "location": "main.rs",
+              "line": 39,
+              "column": 21,
+              "details": "|\n39 |     g(Arc::make_mut(s));\n|       ------------- ^ the trait `CloneToUninit` is not implemented for `St`\n|       |\n|       required by a bound introduced by this call\n|\n= note: required for `St` to implement `CloneToUninit`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 73,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:22:24.904499",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 39,
+              "column": 21,
+              "details": "|\n39 |     g(Arc::make_mut(s));\n|       ------------- ^ types differ in mutability\n|       |\n|       arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<_, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `St: CloneToUninit` is not satisfied",
+              "location": "main.rs",
+              "line": 39,
+              "column": 21,
+              "details": "|\n39 |     g(Arc::make_mut(s));\n|       ------------- ^ the trait `CloneToUninit` is not implemented for `St`\n|       |\n|       required by a bound introduced by this call\n|\n= note: required for `St` to implement `CloneToUninit`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S1` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S2` in the current scope",
+              "location": "main.rs",
+              "line": 73,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `S3` in the current scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:22:58.116180",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 21,
+              "details": "|\n50 |     g(Arc::make_mut(s));\n|       ------------- ^ types differ in mutability\n|       |\n|       arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<_, _>`\nfound reference `&Arc<_, std::alloc::Global>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `St: CloneToUninit` is not satisfied",
+              "location": "main.rs",
+              "line": 50,
+              "column": 21,
+              "details": "|\n50 |     g(Arc::make_mut(s));\n|       ------------- ^ the trait `CloneToUninit` is not implemented for `St`\n|       |\n|       required by a bound introduced by this call\n|\n= note: required for `St` to implement `CloneToUninit`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 83,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 84,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&'static Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 85,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:23:37.400251",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 21,
+              "details": "|\n50 |     g(Arc::make_mut(s));\n|       ------------- ^ expected `&mut Arc<St, _>`, found `MutexGuard<'_, St>`\n|       |\n|       arguments to this function are incorrect\n|\n= note: expected mutable reference `&mut Arc<St, _>`\nfound struct `std::sync::MutexGuard<'_, St>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `St: CloneToUninit` is not satisfied",
+              "location": "main.rs",
+              "line": 50,
+              "column": 21,
+              "details": "|\n50 |     g(Arc::make_mut(s));\n|       ------------- ^ the trait `CloneToUninit` is not implemented for `St`\n|       |\n|       required by a bound introduced by this call\n|\n= note: required for `St` to implement `CloneToUninit`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-19T09:24:18.489183",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

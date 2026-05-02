@@ -1,0 +1,442 @@
+{
+  "timestamp": "2026-04-21T12:04:59.571096",
+  "total": 62,
+  "passed": 9,
+  "failed": 53,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.804211139678955,
+      "details": ""
+    },
+    "array_const____deadlock": {
+      "example_name": "array_const____deadlock",
+      "success": false,
+      "message": "\u274c error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std::fmt::Display`",
+      "time_sec": 3.829960584640503,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_const____lock_mismatch": {
+      "example_name": "array_const____lock_mismatch",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 3.434765100479126,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `num_mutex` in this scope",
+      "time_sec": 3.659580945968628,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_main____lock_leak": {
+      "example_name": "array_main____lock_leak",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `num_mutex` in this scope",
+      "time_sec": 3.736638307571411,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_main____partial_critical_section": {
+      "example_name": "array_main____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 3.6738836765289307,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": false,
+      "message": "\u274c error[E0428]: the name `f1` is defined multiple times",
+      "time_sec": 3.748783826828003,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "array_simple____partial_critical_section": {
+      "example_name": "array_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `n1` in this scope",
+      "time_sec": 3.291403293609619,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.5163943767547607,
+      "details": ""
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.241239309310913,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_assume2____self_lock": {
+      "example_name": "global_assume2____self_lock",
+      "success": false,
+      "message": "\u274c error: expected one of `:`, `@`, or `|`, found `)`",
+      "time_sec": 3.4407691955566406,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_assume____lock_leak": {
+      "example_name": "global_assume____lock_leak",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.4755966663360596,
+      "details": ""
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.152686595916748,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_check____lock_leak": {
+      "example_name": "global_check____lock_leak",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.171440601348877,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_check____lock_mismatch": {
+      "example_name": "global_check____lock_mismatch",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.377336025238037,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1481731) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 5.1917736530303955,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_condvar____lost_wakeup": {
+      "example_name": "global_condvar____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `N1` in this scope",
+      "time_sec": 3.385903835296631,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_condvar____partial_critical_section": {
+      "example_name": "global_condvar____partial_critical_section",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1482758) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 4.415169715881348,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": false,
+      "message": "\u274c error[E0428]: the name `lock` is defined multiple times",
+      "time_sec": 3.357252836227417,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_custom____self_lock": {
+      "example_name": "global_custom____self_lock",
+      "success": false,
+      "message": "\u274c error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std::fmt::Display`",
+      "time_sec": 3.401641845703125,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.1470611095428467,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_main____self_lock": {
+      "example_name": "global_main____self_lock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 3.627488613128662,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.4307668209075928,
+      "details": ""
+    },
+    "global_nested____deadlock": {
+      "example_name": "global_nested____deadlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `handle2` in this scope",
+      "time_sec": 3.3076186180114746,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.622785806655884,
+      "details": ""
+    },
+    "global_read____lock_mismatch": {
+      "example_name": "global_read____lock_mismatch",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX1` in this scope",
+      "time_sec": 3.4325296878814697,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `LOCK` in this scope",
+      "time_sec": 3.5227723121643066,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_rwlock____lock_leak": {
+      "example_name": "global_rwlock____lock_leak",
+      "success": false,
+      "message": "\u274c error[E0428]: the name `f1` is defined multiple times",
+      "time_sec": 3.1888344287872314,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.344538927078247,
+      "details": ""
+    },
+    "global_simple____partial_critical_section": {
+      "example_name": "global_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `NUM_MUTEX` in this scope",
+      "time_sec": 3.851637125015259,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.530181646347046,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>600s)",
+      "time_sec": 600,
+      "details": "Loom state space exploration exceeded timeout"
+    },
+    "global_while____lock_leak": {
+      "example_name": "global_while____lock_leak",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1493971) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 5.71567177772522,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 9.60987901687622,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_alias____self_lock": {
+      "example_name": "struct_alias____self_lock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 4.128749370574951,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": false,
+      "message": "\u274c error: test failed, to rerun pass `--lib`",
+      "time_sec": 4.671302556991577,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_assume____deadlock": {
+      "example_name": "struct_assume____deadlock",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1496199) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 6.185724496841431,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 4.683037281036377,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_condvar____lost_wakeup": {
+      "example_name": "struct_condvar____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 3.6403772830963135,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S1` in this scope",
+      "time_sec": 5.599686145782471,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_dup____deadlock": {
+      "example_name": "struct_dup____deadlock",
+      "success": false,
+      "message": "\u274c error: prefix `pub` is unknown",
+      "time_sec": 3.479433536529541,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": false,
+      "message": "\u274c error[E0596]: cannot borrow `s1` as mutable, as it is not declared as mutable",
+      "time_sec": 3.9143331050872803,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": false,
+      "message": "\u274c error[E0614]: type `Ss` cannot be dereferenced",
+      "time_sec": 3.5452282428741455,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_init____partial_critical_section": {
+      "example_name": "struct_init____partial_critical_section",
+      "success": false,
+      "message": "\u274c error: cast cannot be followed by a method call",
+      "time_sec": 3.338029384613037,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 3.6362462043762207,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 4.384439468383789,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": false,
+      "message": "\u274c error[E0594]: cannot assign to data in dereference of `loom::sync::Arc<Ss>`",
+      "time_sec": 3.9983861446380615,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_malloc2____lock_mismatch": {
+      "example_name": "struct_malloc2____lock_mismatch",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `X` in this scope",
+      "time_sec": 3.9792425632476807,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_malloc____lost_wakeup": {
+      "example_name": "struct_malloc____lost_wakeup",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1501898) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 4.768650054931641,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": false,
+      "message": "\u274c error: visibility `pub` is not followed by an item",
+      "time_sec": 3.5415797233581543,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_multiple____deadlock": {
+      "example_name": "struct_multiple____deadlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S1` in this scope",
+      "time_sec": 3.5216872692108154,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S` in this scope",
+      "time_sec": 3.980684995651245,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_nested____self_lock": {
+      "example_name": "struct_nested____self_lock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 3.5046193599700928,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S` in this scope",
+      "time_sec": 3.7140188217163086,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_simple____partial_critical_section": {
+      "example_name": "struct_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 3.613931894302368,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling once_cell v1.21.4\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 3.386958360671997,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling smallvec v1.15.1\n   Compiling nu-ansi-term v0.50.3\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_spin____lock_leak": {
+      "example_name": "struct_spin____lock_leak",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.649137258529663,
+      "details": ""
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `SHARED_STATE` in this scope",
+      "time_sec": 3.6190061569213867,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling log v0.4.29\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling regex-syntax v0.8.10\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_timedwait____deadlock": {
+      "example_name": "struct_timedwait____deadlock",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `INIT` in this scope",
+      "time_sec": 3.6334033012390137,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling shlex v1.3.0\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling libc v0.2.185\n   Compiling cfg-if v1.0.4\n   Compiling regex-syntax v0.8.10\n   Compiling log v0.4.29\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "struct_timedwait____lost_wakeup": {
+      "example_name": "struct_timedwait____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find value `S` in this scope",
+      "time_sec": 4.686943769454956,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling once_cell v1.21.4\n   Compiling find-msvc-tools v0.1.9\n   Compiling shlex v1.3.0\n   Compiling regex-syntax v0.8.10\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling lazy_static v1.5.0\n   Compiling pin-project-lite v0.2.17\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Loom tests passed",
+      "time_sec": 3.592028856277466,
+      "details": ""
+    },
+    "unused_func____lock_mismatch": {
+      "example_name": "unused_func____lock_mismatch",
+      "success": false,
+      "message": "\u274c thread 'main::test_concurrent_access' (1508243) panicked at /rustc/c756124775121dea0e640652c5ee3c89e",
+      "time_sec": 4.6322526931762695,
+      "details": "    Updating crates.io index\n     Locking 30 packages to latest compatible versions\n   Compiling rustversion v1.0.22\n   Compiling find-msvc-tools v0.1.9\n   Compiling once_cell v1.21.4\n   Compiling shlex v1.3.0\n   Compiling cfg-if v1.0.4\n   Compiling libc v0.2.185\n   Compiling log v0.4.29\n   Compiling regex-syntax v0.8.10\n   Compiling pin-project-lite v0.2.17\n   Compiling lazy_static v1.5.0\n   Compiling nu-ansi-term v0.50.3\n   Compiling smallvec v1.15.1\n   Compiling scoped-tls v1.0.1\n   Compiling"
+    }
+  }
+}

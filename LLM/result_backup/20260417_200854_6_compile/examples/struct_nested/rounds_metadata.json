@@ -1,0 +1,1144 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:59:17.271355",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 52,
+              "column": 13,
+              "details": "|\n51 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n52 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:59:38.271249",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 53,
+              "column": 13,
+              "details": "|\n52 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n53 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 25,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:59:58.565903",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:00:19.712016",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:00:41.952125",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:01:13.353793",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:01:45.204256",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:02:14.685689",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:02:44.808758",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:03:17.656818",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:03:47.957687",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:04:20.317021",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:04:49.902187",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:05:20.093674",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:05:50.418080",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:06:20.459925",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:06:51.032997",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:07:21.720242",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:07:53.182490",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:08:23.761877",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 54,
+              "column": 13,
+              "details": "|\n53 |         libc::printf(\n|         ------------ arguments to this function are incorrect\n54 |             b\"%d %d\\n\\0\".as_ptr(),\n|             ^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n1`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 26,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `S.s.n2`, as `S` is an immutable static item",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

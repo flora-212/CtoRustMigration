@@ -1,0 +1,442 @@
+{
+  "timestamp": "2026-04-21T12:58:14.309021",
+  "total": 62,
+  "passed": 62,
+  "failed": 0,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 14.449422121047974,
+      "details": ""
+    },
+    "array_const____deadlock": {
+      "example_name": "array_const____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 4.400478839874268,
+      "details": ""
+    },
+    "array_const____lock_mismatch": {
+      "example_name": "array_const____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.941222190856934,
+      "details": ""
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.620222330093384,
+      "details": ""
+    },
+    "array_main____lock_leak": {
+      "example_name": "array_main____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 7.900176763534546,
+      "details": ""
+    },
+    "array_main____partial_critical_section": {
+      "example_name": "array_main____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.0190038681030273,
+      "details": ""
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.06404185295105,
+      "details": ""
+    },
+    "array_simple____partial_critical_section": {
+      "example_name": "array_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 6.870898962020874,
+      "details": ""
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.494748115539551,
+      "details": ""
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.858005046844482,
+      "details": ""
+    },
+    "global_assume2____self_lock": {
+      "example_name": "global_assume2____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.7350518703460693,
+      "details": ""
+    },
+    "global_assume____lock_leak": {
+      "example_name": "global_assume____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 12.0381498336792,
+      "details": ""
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.4864559173583984,
+      "details": ""
+    },
+    "global_check____lock_leak": {
+      "example_name": "global_check____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 20.470940351486206,
+      "details": ""
+    },
+    "global_check____lock_mismatch": {
+      "example_name": "global_check____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.8244636058807373,
+      "details": ""
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 9.470373630523682,
+      "details": ""
+    },
+    "global_condvar____lost_wakeup": {
+      "example_name": "global_condvar____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.571706771850586,
+      "details": ""
+    },
+    "global_condvar____partial_critical_section": {
+      "example_name": "global_condvar____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.8946454524993896,
+      "details": ""
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 9.135749578475952,
+      "details": ""
+    },
+    "global_custom____self_lock": {
+      "example_name": "global_custom____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 4.547865390777588,
+      "details": ""
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 5.53944993019104,
+      "details": ""
+    },
+    "global_main____self_lock": {
+      "example_name": "global_main____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 9.244935750961304,
+      "details": ""
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 7.767173767089844,
+      "details": ""
+    },
+    "global_nested____deadlock": {
+      "example_name": "global_nested____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.086960792541504,
+      "details": ""
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 4.987208604812622,
+      "details": ""
+    },
+    "global_read____lock_mismatch": {
+      "example_name": "global_read____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.6747493743896484,
+      "details": ""
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 7.187496900558472,
+      "details": ""
+    },
+    "global_rwlock____lock_leak": {
+      "example_name": "global_rwlock____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 28.67737364768982,
+      "details": ""
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 19.539926528930664,
+      "details": ""
+    },
+    "global_simple____partial_critical_section": {
+      "example_name": "global_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 17.025157928466797,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 7.663903474807739,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 6.452693223953247,
+      "details": ""
+    },
+    "global_while____lock_leak": {
+      "example_name": "global_while____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 6.300442218780518,
+      "details": ""
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 35.62924647331238,
+      "details": ""
+    },
+    "struct_alias____self_lock": {
+      "example_name": "struct_alias____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.356822490692139,
+      "details": ""
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 10.84399676322937,
+      "details": ""
+    },
+    "struct_assume____deadlock": {
+      "example_name": "struct_assume____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.935804843902588,
+      "details": ""
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.6710009574890137,
+      "details": ""
+    },
+    "struct_condvar____lost_wakeup": {
+      "example_name": "struct_condvar____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 11.51989221572876,
+      "details": ""
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 11.516101360321045,
+      "details": ""
+    },
+    "struct_dup____deadlock": {
+      "example_name": "struct_dup____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 10.849186897277832,
+      "details": ""
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.1472983360290527,
+      "details": ""
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 11.750913619995117,
+      "details": ""
+    },
+    "struct_init____partial_critical_section": {
+      "example_name": "struct_init____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 13.626754760742188,
+      "details": ""
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 18.537114143371582,
+      "details": ""
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 9.31011700630188,
+      "details": ""
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.435362577438354,
+      "details": ""
+    },
+    "struct_malloc2____lock_mismatch": {
+      "example_name": "struct_malloc2____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.415304183959961,
+      "details": ""
+    },
+    "struct_malloc____lost_wakeup": {
+      "example_name": "struct_malloc____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 6.8055994510650635,
+      "details": ""
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 7.640214443206787,
+      "details": ""
+    },
+    "struct_multiple____deadlock": {
+      "example_name": "struct_multiple____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 30.78695273399353,
+      "details": ""
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 11.127688884735107,
+      "details": ""
+    },
+    "struct_nested____self_lock": {
+      "example_name": "struct_nested____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 28.927906036376953,
+      "details": ""
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 12.96800684928894,
+      "details": ""
+    },
+    "struct_simple____partial_critical_section": {
+      "example_name": "struct_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.640946626663208,
+      "details": ""
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 9.797112464904785,
+      "details": ""
+    },
+    "struct_spin____lock_leak": {
+      "example_name": "struct_spin____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 11.399632215499878,
+      "details": ""
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 12.150800943374634,
+      "details": ""
+    },
+    "struct_timedwait____deadlock": {
+      "example_name": "struct_timedwait____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 34.9855751991272,
+      "details": ""
+    },
+    "struct_timedwait____lost_wakeup": {
+      "example_name": "struct_timedwait____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.288862466812134,
+      "details": ""
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 8.242454051971436,
+      "details": ""
+    },
+    "unused_func____lock_mismatch": {
+      "example_name": "unused_func____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.735044479370117,
+      "details": ""
+    }
+  }
+}

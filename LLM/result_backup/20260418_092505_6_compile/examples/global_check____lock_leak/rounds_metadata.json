@@ -1,0 +1,4042 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:06:15.284942",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:07:09.907541",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:08:22.796325",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:09:27.163234",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:10:51.090190",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:11:52.715402",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:12:55.043946",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:13:56.875977",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:14:59.711728",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:16:02.158850",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:17:04.845244",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:18:07.185997",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:19:11.993282",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:20:14.732742",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:21:17.427782",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:22:20.407288",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:23:23.522838",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:24:26.564801",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:25:30.134715",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T13:26:35.100560",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 20
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 74,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 77,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 82,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 89,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 91,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 92,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 103,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 105,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 110,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 112,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 123,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_trylock` in this scope",
+              "location": "main.rs",
+              "line": 125,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_lock` in this scope",
+              "location": "main.rs",
+              "line": 131,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_mutex_unlock` in this scope",
+              "location": "main.rs",
+              "line": 136,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 152,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_create` in this scope",
+              "location": "main.rs",
+              "line": 158,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 164,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find function `pthread_join` in this scope",
+              "location": "main.rs",
+              "line": 165,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 19 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

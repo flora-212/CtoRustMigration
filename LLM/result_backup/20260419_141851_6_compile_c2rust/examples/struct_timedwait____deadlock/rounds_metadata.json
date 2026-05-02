@@ -1,0 +1,1378 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:24:14.065914",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 7
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `NULL` in crate `libc`",
+              "location": "main.rs",
+              "line": 81,
+              "column": 11,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `NULL` in crate `libc`",
+              "location": "main.rs",
+              "line": 89,
+              "column": 21,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find value `NULL` in crate `libc`",
+              "location": "main.rs",
+              "line": 93,
+              "column": 21,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 6 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:24:47.781783",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<SharedData>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 31,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 47,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 62,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 84,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:25:25.713506",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 6
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find type `OnceLock` in this scope",
+              "location": "main.rs",
+              "line": 15,
+              "column": 21,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0433",
+              "message": "cannot find type `OnceLock` in this scope",
+              "location": "main.rs",
+              "line": 15,
+              "column": 49,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 35,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 51,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 66,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 5 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:26:03.265959",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:26:47.179591",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:27:31.161439",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:28:15.366009",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:28:59.448848",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:29:44.222391",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:30:28.418030",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:31:12.717054",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:31:57.680141",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:32:42.229088",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:33:26.903453",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:34:11.681593",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:34:56.707407",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:35:42.361521",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:36:27.630406",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:37:13.099910",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:37:58.668329",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 36,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 39,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 90,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

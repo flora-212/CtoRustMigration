@@ -1,0 +1,802 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:57:07.671171",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 57,
+              "column": 9,
+              "details": "|\n56 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n57 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:57:29.432388",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:57:51.926062",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:58:15.485934",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:58:43.580624",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:59:07.632341",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T10:59:38.855299",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:00:10.128754",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:00:41.335426",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:01:12.756452",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:01:44.233636",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:02:15.708806",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:02:47.317216",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:03:19.072117",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:03:50.943653",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:04:22.822124",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:04:54.893700",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:05:27.037877",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:05:59.328203",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T11:06:32.100301",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 59,
+              "column": 9,
+              "details": "|\n58 |     libc::printf(\n|     ------------ arguments to this function are incorrect\n59 |         b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n|         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,982 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:38:44.810304",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 19,
+              "column": 22,
+              "details": "|\n19 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 53,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:39:04.126802",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:39:24.070608",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:39:44.715077",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:40:05.997964",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:40:34.311215",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:41:02.873090",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:41:32.108961",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:42:01.247144",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:42:30.732761",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:42:59.828831",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:43:30.329034",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:44:00.152826",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:44:29.426741",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:44:59.319826",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:45:28.884525",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:45:58.336121",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:46:28.166339",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:46:58.122285",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:47:28.172678",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 22,
+              "details": "|\n18 |             s.c.wait(&mut guard);\n|                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|                 |\n|                 arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<S>` in the current scope",
+              "location": "main.rs",
+              "line": 52,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

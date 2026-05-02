@@ -1,0 +1,442 @@
+{
+  "timestamp": "2026-04-21T12:07:00.640400",
+  "total": 62,
+  "passed": 39,
+  "failed": 23,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.5030198097229004,
+      "details": ""
+    },
+    "array_const____deadlock": {
+      "example_name": "array_const____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3432421684265137,
+      "details": ""
+    },
+    "array_const____lock_mismatch": {
+      "example_name": "array_const____lock_mismatch",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `PthreadMutex::new` in statics",
+      "time_sec": 0.8935151100158691,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_array_const____lock_mismatch_h72bv17u)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `Arc`\n --> src/main.rs:1:17\n  |\n1"
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3676636219024658,
+      "details": ""
+    },
+    "array_main____lock_leak": {
+      "example_name": "array_main____lock_leak",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `std::sync::Arc::<std::sync::Mutex<i32>>::ne",
+      "time_sec": 2.0562429428100586,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_array_main____lock_leak_ec0qm2md)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.95s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function `std::"
+    },
+    "array_main____partial_critical_section": {
+      "example_name": "array_main____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.453981637954712,
+      "details": ""
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 0.9792728424072266,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_array_simple_7xlhwjzk)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.86s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0308]: mismatched types\n   --> src/main.rs:59:13\n    |\n 58 |      "
+    },
+    "array_simple____partial_critical_section": {
+      "example_name": "array_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.332859992980957,
+      "details": ""
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 24.46925687789917,
+      "details": ""
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find function `pthread_mutex_lock` in this scope",
+      "time_sec": 2.291959285736084,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_assume2_p9su_43t)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.17s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0425]: cannot find function `pthread_mutex_lock` in this scope\n "
+    },
+    "global_assume2____self_lock": {
+      "example_name": "global_assume2____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.6857571601867676,
+      "details": ""
+    },
+    "global_assume____lock_leak": {
+      "example_name": "global_assume____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3716633319854736,
+      "details": ""
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find function `pthread_mutex_lock` in this scope",
+      "time_sec": 0.9029252529144287,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_check_b4ad3c10)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0425]: cannot find function `pthread_mutex_lock` in this scope\n  -"
+    },
+    "global_check____lock_leak": {
+      "example_name": "global_check____lock_leak",
+      "success": false,
+      "message": "\u274c 13 | pub type __pthread_list_t = __pthread_internal_list;",
+      "time_sec": 4.438723564147949,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_check____lock_leak_pfi832ee)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.32s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `std::os::raw::c_void`\n --> src/main"
+    },
+    "global_check____lock_mismatch": {
+      "example_name": "global_check____lock_mismatch",
+      "success": false,
+      "message": "\u274c error[E0425]: cannot find function `pthread_mutex_lock` in this scope",
+      "time_sec": 4.22309422492981,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_check____lock_mismatch_75n3wk20)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.10s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0425]: cannot find function `pthread_mutex_lock` "
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.28812837600708,
+      "details": ""
+    },
+    "global_condvar____lost_wakeup": {
+      "example_name": "global_condvar____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `PthreadMutex::new` in statics",
+      "time_sec": 1.7409908771514893,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_condvar____lost_wakeup_9oyg37et)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.64s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function "
+    },
+    "global_condvar____partial_critical_section": {
+      "example_name": "global_condvar____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4373061656951904,
+      "details": ""
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.782395601272583,
+      "details": ""
+    },
+    "global_custom____self_lock": {
+      "example_name": "global_custom____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.390388011932373,
+      "details": ""
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 3.692283868789673,
+      "details": ""
+    },
+    "global_main____self_lock": {
+      "example_name": "global_main____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4200456142425537,
+      "details": ""
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.6593883037567139,
+      "details": ""
+    },
+    "global_nested____deadlock": {
+      "example_name": "global_nested____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4359056949615479,
+      "details": ""
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.989821195602417,
+      "details": ""
+    },
+    "global_read____lock_mismatch": {
+      "example_name": "global_read____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4541757106781006,
+      "details": ""
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `RwLock::new` in statics",
+      "time_sec": 0.9116692543029785,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_global_rwlock_wcbsa4cl)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.81s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `Arc`\n --> src/main.rs:1:17\n  |\n1 | use std::syn"
+    },
+    "global_rwlock____lock_leak": {
+      "example_name": "global_rwlock____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3617424964904785,
+      "details": ""
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4649345874786377,
+      "details": ""
+    },
+    "global_simple____partial_critical_section": {
+      "example_name": "global_simple____partial_critical_section",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3740718364715576,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4544708728790283,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3209559917449951,
+      "details": ""
+    },
+    "global_while____lock_leak": {
+      "example_name": "global_while____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3811707496643066,
+      "details": ""
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `std::sync::Arc::<std::sync::Mutex<St>>::new",
+      "time_sec": 0.9810173511505127,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_alias_k19xj69w)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.88s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function `std::sync::Arc::"
+    },
+    "struct_alias____self_lock": {
+      "example_name": "struct_alias____self_lock",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `std::sync::Arc::<St>::new` in statics",
+      "time_sec": 0.9581739902496338,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_alias____self_lock_0yx5yd_k)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.85s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function `std"
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4133985042572021,
+      "details": ""
+    },
+    "struct_assume____deadlock": {
+      "example_name": "struct_assume____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3212525844573975,
+      "details": ""
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u274c error[E0594]: cannot assign to data in an `Arc`",
+      "time_sec": 0.9877808094024658,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_condvar_5vxrh238)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.88s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0594]: cannot assign to data in an `Arc`\n  --> src/main.rs:33:5\n"
+    },
+    "struct_condvar____lost_wakeup": {
+      "example_name": "struct_condvar____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3234937191009521,
+      "details": ""
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3896117210388184,
+      "details": ""
+    },
+    "struct_dup____deadlock": {
+      "example_name": "struct_dup____deadlock",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `std::sync::Arc::<Ss1>::new` in statics",
+      "time_sec": 0.9516918659210205,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_dup____deadlock_0a40pf73)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.85s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function `std::s"
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": false,
+      "message": "\u274c error[E0015]: cannot call non-const associated function `std::sync::Arc::<std::sync::Mutex<Ss>>::new",
+      "time_sec": 0.8868346214294434,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_empty_4lhltbsk)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.78s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0015]: cannot call non-const associated function `std::sync::Arc::"
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": false,
+      "message": "\u274c error[E0614]: type `Ss` cannot be dereferenced",
+      "time_sec": 1.6017131805419922,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_init_xnwameos)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.50s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0614]: type `Ss` cannot be dereferenced\n  --> src/main.rs:29:19\n   "
+    },
+    "struct_init____partial_critical_section": {
+      "example_name": "struct_init____partial_critical_section",
+      "success": false,
+      "message": "\u274c error: cast cannot be followed by a method call",
+      "time_sec": 0.8994641304016113,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_init____partial_critical_section_r9uf19_y)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.79s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror: cast cannot be followed by a method cal"
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.129544973373413,
+      "details": ""
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 3.067234992980957,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_malloc_d14zdp13)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.96s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0308]: mismatched types\n   --> src/main.rs:18:22\n    |\n 18 |     "
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": false,
+      "message": "\u274c error[E0594]: cannot assign to data in an `Arc`",
+      "time_sec": 0.9689385890960693,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_malloc2_4qi91jvb)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.86s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: variable does not need to be mutable\n  --> src/main.rs:25:9\n  "
+    },
+    "struct_malloc2____lock_mismatch": {
+      "example_name": "struct_malloc2____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.5311803817749023,
+      "details": ""
+    },
+    "struct_malloc____lost_wakeup": {
+      "example_name": "struct_malloc____lost_wakeup",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.3881728649139404,
+      "details": ""
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.2592413425445557,
+      "details": ""
+    },
+    "struct_multiple____deadlock": {
+      "example_name": "struct_multiple____deadlock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4223663806915283,
+      "details": ""
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 0.9599738121032715,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_nested_55gup5ul)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.86s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `std::ffi::CString`\n --> src/main.rs:3:5\n  |\n3 |"
+    },
+    "struct_nested____self_lock": {
+      "example_name": "struct_nested____self_lock",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.3622868061065674,
+      "details": ""
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4047565460205078,
+      "details": ""
+    },
+    "struct_simple____partial_critical_section": {
+      "example_name": "struct_simple____partial_critical_section",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 0.9600293636322021,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_simple____partial_critical_section_mgl_xcr3)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.85s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0308]: mismatched types\n  --> src/mai"
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": false,
+      "message": "\u274c error[E0308]: mismatched types",
+      "time_sec": 0.9415132999420166,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_spin_qpjhg12_)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.84s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nerror[E0308]: mismatched types\n   --> src/main.rs:40:31\n    |\n 40 |     le"
+    },
+    "struct_spin____lock_leak": {
+      "example_name": "struct_spin____lock_leak",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 2.024749279022217,
+      "details": ""
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.5484800338745117,
+      "details": ""
+    },
+    "struct_timedwait____deadlock": {
+      "example_name": "struct_timedwait____deadlock",
+      "success": false,
+      "message": "\u274c error[E0609]: no field `n1` on type `std::sync::MutexGuard<'_, ()>`",
+      "time_sec": 1.069396734237671,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_timedwait____deadlock_7j2yl6ke)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.95s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `UNIX_EPOCH`\n --> src/main.rs:3:3"
+    },
+    "struct_timedwait____lost_wakeup": {
+      "example_name": "struct_timedwait____lost_wakeup",
+      "success": false,
+      "message": "\u274c error[E0382]: the type `Arc` does not implement `Copy`",
+      "time_sec": 0.9326188564300537,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling miri_test v0.1.0 (/tmp/miri_test_struct_timedwait____lost_wakeup_9t7wzd_q)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.81s\n     Running unittests src/main.rs (target/miri/x86_64-unknown-linux-gnu/debug/deps/miri_test-d1ce1253d7691017)\nwarning: unused import: `c_void`\n --> src/main.rs:5:27"
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.4037535190582275,
+      "details": ""
+    },
+    "unused_func____lock_mismatch": {
+      "example_name": "unused_func____lock_mismatch",
+      "success": true,
+      "message": "\u2705 Miri tests passed (no UB detected)",
+      "time_sec": 1.9873340129852295,
+      "details": ""
+    }
+  }
+}

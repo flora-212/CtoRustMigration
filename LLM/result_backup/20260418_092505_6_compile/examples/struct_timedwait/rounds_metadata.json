@@ -1,0 +1,1324 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:08:15.669601",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0425",
+              "message": "cannot find type `Lazy` in this scope",
+              "location": "main.rs",
+              "line": 14,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0433",
+              "message": "cannot find type `Lazy` in this scope",
+              "location": "main.rs",
+              "line": 14,
+              "column": 47,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:08:47.027955",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0432",
+              "message": "unresolved import `std::sync::Lazy`",
+              "location": "main.rs",
+              "line": 4,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:09:19.379524",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:09:57.929391",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0061",
+              "message": "this method takes 1 argument but 2 arguments were supplied",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|\n24 |         let result = state.cond.wait(guard, || Instant::now() < wait_until).unwrap();\n|                                 ^^^^        ------------------------------ unexpected argument #2 of type `{closure@main.rs:24:45: 24:47}`\n|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `timed_out` found for struct `std::sync::MutexGuard<'_, ()>` in the current scope",
+              "location": "main.rs",
+              "line": 25,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0061",
+              "message": "this method takes 1 argument but 2 arguments were supplied",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|\n40 |         let result = state.cond.wait(guard, || Instant::now() < wait_until).unwrap();\n|                                 ^^^^        ------------------------------ unexpected argument #2 of type `{closure@main.rs:40:45: 40:47}`\n|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `timed_out` found for struct `std::sync::MutexGuard<'_, ()>` in the current scope",
+              "location": "main.rs",
+              "line": 41,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0061",
+              "message": "this method takes 1 argument but 2 arguments were supplied",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|\n56 |         let result = state.cond.wait(guard, || Instant::now() < wait_until).unwrap();\n|                                 ^^^^        ------------------------------ unexpected argument #2 of type `{closure@main.rs:56:45: 56:47}`\n|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `timed_out` found for struct `std::sync::MutexGuard<'_, ()>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:10:38.783766",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:11:19.207796",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:11:59.559467",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:12:40.417193",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:13:21.166031",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:14:01.929812",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:14:42.845801",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:15:23.847321",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:16:04.868456",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:16:45.893035",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:17:27.309355",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:18:09.060250",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:18:50.874919",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:19:32.746450",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:20:14.613042",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T12:20:56.878767",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 24,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 40,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `wait_until` found for struct `std::sync::Condvar` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 33,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for reference `&Arc<SharedState>` in the current scope",
+              "location": "main.rs",
+              "line": 88,
+              "column": 45,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

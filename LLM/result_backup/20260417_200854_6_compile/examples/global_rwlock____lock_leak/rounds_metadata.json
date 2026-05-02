@@ -1,0 +1,397 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T00:59:54.608013",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `main::RwLock::new` in statics",
+              "location": "main.rs",
+              "line": 28,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 69,
+              "column": 22,
+              "details": "|\n69 |         libc::printf(b\"%d\\n\\0\".as_ptr(), N);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:00:16.066189",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `main::RwLock::new` in statics",
+              "location": "main.rs",
+              "line": 30,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 71,
+              "column": 22,
+              "details": "|\n71 |         libc::printf(b\"%d\\n\\0\".as_ptr(), N);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:00:39.989018",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `clone` found for struct `LOCK` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 73,
+              "column": 22,
+              "details": "|\n73 |         libc::printf(b\"%d\\n\\0\".as_ptr(), *N.lock().unwrap());\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:01:03.072346",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `main::RwLock::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 22,
+              "details": "|\n72 |         libc::printf(b\"%d\\n\\0\".as_ptr(), N);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:01:31.388623",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `main::RwLock::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 22,
+              "details": "|\n72 |         libc::printf(b\"%d\\n\\0\".as_ptr(), N);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:02:04.109395",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `main::RwLock::new` in statics",
+              "location": "main.rs",
+              "line": 31,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 22,
+              "details": "|\n72 |         libc::printf(b\"%d\\n\\0\".as_ptr(), N);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:02:36.668454",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 74,
+              "column": 22,
+              "details": "|\n74 |         libc::printf(b\"%d\\n\\0\".as_ptr(), *n);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T01:03:12.430453",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 76,
+              "column": 22,
+              "details": "|\n76 |         libc::printf(b\"%d\\n\\0\".as_ptr(), *n);\n|         ------------ ^^^^^^^^^^^^^^^^^^ expected `*const i8`, found `*const u8`\n|         |\n|         arguments to this function are incorrect\n|\n= note: expected raw pointer `*const i8`\nfound raw pointer `*const u8`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-18T01:03:49.134497",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,982 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:17:17.822755",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 42,
+              "column": 31,
+              "details": "|\n42 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:17:42.456101",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:18:05.621520",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:18:30.381462",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:19:00.738921",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:19:31.845018",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:20:06.195107",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:20:39.760142",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:21:12.075110",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:21:44.383348",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:22:17.200372",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:22:49.230577",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:23:21.326149",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:23:53.284978",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:24:25.112992",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:24:57.058024",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:25:29.781895",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:26:01.952253",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:26:34.427455",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T23:27:06.748038",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 40,
+              "column": 31,
+              "details": "|\n40 |     let s_clone1 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 41,
+              "column": 31,
+              "details": "|\n41 |     let s_clone2 = Arc::clone(&s);\n|                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n|                    |\n|                    arguments to this function are incorrect\n|\n= note: expected reference `&Arc<_, _>`\nfound reference `&Ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

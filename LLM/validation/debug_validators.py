@@ -78,13 +78,8 @@ class ValidatorDebugger:
         Returns:
             Path to the loom test file if successful, None otherwise.
         """
-        # Locate loom_converter.py
-        llm_dir = os.path.dirname(validation_dir)  # Go up to LLM directory
-        loom_converter_path = os.path.join(llm_dir, "validation/loom_converter.py")
-        
-        if not os.path.exists(loom_converter_path):
-            print(f"⚠️  Warning: loom_converter.py not found at {loom_converter_path}")
-            return None
+        # Use the packaged loom_converter module from the LLM directory.
+        llm_dir = os.path.dirname(validation_dir)
         
         # Create tests directory if it doesn't exist
         tests_dir = os.path.join(self.example_dir, "tests")
@@ -96,24 +91,30 @@ class ValidatorDebugger:
         print(f"Preparing loom test using converter...")
         print(f"  Input: {self.rs_file}")
         print(f"  Output: {loom_test_path}")
-        print(f"  Converter: {loom_converter_path}\n")
+        print(f"  Converter: python -m loom_converter\n")
         
         # Run loom converter with --standalone flag
         try:
             cmd = [
                 sys.executable,
-                loom_converter_path,
+                "-m",
+                "loom_converter",
                 self.rs_file,
                 loom_test_path,
                 "--example-dir", self.example_dir,
                 "--standalone"
             ]
+
+            env = os.environ.copy()
+            pythonpath = env.get("PYTHONPATH", "")
+            env["PYTHONPATH"] = llm_dir if not pythonpath else f"{llm_dir}{os.pathsep}{pythonpath}"
             
             result = subprocess.run(
                 cmd,
                 capture_output=True,
                 text=True,
-                timeout=10
+                timeout=10,
+                env=env
             )
             
             if result.returncode != 0:

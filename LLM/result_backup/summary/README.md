@@ -1,0 +1,186 @@
+# 📊 Evaluation Results Summary - Quick Guide
+
+Generated: 2026-04-21
+
+## 📁 Generated Files
+
+### 1. **comprehensive_summary.json** (Machine-readable)
+- **Format**: JSON with complete structured data
+- **Use cases**: 
+  - Programmatic analysis
+  - Integration with other tools
+  - Data science workflows
+  - Excel/spreadsheet import
+
+**Structure**:
+```
+{
+  "timestamp": "ISO datetime",
+  "total_examples": 62,
+  "groups": {
+    "non_c2rust": { "runs": 5, "summary": { "loom": {...}, "miri": {...}, ... } },
+    "c2rust": { "runs": 5, "summary": { "loom": {...}, "miri": {...}, ... } }
+  },
+  "examples": {
+    "array_const": {
+      "non_c2rust": { "loom": {...}, "miri": {...}, ... },
+      "c2rust": { "loom": {...}, "miri": {...}, ... }
+    },
+    ...
+  }
+}
+```
+
+### 2. **comprehensive_summary.txt** (Human-readable)
+- **Format**: Plain text with visual formatting
+- **Use cases**:
+  - Quick review
+  - Email sharing
+  - Documentation
+  - Git repository tracking
+
+**Format Sample**:
+```
+▼▼▼▼ Example: array_const ▼▼▼▼
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ Error details...
+  ║  MIRI         Pass: 2/5 ❌
+  ...
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     MIRI         Pass: 5/5 ✅
+     ...
+```
+
+### 3. **results_visualization.html** (Interactive Web)
+- **Format**: Self-contained HTML file
+- **Use cases**:
+  - Interactive browsing
+  - Filtering and search
+  - Status dashboard
+  - Team review
+
+**Features**:
+- 📍 Search examples by name
+- 🔍 Filter by evaluation type (LOOM/MIRI/OUTPUT/CLIPPY/编译通过率)
+- 📊 Status badges (Pass/Partial/Failed)
+- 📱 Responsive design
+- ⚡ Real-time filtering
+
+## 🎯 Key Statistics
+
+### **Non-C2RUST Group (5 runs each, 62 examples total)**
+
+| Metric | Passed | Failed | Pass Rate |
+|--------|--------|--------|-----------|
+| LOOM   | 42     | 268    | 13.5%     |
+| MIRI   | 166    | 144    | 53.5%     |
+| OUTPUT | 38     | 272    | 12.3%     |
+| CLIPPY | 0      | 310    | 0%        |
+| 编译通过率 | 166    | 144    | 53.5%     |
+
+### **C2RUST Group (5 runs each, 62 examples total)**
+
+| Metric | Passed | Failed | Pass Rate |
+|--------|--------|--------|-----------|
+| LOOM   | 42     | 268    | 13.5%     |
+| MIRI   | 308    | 2      | **99.4%** |
+| OUTPUT | 101    | 209    | 32.6%     |
+| CLIPPY | 0      | 310    | 0%        |
+| 编译通过率 | 308    | 2      | **99.4%** |
+
+## 📈 Key Findings
+
+### ✅ C2RUST Improvements
+- **MIRI**: 166→308 passed (+186 examples, +112%)
+- **编译通过率**: 166→308 passed (+186 examples, +112%)
+- **OUTPUT**: 38→101 passed (+63 examples, +166%)
+
+### ⚠️ Consistent Issues
+1. **CLIPPY**: 0/310 in both groups
+   - All examples fail clippy checks
+   - Likely systematic configuration issue
+   
+2. **LOOM**: 42/310 in both groups
+   - No difference between c2rust and non-c2rust
+   - Failures: "prefix `pub` is unknown", lock trait bounds
+   
+3. **OUTPUT (Non-c2rust)**: Only 38/310 passed
+   - Expected vs actual output mismatches
+   - Incorrect concurrency behavior
+
+## 🔍 Example Analysis
+
+### Top-Tier Examples (Perfect in both groups)
+- ✅ **array_const**: MIRI 5/5, OUTPUT 5/5, 编译通过率 5/5 (C2RUST only)
+- ✅ **global_simple**: Multiple evaluations passing
+- ✅ **struct_init**: Core functionality working
+
+### Problematic Examples
+- ❌ **array_main**: LOOM 0/5, OUTPUT 0/5 (expected 4 4 4 4 4, got 2 2 2 2 2)
+- ❌ **array_simple____partial**: Multiple compilation failures
+- ❌ **global_main**: Unstable results across runs
+
+## 📖 How to Use These Reports
+
+### For Quick Overview
+```bash
+# View summary statistics
+python3 -c "
+import json
+with open('comprehensive_summary.json') as f:
+    data = json.load(f)
+print(data['groups'])
+"
+```
+
+### For Specific Example
+```bash
+# Find all failures for a specific example
+grep -A 20 "Example: array_main" comprehensive_summary.txt
+```
+
+### For Further Analysis
+```bash
+# Load JSON and analyze with Python
+import json
+with open('comprehensive_summary.json') as f:
+    data = json.load(f)
+
+# Get all c2rust improvements
+for ex, stats in data['examples'].items():
+    if stats['c2rust']['miri']['passed'] > stats['non_c2rust']['miri']['passed']:
+        print(f"{ex}: MIRI improved")
+```
+
+### For Presentation
+```bash
+# View HTML in browser
+open results_visualization.html
+# or
+firefox results_visualization.html
+```
+
+## 📋 Report Interpretation Guide
+
+### Pass Rate Symbols
+- ✅ **5/5**: All 5 experimental runs passed (perfect)
+- ⚠️ **1-4/5**: Partial success (inconsistent results)
+- ❌ **0/5**: All runs failed (systematic issue)
+
+### Error Categories
+
+| Error | Meaning | Action |
+|-------|---------|--------|
+| `error: prefix 'pub' is unknown` | Parser/syntax issue in generated code | Check code generation |
+| `cannot find value X` | Missing variable/constant | Check variable initialization |
+| `no method named 'lock'` | API mismatch in lock interface | Check trait implementation |
+| `Output mismatch` | Wrong concurrent behavior | Fix synchronization logic |
+| `test failed` | LOOM test detected issue | Check concurrency semantics |
+
+---
+
+**Generated by**: Evaluation Results Summarizer  
+**Date**: 2026-04-21

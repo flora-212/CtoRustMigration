@@ -1,0 +1,218 @@
+{
+  "timestamp": "2026-04-21T13:11:46.775069",
+  "total": 30,
+  "passed": 8,
+  "failed": 22,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_array_const_j9imq"
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 13.873091697692871,
+      "details": "Expected:\n4 4 4 4 4\n\nActual:\n2 2 2 2 2"
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_array_simple_mn2w"
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 9.549434661865234,
+      "details": "Expected:\n2\n\nActual:\n0"
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_global_assume2_6q"
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.29451322555542,
+      "details": ""
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 10.2342050075531,
+      "details": "Expected:\n4\n\nActual:\n2"
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_global_nested_tay4uw98)\nwarning: variable does not need to be mutable"
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 4.530400514602661,
+      "details": ""
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 3.5790350437164307,
+      "details": ""
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 19.27078652381897,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.7607028484344482,
+      "details": ""
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_global_while_6m395z5u)\nerror[E0425]: cannot find function `pthread_mu"
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Blocking waiting for file lock on package cache\n    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_alias_4nrn10w3)\nerror[E0502]: cannot borrow `*s` as mutable because it is also borrowed as immutable\n  --> src/mai"
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n    Blocking waiting for file lock on package cache\n     Locking 3 packages to latest compatible versions\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on package cache\n    Blocking waiting for file lock on shared package cache\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_assume_zi5v3pe5)\nerror[E0308]: mismatched types\n  --> s"
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.9514522552490234,
+      "details": ""
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_init_kf9n1uk1)\nerror[E0658]: use of unstable library feature `get_mut_unchecked`\n  --> src/main.rs:38:8\n   |\n38 |     f1(Arc::get_mut_unchecked(s1) as *mut Ss);\n   |        ^^^^^^^^^^^^^^^^^^^^^^\n   |\n   = note: see issue #63292 <https://github.com/rust-lang/rust/issues"
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_malloc_sxht3fad)\nerror[E0308]: mismatched types\n  --> src/main.rs:16:18\n   |\n16 |         s.c.wait(&mut s);\n   |             ---- ^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, S>`\n   |             |\n   |             arguments to this method are incorre"
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_malloc2_nbgqhfce)\nwarning: variable does not need to be mutable\n  --> src/main.rs:25:9\n   |\n25 |     let mut guard = s.m.lock().unwrap();\n   |         ----^^^^^\n   |         |\n   |         help: remove this `mut`\n   |\n   = note: `#[warn(unused_mut)]` (part of `#[warn(un"
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 2.067704439163208,
+      "details": "Expected:\n2 3 4\n\nActual:\n0 1 2"
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8976151943206787,
+      "details": ""
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.9774956703186035,
+      "details": "Expected:\n6 7 8 3\n\nActual:\n0 1 2 3"
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_spin_oj3mln44)\nerror[E0308]: mismatched types\n  --> src/main.rs:46:34\n   |\n46 |         let s_clone = Arc::clone(&s);\n   |                       ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n   |                       |\n   |                       arguments to this fu"
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_timedwait_e4_0oyll)\nwarning: unnecessary parentheses around function argument\n  --> src/main.rs:35:78\n   |\n35 |         let (guard, _) = state.cond.wait_timeout(guard, Duration::from_nanos((ts.tv_sec as u64 * 1_000_000_000 + ts.tv_nsec as u64))).unwrap();\n   |          "
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 2.073521852493286,
+      "details": ""
+    }
+  }
+}

@@ -1,0 +1,2196 @@
+{
+  "example_name": "struct_alias____self_lock",
+  "total_iterations": 20,
+  "failed_at_iteration": 20,
+  "best_compile_round": null,
+  "final_source": 20,
+  "summary": {
+    "total_checks": 1,
+    "failed_checks": 1,
+    "total_errors": 10
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 18,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 24,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 53,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 54,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 71,
+              "column": 9,
+              "details": "|\n68 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 9,
+              "details": "|\n75 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 48,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 30,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 6,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 7,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 8,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 9,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 10,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 11,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 12,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 13,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 14,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 15,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 16,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 17,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 18,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 19,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "iteration": 20,
+      "passed": false,
+      "error_summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 10
+      },
+      "errors": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 14,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 26,
+              "column": 26,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 55,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 56,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 57,
+              "column": 24,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 72,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `as_ptr` found for struct `Arc<St>` in the current scope",
+              "location": "main.rs",
+              "line": 76,
+              "column": 20,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0502",
+              "message": "cannot borrow `*s` as mutable because it is also borrowed as immutable",
+              "location": "main.rs",
+              "line": 50,
+              "column": 7,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 9 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "rounds_compile_status": {
+    "1": false,
+    "2": false,
+    "3": false,
+    "4": false,
+    "5": false,
+    "6": false,
+    "7": false,
+    "8": false,
+    "9": false,
+    "10": false,
+    "11": false,
+    "12": false,
+    "13": false,
+    "14": false,
+    "15": false,
+    "16": false,
+    "17": false,
+    "18": false,
+    "19": false,
+    "20": false
+  }
+}

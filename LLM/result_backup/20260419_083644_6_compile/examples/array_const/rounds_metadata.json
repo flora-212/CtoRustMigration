@@ -1,0 +1,1171 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:37:11.978411",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 14,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 60,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 51,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.values[_]`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 21,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:37:33.893442",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 14,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 60,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 51,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:37:56.476195",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:38:20.428502",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:38:49.445679",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:39:19.128113",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:39:48.498435",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:40:18.022149",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:40:40.547910",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:41:02.989986",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:41:25.606786",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:41:48.485769",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:42:11.511559",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:42:34.259182",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:42:56.925452",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:43:19.876546",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:43:42.888991",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:44:06.495018",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:44:29.930622",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T08:44:53.361535",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "the trait bound `std::sync::Mutex<i32>: Copy` is not satisfied",
+              "location": "main.rs",
+              "line": 13,
+              "column": 23,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `lock` found for struct `Arc<MutexArray>` in the current scope",
+              "location": "main.rs",
+              "line": 59,
+              "column": 17,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&Arc<MutexArray>` as `*const MutexArray` is invalid",
+              "location": "main.rs",
+              "line": 50,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

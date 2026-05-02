@@ -1,0 +1,1540 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:45:11.991407",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 10,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 15,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<St>::new` in statics",
+              "location": "main.rs",
+              "line": 20,
+              "column": 22,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:45:39.059547",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 22,
+              "column": 13,
+              "details": "|\n22 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 26,
+              "column": 13,
+              "details": "|\n26 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 30,
+              "column": 13,
+              "details": "|\n30 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 36,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 53,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:46:08.938701",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:46:39.313346",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:47:18.067740",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:47:55.843189",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:48:32.925477",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:49:08.876204",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:49:47.375883",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:50:24.825249",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:51:01.158399",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:51:38.092074",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:52:15.159445",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:52:51.681674",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:53:28.702213",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 8
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 23,
+              "column": 13,
+              "details": "|\n23 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 27,
+              "column": 13,
+              "details": "|\n27 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`St` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 31,
+              "column": 13,
+              "details": "|\n31 |         })).unwrap();\n|             ^^^^^^ the trait `Debug` is not implemented for `St`\n|\n= note: add `#[derive(Debug)]` to `St` or manually `impl Debug for St`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to data in an `Arc`",
+              "location": "main.rs",
+              "line": 37,
+              "column": 5,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 54,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 55,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0133",
+              "message": "use of mutable static is unsafe and requires unsafe function or block",
+              "location": "main.rs",
+              "line": 56,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 7 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:55:04.348750",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpbane3eux)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:56:40.366127",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpe7ypylc1)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:58:16.306175",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmprqaogb02)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T16:59:52.141739",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmptdx28hwt)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T17:01:27.893261",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmps441lbyt)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

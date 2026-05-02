@@ -1,0 +1,2170 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:18:33.091500",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 51,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 84,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:19:16.514534",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 51,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 84,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:20:03.236519",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 51,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 84,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:20:53.594699",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 51,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 67,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `duration_since` found for struct `Duration` in the current scope",
+              "location": "main.rs",
+              "line": 84,
+              "column": 35,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:21:45.048091",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:22:36.637183",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:23:28.730521",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:24:20.922494",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:25:12.637919",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:26:04.918156",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:26:56.878826",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:27:49.014280",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:28:41.323908",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:29:34.243474",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:30:26.829454",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:31:19.563743",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:32:12.526058",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:33:05.579569",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:33:59.471691",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T04:34:53.010298",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 9
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0255",
+              "message": "the name `timespec` is defined multiple times",
+              "location": "main.rs",
+              "line": 9,
+              "column": 1,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 45,
+              "column": 39,
+              "details": "|\n45 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 50,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 61,
+              "column": 39,
+              "details": "|\n61 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 66,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 39,
+              "details": "|\n77 |         clock_gettime(CLOCK_REALTIME, &mut ts);\n|         -------------                 ^^^^^^^ expected `*mut timespec`, found `&mut timespec`\n|         |\n|         arguments to this function are incorrect\n|\n= note: `main::timespec` and `libc::timespec` have similar names, but are actually distinct types"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 83,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0382",
+              "message": "the type `Arc` does not implement `Copy`",
+              "location": "main.rs",
+              "line": 110,
+              "column": 14,
+              "details": "|\n96 |     let shared = init_shared_state();\n|         ------ this move could be avoided by cloning the original `Arc`, which is inexpensive"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 8 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

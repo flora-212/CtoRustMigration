@@ -1,0 +1,57 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+#[derive(Debug)]
+struct SharedData {
+    n1: i32,
+    n2: i32,
+    num_mutex: Mutex<()>,
+}
+
+fn f1(shared_data: Arc<SharedData>) {
+    let mut data = shared_data.lock().unwrap();
+    data.n1 += data.n2;
+}
+
+unsafe extern "C" fn t_fun(arg: *mut libc::c_void) -> *mut libc::c_void {
+    let shared_data = Arc::from_raw(arg as *const SharedData);
+    f1(shared_data);
+    shared_data as *const SharedData as *mut libc::c_void
+}
+
+fn main_0() -> libc::c_int {
+    let shared_data = Arc::new(SharedData {
+        n1: 0,
+        n2: 0,
+        num_mutex: Mutex::new(()),
+    });
+
+    let shared_data_clone1 = Arc::clone(&shared_data);
+    let shared_data_clone2 = Arc::clone(&shared_data);
+
+    let handle1 = thread::spawn(move || {
+        t_fun(Arc::into_raw(shared_data_clone1) as *mut libc::c_void);
+    });
+
+    let handle2 = thread::spawn(move || {
+        t_fun(Arc::into_raw(shared_data_clone2) as *mut libc::c_void);
+    });
+
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+
+    let data = shared_data.lock().unwrap();
+    unsafe {
+        libc::printf(
+            b"%d %d\n\0".as_ptr() as *const libc::c_char,
+            data.n1,
+            data.n2,
+        );
+    }
+
+    0
+}
+
+fn main() {
+    unsafe { std::process::exit(main_0() as i32) }
+}

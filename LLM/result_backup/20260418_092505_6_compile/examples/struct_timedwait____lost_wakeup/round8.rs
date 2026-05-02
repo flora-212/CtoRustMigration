@@ -1,0 +1,109 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+use std::time::{Duration, SystemTime};
+use libc::{clock_gettime, timespec, CLOCK_REALTIME};
+use std::ffi::CString;
+use std::ptr;
+use std::sync::atomic::{AtomicI32, Ordering};
+
+#[repr(C)]
+pub struct timespec {
+    pub tv_sec: libc::time_t,
+    pub tv_nsec: libc::c_long,
+}
+
+#[derive(Debug)]
+struct SharedData {
+    n1: AtomicI32,
+    n2: AtomicI32,
+    n3: AtomicI32,
+    m1: Mutex<()>,
+    cond: std::sync::Condvar,
+}
+
+lazy_static::lazy_static! {
+    static ref SHARED_DATA: Arc<SharedData> = Arc::new(SharedData {
+        n1: AtomicI32::new(0),
+        n2: AtomicI32::new(0),
+        n3: AtomicI32::new(0),
+        m1: Mutex::new(()),
+        cond: std::sync::Condvar::new(),
+    });
+}
+
+fn f1(shared_data: Arc<SharedData>) {
+    let mut ts = timespec { tv_sec: 0, tv_nsec: 0 };
+    let mut guard = shared_data.m1.lock().unwrap();
+    shared_data.n1.fetch_add(1, Ordering::SeqCst);
+    unsafe {
+        clock_gettime(CLOCK_REALTIME, &mut ts);
+    }
+    ts.tv_sec += 1;
+    let wait_until = Duration::from_secs(ts.tv_sec as u64) + Duration::from_nanos(ts.tv_nsec as u64);
+    let now = SystemTime::now();
+    if now < wait_until {
+        let _ = shared_data.cond.wait_until(guard, wait_until);
+    }
+}
+
+fn f2(shared_data: Arc<SharedData>) {
+    let mut ts = timespec { tv_sec: 0, tv_nsec: 0 };
+    let mut guard = shared_data.m1.lock().unwrap();
+    shared_data.n2.fetch_add(1, Ordering::SeqCst);
+    unsafe {
+        clock_gettime(CLOCK_REALTIME, &mut ts);
+    }
+    ts.tv_nsec += 1_000_000_000; // 1 second in nanoseconds
+    let wait_until = Duration::from_secs(ts.tv_sec as u64) + Duration::from_nanos(ts.tv_nsec as u64);
+    let now = SystemTime::now();
+    if now < wait_until {
+        let _ = shared_data.cond.wait_until(guard, wait_until);
+    }
+}
+
+fn f3(shared_data: Arc<SharedData>) {
+    let mut ts = timespec { tv_sec: 0, tv_nsec: 0 };
+    let mut guard = shared_data.m1.lock().unwrap();
+    shared_data.n3.fetch_add(1, Ordering::SeqCst);
+    unsafe {
+        clock_gettime(CLOCK_REALTIME, &mut ts);
+    }
+    ts.tv_sec += 1;
+    ts.tv_nsec += 2_000_000_000; // 2 seconds in nanoseconds
+    let wait_until = Duration::from_secs(ts.tv_sec as u64) + Duration::from_nanos(ts.tv_nsec as u64);
+    let now = SystemTime::now();
+    if now < wait_until {
+        let _ = shared_data.cond.wait_until(guard, wait_until);
+    }
+}
+
+fn t_fun(shared_data: Arc<SharedData>) {
+    f1(shared_data.clone());
+    f2(shared_data.clone());
+    f3(shared_data);
+}
+
+fn main_0() -> i32 {
+    let shared_data = SHARED_DATA.clone();
+
+    let handle1 = thread::spawn(move || t_fun(shared_data.clone()));
+    let handle2 = thread::spawn(move || t_fun(shared_data.clone()));
+
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+
+    let n1 = shared_data.n1.load(Ordering::SeqCst);
+    let n2 = shared_data.n2.load(Ordering::SeqCst);
+    let n3 = shared_data.n3.load(Ordering::SeqCst);
+
+    let c_string = CString::new(format!("{} {} {}\n", n1, n2, n3)).unwrap();
+    unsafe {
+        libc::printf(c_string.as_ptr());
+    }
+
+    0
+}
+
+fn main() {
+    std::process::exit(main_0());
+}

@@ -1,0 +1,6220 @@
+[
+  {
+    "name": "array_const",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 42,
+        "raw_ptr": 41,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 183
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 132
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 9,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 60
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "array_main",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 211
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 151
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 212
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (4 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T14:29:30.333450"
+        }
+      }
+    }
+  },
+  {
+    "name": "array_simple",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 39,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 235
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 197
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 39,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 236
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (4 calls)",
+          "static mut variables remain: n1, n2, n3, num_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T14:40:18.910485"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_assume",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 117
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 118
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 5,
+        "std_mutex": 3,
+        "std_arc": 1,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 49
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: N1",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_assume2",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 122
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 129
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 53
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_check",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 44,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 181
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 22,
+        "raw_ptr": 24,
+        "static_mut": 1,
+        "libc": 6,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 243
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 44,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 182
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (19 calls)",
+          "static mut variables remain: n, m",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T14:54:58.176545"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_condvar",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 40,
+        "raw_ptr": 29,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 188
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 3,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 172
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 3,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 56
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_custom",
+    "original": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 142
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 156
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 143
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "12 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T15:07:44.187255"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_main",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 115
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 113
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 3,
+        "pthread": 0,
+        "raw_ptr": 5,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 8,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 51
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "3 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 3
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_nested",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 36,
+        "raw_ptr": 27,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 148
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 137
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 36,
+        "raw_ptr": 27,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 149
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (14 calls)",
+          "static mut variables remain: n1, n2, n1_mutex, n2_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T15:18:14.002711"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_read",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 115
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 115
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 3,
+        "pthread": 0,
+        "raw_ptr": 4,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 6,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 1,
+        "lines": 53
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "3 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 3
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_rwlock",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 22,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 125
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 22,
+        "raw_ptr": 22,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 1,
+        "std_arc": 0,
+        "std_rwlock": 3,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 116
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 22,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 126
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: n, lock",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T15:31:14.275642"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_simple",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 120
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 6,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 2,
+        "lines": 56
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_trylock",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 38,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 153
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 38,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 153
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 54
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_while",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 29,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 133
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 133
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 29,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 134
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (9 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T15:47:25.520432"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_alias",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 26,
+        "raw_ptr": 32,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 185
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 20,
+        "raw_ptr": 26,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 156
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 26,
+        "raw_ptr": 32,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 186
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (4 calls)",
+          "static mut variables remain: s1, s2, s3",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T16:01:53.747444"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_assume",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 29,
+        "raw_ptr": 33,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 112
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 24,
+        "raw_ptr": 33,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 129
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 5,
+        "pthread": 0,
+        "raw_ptr": 6,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 62
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "5 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 5
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_condvar",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 34,
+        "raw_ptr": 28,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 186
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 26,
+        "raw_ptr": 26,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 3,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 164
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 5,
+        "std_mutex": 3,
+        "std_arc": 4,
+        "std_rwlock": 0,
+        "std_condvar": 3,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 1,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 69
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_dup",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 28,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 166
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 24,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 147
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 0,
+        "raw_ptr": 2,
+        "static_mut": 2,
+        "libc": 5,
+        "std_mutex": 5,
+        "std_arc": 7,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 88
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S1, S2",
+          "9 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 9
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_empty",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 30,
+        "raw_ptr": 34,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 142
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 32,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 4,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 133
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 30,
+        "raw_ptr": 34,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 143
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: s1",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T16:14:34.137988"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_init",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 35,
+        "raw_ptr": 36,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 160
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 32,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 136
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 35,
+        "raw_ptr": 36,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 161
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (8 calls)",
+          "static mut variables remain: s1, s2",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T16:24:02.459991"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_main",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 120
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 5,
+        "pthread": 0,
+        "raw_ptr": 2,
+        "static_mut": 0,
+        "libc": 4,
+        "std_mutex": 5,
+        "std_arc": 3,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 1,
+        "lines": 59
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "5 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 5
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_malloc",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 44,
+        "raw_ptr": 39,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 163
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 34,
+        "raw_ptr": 39,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 3,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 179
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 44,
+        "raw_ptr": 39,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 164
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T16:35:02.099944"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_malloc2",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 33,
+        "raw_ptr": 32,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 120
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 24,
+        "raw_ptr": 32,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 4,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 135
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 33,
+        "raw_ptr": 32,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 121
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (9 calls)",
+          "static mut variables remain: x",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T16:44:53.494817"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_multiple",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 26,
+        "raw_ptr": 30,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 175
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 20,
+        "raw_ptr": 24,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 138
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 3,
+        "libc": 5,
+        "std_mutex": 5,
+        "std_arc": 8,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 3,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 83
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S1, S2, S3",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": 20,
+        "type": "last_attempt",
+        "metadata": {
+          "result_type": "last_attempt",
+          "round": 20,
+          "reason": "last_attempt",
+          "timestamp": "2026-04-19T17:02:28.017634"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_nested",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 136
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 129
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 2,
+        "pthread": 0,
+        "raw_ptr": 1,
+        "static_mut": 0,
+        "libc": 3,
+        "std_mutex": 7,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 3,
+        "lines": 61
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "2 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 2
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_simple",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 157
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 138
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: s",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T17:19:48.560388"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_spin",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 56,
+        "raw_ptr": 36,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 205
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 40,
+        "raw_ptr": 36,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 0,
+        "std_rwlock": 4,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 197
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 56,
+        "raw_ptr": 36,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 206
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T17:37:01.299557"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_timedwait",
+    "original": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 42,
+        "raw_ptr": 30,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 251
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 26,
+        "raw_ptr": 28,
+        "static_mut": 1,
+        "libc": 3,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 3,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 278
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 42,
+        "raw_ptr": 30,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 252
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (8 calls)",
+          "static mut variables remain: s",
+          "9 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T17:50:01.989161"
+        }
+      }
+    }
+  },
+  {
+    "name": "unused_func",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 119
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": false,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 20,
+        "raw_ptr": 23,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 0,
+        "std_rwlock": 1,
+        "std_condvar": 1,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 119
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 6,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 5,
+        "std_mutex": 4,
+        "std_arc": 1,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 66
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: N1",
+          "6 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 6
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "array_const____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 64,
+        "raw_ptr": 58,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 233
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 64,
+        "raw_ptr": 58,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 233
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 12,
+        "std_arc": 13,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 7,
+        "lines": 99
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "array_const____lock_mismatch",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 42,
+        "raw_ptr": 41,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 183
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 42,
+        "raw_ptr": 41,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 183
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 42,
+        "raw_ptr": 41,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 184
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (8 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T18:01:35.137238"
+        }
+      }
+    }
+  },
+  {
+    "name": "array_main____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 27,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 207
+      },
+      "lock_safety": {
+        "issues": [
+          "Lock without matching unlock (potential deadlock)"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 27,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 207
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 27,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 208
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (2 calls)",
+          "Lock without matching unlock (potential deadlock)",
+          "static mut variables remain: n1, num_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T18:10:43.859826"
+        }
+      }
+    }
+  },
+  {
+    "name": "array_main____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 212
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 212
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 213
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (4 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T18:21:13.131765"
+        }
+      }
+    }
+  },
+  {
+    "name": "array_simple____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 22,
+        "raw_ptr": 33,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 227
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 22,
+        "raw_ptr": 33,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 227
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 6,
+        "pthread": 0,
+        "raw_ptr": 2,
+        "static_mut": 4,
+        "libc": 4,
+        "std_mutex": 7,
+        "std_arc": 1,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 70
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: n1, n2, n3, num_mutex",
+          "6 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 6
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_assume2____self_lock",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 5,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 4,
+        "std_mutex": 4,
+        "std_arc": 1,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 71
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: N1",
+          "5 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 5
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_assume____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 21,
+        "raw_ptr": 24,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 115
+      },
+      "lock_safety": {
+        "issues": [
+          "Lock without matching unlock (potential deadlock)"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 21,
+        "raw_ptr": 24,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 115
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 49
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_check____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 39,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 176
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 39,
+        "raw_ptr": 26,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 176
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 2,
+        "libc": 5,
+        "std_mutex": 10,
+        "std_arc": 10,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 3,
+        "join_handle": 2,
+        "arc_mutex_combo": 5,
+        "lines": 124
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: N, M",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_check____lock_mismatch",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 46,
+        "raw_ptr": 28,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 197
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 46,
+        "raw_ptr": 28,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 197
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 46,
+        "raw_ptr": 28,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 198
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (19 calls)",
+          "static mut variables remain: n, m, r",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T18:39:16.703879"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_condvar____lost_wakeup",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 38,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 187
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 38,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 187
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 3,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 60
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_condvar____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 40,
+        "raw_ptr": 29,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 190
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 40,
+        "raw_ptr": 29,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 190
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 3,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 66
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_custom____self_lock",
+    "original": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 144
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 144
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 12,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 145
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: n1, num_mutex",
+          "12 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 12
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T18:50:43.977205"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_main____self_lock",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 117
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 117
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 4,
+        "std_mutex": 4,
+        "std_arc": 1,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 68
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: N1",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_nested____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 48,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 175
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 48,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 175
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 2,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 0,
+        "libc": 6,
+        "std_mutex": 5,
+        "std_arc": 7,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 73
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "2 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 2
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_read____lock_mismatch",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 141
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 141
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 28,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 142
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: n1, n2, num_mutex1, num_mutex2",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T19:00:04.159701"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_rwlock____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 27,
+        "raw_ptr": 22,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 27,
+        "raw_ptr": 22,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 124
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 27,
+        "raw_ptr": 22,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 125
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: n, lock",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T19:16:22.211287"
+        }
+      }
+    }
+  },
+  {
+    "name": "global_simple____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 125
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 24,
+        "raw_ptr": 25,
+        "static_mut": 4,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 125
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 1,
+        "pthread": 0,
+        "raw_ptr": 1,
+        "static_mut": 0,
+        "libc": 2,
+        "std_mutex": 7,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 0,
+        "lines": 69
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "1 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 1
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "global_while____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 27,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 131
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 27,
+        "raw_ptr": 25,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 131
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 3,
+        "std_arc": 5,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 3,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 61
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_alias____self_lock",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 28,
+        "raw_ptr": 32,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 187
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 28,
+        "raw_ptr": 32,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 187
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 28,
+        "raw_ptr": 32,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 188
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: s1, s2, s3",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T19:30:05.584246"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_assume____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 37,
+        "raw_ptr": 45,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 146
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 37,
+        "raw_ptr": 45,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 146
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 37,
+        "raw_ptr": 45,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 147
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (13 calls)",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T19:41:10.129492"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_condvar____lost_wakeup",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 185
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 32,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 185
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 1,
+        "libc": 5,
+        "std_mutex": 5,
+        "std_arc": 7,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 1,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 71
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_dup____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 32,
+        "raw_ptr": 29,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 180
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 32,
+        "raw_ptr": 29,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 180
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 10,
+        "pthread": 0,
+        "raw_ptr": 3,
+        "static_mut": 2,
+        "libc": 2,
+        "std_mutex": 5,
+        "std_arc": 7,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 112
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S1, S2",
+          "10 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 10
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_init____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 29,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 157
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 29,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 157
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 29,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (4 calls)",
+          "static mut variables remain: s1, s2",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T19:59:52.083895"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_malloc2____lock_mismatch",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 35,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 145
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 35,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 145
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 35,
+        "raw_ptr": 34,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 146
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (9 calls)",
+          "static mut variables remain: lock, x",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T20:10:25.468133"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_malloc____lost_wakeup",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 41,
+        "raw_ptr": 38,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 41,
+        "raw_ptr": 38,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 41,
+        "raw_ptr": 38,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 159
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "7 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T20:19:47.454955"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_multiple____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 11,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 198
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 11
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 11,
+        "pthread": 32,
+        "raw_ptr": 37,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 198
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 11
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 5,
+        "std_arc": 12,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 3,
+        "move_closure": 3,
+        "arc_clone": 3,
+        "join_handle": 3,
+        "arc_mutex_combo": 0,
+        "lines": 73
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_nested____self_lock",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 138
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 26,
+        "raw_ptr": 25,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 138
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 5,
+        "pthread": 0,
+        "raw_ptr": 2,
+        "static_mut": 0,
+        "libc": 1,
+        "std_mutex": 5,
+        "std_arc": 4,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 1,
+        "move_closure": 1,
+        "arc_clone": 1,
+        "join_handle": 1,
+        "arc_mutex_combo": 1,
+        "lines": 69
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "5 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 5
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_simple____partial_critical_section",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 158
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 3,
+        "pthread": 0,
+        "raw_ptr": 2,
+        "static_mut": 1,
+        "libc": 4,
+        "std_mutex": 7,
+        "std_arc": 3,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 3,
+        "join_handle": 2,
+        "arc_mutex_combo": 1,
+        "lines": 85
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "static mut variables remain: S",
+          "3 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": true,
+        "has_arc_mutex": true,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 3
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_spin____lock_leak",
+    "original": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 47,
+        "raw_ptr": 33,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 199
+      },
+      "lock_safety": {
+        "issues": [
+          "Lock without matching unlock (potential deadlock)"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 7,
+        "pthread": 47,
+        "raw_ptr": 33,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 199
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 7
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 0,
+        "pthread": 0,
+        "raw_ptr": 0,
+        "static_mut": 0,
+        "libc": 0,
+        "std_mutex": 7,
+        "std_arc": 6,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 2,
+        "move_closure": 2,
+        "arc_clone": 2,
+        "join_handle": 2,
+        "arc_mutex_combo": 0,
+        "lines": 58
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": true,
+        "has_arc_mutex": false,
+        "has_pthread": false,
+        "has_thread_spawn": true,
+        "has_join": true,
+        "unsafe_count": 0
+      },
+      "round_info": {
+        "round": null,
+        "type": "unknown",
+        "metadata": null
+      }
+    }
+  },
+  {
+    "name": "struct_timedwait____deadlock",
+    "original": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 48,
+        "raw_ptr": 32,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 271
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 48,
+        "raw_ptr": 32,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 271
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 48,
+        "raw_ptr": 32,
+        "static_mut": 2,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 272
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (12 calls)",
+          "static mut variables remain: s, m2",
+          "9 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T20:37:59.956515"
+        }
+      }
+    }
+  },
+  {
+    "name": "struct_timedwait____lost_wakeup",
+    "original": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 37,
+        "raw_ptr": 29,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 238
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 37,
+        "raw_ptr": 29,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 238
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 9,
+        "pthread": 37,
+        "raw_ptr": 29,
+        "static_mut": 1,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 239
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (8 calls)",
+          "static mut variables remain: s",
+          "9 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 9
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T20:51:07.961535"
+        }
+      }
+    }
+  },
+  {
+    "name": "unused_func____lock_mismatch",
+    "original": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 135
+      },
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "is_negative": true,
+    "concrat": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 135
+      },
+      "compiles": false,
+      "lock_safety": {
+        "issues": [],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      }
+    },
+    "llm": {
+      "metrics": {
+        "unsafe": 8,
+        "pthread": 28,
+        "raw_ptr": 27,
+        "static_mut": 3,
+        "libc": 0,
+        "std_mutex": 0,
+        "std_arc": 0,
+        "std_rwlock": 0,
+        "std_condvar": 0,
+        "std_thread": 0,
+        "move_closure": 0,
+        "arc_clone": 0,
+        "join_handle": 0,
+        "arc_mutex_combo": 0,
+        "lines": 136
+      },
+      "compiles": true,
+      "lock_safety": {
+        "issues": [
+          "Still uses pthread_mutex (6 calls)",
+          "static mut variables remain: n1, num_mutex1, num_mutex2",
+          "8 unsafe keyword(s) remain"
+        ],
+        "has_std_mutex": false,
+        "has_arc_mutex": false,
+        "has_pthread": true,
+        "has_thread_spawn": false,
+        "has_join": false,
+        "unsafe_count": 8
+      },
+      "round_info": {
+        "round": "original",
+        "type": "original_code_fallback",
+        "metadata": {
+          "result_type": "original_code_fallback",
+          "round": "original",
+          "reason": "original_code_fallback",
+          "timestamp": "2026-04-19T21:00:34.390898"
+        }
+      }
+    }
+  }
+]

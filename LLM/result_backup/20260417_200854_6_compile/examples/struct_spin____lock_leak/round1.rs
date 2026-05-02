@@ -1,0 +1,57 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+#[derive(Debug)]
+struct Ss {
+    n1: i32,
+    m1: Mutex<i32>,
+    n2: i32,
+    m2: Mutex<i32>,
+    n3: i32,
+    m3: Mutex<i32>,
+}
+
+fn f1(s: Arc<Ss>) {
+    let mut n1 = s.m1.lock().unwrap();
+    *n1 += 1;
+    let mut n2 = s.m2.lock().unwrap();
+    *n2 += 1;
+    let mut n3 = s.m3.lock().unwrap();
+    *n3 += 1;
+}
+
+fn t_fun(s: Arc<Ss>) {
+    f1(s);
+}
+
+fn main_0() -> i32 {
+    let s = Arc::new(Ss {
+        n1: 1,
+        m1: Mutex::new(0),
+        n2: 2,
+        m2: Mutex::new(0),
+        n3: 3,
+        m3: Mutex::new(0),
+    });
+
+    let s_clone1 = s.clone();
+    let s_clone2 = s.clone();
+
+    let handle1 = thread::spawn(move || t_fun(s_clone1));
+    let handle2 = thread::spawn(move || t_fun(s_clone2));
+
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+
+    let n1 = s.m1.lock().unwrap();
+    let n2 = s.m2.lock().unwrap();
+    let n3 = s.m3.lock().unwrap();
+
+    println!("{} {} {}", *n1, *n2, *n3);
+
+    0
+}
+
+fn main() {
+    std::process::exit(main_0());
+}

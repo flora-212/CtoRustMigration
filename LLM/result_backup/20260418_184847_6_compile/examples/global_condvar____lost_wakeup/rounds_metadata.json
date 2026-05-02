@@ -1,0 +1,2602 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:45:44.496312",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 60,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 69,
+              "column": 19,
+              "details": "|\n69 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 71,
+              "column": 19,
+              "details": "|\n71 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 77,
+              "column": 19,
+              "details": "|\n77 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 95,
+              "column": 9,
+              "details": "|\n92 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 101,
+              "column": 9,
+              "details": "|\n98 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 106,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 35,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 41,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 43,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:46:17.897099",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:46:53.385194",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:47:34.446363",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:48:17.409229",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:49:00.630137",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:49:43.754849",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:50:27.007465",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:51:11.016719",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:51:54.408911",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:52:37.851687",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:53:21.851869",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:54:05.537701",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:54:49.348448",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:55:33.563564",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:56:18.225060",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:57:02.358359",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:57:46.832912",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:58:31.332205",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-18T22:59:16.026642",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 12
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `PthreadMutex::new` in statics",
+              "location": "main.rs",
+              "line": 61,
+              "column": 34,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 70,
+              "column": 19,
+              "details": "|\n70 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 72,
+              "column": 19,
+              "details": "|\n72 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 78,
+              "column": 19,
+              "details": "|\n78 |         COND.wait(&mut NUM_MUTEX.lock());\n|              ---- ^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut ()`\n|              |\n|              arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut ()`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 96,
+              "column": 9,
+              "details": "|\n93 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 102,
+              "column": 9,
+              "details": "|\n99 |     libc::pthread_create(\n|     -------------------- arguments to this function are incorrect"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 107,
+              "column": 18,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 36,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 37,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.count`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 42,
+              "column": 9,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0594",
+              "message": "cannot assign to `self.owner`, which is behind a `&` reference",
+              "location": "main.rs",
+              "line": 44,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 11 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

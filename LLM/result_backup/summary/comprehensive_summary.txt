@@ -1,0 +1,5149 @@
+
+====================================================================================================
+COMPREHENSIVE EVALUATION RESULTS SUMMARY
+====================================================================================================
+
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  GLOBAL METRICS SUMMARY
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  NON-C2RUST GROUP (All Examples)
+    ∑Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc):  676.80
+    ∑Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo):  1163.40
+
+  C2RUST GROUP (All Examples)
+    ∑Lower is Better (unsafe, pthread, raw_ptr, static_mut, libc):  2438.60
+    ∑Higher is Better (std_mutex, std_arc, std_rwlock, std_condvar, std_thread, move_closure, arc_clone, join_handle, arc_mutex_combo):  630.20
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_const ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=12.8, c2rust=12.8, overall=12.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0599]: no method named `lock` found for struct `loom::sync::Arc
+  ║    └─ 20260419_083644_6_compile: error[E0277]: the trait bound `loom::sync::Mutex<i32>: Copy` is not sa
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0599]: no method named `lock` found for struct `std::sync::Arc<
+  ║    └─ 20260419_083644_6_compile: error[E0277]: the trait bound `std::sync::Mutex<i32>: std::marker::Cop
+  ║  OUTPUT       Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║    └─ 20260419_083644_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 12.8
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.20
+  ║    pthread         6.20
+  ║    raw_ptr         6.20
+  ║    static_mut      0.40
+  ║    unsafe          2.20
+  ║    ∑Lower          16.20
+  ║  Higher is Better:
+  ║    arc_clone       1.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.00
+  ║    move_closure    1.00
+  ║    std_arc         4.00
+  ║    std_condvar     0.00
+  ║    std_mutex       4.60
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         12.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 12.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         25.20
+       raw_ptr         24.60
+       static_mut      1.20
+       unsafe          4.20
+       ∑Lower          55.20
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       2.80
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         6.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_const____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=6.2, c2rust=6.2, overall=6.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for struct `loom::sync::Arc
+  ║    └─ 20260419_141851_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for struct `std::sync::Arc<
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 6.2
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.00
+  ║    static_mut      0.00
+  ║    unsafe          0.00
+  ║    ∑Lower          0.00
+  ║  Higher is Better:
+  ║    arc_clone       1.00
+  ║    arc_mutex_combo 1.80
+  ║    join_handle     1.00
+  ║    move_closure    1.00
+  ║    std_arc         5.60
+  ║    std_condvar     0.00
+  ║    std_mutex       8.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         20.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_141851_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 6.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         12.80
+       raw_ptr         11.60
+       static_mut      0.40
+       unsafe          2.00
+       ∑Lower          26.80
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 1.80
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         4.80
+       std_condvar     0.00
+       std_mutex       7.00
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         16.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_const____lock_mismatch ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.4, c2rust=16.4, overall=16.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for struct `loom::sync::Arc
+  ║    └─ 20260419_083644_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for struct `std::sync::Arc<
+  ║    └─ 20260419_083644_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.4
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.00
+  ║    pthread         1.20
+  ║    raw_ptr         2.40
+  ║    static_mut      0.20
+  ║    unsafe          2.40
+  ║    ∑Lower          9.20
+  ║  Higher is Better:
+  ║    arc_clone       1.00
+  ║    arc_mutex_combo 0.60
+  ║    join_handle     1.00
+  ║    move_closure    1.00
+  ║    std_arc         5.20
+  ║    std_condvar     0.00
+  ║    std_mutex       5.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         15.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         33.60
+       raw_ptr         32.80
+       static_mut      1.60
+       unsafe          5.60
+       ∑Lower          73.60
+     Higher is Better:
+       arc_clone       0.20
+       arc_mutex_combo 0.00
+       join_handle     0.20
+       move_closure    0.20
+       std_arc         1.00
+       std_condvar     0.00
+       std_mutex       1.00
+       std_rwlock      0.00
+       std_thread      0.20
+       ∑Higher         2.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_main ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=8.2, c2rust=8.2, overall=8.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `num_mutex` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260419_141851_6_compile: error[E0530]: let bindings cannot shadow statics
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+  ║    └─ 20260418_092505_6_compile: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+  ║    └─ 20260418_184847_6_compile: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 8.2
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.60
+  ║    static_mut      1.60
+  ║    unsafe          4.20
+  ║    ∑Lower          12.40
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 0.60
+  ║    join_handle     1.20
+  ║    move_closure    0.00
+  ║    std_arc         4.60
+  ║    std_condvar     0.00
+  ║    std_mutex       7.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         14.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `num_mutex` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+     └─ 20260418_092505_6_compile_c2rust: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+     └─ 20260418_184847_6_compile_c2rust: Expected:
+4 4 4 4 4
+
+Actual:
+2 2 2 2 2
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 8.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.20
+       pthread         6.40
+       raw_ptr         9.60
+       static_mut      1.60
+       unsafe          4.80
+       ∑Lower          25.60
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.40
+       join_handle     1.00
+       move_closure    0.00
+       std_arc         3.20
+       std_condvar     0.00
+       std_mutex       5.60
+       std_rwlock      0.00
+       std_thread      1.00
+       ∑Higher         11.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_main____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.2, c2rust=16.2, overall=16.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `num_mutex` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_083644_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      2.00
+  ║    unsafe          4.60
+  ║    ∑Lower          12.60
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.00
+  ║    move_closure    0.00
+  ║    std_arc         7.80
+  ║    std_condvar     0.00
+  ║    std_mutex       9.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         19.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `n1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.80
+       pthread         23.60
+       raw_ptr         28.80
+       static_mut      2.00
+       unsafe          6.40
+       ∑Lower          61.60
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.20
+       move_closure    0.00
+       std_arc         0.20
+       std_condvar     0.00
+       std_mutex       1.40
+       std_rwlock      0.00
+       std_thread      0.20
+       ∑Higher         2.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_main____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.6, c2rust=16.6, overall=16.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `num_mutex` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.6
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.20
+  ║    static_mut      1.80
+  ║    unsafe          5.20
+  ║    ∑Lower          13.00
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 1.00
+  ║    join_handle     1.00
+  ║    move_closure    0.00
+  ║    std_arc         6.00
+  ║    std_condvar     0.00
+  ║    std_mutex       7.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         16.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.80
+       pthread         25.60
+       raw_ptr         30.20
+       static_mut      2.00
+       unsafe          6.80
+       ∑Lower          65.40
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.40
+       join_handle     0.20
+       move_closure    0.00
+       std_arc         1.60
+       std_condvar     0.00
+       std_mutex       1.60
+       std_rwlock      0.00
+       std_thread      0.20
+       ∑Higher         4.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_simple ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.2, c2rust=16.2, overall=16.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0428]: the name `f1` is defined multiple times
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0277]: the trait bound `std::sync::Arc<std::sync::Mutex<()>>: s
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260418_184847_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.40
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      3.80
+  ║    unsafe          4.80
+  ║    ∑Lower          15.00
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.00
+  ║    move_closure    0.00
+  ║    std_arc         5.00
+  ║    std_condvar     0.00
+  ║    std_mutex       7.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         15.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.60
+       pthread         25.60
+       raw_ptr         31.60
+       static_mut      4.00
+       unsafe          6.40
+       ∑Lower          68.20
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.20
+       move_closure    0.00
+       std_arc         0.20
+       std_condvar     0.00
+       std_mutex       1.40
+       std_rwlock      0.00
+       std_thread      0.20
+       ∑Higher         2.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: array_simple____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=5.0, c2rust=5.0, overall=5.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 5.0
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.40
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      4.00
+  ║    unsafe          5.80
+  ║    ∑Lower          15.20
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.00
+  ║    move_closure    0.00
+  ║    std_arc         1.00
+  ║    std_condvar     0.00
+  ║    std_mutex       7.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.00
+  ║    ∑Higher         10.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `n1` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `n1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `n1` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.20
+       pthread         6.40
+       raw_ptr         9.40
+       static_mut      4.00
+       unsafe          6.00
+       ∑Lower          28.00
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.80
+       move_closure    0.00
+       std_arc         0.80
+       std_condvar     0.00
+       std_mutex       5.60
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_assume ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.8, c2rust=1.8, overall=1.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error: expected one of `!` or `::`, found `init`
+  ║    └─ 20260419_083644_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260419_141851_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: Expected:
+2
+
+Actual:
+0
+  ║    └─ 20260418_184847_6_compile: Expected:
+2
+
+Actual:
+0
+  ║    └─ 20260419_083644_6_compile: Expected:
+2
+
+Actual:
+0
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.8
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.40
+  ║    pthread         0.00
+  ║    raw_ptr         1.80
+  ║    static_mut      0.80
+  ║    unsafe          5.00
+  ║    ∑Lower          10.00
+  ║  Higher is Better:
+  ║    arc_clone       0.60
+  ║    arc_mutex_combo 0.20
+  ║    join_handle     1.60
+  ║    move_closure    0.80
+  ║    std_arc         3.40
+  ║    std_condvar     0.00
+  ║    std_mutex       3.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         11.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: error: expected one of `!` or `::`, found `init`
+     └─ 20260419_083644_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260419_141851_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 1/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     └─ 20260418_184847_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.40
+       pthread         0.00
+       raw_ptr         1.80
+       static_mut      0.80
+       unsafe          5.00
+       ∑Lower          10.00
+     Higher is Better:
+       arc_clone       0.60
+       arc_mutex_combo 0.20
+       join_handle     1.60
+       move_closure    0.80
+       std_arc         3.40
+       std_condvar     0.00
+       std_mutex       3.40
+       std_rwlock      0.00
+       std_thread      1.60
+       ∑Higher         11.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_assume2 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.2, c2rust=16.2, overall=16.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `N1` in this scope
+  ║    └─ 20260418_184847_6_compile: error: expected one of `:`, `@`, or `|`, found `)`
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║    └─ 20260418_184847_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.80
+  ║    pthread         3.00
+  ║    raw_ptr         4.00
+  ║    static_mut      0.80
+  ║    unsafe          4.60
+  ║    ∑Lower          14.20
+  ║  Higher is Better:
+  ║    arc_clone       0.40
+  ║    arc_mutex_combo 0.20
+  ║    join_handle     1.20
+  ║    move_closure    0.60
+  ║    std_arc         2.60
+  ║    std_condvar     0.00
+  ║    std_mutex       2.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         9.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `N1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 4/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: error[E0308]: mismatched types
+     OUTPUT       Pass: 3/5 ❌
+     └─ 20260418_092505_6_compile_c2rust:     Blocking waiting for file lock on package cache
+    Updating crate
+     └─ 20260419_141851_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 16.2
+     └─ Failed: {'run': '20260418_092505_6_compile_c2rust', 'iterations': 20}
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.60
+       pthread         14.40
+       raw_ptr         15.40
+       static_mut      1.40
+       unsafe          5.80
+       ∑Lower          37.60
+     Higher is Better:
+       arc_clone       0.20
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.20
+       std_arc         1.40
+       std_condvar     0.00
+       std_mutex       1.40
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         4.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_assume2____self_lock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.6, c2rust=9.6, overall=9.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: expected one of `:`, `@`, or `|`, found `)`
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_184847_6_compile: error: expected one of `:`, `@`, or `|`, found `)`
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_083644_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.6
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.00
+  ║    pthread         3.00
+  ║    raw_ptr         3.60
+  ║    static_mut      1.00
+  ║    unsafe          5.60
+  ║    ∑Lower          15.20
+  ║  Higher is Better:
+  ║    arc_clone       1.20
+  ║    arc_mutex_combo 1.00
+  ║    join_handle     1.20
+  ║    move_closure    0.80
+  ║    std_arc         3.00
+  ║    std_condvar     0.00
+  ║    std_mutex       4.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         12.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: expected one of `:`, `@`, or `|`, found `)`
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: expected one of `:`, `@`, or `|`, found `)`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.60
+       pthread         10.00
+       raw_ptr         11.20
+       static_mut      1.20
+       unsafe          6.20
+       ∑Lower          30.20
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.80
+       join_handle     0.80
+       move_closure    0.40
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       3.20
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_assume____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=8.6, c2rust=8.6, overall=8.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `N1` in this scope
+  ║    └─ 20260419_083644_6_compile: error[E0425]: cannot find value `N1` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0507]: cannot move out of static item `NUM_MUTEX`
+  ║    └─ 20260419_083644_6_compile: error[E0507]: cannot move out of static item `NUM_MUTEX`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 8.6
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.60
+  ║    static_mut      0.40
+  ║    unsafe          1.80
+  ║    ∑Lower          3.80
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.20
+  ║    move_closure    1.20
+  ║    std_arc         5.60
+  ║    std_condvar     0.00
+  ║    std_mutex       3.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         14.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 3/5 ❌
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 8.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         9.00
+       raw_ptr         9.80
+       static_mut      0.80
+       unsafe          3.20
+       ∑Lower          22.80
+     Higher is Better:
+       arc_clone       0.60
+       arc_mutex_combo 0.00
+       join_handle     0.60
+       move_closure    0.60
+       std_arc         3.60
+       std_condvar     0.00
+       std_mutex       1.80
+       std_rwlock      0.00
+       std_thread      0.60
+       ∑Higher         7.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_check ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=14.8, c2rust=14.8, overall=14.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error[E0596]: cannot borrow data in dereference of `loom::sync::Arc<Mu
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `N` in this scope
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0596]: cannot borrow data in an `Arc` as mutable
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║  OUTPUT       Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260419_141851_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 14.8
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.60
+  ║    pthread         5.60
+  ║    raw_ptr         3.00
+  ║    static_mut      0.80
+  ║    unsafe          7.40
+  ║    ∑Lower          19.40
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 1.00
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         4.60
+  ║    std_condvar     0.00
+  ║    std_mutex       4.60
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         17.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `N` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 14.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.80
+       pthread         26.40
+       raw_ptr         16.60
+       static_mut      1.40
+       unsafe          10.00
+       ∑Lower          56.20
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 1.00
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       2.80
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         9.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_check____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=13.2, c2rust=13.2, overall=13.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0382]: use of moved value: `m`
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: 13 | pub type __pthread_list_t = __pthread_internal_list;
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0382]: use of moved value: `m`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 13.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.20
+  ║    pthread         11.00
+  ║    raw_ptr         5.80
+  ║    static_mut      1.20
+  ║    unsafe          5.40
+  ║    ∑Lower          24.60
+  ║  Higher is Better:
+  ║    arc_clone       2.20
+  ║    arc_mutex_combo 1.00
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         5.60
+  ║    std_condvar     0.00
+  ║    std_mutex       4.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         18.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 13.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.00
+       pthread         24.40
+       raw_ptr         16.20
+       static_mut      1.60
+       unsafe          7.60
+       ∑Lower          50.80
+     Higher is Better:
+       arc_clone       1.00
+       arc_mutex_combo 1.00
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         3.00
+       std_condvar     0.00
+       std_mutex       3.00
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         10.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_check____lock_mismatch ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=20.0, c2rust=20.0, overall=20.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `M` in this scope
+  ║    └─ 20260418_184847_6_compile: error: prefix `pub` is unknown
+  ║  MIRI         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 0/5 ❌ | 平均迭代: 20.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.80
+  ║    pthread         12.60
+  ║    raw_ptr         5.20
+  ║    static_mut      1.20
+  ║    unsafe          7.80
+  ║    ∑Lower          29.60
+  ║  Higher is Better:
+  ║    arc_clone       1.20
+  ║    arc_mutex_combo 1.80
+  ║    join_handle     1.20
+  ║    move_closure    1.20
+  ║    std_arc         4.20
+  ║    std_condvar     0.00
+  ║    std_mutex       4.60
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         15.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 20.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         45.20
+       raw_ptr         27.20
+       static_mut      2.60
+       unsafe          10.00
+       ∑Lower          85.00
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.00
+       move_closure    0.00
+       std_arc         0.00
+       std_condvar     0.00
+       std_mutex       0.00
+       std_rwlock      0.00
+       std_thread      0.00
+       ∑Higher         0.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_condvar ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=2.0, c2rust=2.0, overall=2.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1481731) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1641615) panicked at /rustc/c75
+  ║    └─ 20260418_184847_6_compile: thread 'main::test_concurrent_access' (1698405) panicked at /rustc/c75
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Test execution exceeded timeout
+  ║    └─ 20260418_092505_6_compile: Test execution exceeded timeout
+  ║    └─ 20260418_184847_6_compile: Test execution exceeded timeout
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 2.0
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.00
+  ║    static_mut      0.00
+  ║    unsafe          0.00
+  ║    ∑Lower          0.00
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         5.40
+  ║    std_condvar     3.00
+  ║    std_mutex       7.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         23.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1608156) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1660352) panicked at /rustc/c75
+     └─ 20260418_184847_6_compile_c2rust: thread 'main::test_concurrent_access' (1701733) panicked at /rustc/c75
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260418_092505_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260418_184847_6_compile_c2rust: Test execution exceeded timeout
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 2.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         0.00
+       raw_ptr         0.00
+       static_mut      0.00
+       unsafe          0.00
+       ∑Lower          0.00
+     Higher is Better:
+       arc_clone       2.00
+       arc_mutex_combo 0.00
+       join_handle     2.00
+       move_closure    2.00
+       std_arc         5.40
+       std_condvar     3.00
+       std_mutex       7.00
+       std_rwlock      0.00
+       std_thread      2.00
+       ∑Higher         23.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_condvar____lost_wakeup ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.2, c2rust=9.2, overall=9.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `N1` in this scope
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1643640) panicked at /rustc/c75
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `COND` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.00
+  ║    pthread         1.20
+  ║    raw_ptr         1.00
+  ║    static_mut      0.80
+  ║    unsafe          1.60
+  ║    ∑Lower          7.60
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.60
+  ║    move_closure    1.20
+  ║    std_arc         4.60
+  ║    std_condvar     3.80
+  ║    std_mutex       5.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         19.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1663078) panicked at /rustc/c75
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         15.60
+       raw_ptr         11.40
+       static_mut      1.60
+       unsafe          2.80
+       ∑Lower          31.40
+     Higher is Better:
+       arc_clone       1.20
+       arc_mutex_combo 0.00
+       join_handle     1.20
+       move_closure    1.20
+       std_arc         3.40
+       std_condvar     1.80
+       std_mutex       4.20
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         14.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_condvar____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=3.0, c2rust=3.0, overall=3.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1482758) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1645676) panicked at /rustc/c75
+  ║    └─ 20260419_083644_6_compile: thread 'main::test_concurrent_access' (1732699) panicked at /rustc/c75
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 3.0
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.40
+  ║    pthread         0.00
+  ║    raw_ptr         0.20
+  ║    static_mut      0.00
+  ║    unsafe          0.20
+  ║    ∑Lower          0.80
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         5.80
+  ║    std_condvar     3.00
+  ║    std_mutex       6.80
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         24.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1610855) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1665600) panicked at /rustc/c75
+     └─ 20260419_083644_6_compile_c2rust: thread 'main::test_concurrent_access' (1732953) panicked at /rustc/c75
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 3.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.40
+       pthread         0.00
+       raw_ptr         0.20
+       static_mut      0.00
+       unsafe          0.20
+       ∑Lower          0.80
+     Higher is Better:
+       arc_clone       2.00
+       arc_mutex_combo 0.40
+       join_handle     2.00
+       move_closure    2.00
+       std_arc         5.80
+       std_condvar     3.00
+       std_mutex       6.80
+       std_rwlock      0.00
+       std_thread      2.00
+       ∑Higher         24.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_custom ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=8.0, c2rust=8.0, overall=8.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0428]: the name `lock` is defined multiple times
+  ║    └─ 20260418_092505_6_compile: error: expected one of `:`, `@`, or `|`, found `)`
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+8
+
+Actual:
+6
+  ║    └─ 20260418_092505_6_compile: Test execution exceeded timeout
+  ║    └─ 20260418_184847_6_compile: Test execution exceeded timeout
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 8.0
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.60
+  ║    pthread         0.00
+  ║    raw_ptr         2.80
+  ║    static_mut      0.80
+  ║    unsafe          5.80
+  ║    ∑Lower          12.00
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     1.60
+  ║    move_closure    1.00
+  ║    std_arc         5.00
+  ║    std_condvar     0.00
+  ║    std_mutex       5.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         17.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0428]: the name `lock` is defined multiple times
+     └─ 20260418_092505_6_compile_c2rust: error: expected one of `:`, `@`, or `|`, found `)`
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+8
+
+Actual:
+6
+     └─ 20260418_092505_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260418_184847_6_compile_c2rust: Test execution exceeded timeout
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 8.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.80
+       pthread         5.20
+       raw_ptr         7.20
+       static_mut      1.20
+       unsafe          7.60
+       ∑Lower          23.00
+     Higher is Better:
+       arc_clone       1.60
+       arc_mutex_combo 1.00
+       join_handle     1.20
+       move_closure    1.00
+       std_arc         4.40
+       std_condvar     0.00
+       std_mutex       3.80
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         14.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_custom____self_lock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=12.8, c2rust=12.8, overall=12.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+  ║    └─ 20260418_092505_6_compile: error[E0446]: private type `SharedData` in public interface
+  ║    └─ 20260418_184847_6_compile: error[E0599]: no method named `unwrap` found for unit type `()` in the
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0277]: `*mut libc::c_void` cannot be sent between threads safel
+  ║    └─ 20260418_184847_6_compile: error[E0599]: no method named `unwrap` found for unit type `()` in the
+  ║    └─ 20260419_141851_6_compile: error[E0596]: cannot borrow `guard` as mutable, as it is not declared 
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 12.8
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.60
+  ║    pthread         0.00
+  ║    raw_ptr         2.40
+  ║    static_mut      0.40
+  ║    unsafe          2.00
+  ║    ∑Lower          7.40
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         7.80
+  ║    std_condvar     0.00
+  ║    std_mutex       3.60
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         18.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 12.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.80
+       pthread         15.60
+       raw_ptr         15.80
+       static_mut      1.60
+       unsafe          8.00
+       ∑Lower          41.80
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.40
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         3.20
+       std_condvar     0.00
+       std_mutex       1.40
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_main ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.8, c2rust=1.8, overall=1.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 3/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error: expected one of `!` or `::`, found `init`
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+4
+
+Actual:
+2
+  ║    └─ 20260418_092505_6_compile: Expected:
+4
+
+Actual:
+3
+  ║    └─ 20260418_184847_6_compile: Expected:
+4
+
+Actual:
+2
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.8
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.40
+  ║    pthread         0.00
+  ║    raw_ptr         2.20
+  ║    static_mut      0.60
+  ║    unsafe          2.40
+  ║    ∑Lower          6.60
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.20
+  ║    join_handle     1.40
+  ║    move_closure    1.40
+  ║    std_arc         4.60
+  ║    std_condvar     0.00
+  ║    std_mutex       3.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         13.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 3/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: expected one of `!` or `::`, found `init`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+4
+
+Actual:
+2
+     └─ 20260418_092505_6_compile_c2rust: Expected:
+4
+
+Actual:
+3
+     └─ 20260418_184847_6_compile_c2rust: Expected:
+4
+
+Actual:
+2
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.40
+       pthread         0.00
+       raw_ptr         2.20
+       static_mut      0.60
+       unsafe          2.40
+       ∑Lower          6.60
+     Higher is Better:
+       arc_clone       1.40
+       arc_mutex_combo 0.20
+       join_handle     1.40
+       move_closure    1.40
+       std_arc         4.60
+       std_condvar     0.00
+       std_mutex       3.00
+       std_rwlock      0.00
+       std_thread      1.80
+       ∑Higher         13.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_main____self_lock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.4, c2rust=1.4, overall=1.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.4
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.40
+  ║    pthread         0.00
+  ║    raw_ptr         3.00
+  ║    static_mut      1.00
+  ║    unsafe          5.80
+  ║    ∑Lower          14.20
+  ║  Higher is Better:
+  ║    arc_clone       0.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.80
+  ║    move_closure    0.00
+  ║    std_arc         1.00
+  ║    std_condvar     0.00
+  ║    std_mutex       4.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         8.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            4.40
+       pthread         0.00
+       raw_ptr         3.00
+       static_mut      1.00
+       unsafe          5.80
+       ∑Lower          14.20
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     1.80
+       move_closure    0.00
+       std_arc         1.00
+       std_condvar     0.00
+       std_mutex       4.00
+       std_rwlock      0.00
+       std_thread      1.80
+       ∑Higher         8.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_nested ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.0, c2rust=9.0, overall=9.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260419_083644_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260419_141851_6_compile: error[E0425]: cannot find value `SHARED_DATA` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0596]: cannot borrow `n1` as mutable, as it is not declared as 
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║    └─ 20260419_141851_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.0
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      0.40
+  ║    unsafe          3.00
+  ║    ∑Lower          8.20
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         4.60
+  ║    std_condvar     0.00
+  ║    std_mutex       5.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         17.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     └─ 20260419_141851_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.00
+       pthread         14.40
+       raw_ptr         11.60
+       static_mut      1.80
+       unsafe          4.00
+       ∑Lower          32.80
+     Higher is Better:
+       arc_clone       1.00
+       arc_mutex_combo 0.00
+       join_handle     1.20
+       move_closure    1.20
+       std_arc         3.20
+       std_condvar     0.00
+       std_mutex       3.00
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         10.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_nested____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.2, c2rust=1.2, overall=1.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `handle2` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.2
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.40
+  ║    static_mut      0.80
+  ║    unsafe          2.60
+  ║    ∑Lower          10.60
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         7.00
+  ║    std_condvar     0.00
+  ║    std_mutex       5.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         20.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `handle2` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0277]: `loom::sync::MutexGuard<'_, i32>` doesn't implement `std
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            4.80
+       pthread         0.00
+       raw_ptr         2.40
+       static_mut      0.80
+       unsafe          2.60
+       ∑Lower          10.60
+     Higher is Better:
+       arc_clone       2.00
+       arc_mutex_combo 0.40
+       join_handle     2.00
+       move_closure    2.00
+       std_arc         7.00
+       std_condvar     0.00
+       std_mutex       5.00
+       std_rwlock      0.00
+       std_thread      2.00
+       ∑Higher         20.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_read ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=5.4, c2rust=5.4, overall=5.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 5/5 ✅
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 5/5 ✅
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.4
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.40
+  ║    pthread         0.00
+  ║    raw_ptr         1.80
+  ║    static_mut      0.00
+  ║    unsafe          1.60
+  ║    ∑Lower          3.80
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     1.80
+  ║    move_closure    1.80
+  ║    std_arc         6.40
+  ║    std_condvar     0.00
+  ║    std_mutex       6.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         21.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 5/5 ✅
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.40
+       pthread         0.00
+       raw_ptr         1.80
+       static_mut      0.00
+       unsafe          1.60
+       ∑Lower          3.80
+     Higher is Better:
+       arc_clone       1.80
+       arc_mutex_combo 1.20
+       join_handle     1.80
+       move_closure    1.80
+       std_arc         6.40
+       std_condvar     0.00
+       std_mutex       6.20
+       std_rwlock      0.00
+       std_thread      1.80
+       ∑Higher         21.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_read____lock_mismatch ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=12.8, c2rust=12.8, overall=12.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `NUM_MUTEX1` in this scope
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `n1` in this scope
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0530]: let bindings cannot shadow statics
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 12.8
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            6.20
+  ║    pthread         0.00
+  ║    raw_ptr         4.00
+  ║    static_mut      2.40
+  ║    unsafe          5.20
+  ║    ∑Lower          17.80
+  ║  Higher is Better:
+  ║    arc_clone       0.40
+  ║    arc_mutex_combo 2.00
+  ║    join_handle     1.80
+  ║    move_closure    0.40
+  ║    std_arc         5.80
+  ║    std_condvar     0.00
+  ║    std_mutex       5.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         17.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX1` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 12.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.40
+       pthread         16.80
+       raw_ptr         18.60
+       static_mut      3.20
+       unsafe          6.80
+       ∑Lower          47.80
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.80
+       join_handle     0.80
+       move_closure    0.40
+       std_arc         2.80
+       std_condvar     0.00
+       std_mutex       2.40
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_rwlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.0, c2rust=17.0, overall=17.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `LOCK` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `LOCK` in this scope
+  ║    └─ 20260418_184847_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `RwLock::new` 
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_083644_6_compile: error[E0015]: cannot call non-const associated function `RwLock::new` 
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260419_083644_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.80
+  ║    pthread         0.00
+  ║    raw_ptr         3.00
+  ║    static_mut      1.00
+  ║    unsafe          5.20
+  ║    ∑Lower          12.00
+  ║  Higher is Better:
+  ║    arc_clone       1.00
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     1.80
+  ║    move_closure    1.40
+  ║    std_arc         2.80
+  ║    std_condvar     0.00
+  ║    std_mutex       4.20
+  ║    std_rwlock      4.40
+  ║    std_thread      1.80
+  ║    ∑Higher         17.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.40
+       pthread         22.40
+       raw_ptr         18.20
+       static_mut      1.60
+       unsafe          7.00
+       ∑Lower          49.60
+     Higher is Better:
+       arc_clone       0.20
+       arc_mutex_combo 0.20
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         0.60
+       std_condvar     0.00
+       std_mutex       0.60
+       std_rwlock      1.00
+       std_thread      0.40
+       ∑Higher         3.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_rwlock____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.8, c2rust=17.8, overall=17.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0428]: the name `f1` is defined multiple times
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `LOCK` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0530]: let bindings cannot shadow statics
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `RwLock::new` 
+  ║    └─ 20260419_083644_6_compile: error[E0015]: cannot call non-const associated function `RwLock::new` 
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.8
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.00
+  ║    pthread         3.40
+  ║    raw_ptr         3.40
+  ║    static_mut      0.80
+  ║    unsafe          4.40
+  ║    ∑Lower          13.00
+  ║  Higher is Better:
+  ║    arc_clone       0.60
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     1.40
+  ║    move_closure    0.60
+  ║    std_arc         2.20
+  ║    std_condvar     0.00
+  ║    std_mutex       4.20
+  ║    std_rwlock      4.00
+  ║    std_thread      1.40
+  ║    ∑Higher         14.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0428]: the name `f1` is defined multiple times
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.20
+       pthread         21.80
+       raw_ptr         18.00
+       static_mut      1.60
+       unsafe          6.60
+       ∑Lower          48.20
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.20
+       join_handle     0.20
+       move_closure    0.20
+       std_arc         0.80
+       std_condvar     0.00
+       std_mutex       1.40
+       std_rwlock      1.00
+       std_thread      0.20
+       ∑Higher         4.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_simple ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=14.4, c2rust=14.4, overall=14.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260419_083644_6_compile: error[E0599]: no method named `lock` found for struct `loom::sync::Arc
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_083644_6_compile: error[E0599]: no method named `lock` found for struct `std::sync::Arc<
+  ║  OUTPUT       Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260419_083644_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 14.4
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.00
+  ║    static_mut      0.60
+  ║    unsafe          0.60
+  ║    ∑Lower          1.20
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 1.40
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         5.20
+  ║    std_condvar     0.00
+  ║    std_mutex       4.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         17.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 3/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 14.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         9.60
+       raw_ptr         10.00
+       static_mut      1.60
+       unsafe          2.80
+       ∑Lower          24.00
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 1.20
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         3.20
+       std_condvar     0.00
+       std_mutex       3.60
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         11.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_simple____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.6, c2rust=9.6, overall=9.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.6
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.60
+  ║    pthread         0.00
+  ║    raw_ptr         3.00
+  ║    static_mut      0.80
+  ║    unsafe          3.80
+  ║    ∑Lower          11.20
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         6.00
+  ║    std_condvar     0.00
+  ║    std_mutex       6.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         19.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 2/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260419_083644_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.40
+       pthread         9.60
+       raw_ptr         11.20
+       static_mut      2.40
+       unsafe          4.80
+       ∑Lower          29.40
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.40
+       join_handle     1.00
+       move_closure    1.00
+       std_arc         3.20
+       std_condvar     0.00
+       std_mutex       4.00
+       std_rwlock      0.00
+       std_thread      1.00
+       ∑Higher         11.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_trylock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.2, c2rust=1.2, overall=1.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 5/5 ✅
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+8
+
+Actual:
+0
+  ║    └─ 20260419_083644_6_compile: Expected:
+8
+
+Actual:
+0
+  ║    └─ 20260419_141851_6_compile: Expected:
+8
+
+Actual:
+0
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.2
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.00
+  ║    static_mut      0.00
+  ║    unsafe          0.00
+  ║    ∑Lower          0.00
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         5.80
+  ║    std_condvar     0.00
+  ║    std_mutex       3.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         17.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 5/5 ✅
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 2/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+8
+
+Actual:
+0
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+8
+
+Actual:
+0
+     └─ 20260419_141851_6_compile_c2rust: Expected:
+8
+
+Actual:
+0
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         0.00
+       raw_ptr         0.00
+       static_mut      0.00
+       unsafe          0.00
+       ∑Lower          0.00
+     Higher is Better:
+       arc_clone       2.00
+       arc_mutex_combo 0.00
+       join_handle     2.00
+       move_closure    2.00
+       std_arc         5.80
+       std_condvar     0.00
+       std_mutex       3.40
+       std_rwlock      0.00
+       std_thread      2.00
+       ∑Higher         17.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_while ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.4, c2rust=9.4, overall=9.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: ⏱️  Timeout (>600s)
+  ║    └─ 20260418_092505_6_compile: ⏱️  Timeout (>600s)
+  ║    └─ 20260418_184847_6_compile: error: prefix `pub` is unknown
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║  OUTPUT       Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260419_141851_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.4
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.20
+  ║    pthread         4.60
+  ║    raw_ptr         2.80
+  ║    static_mut      0.60
+  ║    unsafe          2.40
+  ║    ∑Lower          12.60
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.20
+  ║    move_closure    1.20
+  ║    std_arc         3.40
+  ║    std_condvar     0.00
+  ║    std_mutex       3.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         12.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: ⏱️  Timeout (>600s)
+     └─ 20260418_092505_6_compile_c2rust: ⏱️  Timeout (>600s)
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         11.60
+       raw_ptr         10.00
+       static_mut      0.80
+       unsafe          3.20
+       ∑Lower          25.60
+     Higher is Better:
+       arc_clone       1.80
+       arc_mutex_combo 0.00
+       join_handle     1.20
+       move_closure    1.20
+       std_arc         3.00
+       std_condvar     0.00
+       std_mutex       2.20
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         10.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: global_while____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=12.6, c2rust=12.6, overall=12.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1493971) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0382]: use of moved value: `shared_data`
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find function `pthread_mutex_lock` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║    └─ 20260419_083644_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 12.6
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         2.60
+  ║    raw_ptr         1.80
+  ║    static_mut      0.40
+  ║    unsafe          1.60
+  ║    ∑Lower          6.40
+  ║  Higher is Better:
+  ║    arc_clone       2.40
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         4.20
+  ║    std_condvar     0.00
+  ║    std_mutex       3.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         14.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1767638) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 12.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         16.60
+       raw_ptr         15.00
+       static_mut      1.20
+       unsafe          4.80
+       ∑Lower          37.60
+     Higher is Better:
+       arc_clone       1.20
+       arc_mutex_combo 0.00
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       1.60
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         7.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_alias ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.0, c2rust=17.0, overall=17.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0502]: cannot borrow `*s` as mutable because it is also borrowe
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0502]: cannot borrow `*s` as mutable because it is also borrowe
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Blocking waiting for file lock on package cache
+    Updating crate
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.40
+  ║    static_mut      0.00
+  ║    unsafe          6.80
+  ║    ∑Lower          12.00
+  ║  Higher is Better:
+  ║    arc_clone       2.40
+  ║    arc_mutex_combo 3.40
+  ║    join_handle     2.00
+  ║    move_closure    1.20
+  ║    std_arc         9.00
+  ║    std_condvar     0.00
+  ║    std_mutex       10.80
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         30.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.60
+       pthread         20.80
+       raw_ptr         26.00
+       static_mut      2.40
+       unsafe          9.80
+       ∑Lower          59.60
+     Higher is Better:
+       arc_clone       1.20
+       arc_mutex_combo 1.40
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         2.20
+       std_condvar     0.00
+       std_mutex       3.00
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         9.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_alias____self_lock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.4, c2rust=17.4, overall=17.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1817219) panicked at /rustc/c75
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0596]: cannot borrow `s1` as mutable, as it is not declared as 
+  ║    └─ 20260419_083644_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.4
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.80
+  ║    pthread         0.00
+  ║    raw_ptr         4.00
+  ║    static_mut      0.00
+  ║    unsafe          5.00
+  ║    ∑Lower          11.80
+  ║  Higher is Better:
+  ║    arc_clone       3.60
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     2.00
+  ║    move_closure    1.60
+  ║    std_arc         10.60
+  ║    std_condvar     0.00
+  ║    std_mutex       6.80
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         27.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1848635) panicked at /rustc/c75
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         21.60
+       raw_ptr         26.00
+       static_mut      2.40
+       unsafe          8.40
+       ∑Lower          58.40
+     Higher is Better:
+       arc_clone       0.60
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         2.60
+       std_condvar     0.00
+       std_mutex       1.00
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         5.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_assume ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.0, c2rust=9.0, overall=9.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: test failed, to rerun pass `--lib`
+  ║    └─ 20260418_092505_6_compile: error: test failed, to rerun pass `--lib`
+  ║    └─ 20260418_184847_6_compile: error[E0502]: cannot borrow `*s` as mutable because it is also borrowe
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║    └─ 20260419_083644_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.0
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         5.40
+  ║    static_mut      0.00
+  ║    unsafe          4.40
+  ║    ∑Lower          9.80
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.40
+  ║    move_closure    1.40
+  ║    std_arc         5.00
+  ║    std_condvar     0.00
+  ║    std_mutex       3.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.40
+  ║    ∑Higher         13.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     └─ 20260418_092505_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     └─ 20260418_184847_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 9.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         11.60
+       raw_ptr         16.80
+       static_mut      0.00
+       unsafe          6.40
+       ∑Lower          34.80
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.00
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         3.00
+       std_condvar     0.00
+       std_mutex       1.80
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_assume____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=20.0, c2rust=20.0, overall=20.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1496199) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for reference `&loom::sync:
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `lock` found for reference `&std::sync::
+  ║    └─ 20260418_184847_6_compile: Compiling miri_test v0.1.0 (/tmp/miri_test_struct_assume____deadlock_i
+  ║    └─ 20260419_083644_6_compile: error[E0599]: no method named `lock` found for reference `&std::sync::
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 20.0
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.60
+  ║    pthread         0.00
+  ║    raw_ptr         5.20
+  ║    static_mut      0.00
+  ║    unsafe          2.80
+  ║    ∑Lower          11.60
+  ║  Higher is Better:
+  ║    arc_clone       3.80
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         9.60
+  ║    std_condvar     0.00
+  ║    std_mutex       5.60
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         26.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1782148) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     └─ 20260418_184847_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 20.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.80
+       pthread         28.00
+       raw_ptr         36.20
+       static_mut      0.00
+       unsafe          9.00
+       ∑Lower          75.00
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 1.20
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         1.80
+       std_condvar     0.00
+       std_mutex       2.40
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         7.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_condvar ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=11.0, c2rust=11.0, overall=11.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0432]: unresolved import `loom::sync::ONCE_INIT`
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260419_083644_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile: Test execution exceeded timeout
+  ║    └─ 20260418_184847_6_compile: Test execution exceeded timeout
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 11.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            5.00
+  ║    pthread         0.00
+  ║    raw_ptr         3.00
+  ║    static_mut      0.80
+  ║    unsafe          6.40
+  ║    ∑Lower          15.20
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         3.60
+  ║    std_condvar     3.00
+  ║    std_mutex       3.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         17.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error[E0432]: unresolved import `loom::sync::ONCE_INIT`
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `S` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 2/5 ❌
+     └─ 20260418_092505_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260418_184847_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260419_141851_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 11.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.00
+       pthread         13.60
+       raw_ptr         13.00
+       static_mut      0.80
+       unsafe          6.20
+       ∑Lower          36.60
+     Higher is Better:
+       arc_clone       1.00
+       arc_mutex_combo 0.00
+       join_handle     0.80
+       move_closure    0.80
+       std_arc         2.20
+       std_condvar     1.80
+       std_mutex       2.60
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         10.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_condvar____lost_wakeup ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=11.4, c2rust=11.4, overall=11.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1829400) panicked at /rustc/c75
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260419_083644_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 11.4
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.20
+  ║    pthread         0.00
+  ║    raw_ptr         2.80
+  ║    static_mut      0.60
+  ║    unsafe          5.60
+  ║    ∑Lower          13.20
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         4.00
+  ║    std_condvar     2.20
+  ║    std_mutex       3.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         16.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1860019) panicked at /rustc/c75
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 11.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.80
+       pthread         13.20
+       raw_ptr         12.60
+       static_mut      0.80
+       unsafe          6.40
+       ∑Lower          35.80
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.00
+       join_handle     1.00
+       move_closure    1.00
+       std_arc         2.80
+       std_condvar     1.20
+       std_mutex       2.60
+       std_rwlock      0.00
+       std_thread      1.00
+       ∑Higher         10.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_dup ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=4.0, c2rust=4.0, overall=4.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_184847_6_compile: thread 'main::test_concurrent_access' (1779579) panicked at /rustc/c75
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+8 1
+10 3
+
+Actual:
+0 1
+2 3
+  ║    └─ 20260418_092505_6_compile: Expected:
+8 1
+10 3
+
+Actual:
+0 1
+2 3
+  ║    └─ 20260418_184847_6_compile: Test execution exceeded timeout
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 4.0
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            5.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.80
+  ║    static_mut      1.20
+  ║    unsafe          7.40
+  ║    ∑Lower          16.40
+  ║  Higher is Better:
+  ║    arc_clone       1.20
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     2.00
+  ║    move_closure    1.20
+  ║    std_arc         7.00
+  ║    std_condvar     0.00
+  ║    std_mutex       6.60
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         21.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `S1` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `S1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: thread 'main::test_concurrent_access' (1779253) panicked at /rustc/c75
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+8 1
+10 3
+
+Actual:
+0 1
+2 3
+     └─ 20260418_092505_6_compile_c2rust: Expected:
+8 1
+10 3
+
+Actual:
+0 1
+2 3
+     └─ 20260418_184847_6_compile_c2rust: Test execution exceeded timeout
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 4.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            5.00
+       pthread         0.00
+       raw_ptr         2.80
+       static_mut      1.20
+       unsafe          7.40
+       ∑Lower          16.40
+     Higher is Better:
+       arc_clone       1.20
+       arc_mutex_combo 1.20
+       join_handle     2.00
+       move_closure    1.20
+       std_arc         7.00
+       std_condvar     0.00
+       std_mutex       6.60
+       std_rwlock      0.00
+       std_thread      2.00
+       ∑Higher         21.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_dup____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=15.4, c2rust=15.4, overall=15.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_184847_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 15.4
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.80
+  ║    pthread         0.00
+  ║    raw_ptr         3.20
+  ║    static_mut      1.60
+  ║    unsafe          7.80
+  ║    ∑Lower          17.40
+  ║  Higher is Better:
+  ║    arc_clone       2.40
+  ║    arc_mutex_combo 2.00
+  ║    join_handle     2.00
+  ║    move_closure    1.60
+  ║    std_arc         7.80
+  ║    std_condvar     0.00
+  ║    std_mutex       8.20
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         26.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 15.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.80
+       pthread         18.40
+       raw_ptr         18.60
+       static_mut      1.60
+       unsafe          7.80
+       ∑Lower          47.20
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.40
+       join_handle     0.80
+       move_closure    0.40
+       std_arc         2.40
+       std_condvar     0.00
+       std_mutex       2.80
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         8.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_empty ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=13.4, c2rust=13.4, overall=13.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0596]: cannot borrow `s1` as mutable, as it is not declared as 
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_184847_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260419_141851_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260419_083644_6_compile: Expected:
+0 0
+
+Actual:
+
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 13.4
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            6.00
+  ║    pthread         0.00
+  ║    raw_ptr         6.80
+  ║    static_mut      0.20
+  ║    unsafe          4.80
+  ║    ∑Lower          17.80
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         6.60
+  ║    std_condvar     0.00
+  ║    std_mutex       6.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         21.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 4/5 ❌
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+0 0
+
+Actual:
+
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 13.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.20
+       pthread         18.00
+       raw_ptr         23.20
+       static_mut      0.80
+       unsafe          6.20
+       ∑Lower          50.40
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.60
+       join_handle     0.60
+       move_closure    0.60
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       2.60
+       std_rwlock      0.00
+       std_thread      0.60
+       ∑Higher         7.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_init ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=20.0, c2rust=20.0, overall=20.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0614]: type `Ss` cannot be dereferenced
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find type `Once` in this scope
+  ║  MIRI         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0614]: type `Ss` cannot be dereferenced
+  ║    └─ 20260418_092505_6_compile: error[E0015]: cannot call non-const associated function `std::sync::Ar
+  ║    └─ 20260418_184847_6_compile: error[E0658]: use of unstable library feature `get_mut_unchecked`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 0/5 ❌ | 平均迭代: 20.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.60
+  ║    pthread         0.00
+  ║    raw_ptr         6.20
+  ║    static_mut      0.40
+  ║    unsafe          4.60
+  ║    ∑Lower          13.80
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 1.20
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         11.00
+  ║    std_condvar     0.00
+  ║    std_mutex       8.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         28.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 20.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         35.00
+       raw_ptr         36.00
+       static_mut      2.00
+       unsafe          7.00
+       ∑Lower          80.00
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.00
+       move_closure    0.00
+       std_arc         0.00
+       std_condvar     0.00
+       std_mutex       0.00
+       std_rwlock      0.00
+       std_thread      0.00
+       ∑Higher         0.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_init____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.0, c2rust=17.0, overall=17.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: cast cannot be followed by a method call
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0428]: the name `t_fun` is defined multiple times
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: cast cannot be followed by a method call
+  ║    └─ 20260418_092505_6_compile: error[E0133]: use of mutable static is unsafe and requires unsafe func
+  ║    └─ 20260418_184847_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            6.40
+  ║    pthread         0.00
+  ║    raw_ptr         7.40
+  ║    static_mut      1.20
+  ║    unsafe          5.80
+  ║    ∑Lower          20.80
+  ║  Higher is Better:
+  ║    arc_clone       2.80
+  ║    arc_mutex_combo 1.60
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         9.60
+  ║    std_condvar     0.00
+  ║    std_mutex       8.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         28.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.00
+       pthread         24.40
+       raw_ptr         28.80
+       static_mut      2.00
+       unsafe          6.60
+       ∑Lower          62.80
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.40
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         2.00
+       std_condvar     0.00
+       std_mutex       2.00
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         6.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_main ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=4.0, c2rust=4.0, overall=4.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260419_083644_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+4
+
+Actual:
+0
+  ║    └─ 20260418_092505_6_compile: Expected:
+4
+
+Actual:
+3
+  ║    └─ 20260418_184847_6_compile: Test execution exceeded timeout
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 4.0
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      0.60
+  ║    unsafe          5.60
+  ║    ∑Lower          12.00
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.60
+  ║    join_handle     1.60
+  ║    move_closure    1.60
+  ║    std_arc         3.40
+  ║    std_condvar     0.00
+  ║    std_mutex       3.60
+  ║    std_rwlock      0.00
+  ║    std_thread      1.60
+  ║    ∑Higher         14.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     └─ 20260419_083644_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+4
+
+Actual:
+0
+     └─ 20260418_092505_6_compile_c2rust: Expected:
+4
+
+Actual:
+3
+     └─ 20260418_184847_6_compile_c2rust: Test execution exceeded timeout
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 4.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.80
+       pthread         0.00
+       raw_ptr         2.00
+       static_mut      0.60
+       unsafe          5.60
+       ∑Lower          12.00
+     Higher is Better:
+       arc_clone       2.00
+       arc_mutex_combo 0.60
+       join_handle     1.60
+       move_closure    1.60
+       std_arc         3.40
+       std_condvar     0.00
+       std_mutex       3.60
+       std_rwlock      0.00
+       std_thread      1.60
+       ∑Higher         14.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_malloc ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=20.0, c2rust=20.0, overall=20.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║  MIRI         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 0/5 ❌ | 平均迭代: 20.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         4.00
+  ║    static_mut      0.00
+  ║    unsafe          2.40
+  ║    ∑Lower          6.40
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         6.80
+  ║    std_condvar     2.60
+  ║    std_mutex       3.60
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         21.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     └─ 20260418_092505_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     └─ 20260418_184847_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 20.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         44.00
+       raw_ptr         39.00
+       static_mut      0.00
+       unsafe          7.00
+       ∑Lower          90.00
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.00
+       move_closure    0.00
+       std_arc         0.00
+       std_condvar     0.00
+       std_mutex       0.00
+       std_rwlock      0.00
+       std_thread      0.00
+       ∑Higher         0.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_malloc2 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=12.8, c2rust=12.8, overall=12.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260419_141851_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260419_083644_6_compile: Expected:
+789
+
+Actual:
+
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 12.8
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.60
+  ║    pthread         0.00
+  ║    raw_ptr         2.60
+  ║    static_mut      0.60
+  ║    unsafe          5.80
+  ║    ∑Lower          12.60
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     2.00
+  ║    move_closure    0.40
+  ║    std_arc         3.60
+  ║    std_condvar     0.00
+  ║    std_mutex       4.80
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         14.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 12.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.60
+       pthread         19.80
+       raw_ptr         20.40
+       static_mut      1.00
+       unsafe          7.20
+       ∑Lower          50.00
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.00
+       join_handle     0.80
+       move_closure    0.00
+       std_arc         1.00
+       std_condvar     0.00
+       std_mutex       1.60
+       std_rwlock      0.00
+       std_thread      0.80
+       ∑Higher         4.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_malloc2____lock_mismatch ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=10.4, c2rust=10.4, overall=10.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `X` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `X` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `X` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0505]: cannot move out of `s` because it is borrowed
+  ║    └─ 20260419_141851_6_compile: error[E0505]: cannot move out of `s` because it is borrowed
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 10.4
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.40
+  ║    static_mut      0.80
+  ║    unsafe          8.00
+  ║    ∑Lower          15.20
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 0.40
+  ║    join_handle     2.00
+  ║    move_closure    0.00
+  ║    std_arc         5.00
+  ║    std_condvar     0.00
+  ║    std_mutex       6.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         17.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `X` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `X` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 10.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.00
+       pthread         14.00
+       raw_ptr         14.80
+       static_mut      1.20
+       unsafe          8.00
+       ∑Lower          40.00
+     Higher is Better:
+       arc_clone       1.40
+       arc_mutex_combo 0.20
+       join_handle     1.20
+       move_closure    0.00
+       std_arc         2.80
+       std_condvar     0.00
+       std_mutex       4.00
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         10.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_malloc____lost_wakeup ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.2, c2rust=16.2, overall=16.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1501898) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in dereference of `loom::sync::Arc
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260418_184847_6_compile: error[E0594]: cannot assign to data in an `Arc`
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.2
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         5.20
+  ║    static_mut      0.00
+  ║    unsafe          3.20
+  ║    ∑Lower          8.40
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         7.60
+  ║    std_condvar     2.00
+  ║    std_mutex       3.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         20.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1813633) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     └─ 20260418_184847_6_compile_c2rust: error[E0133]: call to unsafe function `main::malloc` is unsafe and req
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         33.40
+       raw_ptr         31.60
+       static_mut      0.00
+       unsafe          6.20
+       ∑Lower          71.20
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         1.40
+       std_condvar     0.40
+       std_mutex       0.60
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         4.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_multiple ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=9.8, c2rust=9.8, overall=9.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error: visibility `pub` is not followed by an item
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260419_083644_6_compile: error[E0432]: unresolved import `std::sync::Lazy`
+  ║    └─ 20260419_141851_6_compile: error[E0277]: `St` doesn't implement `std::fmt::Debug`
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+2 3 4
+
+Actual:
+0 1 2
+  ║    └─ 20260418_092505_6_compile: Test execution exceeded timeout
+  ║    └─ 20260418_184847_6_compile: Expected:
+2 3 4
+
+Actual:
+0 1 2
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 9.8
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.40
+  ║    pthread         0.00
+  ║    raw_ptr         3.20
+  ║    static_mut      1.80
+  ║    unsafe          5.40
+  ║    ∑Lower          13.80
+  ║  Higher is Better:
+  ║    arc_clone       3.00
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     2.00
+  ║    move_closure    1.60
+  ║    std_arc         10.20
+  ║    std_condvar     0.00
+  ║    std_mutex       5.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         23.80
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: visibility `pub` is not followed by an item
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `S1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `S1` in this scope
+     MIRI         Pass: 4/5 ❌
+     └─ 20260419_141851_6_compile_c2rust: error[E0277]: `St` doesn't implement `std::fmt::Debug`
+     OUTPUT       Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+2 3 4
+
+Actual:
+0 1 2
+     └─ 20260418_092505_6_compile_c2rust: Test execution exceeded timeout
+     └─ 20260418_184847_6_compile_c2rust: Expected:
+2 3 4
+
+Actual:
+0 1 2
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 9.8
+     └─ Failed: {'run': '20260419_141851_6_compile_c2rust', 'iterations': 20}
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.40
+       pthread         5.20
+       raw_ptr         9.20
+       static_mut      2.40
+       unsafe          7.00
+       ∑Lower          27.20
+     Higher is Better:
+       arc_clone       3.00
+       arc_mutex_combo 0.00
+       join_handle     1.60
+       move_closure    1.60
+       std_arc         8.60
+       std_condvar     0.00
+       std_mutex       4.00
+       std_rwlock      0.00
+       std_thread      1.60
+       ∑Higher         20.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_multiple____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=5.2, c2rust=5.2, overall=5.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `S1` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `id1` in this scope
+  ║    └─ 20260418_184847_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.2
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.00
+  ║    static_mut      0.00
+  ║    unsafe          1.60
+  ║    ∑Lower          5.60
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 3.60
+  ║    join_handle     3.00
+  ║    move_closure    1.80
+  ║    std_arc         11.40
+  ║    std_condvar     0.00
+  ║    std_mutex       9.60
+  ║    std_rwlock      0.00
+  ║    std_thread      3.00
+  ║    ∑Higher         34.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `S1` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `id1` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.00
+       pthread         0.00
+       raw_ptr         2.00
+       static_mut      0.00
+       unsafe          1.60
+       ∑Lower          5.60
+     Higher is Better:
+       arc_clone       1.80
+       arc_mutex_combo 3.60
+       join_handle     3.00
+       move_closure    1.80
+       std_arc         11.40
+       std_condvar     0.00
+       std_mutex       9.60
+       std_rwlock      0.00
+       std_thread      3.00
+       ∑Higher         34.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_nested ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=11.0, c2rust=11.0, overall=11.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║    └─ 20260418_092505_6_compile: error: prefix `pub` is unknown
+  ║    └─ 20260418_184847_6_compile: error: test failed, to rerun pass `--lib`
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0204]: the trait `std::marker::Copy` cannot be implemented for 
+  ║  OUTPUT       Pass: 3/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 11.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            5.20
+  ║    pthread         1.20
+  ║    raw_ptr         2.00
+  ║    static_mut      0.40
+  ║    unsafe          4.80
+  ║    ∑Lower          13.60
+  ║  Higher is Better:
+  ║    arc_clone       1.40
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.20
+  ║    move_closure    1.20
+  ║    std_arc         3.40
+  ║    std_condvar     0.00
+  ║    std_mutex       4.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         13.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 11.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.20
+       pthread         9.60
+       raw_ptr         11.00
+       static_mut      0.60
+       unsafe          5.60
+       ∑Lower          29.00
+     Higher is Better:
+       arc_clone       1.20
+       arc_mutex_combo 0.60
+       join_handle     1.00
+       move_closure    1.00
+       std_arc         2.40
+       std_condvar     0.00
+       std_mutex       3.00
+       std_rwlock      0.00
+       std_thread      1.00
+       ∑Higher         10.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_nested____self_lock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=5.4, c2rust=5.4, overall=5.4
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_092505_6_compile: thread 'main::test_concurrent_access' (1868608) panicked at /rustc/c75
+  ║    └─ 20260418_184847_6_compile: thread 'main::test_concurrent_access' (1813350) panicked at /rustc/c75
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.4
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.20
+  ║    pthread         0.00
+  ║    raw_ptr         2.20
+  ║    static_mut      0.20
+  ║    unsafe          4.40
+  ║    ∑Lower          10.00
+  ║  Higher is Better:
+  ║    arc_clone       2.40
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.80
+  ║    move_closure    1.80
+  ║    std_arc         4.80
+  ║    std_condvar     0.00
+  ║    std_mutex       4.20
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         17.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     └─ 20260418_092505_6_compile_c2rust: thread 'main::test_concurrent_access' (1887056) panicked at /rustc/c75
+     └─ 20260418_184847_6_compile_c2rust: thread 'main::test_concurrent_access' (1813652) panicked at /rustc/c75
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 5.4
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.20
+       pthread         0.00
+       raw_ptr         2.20
+       static_mut      0.20
+       unsafe          4.40
+       ∑Lower          10.00
+     Higher is Better:
+       arc_clone       2.40
+       arc_mutex_combo 0.80
+       join_handle     1.80
+       move_closure    1.80
+       std_arc         4.80
+       std_condvar     0.00
+       std_mutex       4.20
+       std_rwlock      0.00
+       std_thread      1.80
+       ∑Higher         17.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_simple ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=11.8, c2rust=11.8, overall=11.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║  MIRI         Pass: 3/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║    └─ 20260419_141851_6_compile: error[E0599]: no method named `as_ptr` found for struct `std::sync::Ar
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Expected:
+6 7 8 3
+
+Actual:
+0 1 2 3
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile: Expected:
+6 7 8 3
+
+Actual:
+0 1 2 3
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 3/5 ❌ | 平均迭代: 11.8
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            3.80
+  ║    pthread         0.00
+  ║    raw_ptr         2.60
+  ║    static_mut      0.60
+  ║    unsafe          4.80
+  ║    ∑Lower          11.80
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 1.40
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         5.60
+  ║    std_condvar     0.00
+  ║    std_mutex       8.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         22.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `S` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `INIT` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 2/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Expected:
+6 7 8 3
+
+Actual:
+0 1 2 3
+     └─ 20260418_184847_6_compile_c2rust: Expected:
+6 7 8 3
+
+Actual:
+0 1 2 3
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+6 7 8 3
+
+Actual:
+0 1 2 3
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 11.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            2.80
+       pthread         11.20
+       raw_ptr         12.40
+       static_mut      0.80
+       unsafe          6.60
+       ∑Lower          33.80
+     Higher is Better:
+       arc_clone       0.60
+       arc_mutex_combo 0.60
+       join_handle     1.20
+       move_closure    1.20
+       std_arc         2.60
+       std_condvar     0.00
+       std_mutex       3.80
+       std_rwlock      0.00
+       std_thread      1.20
+       ∑Higher         11.20
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_simple____partial_critical_section ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=8.0, c2rust=8.0, overall=8.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 8.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.20
+  ║    pthread         0.00
+  ║    raw_ptr         2.60
+  ║    static_mut      0.80
+  ║    unsafe          4.00
+  ║    ∑Lower          11.60
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 1.60
+  ║    join_handle     1.80
+  ║    move_closure    1.80
+  ║    std_arc         4.00
+  ║    std_condvar     0.00
+  ║    std_mutex       7.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         20.40
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error[E0425]: cannot find value `S` in this scope
+     └─ 20260418_184847_6_compile_c2rust: error[E0425]: cannot find value `S` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 8.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            3.40
+       pthread         5.60
+       raw_ptr         7.20
+       static_mut      1.00
+       unsafe          4.80
+       ∑Lower          22.00
+     Higher is Better:
+       arc_clone       1.80
+       arc_mutex_combo 1.60
+       join_handle     1.60
+       move_closure    1.60
+       std_arc         3.40
+       std_condvar     0.00
+       std_mutex       6.20
+       std_rwlock      0.00
+       std_thread      1.60
+       ∑Higher         17.80
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_spin ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.2, c2rust=16.2, overall=16.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_092505_6_compile: error[E0308]: mismatched types
+  ║    └─ 20260418_184847_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.2
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         4.00
+  ║    static_mut      0.00
+  ║    unsafe          2.00
+  ║    ∑Lower          6.00
+  ║  Higher is Better:
+  ║    arc_clone       1.80
+  ║    arc_mutex_combo 1.60
+  ║    join_handle     1.80
+  ║    move_closure    1.80
+  ║    std_arc         8.40
+  ║    std_condvar     0.00
+  ║    std_mutex       5.00
+  ║    std_rwlock      3.00
+  ║    std_thread      1.80
+  ║    ∑Higher         25.20
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 1/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0133]: call to unsafe function `main::pthread_mutex_init` is un
+     └─ 20260418_092505_6_compile_c2rust: error[E0133]: call to unsafe function `main::pthread_mutex_init` is un
+     └─ 20260418_184847_6_compile_c2rust: error[E0133]: call to unsafe function `main::pthread_mutex_init` is un
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 4/5 ❌
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+3 4 5
+
+Actual:
+1 2 3
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         44.80
+       raw_ptr         29.60
+       static_mut      0.00
+       unsafe          6.20
+       ∑Lower          80.60
+     Higher is Better:
+       arc_clone       0.40
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         1.20
+       std_condvar     0.00
+       std_mutex       1.00
+       std_rwlock      0.60
+       std_thread      0.40
+       ∑Higher         4.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_spin____lock_leak ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=4.8, c2rust=4.8, overall=4.8
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 3/5 ❌
+  ║    └─ 20260418_184847_6_compile: error: test failed, to rerun pass `--lib`
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  MIRI         Pass: 4/5 ❌
+  ║    └─ 20260419_083644_6_compile: error[E0308]: mismatched types
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 4/5 ❌ | 平均迭代: 4.8
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.00
+  ║    pthread         0.00
+  ║    raw_ptr         2.20
+  ║    static_mut      0.00
+  ║    unsafe          1.00
+  ║    ∑Lower          3.20
+  ║  Higher is Better:
+  ║    arc_clone       2.00
+  ║    arc_mutex_combo 1.80
+  ║    join_handle     2.00
+  ║    move_closure    2.00
+  ║    std_arc         8.20
+  ║    std_condvar     0.00
+  ║    std_mutex       7.00
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         25.00
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 3/5 ❌
+     └─ 20260418_184847_6_compile_c2rust: error: test failed, to rerun pass `--lib`
+     └─ 20260419_083644_6_compile_c2rust: error[E0133]: call to unsafe function `main::pthread_mutex_init` is un
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 4.8
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         11.20
+       raw_ptr         8.20
+       static_mut      0.00
+       unsafe          2.00
+       ∑Lower          21.40
+     Higher is Better:
+       arc_clone       1.60
+       arc_mutex_combo 1.20
+       join_handle     1.60
+       move_closure    1.60
+       std_arc         6.80
+       std_condvar     0.00
+       std_mutex       5.60
+       std_rwlock      0.00
+       std_thread      1.60
+       ∑Higher         20.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_timedwait ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=17.2, c2rust=17.2, overall=17.2
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `SHARED_STATE` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `SHARED_STATE` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `SHARED_STATE` in this scope
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0599]: no method named `wait_until` found for struct `std::sync
+  ║    └─ 20260418_184847_6_compile: error[E0382]: use of moved value: `guard`
+  ║    └─ 20260419_083644_6_compile: error[E0599]: no method named `wait_until` found for struct `std::sync
+  ║  OUTPUT       Pass: 1/5 ❌
+  ║    └─ 20260418_092505_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260418_184847_6_compile:     Updating crates.io index
+     Locking 3 packages to latest compati
+  ║    └─ 20260419_083644_6_compile:     Updating crates.io index
+    Blocking waiting for file lock on pac
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 17.2
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_083644_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            0.20
+  ║    pthread         0.00
+  ║    raw_ptr         0.40
+  ║    static_mut      0.20
+  ║    unsafe          1.80
+  ║    ∑Lower          2.60
+  ║  Higher is Better:
+  ║    arc_clone       3.40
+  ║    arc_mutex_combo 1.60
+  ║    join_handle     2.00
+  ║    move_closure    1.20
+  ║    std_arc         4.40
+  ║    std_condvar     2.60
+  ║    std_mutex       6.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         23.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error[E0425]: cannot find value `SHARED_STATE` in this scope
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 5/5 ✅
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 17.2
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         33.60
+       raw_ptr         24.00
+       static_mut      0.80
+       unsafe          7.20
+       ∑Lower          65.60
+     Higher is Better:
+       arc_clone       0.80
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         0.60
+       std_condvar     0.60
+       std_mutex       1.80
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         5.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_timedwait____deadlock ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=16.6, c2rust=16.6, overall=16.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `INIT` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║    └─ 20260418_184847_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║  MIRI         Pass: 1/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0609]: no field `n1` on type `std::sync::MutexGuard<'_, ()>`
+  ║    └─ 20260418_092505_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║    └─ 20260418_184847_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 1/5 ❌ | 平均迭代: 16.6
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            2.40
+  ║    pthread         0.00
+  ║    raw_ptr         0.40
+  ║    static_mut      0.40
+  ║    unsafe          3.60
+  ║    ∑Lower          6.80
+  ║  Higher is Better:
+  ║    arc_clone       3.60
+  ║    arc_mutex_combo 0.20
+  ║    join_handle     2.00
+  ║    move_closure    1.60
+  ║    std_arc         5.60
+  ║    std_condvar     2.20
+  ║    std_mutex       5.40
+  ║    std_rwlock      0.00
+  ║    std_thread      2.00
+  ║    ∑Higher         22.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 16.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.40
+       pthread         37.20
+       raw_ptr         25.20
+       static_mut      1.60
+       unsafe          8.40
+       ∑Lower          72.80
+     Higher is Better:
+       arc_clone       0.60
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.40
+       std_arc         1.40
+       std_condvar     0.40
+       std_mutex       1.80
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         5.40
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: struct_timedwait____lost_wakeup ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=20.0, c2rust=20.0, overall=20.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0425]: cannot find value `S` in this scope
+  ║    └─ 20260418_092505_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║    └─ 20260418_184847_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║  MIRI         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: error[E0382]: the type `Arc` does not implement `Copy`
+  ║    └─ 20260418_092505_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║    └─ 20260418_184847_6_compile: error[E0255]: the name `timespec` is defined multiple times
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 0/5 ❌ | 平均迭代: 20.0
+  ║    └─ Failed: {'run': '20260417_200854_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.80
+  ║    pthread         0.00
+  ║    raw_ptr         0.00
+  ║    static_mut      0.60
+  ║    unsafe          3.00
+  ║    ∑Lower          5.40
+  ║  Higher is Better:
+  ║    arc_clone       4.40
+  ║    arc_mutex_combo 1.00
+  ║    join_handle     1.80
+  ║    move_closure    1.80
+  ║    std_arc         8.00
+  ║    std_condvar     2.00
+  ║    std_mutex       5.80
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         26.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 20.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            0.00
+       pthread         39.00
+       raw_ptr         29.40
+       static_mut      1.00
+       unsafe          9.00
+       ∑Lower          78.40
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.00
+       move_closure    0.00
+       std_arc         0.00
+       std_condvar     0.00
+       std_mutex       0.00
+       std_rwlock      0.00
+       std_thread      0.00
+       ∑Higher         0.00
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: unused_func ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=1.6, c2rust=1.6, overall=1.6
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 4/5 ❌
+  ║    └─ 20260419_141851_6_compile: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+  ║  MIRI         Pass: 5/5 ✅
+  ║  OUTPUT       Pass: 4/5 ❌
+  ║    └─ 20260419_083644_6_compile: Expected:
+2
+
+Actual:
+0
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_092505_6_compile: Clippy warnings: 0
+  ║    └─ 20260418_184847_6_compile: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.6
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            1.00
+  ║    pthread         0.00
+  ║    raw_ptr         0.60
+  ║    static_mut      0.20
+  ║    unsafe          1.20
+  ║    ∑Lower          3.00
+  ║  Higher is Better:
+  ║    arc_clone       1.60
+  ║    arc_mutex_combo 0.00
+  ║    join_handle     1.80
+  ║    move_closure    1.60
+  ║    std_arc         5.80
+  ║    std_condvar     0.00
+  ║    std_mutex       4.00
+  ║    std_rwlock      0.00
+  ║    std_thread      1.80
+  ║    ∑Higher         16.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 4/5 ❌
+     └─ 20260419_141851_6_compile_c2rust: error[E0425]: cannot find value `NUM_MUTEX` in this scope
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 4/5 ❌
+     └─ 20260419_083644_6_compile_c2rust: Expected:
+2
+
+Actual:
+0
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_092505_6_compile_c2rust: Clippy warnings: 0
+     └─ 20260418_184847_6_compile_c2rust: Clippy warnings: 0
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 1.6
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.00
+       pthread         0.00
+       raw_ptr         0.60
+       static_mut      0.20
+       unsafe          1.20
+       ∑Lower          3.00
+     Higher is Better:
+       arc_clone       1.60
+       arc_mutex_combo 0.00
+       join_handle     1.80
+       move_closure    1.60
+       std_arc         5.80
+       std_condvar     0.00
+       std_mutex       4.00
+       std_rwlock      0.00
+       std_thread      1.80
+       ∑Higher         16.60
+
+
+▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ Example: unused_func____lock_mismatch ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+  平均迭代次数: non-c2rust=13.0, c2rust=13.0, overall=13.0
+
+  ╔══ NON-C2RUST GROUP (5 runs) ══
+  ║  LOOM         Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: thread 'main::test_concurrent_access' (1508243) panicked at /rustc/c75
+  ║    └─ 20260418_092505_6_compile: error[E0425]: cannot find value `NUM_MUTEX1` in this scope
+  ║    └─ 20260418_184847_6_compile: error[E0425]: cannot find value `NUM_MUTEX1` in this scope
+  ║  MIRI         Pass: 2/5 ❌
+  ║    └─ 20260418_092505_6_compile: error[E0716]: temporary value dropped while borrowed
+  ║    └─ 20260418_184847_6_compile: error[E0015]: cannot call non-const associated function `PthreadMutex:
+  ║    └─ 20260419_141851_6_compile: error[E0015]: cannot call non-const associated function `MutexWrapper:
+  ║  OUTPUT       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+  ║  CLIPPY       Pass: 0/5 ❌
+  ║    └─ 20260417_200854_6_compile: 
+  ║    └─ 20260418_092505_6_compile: 
+  ║    └─ 20260418_184847_6_compile: 
+     编译通过率        Pass: 2/5 ❌ | 平均迭代: 13.0
+  ║    └─ Failed: {'run': '20260418_092505_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260418_184847_6_compile', 'iterations': 20}
+  ║    └─ Failed: {'run': '20260419_141851_6_compile', 'iterations': 20}
+  ║
+  ╠══ Metrics Average (LLM) ══
+  ║  Lower is Better (excluding lines):
+  ║    libc            4.20
+  ║    pthread         0.00
+  ║    raw_ptr         2.60
+  ║    static_mut      0.60
+  ║    unsafe          5.80
+  ║    ∑Lower          13.20
+  ║  Higher is Better:
+  ║    arc_clone       0.40
+  ║    arc_mutex_combo 0.80
+  ║    join_handle     1.20
+  ║    move_closure    0.40
+  ║    std_arc         2.20
+  ║    std_condvar     0.00
+  ║    std_mutex       4.40
+  ║    std_rwlock      0.00
+  ║    std_thread      1.20
+  ║    ∑Higher         10.60
+  ║
+  ╚══ C2RUST GROUP (5 runs) ══
+     LOOM         Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: thread 'main::test_concurrent_access' (1852006) panicked at /rustc/c75
+     └─ 20260418_092505_6_compile_c2rust: error: prefix `pub` is unknown
+     └─ 20260418_184847_6_compile_c2rust: error: prefix `pub` is unknown
+     MIRI         Pass: 5/5 ✅
+     OUTPUT       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     CLIPPY       Pass: 0/5 ❌
+     └─ 20260417_200854_6_compile_c2rust: 
+     └─ 20260418_092505_6_compile_c2rust: 
+     └─ 20260418_184847_6_compile_c2rust: 
+     编译通过率        Pass: 5/5 ✅ | 平均迭代: 13.0
+
+  ╠══ Metrics Average (LLM) ══
+     Lower is Better (excluding lines):
+       libc            1.60
+       pthread         16.80
+       raw_ptr         17.20
+       static_mut      2.00
+       unsafe          7.20
+       ∑Lower          44.80
+     Higher is Better:
+       arc_clone       0.00
+       arc_mutex_combo 0.00
+       join_handle     0.40
+       move_closure    0.00
+       std_arc         0.40
+       std_condvar     0.00
+       std_mutex       1.60
+       std_rwlock      0.00
+       std_thread      0.40
+       ∑Higher         2.80

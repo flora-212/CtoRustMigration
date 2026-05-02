@@ -1,0 +1,218 @@
+{
+  "timestamp": "2026-04-21T12:10:02.545125",
+  "total": 30,
+  "passed": 9,
+  "failed": 21,
+  "results": {
+    "array_const": {
+      "example_name": "array_const",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.070270299911499,
+      "details": ""
+    },
+    "array_main": {
+      "example_name": "array_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 1.089918613433838,
+      "details": "Expected:\n4 4 4 4 4\n\nActual:\n2 2 2 2 2"
+    },
+    "array_simple": {
+      "example_name": "array_simple",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_array_simple_sepyhdk8)\nerror[E0308]: mismatched types\n   --> src/main.rs:59:13\n    |\n 58 |         libc::printf(\n    |         ------------ arguments to this function are incorrect\n 59 |             b\"%d %d %d %d %d\\n\\0\".as_ptr(),\n    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    },
+    "global_assume": {
+      "example_name": "global_assume",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 1.0779588222503662,
+      "details": ""
+    },
+    "global_assume2": {
+      "example_name": "global_assume2",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_global_assume2_jvme25nh)\nerror[E0425]: cannot find function `pthread_mutex_lock` in this scope\n  --> src/main.rs:90:5\n   |\n90 |     pthread_mutex_lock(&raw mut num_mutex);\n   |     ^^^^^^^^^^^^^^^^^^ not found in this scope\n   |\nhelp: consider importing this function\n   |\n 1 +"
+    },
+    "global_check": {
+      "example_name": "global_check",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_global_check_jn4b6q86)\nerror[E0425]: cannot find function `pthread_mutex_lock` in this scope\n  --> src/main.rs:69:5\n   |\n69 |     pthread_mutex_lock(&mut m);\n   |     ^^^^^^^^^^^^^^^^^^ not found in this scope\n   |\nhelp: consider importing this function\n   |\n 1 + use libc::pth"
+    },
+    "global_condvar": {
+      "example_name": "global_condvar",
+      "success": false,
+      "message": "\u23f1\ufe0f  Timeout (>300s)",
+      "time_sec": 300,
+      "details": "Test execution exceeded timeout"
+    },
+    "global_custom": {
+      "example_name": "global_custom",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.888995885848999,
+      "details": "Expected:\n8\n\nActual:\n6"
+    },
+    "global_main": {
+      "example_name": "global_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.9230091571807861,
+      "details": "Expected:\n4\n\nActual:\n2"
+    },
+    "global_nested": {
+      "example_name": "global_nested",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.9063780307769775,
+      "details": ""
+    },
+    "global_read": {
+      "example_name": "global_read",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8469114303588867,
+      "details": ""
+    },
+    "global_rwlock": {
+      "example_name": "global_rwlock",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_global_rwlock_358aggh8)\nwarning: unused import: `Arc`\n --> src/main.rs:1:17\n  |\n1 | use std::sync::{Arc, Mutex};\n  |                 ^^^\n  |\n  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default\n\nwarning: unused import: `std::ffi::CStr`\n --> src/main.rs"
+    },
+    "global_simple": {
+      "example_name": "global_simple",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.9222991466522217,
+      "details": ""
+    },
+    "global_trylock": {
+      "example_name": "global_trylock",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.8940722942352295,
+      "details": "Expected:\n8\n\nActual:\n0"
+    },
+    "global_while": {
+      "example_name": "global_while",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8898804187774658,
+      "details": ""
+    },
+    "struct_alias": {
+      "example_name": "struct_alias",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_alias_pmgahlz1)\nerror[E0015]: cannot call non-const associated function `Arc::<std::sync::Mutex<St>>::new` in statics\n  --> src/main.rs:16:33\n   |\n16 |   pub static S1: Arc<Mutex<St>> = Arc::new(M...\n   |  _________________________________^\n17 | |     n1: 0,\n18 | |     "
+    },
+    "struct_assume": {
+      "example_name": "struct_assume",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.9104409217834473,
+      "details": ""
+    },
+    "struct_condvar": {
+      "example_name": "struct_condvar",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_condvar_3hpl4mnm)\nerror[E0594]: cannot assign to data in an `Arc`\n  --> src/main.rs:33:5\n   |\n33 |     s.n1 += 1;\n   |     ^^^^^^^^^ cannot assign\n   |\n   = help: trait `DerefMut` is required to modify through a dereference, but it is not implemented for `Arc<SharedData"
+    },
+    "struct_dup": {
+      "example_name": "struct_dup",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.9527719020843506,
+      "details": "Expected:\n8 1\n10 3\n\nActual:\n0 1\n2 3"
+    },
+    "struct_empty": {
+      "example_name": "struct_empty",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_empty_czbkter7)\nerror[E0015]: cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics\n  --> src/main.rs:12:29\n   |\n12 |   static S1: Arc<Mutex<Ss>> = Arc::new(Mutex...\n   |  _____________________________^\n13 | |     n: 0,\n14 | |     m: Mu"
+    },
+    "struct_init": {
+      "example_name": "struct_init",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_init_c5qxfj3g)\nerror[E0614]: type `Ss` cannot be dereferenced\n  --> src/main.rs:29:19\n   |\n29 | ...1 = &mut **S1.lock().unwrap() as *mut Ss;\n   |             ^^^^^^^^^^^^^^^^^^^^ can't be dereferenced\n\nerror[E0614]: type `Ss` cannot be dereferenced\n  --> src/main.rs:30:"
+    },
+    "struct_main": {
+      "example_name": "struct_main",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.9692375659942627,
+      "details": "Expected:\n4\n\nActual:\n0"
+    },
+    "struct_malloc": {
+      "example_name": "struct_malloc",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_malloc_33kakd1n)\nerror[E0308]: mismatched types\n  --> src/main.rs:18:22\n   |\n18 |             s.c.wait(&mut guard);\n   |                 ---- ^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n   |                 |\n   |                 arguments t"
+    },
+    "struct_malloc2": {
+      "example_name": "struct_malloc2",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_malloc2_q_246c84)\nwarning: variable does not need to be mutable\n  --> src/main.rs:25:9\n   |\n25 |     let mut guard = s.m.lock().unwrap();\n   |         ----^^^^^\n   |         |\n   |         help: remove this `mut`\n   |\n   = note: `#[warn(unused_mut)]` (part of `#[warn(un"
+    },
+    "struct_multiple": {
+      "example_name": "struct_multiple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.861046314239502,
+      "details": "Expected:\n2 3 4\n\nActual:\n0 1 2"
+    },
+    "struct_nested": {
+      "example_name": "struct_nested",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling once_cell v1.21.4\n   Compiling lazy_static v1.5.0\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_nested_rxul8sjt)\nwarning: unused import: `std::ffi::CString`\n --> src/main.rs:3:5\n  |\n3 | use std::ffi::CString;\n  |     ^^^^^^^^^^^^^^^^^\n  |\n  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default\n\nerror[E0308]: mismatched types\n   --> src/main.r"
+    },
+    "struct_simple": {
+      "example_name": "struct_simple",
+      "success": false,
+      "message": "\u274c Output mismatch",
+      "time_sec": 0.8610429763793945,
+      "details": "Expected:\n6 7 8 3\n\nActual:\n0 1 2 3"
+    },
+    "struct_spin": {
+      "example_name": "struct_spin",
+      "success": false,
+      "message": "\u274c Build failed",
+      "time_sec": 0.0,
+      "details": "    Updating crates.io index\n     Locking 3 packages to latest compatible versions\n   Compiling libc v0.2.185\n   Compiling lazy_static v1.5.0\n   Compiling once_cell v1.21.4\n   Compiling output_test v0.1.0 (/tmp/output_test_struct_spin_vseen08x)\nerror[E0308]: mismatched types\n  --> src/main.rs:40:31\n   |\n40 |     let s_clone1 = Arc::clone(&s);\n   |                    ---------- ^^ expected `&Arc<_, _>`, found `&Ss`\n   |                    |\n   |                    arguments to this function are i"
+    },
+    "struct_timedwait": {
+      "example_name": "struct_timedwait",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.8745706081390381,
+      "details": ""
+    },
+    "unused_func": {
+      "example_name": "unused_func",
+      "success": true,
+      "message": "\u2705 Output verification passed",
+      "time_sec": 0.9384949207305908,
+      "details": ""
+    }
+  }
+}

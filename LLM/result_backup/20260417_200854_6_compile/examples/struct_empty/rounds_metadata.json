@@ -1,0 +1,1252 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:05:32.012632",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 3
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 41,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 38,
+              "column": 36,
+              "details": "|\n38 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n39 | |             let s = Arc::clone(&s_clone);\n40 | |             let s = unsafe { &mut *s.lock().unwrap() };\n41 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n42 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 2 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:05:54.284293",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:06:18.249063",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:06:42.682917",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:07:12.741396",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:08:04.470000",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:08:37.860357",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:09:09.734773",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:09:42.711301",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:10:16.530456",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:11:18.371004",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpsgd1cgca)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:12:46.761365",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 1
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "failed to get `lazy_static` as a dependency of package `c2rust_out v0.0.0 (/tmp/tmpne_uo0m0)`",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:13:13.880918",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:13:46.654065",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:14:18.143737",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:14:48.980622",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:15:21.150984",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:15:54.086234",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:16:27.457289",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-17T22:17:02.883027",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 5
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0015",
+              "message": "cannot call non-const associated function `Arc::<std::sync::Mutex<Ss>>::new` in statics",
+              "location": "main.rs",
+              "line": 12,
+              "column": 29,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0606",
+              "message": "casting `&mut *mut Ss` as `*mut Ss` is invalid",
+              "location": "main.rs",
+              "line": 44,
+              "column": 19,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut Ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 41,
+              "column": 36,
+              "details": "|\n41 |           let handle = thread::spawn(move || {\n|  ______________________-------------_^\n| |                      |\n| |                      required by a bound introduced by this call\n42 | |             let s = Arc::clone(&s_clone);\n43 | |             let s = unsafe { &mut *s.lock().unwrap() };\n44 | |             t_fun(s as *mut Ss as *mut libc::c_void);\n45 | |         });\n| |_________^ `*mut Ss` cannot be sent between threads safely\n|\n= help: the trait `Send` is not implemented for `*mut"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0596",
+              "message": "cannot borrow `s1` as mutable, as it is not declared as mutable",
+              "location": "main.rs",
+              "line": 24,
+              "column": 14,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 4 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,820 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:10:42.686138",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 4
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0308",
+              "message": "mismatched types",
+              "location": "main.rs",
+              "line": 18,
+              "column": 18,
+              "details": "|\n18 |         s.c.wait(&mut s.m.lock().unwrap());\n|             ---- ^^^^^^^^^^^^^^^^^^^^^^^^ expected `MutexGuard<'_, _>`, found `&mut MutexGuard<'_, ()>`\n|             |\n|             arguments to this method are incorrect\n|\n= note:         expected struct `std::sync::MutexGuard<'_, _>`\nfound mutable reference `&mut std::sync::MutexGuard<'_, ()>`"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0599",
+              "message": "no method named `unlock` found for struct `std::sync::Mutex<T>` in the current scope",
+              "location": "main.rs",
+              "line": 19,
+              "column": 13,
+              "details": "|"
+            },
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 3 previous errors",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:11:03.124470",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:11:24.857324",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "4": {
+    "round": 4,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:11:46.747621",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "5": {
+    "round": 5,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:12:09.583315",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "6": {
+    "round": 6,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:12:39.369634",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "7": {
+    "round": 7,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:13:09.372521",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "8": {
+    "round": 8,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:13:39.432650",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "9": {
+    "round": 9,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:14:09.383551",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "10": {
+    "round": 10,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:14:39.147890",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "11": {
+    "round": 11,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:15:09.287285",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "12": {
+    "round": 12,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:15:39.940288",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "13": {
+    "round": 13,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:16:10.262223",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "14": {
+    "round": 14,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:16:40.562587",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "15": {
+    "round": 15,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:17:10.835265",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "16": {
+    "round": 16,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:17:41.224652",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "17": {
+    "round": 17,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:18:11.834954",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "18": {
+    "round": 18,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:18:42.588131",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "19": {
+    "round": 19,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:19:14.251785",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "20": {
+    "round": 20,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T20:19:46.445444",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 50,
+              "column": 32,
+              "details": "|\n50 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

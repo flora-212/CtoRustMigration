@@ -1,0 +1,103 @@
+{
+  "1": {
+    "round": 1,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:46:58.723636",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`*mut ss` cannot be sent between threads safely",
+              "location": "main.rs",
+              "line": 42,
+              "column": 36,
+              "details": "|\n42 |           let handle = thread::spawn(move || {\n|                        ------------- ^------\n|                        |             |\n|  ______________________|_____________within this `{closure@main.rs:42:36: 42:43}`\n| |                      |\n| |                      required by a bound introduced by this call\n43 | |             unsafe {\n44 | |                 t_fun(s_clone as *mut libc::c_void);\n45 | |             }\n46 | |         });\n| |_________^ `*mut ss` cannot be sent between thr"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "2": {
+    "round": 2,
+    "passed": false,
+    "compile_status": false,
+    "timestamp": "2026-04-19T09:47:19.674246",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 1,
+        "total_errors": 2
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": false,
+          "message": "Compilation failed",
+          "errors": [
+            {
+              "type": "compile_error",
+              "code": "E0277",
+              "message": "`ss` doesn't implement `Debug`",
+              "location": "main.rs",
+              "line": 53,
+              "column": 32,
+              "details": "|\n53 |     let s = Arc::try_unwrap(s).unwrap();\n|                                ^^^^^^ the trait `Debug` is not implemented for `ss`\n|\n= note: add `#[derive(Debug)]` to `ss` or manually `impl Debug for ss`"
+            },
+            {
+              "type": "compile_error",
+              "code": "",
+              "message": "could not compile `c2rust_out` (lib) due to 1 previous error",
+              "location": "",
+              "line": -1,
+              "column": -1,
+              "details": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "3": {
+    "round": 3,
+    "passed": true,
+    "compile_status": true,
+    "timestamp": "2026-04-19T09:47:42.719293",
+    "errors": {
+      "summary": {
+        "total_checks": 1,
+        "failed_checks": 0,
+        "total_errors": 0
+      },
+      "results": [
+        {
+          "category": "compile",
+          "passed": true,
+          "message": "Code compiles successfully",
+          "errors": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+use std::sync::{Arc, Mutex};
+use std::thread;
+use std::ptr;
+
+#[derive(Debug)]
+struct SharedState {
+    n1: i32,
+    m1: Mutex<()>,
+    cond: std::sync::Condvar,
+}
+
+static S: Lazy<Arc<SharedState>> = Lazy::new(|| {
+    Arc::new(SharedState {
+        n1: 0,
+        m1: Mutex::new(()),
+        cond: std::sync::Condvar::new(),
+    })
+});
+
+unsafe extern "C" fn f1() {
+    let s = S.clone();
+    let mut guard = s.m1.lock().unwrap();
+    s.n1 += 1;
+    if s.n1 == 1 {
+        guard = s.cond.wait(guard).unwrap();
+    } else {
+        s.cond.notify_one();
+    }
+}
+
+unsafe extern "C" fn t_fun(_arg: *mut libc::c_void) -> *mut libc::c_void {
+    f1();
+    ptr::null_mut()
+}
+
+fn main_0() -> libc::c_int {
+    let s = S.clone();
+    let mut handles = vec![];
+
+    for _ in 0..2 {
+        let s_clone = s.clone();
+        let handle = thread::spawn(move || {
+            unsafe { t_fun(ptr::null_mut()) };
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    unsafe {
+        libc::printf(b"%d\n\0".as_ptr() as *const libc::c_char, s.n1);
+    }
+
+    0
+}
+
+fn main() {
+    unsafe { std::process::exit(main_0() as i32) }
+}
