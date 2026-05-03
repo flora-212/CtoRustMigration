@@ -117,29 +117,89 @@ def replace_global_var_access(test_body: str, global_statics: Dict[str, Dict]) -
     result = test_body
     
     for var_name, info in global_statics.items():
-        if not info['is_mut']:
-            continue
-        
         marker = f"__STATE_{var_name.upper()}_MARKER__"
-        
+
         result = re.sub(
             rf'state\.{re.escape(var_name)}',
             marker,
             result
         )
-        
-        array_pattern = rf'\b{re.escape(var_name)}\s*\[([^\]]*)\]'
-        array_replacement = rf'state.{var_name}.lock().unwrap()[\1]'
-        result = re.sub(array_pattern, array_replacement, result)
-        
-        assign_pattern = rf'\b{re.escape(var_name)}\b\s*(?=[+\-*/%]?=)'
-        assign_replacement = rf'*state.{var_name}.lock().unwrap()'
-        result = re.sub(assign_pattern, assign_replacement, result)
-        
-        bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
-        bare_replacement = rf'*state.{var_name}.lock().unwrap()'
-        result = re.sub(bare_pattern, bare_replacement, result)
-        
+
+        var_type = info.get('type', '').strip()
+        is_mut = info.get('is_mut', False)
+
+        # Immutable globals still live in State and should be accessed via state.var.
+        if not is_mut:
+            if '[' in var_type:
+                array_pattern = rf'\b{re.escape(var_name)}\s*\[([^\]]*)\]'
+                array_replacement = rf'state.{var_name}[\1]'
+                result = re.sub(array_pattern, array_replacement, result)
+            elif 'Mutex' in var_type:
+                lock_pattern = rf'\b{re.escape(var_name)}\b(?=\s*\.lock\s*\()'
+                lock_replacement = rf'state.{var_name}'
+                result = re.sub(lock_pattern, lock_replacement, result)
+
+                bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
+                bare_replacement = rf'state.{var_name}'
+                result = re.sub(bare_pattern, bare_replacement, result)
+            else:
+                bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
+                bare_replacement = rf'state.{var_name}'
+                result = re.sub(bare_pattern, bare_replacement, result)
+
+            result = result.replace(marker, f'state.{var_name}')
+            continue
+
+        # Per-element Mutex array (keep array of Mutex, no outer Mutex)
+        if '[' in var_type and 'Mutex' in var_type:
+            array_pattern = rf'\b{re.escape(var_name)}\s*\[([^\]]*)\]'
+            array_replacement = rf'(*state.{var_name})[\1].lock().unwrap()'
+            result = re.sub(array_pattern, array_replacement, result)
+
+            assign_pattern = rf'\b{re.escape(var_name)}\b\s*(?=[+\-*/%]?=)'
+            assign_replacement = rf'(*state.{var_name})'
+            result = re.sub(assign_pattern, assign_replacement, result)
+
+            bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
+            bare_replacement = rf'(*state.{var_name})'
+            result = re.sub(bare_pattern, bare_replacement, result)
+
+        # Plain mutable fixed-size array -> use UnsafeCell inside Arc
+        elif var_type.startswith('['):
+            # Replace array indexing with a mutable reference obtained inside unsafe,
+            # so compound assignments like `n1[i] += 1` become valid:
+            # `unsafe { &mut *state.n1.get() }[i] += 1;`
+            array_pattern = rf'\b{re.escape(var_name)}\s*\[([^\]]*)\]'
+            array_replacement = rf'unsafe {{ &mut *state.{var_name}.get() }}[\1]'
+            result = re.sub(array_pattern, array_replacement, result)
+
+            # Bare uses of the array as a whole (rare) -> produce unsafe &mut deref
+            assign_pattern = rf'\b{re.escape(var_name)}\b\s*(?=[+\-*/%]?=)'
+            assign_replacement = rf'unsafe {{ &mut *state.{var_name}.get() }}'
+            result = re.sub(assign_pattern, assign_replacement, result)
+
+            bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
+            bare_replacement = rf'unsafe {{ &mut *state.{var_name}.get() }}'
+            result = re.sub(bare_pattern, bare_replacement, result)
+
+        # Default: outer Mutex style (existing behavior)
+        else:
+            lock_pattern = rf'\b{re.escape(var_name)}\b(?=\s*\.lock\s*\()'
+            lock_replacement = rf'state.{var_name}'
+            result = re.sub(lock_pattern, lock_replacement, result)
+
+            array_pattern = rf'\b{re.escape(var_name)}\s*\[([^\]]*)\]'
+            array_replacement = rf'state.{var_name}.lock().unwrap()[\1]'
+            result = re.sub(array_pattern, array_replacement, result)
+
+            assign_pattern = rf'\b{re.escape(var_name)}\b\s*(?=[+\-*/%]?=)'
+            assign_replacement = rf'*state.{var_name}.lock().unwrap()'
+            result = re.sub(assign_pattern, assign_replacement, result)
+
+            bare_pattern = rf'(?<!\.)\b{re.escape(var_name)}\b(?![.\[\+\-\*/%=])'
+            bare_replacement = rf'*state.{var_name}.lock().unwrap()'
+            result = re.sub(bare_pattern, bare_replacement, result)
+
         result = result.replace(marker, f'state.{var_name}')
     
     return result

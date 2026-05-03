@@ -86,65 +86,34 @@ def convert_main_to_loom_model(content: str) -> str:
                 content = update_function_calls(content, func_name, var_name)
     
     if enable_sig_update and all_global_statics:
+        processed_funcs = set()
+
         for var_name, var_info in all_global_statics.items():
             if var_name in once_statics:
                 continue
-            
-            var_type = var_info['type']
-            is_mutable_type = 'Mutex' in var_type or 'Arc' in var_type or var_info['is_mut']
-            
-            if not is_mutable_type:
-                continue
-            
+
             using_funcs = find_functions_using_var(content, var_name)
-            
-            if using_funcs:
-                extern_c_funcs = []
-                regular_funcs = []
-                
-                for func_info in using_funcs:
-                    if 'extern "C"' in func_info['full']:
-                        extern_c_funcs.append(func_info)
-                    else:
-                        regular_funcs.append(func_info)
-                
-                for func_info in regular_funcs:
-                    func_name = func_info['name']
-                    func_full = func_info['full']
-                    
-                    if func_name in ['main', 'main_0', 'test_concurrent_access']:
-                        continue
-                    
-                    if var_info['is_mut'] and not ('Mutex' in var_type or 'Arc' in var_type):
-                        param_type = f"&mut {var_type}"
-                    else:
-                        param_type = var_type
-                    
-                    updated_sig = update_function_signature(func_full, var_name, param_type)
-                    
-                    if updated_sig != func_full:
-                        content = content.replace(func_info['full'], updated_sig)
-                    
-                    content = update_function_calls(content, func_name, var_name)
-                
-                for func_info in extern_c_funcs:
-                    func_name = func_info['name']
-                    func_full = func_info['full']
-                    
-                    if func_info['full'].count('\n') < 2:
-                        continue
-                    
-                    if var_info['is_mut'] and not ('Mutex' in var_type or 'Arc' in var_type):
-                        param_type = f"&mut {var_type}"
-                    else:
-                        param_type = var_type
-                    
-                    updated_sig = update_function_signature(func_full, var_name, param_type)
-                    
-                    if updated_sig != func_full:
-                        content = content.replace(func_info['full'], updated_sig)
-                    
-                    content = update_function_calls(content, func_name, var_name)
+            if not using_funcs:
+                continue
+
+            for func_info in using_funcs:
+                func_name = func_info['name']
+                func_full = func_info['full']
+
+                if func_name in ['main', 'main_0', 'test_concurrent_access']:
+                    continue
+
+                if func_name in processed_funcs:
+                    continue
+
+                updated_sig = update_function_signature(func_full, 'state', '&State')
+                updated_sig = replace_global_var_access(updated_sig, all_global_statics)
+
+                if updated_sig != func_full:
+                    content = content.replace(func_full, updated_sig)
+
+                content = update_function_calls(content, func_name, 'state')
+                processed_funcs.add(func_name)
     
     main_0_body = extract_function_body(content, 'main_0')
     
@@ -248,6 +217,13 @@ def convert_main_to_loom_model(content: str) -> str:
     
     if main_0_body and all_global_statics:
         main_0_body = replace_global_var_access(main_0_body, all_global_statics)
+
+    if main_0_body:
+        main_0_body = re.sub(
+            r'\bt_fun\s*\(\s*ptr::null_mut\(\)\s*\)',
+            'f1(&state)',
+            main_0_body,
+        )
     
     unsafe_funcs = []
     if main_0_body:
@@ -437,6 +413,18 @@ fn test_concurrent_access() {
         original = var_info['full_match']
         pattern = rf'(?:^[ \t]*#\[[^\]]+\]\s*\n)?[ \t]*{re.escape(original)}\s*\n?'
         content = re.sub(pattern, '', content, flags=re.MULTILINE)
+
+    # Remove helper C thread wrapper `t_fun` if present (not needed in loom tests)
+    content = re.sub(
+        r'(?ms)^\s*(?:#\[[^\]]+\]\s*\n\s*)*(?:pub\s+)?(?:unsafe\s+)?extern\s+"C"\s+fn\s+t_fun\s*\([^\)]*\)\s*(?:->\s*[^\{]+)?\s*\{.*?^\s*\}\s*\n?',
+        '',
+        content,
+    )
+    content = re.sub(
+        r'(?ms)^\s*#\[no_mangle\]\s*\n\s*pub\s+extern\s+"C"\s+fn\s+t_fun\s*\([^\)]*\)\s*->\s*[^\{]+\{.*?^\s*\}\s*\n?',
+        '',
+        content,
+    )
     
     content = re.sub(r'\n\n\n+', '\n\n', content)
     
@@ -466,6 +454,9 @@ fn test_concurrent_access() {
         content = re.sub(rf'use loom::sync::{re.escape(unused_type)};\s*\n', '', content)
         content = re.sub(rf'use std::sync::{re.escape(unused_type)};\s*\n', '', content)
     
+    content = re.sub(r'pub\s*#\s*\[\s*no_mangle\s*\]', '#[no_mangle]', content)
+    content = re.sub(r'pub#\s*\[\s*no_mangle\s*\]', '#[no_mangle]', content)
+    content = re.sub(r'(?m)^\s*#\[no_mangle\]\s*\n(?:\s*#\[no_mangle\]\s*\n)+', '#[no_mangle]\n', content)
     content = re.sub(r'(#\[no_mangle\]\s*)+#\[no_mangle\]', r'#[no_mangle]', content)
     content = re.sub(r'\n\n\n+', '\n\n', content)
     

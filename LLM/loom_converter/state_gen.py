@@ -23,18 +23,26 @@ def generate_state_struct(global_statics: Dict[str, Dict], once_statics: Dict[st
     for var_name, info in global_statics.items():
         if var_name in once_statics:
             continue
-        
+
         var_type = info['type']
         is_mut = info['is_mut']
-        
+
         if is_mut:
-            clean_type = var_type
-            field_type = f"Arc<Mutex<{clean_type}>>"
+            vt = var_type.strip()
+            # Case A: per-element Mutex array like "[Mutex<i32>; 5]"
+            if '[' in vt and 'Mutex' in vt:
+                field_type = f"Arc<{vt}>"
+            # Case B: plain mutable fixed-size array (keep race semantics with UnsafeCell)
+            elif vt.startswith('['):
+                field_type = f"Arc<loom::cell::UnsafeCell<{vt}>>"
+            # Default: wrap in Arc<Mutex<...>> for other mutable types
+            else:
+                field_type = f"Arc<Mutex<{vt}>>"
         else:
             field_type = var_type
-        
+
         struct_def += f"    {var_name}: {field_type},\n"
-    
+
     struct_def += "}\n"
     return struct_def
 
@@ -59,17 +67,26 @@ def generate_state_initialization(global_statics: Dict[str, Dict], once_statics:
     for var_name, info in global_statics.items():
         if var_name in once_statics:
             continue
-        
+
         init_value = info['init_value']
         is_mut = info['is_mut']
-        
+        vt = info['type'].strip()
+
         if is_mut:
-            state_fields.append(f"        {var_name}: loom::sync::Arc::new(loom::sync::Mutex::new({init_value}))")
+            # Per-element Mutex array: keep array of Mutex and wrap in Arc (no outer Mutex)
+            if '[' in vt and 'Mutex' in vt:
+                state_fields.append(f"        {var_name}: loom::sync::Arc::new({init_value})")
+            # Plain mutable fixed-size array: preserve race semantics with UnsafeCell inside Arc
+            elif vt.startswith('['):
+                state_fields.append(f"        {var_name}: loom::sync::Arc::new(loom::cell::UnsafeCell::new({init_value}))")
+            # Default: wrap in Arc<Mutex<...>>
+            else:
+                state_fields.append(f"        {var_name}: loom::sync::Arc::new(loom::sync::Mutex::new({init_value}))")
         else:
             state_fields.append(f"        {var_name}: {init_value}")
-    
+
     if not state_fields:
-        return "let state = Arc::new(State {});"
-    
+        return "let state = loom::sync::Arc::new(State {});"
+
     init_code = "let state = loom::sync::Arc::new(State {\n" + ",\n".join(state_fields) + "\n        });"
     return init_code

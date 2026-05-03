@@ -108,49 +108,44 @@ def clone_globals_in_loops(test_body: str, all_global_statics: Dict[str, Dict]) 
     lines = test_body.split('\n')
     result_lines = []
     i = 0
-    
+    clone_index = 1
+
+    def next_clone_name() -> str:
+        nonlocal clone_index
+        name = f'state{clone_index}'
+        clone_index += 1
+        return name
+
+    def rewrite_spawn_chunk(chunk_lines: list, clone_name: str) -> list:
+        rewritten = []
+        for chunk_line in chunk_lines:
+            rewritten.append(re.sub(r'\bstate\b', clone_name, chunk_line))
+        return rewritten
+
     while i < len(lines):
         line = lines[i]
-        
+
         if 'loom::thread::spawn' in line and 'move ||' in line:
-            in_loop = False
-            current_depth = 0
-            
-            for check_idx in range(i):
-                check_line = lines[check_idx]
-                current_depth += check_line.count('{') - check_line.count('}')
-            
-            search_depth = current_depth
-            for back_idx in range(i - 1, -1, -1):
-                back_line = lines[back_idx]
-                search_depth -= back_line.count('{') - back_line.count('}')
-                
-                if search_depth < current_depth and re.search(r'\b(for|while)\b', back_line):
-                    in_loop = True
-                    break
-            
-            if in_loop:
-                closure_vars = set()
-                scan_idx = i
-                closure_start = False
-                closure_brace_depth = 0
-                
-                while scan_idx < len(lines):
-                    scan_line = lines[scan_idx]
-                    
-                    if '||' in scan_line:
-                        closure_start = True
-                    
-                    if closure_start:
-                        for match in re.finditer(r'\b([a-zA-Z_][a-zA-Z0-9_]*)\b', scan_line):
-                            closure_vars.add(match.group(1))
-                    
-                    if closure_start and closure_brace_depth == 0:
-                        break
-                    
-                    scan_idx += 1
-        
+            indent = line[:len(line) - len(line.lstrip())]
+
+            clone_name = next_clone_name()
+            result_lines.append(indent + f'let {clone_name} = state.clone();')
+
+            chunk_lines = [line]
+            brace_depth = line.count('{') - line.count('}')
+            j = i + 1
+
+            while j < len(lines) and brace_depth > 0:
+                chunk_line = lines[j]
+                chunk_lines.append(chunk_line)
+                brace_depth += chunk_line.count('{') - chunk_line.count('}')
+                j += 1
+
+            result_lines.extend(rewrite_spawn_chunk(chunk_lines, clone_name))
+            i = j
+            continue
+
         result_lines.append(line)
         i += 1
-    
+
     return '\n'.join(result_lines)
